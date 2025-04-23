@@ -1,0 +1,794 @@
+Tokenizer vocab size: 109
+Qwen2ForCausalLM(
+  (model): Qwen2Model(
+    (embed_tokens): Embedding(109, 1024)
+    (layers): ModuleList(
+      (0-11): 12 x Qwen2DecoderLayer(
+        (self_attn): Qwen2Attention(
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (k_proj): Linear(in_features=1024, out_features=256, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=256, bias=True)
+          (o_proj): Linear(in_features=1024, out_features=1024, bias=False)
+        )
+        (mlp): Qwen2MLP(
+          (gate_proj): Linear(in_features=1024, out_features=3072, bias=False)
+          (up_proj): Linear(in_features=1024, out_features=3072, bias=False)
+          (down_proj): Linear(in_features=3072, out_features=1024, bias=False)
+          (act_fn): SiLU()
+        )
+        (input_layernorm): Qwen2RMSNorm((1024,), eps=1e-06)
+        (post_attention_layernorm): Qwen2RMSNorm((1024,), eps=1e-06)
+      )
+    )
+    (norm): Qwen2RMSNorm((1024,), eps=1e-06)
+    (rotary_emb): Qwen2RotaryEmbedding()
+  )
+  (lm_head): Linear(in_features=1024, out_features=109, bias=False)
+)
+Model size: 144,970,752
+Tokenized dataset example
+tokenized dataset DatasetDict({
+    train: Dataset({
+        features: ['input_ids'],
+        num_rows: 3477496
+    })
+    val: Dataset({
+        features: ['input_ids'],
+        num_rows: 163
+    })
+})
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/table.py:1421: FutureWarning: promote has been superseded by promote_options='default'.
+  table = cls._concat_blocks(blocks, axis=0)
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/training_args.py:1575: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+/n/home05/sqin/self-correct/sudoku/train.py:269: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/deepspeed/runtime/zero/stage_1_and_2.py:1586: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at ../torch/csrc/tensor/python_tensor.cpp:78.)
+  total_norm_cuda = get_accelerator().FloatTensor([float(total_norm)])
+{'loss': 0.0708, 'grad_norm': 0.017204302126437886, 'learning_rate': 8.780867765429402e-05, 'epoch': 3.4593419486188512}
+{'loss': 0.0289, 'grad_norm': 0.015246314205728318, 'learning_rate': 8.774922658982136e-05, 'epoch': 3.467968736520644}
+{'eval_valid_loss': 0.03296873718500137, 'eval_valid_runtime': 0.8031, 'eval_valid_samples_per_second': 202.968, 'eval_valid_steps_per_second': 3.736, 'epoch': 3.467968736520644}
+{'loss': 0.0289, 'grad_norm': 0.014068024728153673, 'learning_rate': 8.768965115153062e-05, 'epoch': 3.4765955244224367}
+{'loss': 0.0287, 'grad_norm': 0.01533577218400518, 'learning_rate': 8.76299515357073e-05, 'epoch': 3.485222312324229}
+{'eval_valid_loss': 0.0329294353723526, 'eval_valid_runtime': 0.7996, 'eval_valid_samples_per_second': 203.851, 'eval_valid_steps_per_second': 3.752, 'epoch': 3.485222312324229}
+{'loss': 0.0288, 'grad_norm': 0.01656134418103543, 'learning_rate': 8.757012793904596e-05, 'epoch': 3.4938491002260217}
+{'loss': 0.0289, 'grad_norm': 0.016924968111451007, 'learning_rate': 8.751018055864969e-05, 'epoch': 3.5024758881278144}
+{'eval_valid_loss': 0.033190857619047165, 'eval_valid_runtime': 0.8032, 'eval_valid_samples_per_second': 202.942, 'eval_valid_steps_per_second': 3.735, 'epoch': 3.5024758881278144}
+{'loss': 0.029, 'grad_norm': 0.01762949957808488, 'learning_rate': 8.745010959202943e-05, 'epoch': 3.511102676029607}
+{'loss': 0.0291, 'grad_norm': 0.015401140227000868, 'learning_rate': 8.738991523710331e-05, 'epoch': 3.5197294639314}
+{'eval_valid_loss': 0.03318597376346588, 'eval_valid_runtime': 0.801, 'eval_valid_samples_per_second': 203.486, 'eval_valid_steps_per_second': 3.745, 'epoch': 3.5197294639314}
+{'loss': 0.0291, 'grad_norm': 0.01977422135949382, 'learning_rate': 8.732959769219591e-05, 'epoch': 3.5283562518331926}
+{'loss': 0.0292, 'grad_norm': 0.01625874850248071, 'learning_rate': 8.726915715603781e-05, 'epoch': 3.5369830397349853}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+{'eval_valid_loss': 0.03366728127002716, 'eval_valid_runtime': 0.8015, 'eval_valid_samples_per_second': 203.371, 'eval_valid_steps_per_second': 3.743, 'epoch': 3.5369830397349853}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0292, 'grad_norm': 0.016951471682607102, 'learning_rate': 8.720859382776471e-05, 'epoch': 3.5456098276367776}
+{'loss': 0.0291, 'grad_norm': 0.017925133550431713, 'learning_rate': 8.714790790691694e-05, 'epoch': 3.5542366155385703}
+{'eval_valid_loss': 0.03376911208033562, 'eval_valid_runtime': 0.797, 'eval_valid_samples_per_second': 204.527, 'eval_valid_steps_per_second': 3.764, 'epoch': 3.5542366155385703}
+{'loss': 0.0292, 'grad_norm': 0.017142882154701434, 'learning_rate': 8.70870995934387e-05, 'epoch': 3.562863403440363}
+{'loss': 0.0292, 'grad_norm': 0.01653785164548955, 'learning_rate': 8.702616908767748e-05, 'epoch': 3.5714901913421557}
+{'eval_valid_loss': 0.033257342875003815, 'eval_valid_runtime': 0.7923, 'eval_valid_samples_per_second': 205.718, 'eval_valid_steps_per_second': 3.786, 'epoch': 3.5714901913421557}
+{'loss': 0.0292, 'grad_norm': 0.01758035573820216, 'learning_rate': 8.696511659038334e-05, 'epoch': 3.5801169792439484}
+{'loss': 0.0292, 'grad_norm': 0.0155360505377828, 'learning_rate': 8.690394230270827e-05, 'epoch': 3.5887437671457407}
+{'eval_valid_loss': 0.03351962938904762, 'eval_valid_runtime': 0.7919, 'eval_valid_samples_per_second': 205.843, 'eval_valid_steps_per_second': 3.789, 'epoch': 3.5887437671457407}
+{'loss': 0.0291, 'grad_norm': 0.016664410925367714, 'learning_rate': 8.684264642620554e-05, 'epoch': 3.5973705550475334}
+{'loss': 0.0292, 'grad_norm': 0.01686374046175217, 'learning_rate': 8.678122916282901e-05, 'epoch': 3.605997342949326}
+{'eval_valid_loss': 0.03340728580951691, 'eval_valid_runtime': 0.7951, 'eval_valid_samples_per_second': 204.996, 'eval_valid_steps_per_second': 3.773, 'epoch': 3.605997342949326}
+{'loss': 0.0292, 'grad_norm': 0.016288283090477595, 'learning_rate': 8.671969071493248e-05, 'epoch': 3.614624130851119}
+{'loss': 0.0292, 'grad_norm': 0.018212990323432945, 'learning_rate': 8.665803128526901e-05, 'epoch': 3.6232509187529116}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+{'eval_valid_loss': 0.03346099331974983, 'eval_valid_runtime': 0.7916, 'eval_valid_samples_per_second': 205.904, 'eval_valid_steps_per_second': 3.79, 'epoch': 3.6232509187529116}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0292, 'grad_norm': 0.01827822772860955, 'learning_rate': 8.659625107699032e-05, 'epoch': 3.6318777066547043}
+{'loss': 0.0292, 'grad_norm': 0.01966590696208242, 'learning_rate': 8.653435029364599e-05, 'epoch': 3.640504494556497}
+{'eval_valid_loss': 0.0336281843483448, 'eval_valid_runtime': 0.8045, 'eval_valid_samples_per_second': 202.605, 'eval_valid_steps_per_second': 3.729, 'epoch': 3.640504494556497}
+{'loss': 0.0292, 'grad_norm': 0.015466716445988437, 'learning_rate': 8.647232913918288e-05, 'epoch': 3.6491312824582893}
+{'loss': 0.0292, 'grad_norm': 0.016765120893435927, 'learning_rate': 8.641018781794447e-05, 'epoch': 3.657758070360082}
+{'eval_valid_loss': 0.03324921056628227, 'eval_valid_runtime': 0.7938, 'eval_valid_samples_per_second': 205.332, 'eval_valid_steps_per_second': 3.779, 'epoch': 3.657758070360082}
+{'loss': 0.0291, 'grad_norm': 0.01719411913058716, 'learning_rate': 8.634792653467016e-05, 'epoch': 3.6663848582618748}
+{'loss': 0.0292, 'grad_norm': 0.01647722840420395, 'learning_rate': 8.628554549449456e-05, 'epoch': 3.6750116461636675}
+{'eval_valid_loss': 0.03362898901104927, 'eval_valid_runtime': 0.7967, 'eval_valid_samples_per_second': 204.603, 'eval_valid_steps_per_second': 3.766, 'epoch': 3.6750116461636675}
+{'loss': 0.0292, 'grad_norm': 0.015009866989170522, 'learning_rate': 8.622304490294686e-05, 'epoch': 3.68363843406546}
+{'loss': 0.0291, 'grad_norm': 0.014685112585083532, 'learning_rate': 8.616042496595015e-05, 'epoch': 3.6922652219672525}
+{'eval_valid_loss': 0.03358893096446991, 'eval_valid_runtime': 0.7937, 'eval_valid_samples_per_second': 205.361, 'eval_valid_steps_per_second': 3.78, 'epoch': 3.6922652219672525}
+{'loss': 0.0292, 'grad_norm': 0.016602936686624565, 'learning_rate': 8.609768588982076e-05, 'epoch': 3.700892009869045}
+{'loss': 0.0291, 'grad_norm': 0.016256588465334235, 'learning_rate': 8.603482788126747e-05, 'epoch': 3.709518797770838}
+{'eval_valid_loss': 0.03354384005069733, 'eval_valid_runtime': 0.7967, 'eval_valid_samples_per_second': 204.583, 'eval_valid_steps_per_second': 3.765, 'epoch': 3.709518797770838}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0291, 'grad_norm': 0.017284400996268785, 'learning_rate': 8.597185114739098e-05, 'epoch': 3.7181455856726306}
+{'loss': 0.0291, 'grad_norm': 0.014895646576889089, 'learning_rate': 8.590875589568314e-05, 'epoch': 3.7267723735744234}
+{'eval_valid_loss': 0.03348510339856148, 'eval_valid_runtime': 0.8036, 'eval_valid_samples_per_second': 202.846, 'eval_valid_steps_per_second': 3.733, 'epoch': 3.7267723735744234}
+{'loss': 0.0292, 'grad_norm': 0.017989330494928332, 'learning_rate': 8.584554233402628e-05, 'epoch': 3.735399161476216}
+{'loss': 0.0291, 'grad_norm': 0.015778307103852994, 'learning_rate': 8.578221067069255e-05, 'epoch': 3.744025949378009}
+{'eval_valid_loss': 0.033468831330537796, 'eval_valid_runtime': 0.7967, 'eval_valid_samples_per_second': 204.588, 'eval_valid_steps_per_second': 3.765, 'epoch': 3.744025949378009}
+{'loss': 0.029, 'grad_norm': 0.014400747376488405, 'learning_rate': 8.571876111434318e-05, 'epoch': 3.752652737279801}
+{'loss': 0.0291, 'grad_norm': 0.014277243528377698, 'learning_rate': 8.565519387402787e-05, 'epoch': 3.761279525181594}
+{'eval_valid_loss': 0.03339141234755516, 'eval_valid_runtime': 0.7914, 'eval_valid_samples_per_second': 205.953, 'eval_valid_steps_per_second': 3.791, 'epoch': 3.761279525181594}
+{'loss': 0.0291, 'grad_norm': 0.01586801614120767, 'learning_rate': 8.5591509159184e-05, 'epoch': 3.7699063130833865}
+{'loss': 0.0292, 'grad_norm': 0.016101992106940438, 'learning_rate': 8.552770717963607e-05, 'epoch': 3.7785331009851792}
+{'eval_valid_loss': 0.033169228583574295, 'eval_valid_runtime': 0.7953, 'eval_valid_samples_per_second': 204.945, 'eval_valid_steps_per_second': 3.772, 'epoch': 3.7785331009851792}
+{'loss': 0.029, 'grad_norm': 0.016502467266748796, 'learning_rate': 8.546378814559485e-05, 'epoch': 3.787159888886972}
+{'loss': 0.0291, 'grad_norm': 0.01872779275868192, 'learning_rate': 8.539975226765687e-05, 'epoch': 3.7957866767887642}
+{'eval_valid_loss': 0.033249128609895706, 'eval_valid_runtime': 0.7927, 'eval_valid_samples_per_second': 205.619, 'eval_valid_steps_per_second': 3.784, 'epoch': 3.7957866767887642}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0291, 'grad_norm': 0.017755108111905456, 'learning_rate': 8.533559975680357e-05, 'epoch': 3.804413464690557}
+{'loss': 0.0291, 'grad_norm': 0.01582563171314503, 'learning_rate': 8.527133082440065e-05, 'epoch': 3.8130402525923497}
+{'eval_valid_loss': 0.0333888940513134, 'eval_valid_runtime': 0.7963, 'eval_valid_samples_per_second': 204.691, 'eval_valid_steps_per_second': 3.767, 'epoch': 3.8130402525923497}
+{'loss': 0.0291, 'grad_norm': 0.016790107360787423, 'learning_rate': 8.520694568219744e-05, 'epoch': 3.8216670404941424}
+{'loss': 0.029, 'grad_norm': 0.016434584448925885, 'learning_rate': 8.514244454232612e-05, 'epoch': 3.830293828395935}
+{'eval_valid_loss': 0.03324476629495621, 'eval_valid_runtime': 0.8002, 'eval_valid_samples_per_second': 203.711, 'eval_valid_steps_per_second': 3.749, 'epoch': 3.830293828395935}
+{'loss': 0.029, 'grad_norm': 0.014421962416633257, 'learning_rate': 8.507782761730105e-05, 'epoch': 3.838920616297728}
+{'loss': 0.0291, 'grad_norm': 0.016961297496399828, 'learning_rate': 8.50130951200181e-05, 'epoch': 3.8475474041995206}
+{'eval_valid_loss': 0.033337078988552094, 'eval_valid_runtime': 0.7906, 'eval_valid_samples_per_second': 206.177, 'eval_valid_steps_per_second': 3.795, 'epoch': 3.8475474041995206}
+{'loss': 0.029, 'grad_norm': 0.01762297051834842, 'learning_rate': 8.494824726375388e-05, 'epoch': 3.856174192101313}
+{'loss': 0.0291, 'grad_norm': 0.01731972440428895, 'learning_rate': 8.48832842621651e-05, 'epoch': 3.8648009800031056}
+{'eval_valid_loss': 0.033067259937524796, 'eval_valid_runtime': 0.7944, 'eval_valid_samples_per_second': 205.184, 'eval_valid_steps_per_second': 3.776, 'epoch': 3.8648009800031056}
+{'loss': 0.029, 'grad_norm': 0.015590901221176448, 'learning_rate': 8.481820632928786e-05, 'epoch': 3.8734277679048983}
+{'loss': 0.029, 'grad_norm': 0.016253627845131527, 'learning_rate': 8.47530136795369e-05, 'epoch': 3.882054555806691}
+{'eval_valid_loss': 0.03319118171930313, 'eval_valid_runtime': 0.7911, 'eval_valid_samples_per_second': 206.031, 'eval_valid_steps_per_second': 3.792, 'epoch': 3.882054555806691}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.029, 'grad_norm': 0.014521649697222087, 'learning_rate': 8.468770652770491e-05, 'epoch': 3.8906813437084837}
+{'loss': 0.029, 'grad_norm': 0.016938371872595146, 'learning_rate': 8.462228508896188e-05, 'epoch': 3.899308131610276}
+{'eval_valid_loss': 0.03326236829161644, 'eval_valid_runtime': 0.7924, 'eval_valid_samples_per_second': 205.71, 'eval_valid_steps_per_second': 3.786, 'epoch': 3.899308131610276}
+{'loss': 0.029, 'grad_norm': 0.015537486965868643, 'learning_rate': 8.455674957885433e-05, 'epoch': 3.9079349195120687}
+{'loss': 0.029, 'grad_norm': 0.01756620847517703, 'learning_rate': 8.44911002133046e-05, 'epoch': 3.9165617074138614}
+{'eval_valid_loss': 0.033211030066013336, 'eval_valid_runtime': 0.8038, 'eval_valid_samples_per_second': 202.788, 'eval_valid_steps_per_second': 3.732, 'epoch': 3.9165617074138614}
+{'loss': 0.0289, 'grad_norm': 0.014706368716567182, 'learning_rate': 8.442533720861015e-05, 'epoch': 3.925188495315654}
+{'loss': 0.0289, 'grad_norm': 0.01475244902297241, 'learning_rate': 8.435946078144285e-05, 'epoch': 3.933815283217447}
+{'eval_valid_loss': 0.03318371623754501, 'eval_valid_runtime': 0.7957, 'eval_valid_samples_per_second': 204.842, 'eval_valid_steps_per_second': 3.77, 'epoch': 3.933815283217447}
+{'loss': 0.0289, 'grad_norm': 0.018390484977154776, 'learning_rate': 8.429347114884833e-05, 'epoch': 3.9424420711192396}
+{'loss': 0.029, 'grad_norm': 0.019473899137175225, 'learning_rate': 8.422736852824512e-05, 'epoch': 3.9510688590210323}
+{'eval_valid_loss': 0.033048927783966064, 'eval_valid_runtime': 0.7944, 'eval_valid_samples_per_second': 205.18, 'eval_valid_steps_per_second': 3.776, 'epoch': 3.9510688590210323}
+{'loss': 0.029, 'grad_norm': 0.016838963843706003, 'learning_rate': 8.416115313742402e-05, 'epoch': 3.9596956469228246}
+{'loss': 0.029, 'grad_norm': 0.01415319387055045, 'learning_rate': 8.409482519454744e-05, 'epoch': 3.9683224348246173}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+{'eval_valid_loss': 0.03321531042456627, 'eval_valid_runtime': 0.796, 'eval_valid_samples_per_second': 204.766, 'eval_valid_steps_per_second': 3.769, 'epoch': 3.9683224348246173}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.029, 'grad_norm': 0.01528471309147498, 'learning_rate': 8.40283849181486e-05, 'epoch': 3.97694922272641}
+{'loss': 0.0289, 'grad_norm': 0.016056437604708353, 'learning_rate': 8.396183252713078e-05, 'epoch': 3.9855760106282028}
+{'eval_valid_loss': 0.03301969915628433, 'eval_valid_runtime': 0.7968, 'eval_valid_samples_per_second': 204.571, 'eval_valid_steps_per_second': 3.765, 'epoch': 3.9855760106282028}
+{'loss': 0.0289, 'grad_norm': 0.01647303339322262, 'learning_rate': 8.389516824076669e-05, 'epoch': 3.9942027985299955}
+{'loss': 0.0288, 'grad_norm': 0.014663996552720772, 'learning_rate': 8.382839227869774e-05, 'epoch': 4.002829586431788}
+{'eval_valid_loss': 0.03303024545311928, 'eval_valid_runtime': 0.8021, 'eval_valid_samples_per_second': 203.209, 'eval_valid_steps_per_second': 3.74, 'epoch': 4.002829586431788}
+{'loss': 0.0284, 'grad_norm': 0.015017674629927764, 'learning_rate': 8.376150486093318e-05, 'epoch': 4.011456374333581}
+{'loss': 0.0284, 'grad_norm': 0.0159873851016925, 'learning_rate': 8.369450620784959e-05, 'epoch': 4.020083162235373}
+{'eval_valid_loss': 0.03312620520591736, 'eval_valid_runtime': 0.7977, 'eval_valid_samples_per_second': 204.335, 'eval_valid_steps_per_second': 3.761, 'epoch': 4.020083162235373}
+{'loss': 0.0284, 'grad_norm': 0.017617809584061294, 'learning_rate': 8.362739654018996e-05, 'epoch': 4.028709950137166}
+{'loss': 0.0284, 'grad_norm': 0.014488519364925102, 'learning_rate': 8.356017607906308e-05, 'epoch': 4.037336738038959}
+{'eval_valid_loss': 0.03331003710627556, 'eval_valid_runtime': 0.7933, 'eval_valid_samples_per_second': 205.465, 'eval_valid_steps_per_second': 3.782, 'epoch': 4.037336738038959}
+{'loss': 0.0284, 'grad_norm': 0.016567914943348812, 'learning_rate': 8.349284504594279e-05, 'epoch': 4.045963525940751}
+{'loss': 0.0284, 'grad_norm': 0.013999802147559907, 'learning_rate': 8.342540366266718e-05, 'epoch': 4.054590313842544}
+{'eval_valid_loss': 0.03311702981591225, 'eval_valid_runtime': 0.7966, 'eval_valid_samples_per_second': 204.632, 'eval_valid_steps_per_second': 3.766, 'epoch': 4.054590313842544}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0285, 'grad_norm': 0.011909478258704849, 'learning_rate': 8.335785215143796e-05, 'epoch': 4.063217101744336}
+{'loss': 0.0285, 'grad_norm': 0.014479961921518925, 'learning_rate': 8.329019073481971e-05, 'epoch': 4.0718438896461295}
+{'eval_valid_loss': 0.03300049528479576, 'eval_valid_runtime': 0.7935, 'eval_valid_samples_per_second': 205.412, 'eval_valid_steps_per_second': 3.781, 'epoch': 4.0718438896461295}
+{'loss': 0.0284, 'grad_norm': 0.014313194945281498, 'learning_rate': 8.322241963573905e-05, 'epoch': 4.080470677547922}
+{'loss': 0.0285, 'grad_norm': 0.014891498365236419, 'learning_rate': 8.315453907748401e-05, 'epoch': 4.089097465449714}
+{'eval_valid_loss': 0.032999780029058456, 'eval_valid_runtime': 0.7935, 'eval_valid_samples_per_second': 205.423, 'eval_valid_steps_per_second': 3.781, 'epoch': 4.089097465449714}
+{'loss': 0.0285, 'grad_norm': 0.01445694879916788, 'learning_rate': 8.308654928370325e-05, 'epoch': 4.097724253351507}
+{'loss': 0.0284, 'grad_norm': 0.01488362725825829, 'learning_rate': 8.301845047840535e-05, 'epoch': 4.1063510412532995}
+{'eval_valid_loss': 0.03306856378912926, 'eval_valid_runtime': 0.8059, 'eval_valid_samples_per_second': 202.27, 'eval_valid_steps_per_second': 3.723, 'epoch': 4.1063510412532995}
+{'loss': 0.0285, 'grad_norm': 0.01662921883811465, 'learning_rate': 8.295024288595805e-05, 'epoch': 4.114977829155093}
+{'loss': 0.0284, 'grad_norm': 0.012543460607932986, 'learning_rate': 8.28819267310875e-05, 'epoch': 4.123604617056885}
+{'eval_valid_loss': 0.03301558643579483, 'eval_valid_runtime': 0.7956, 'eval_valid_samples_per_second': 204.866, 'eval_valid_steps_per_second': 3.771, 'epoch': 4.123604617056885}
+{'loss': 0.0285, 'grad_norm': 0.0162348244253651, 'learning_rate': 8.281350223887754e-05, 'epoch': 4.132231404958677}
+{'loss': 0.0285, 'grad_norm': 0.016006753830695594, 'learning_rate': 8.274496963476897e-05, 'epoch': 4.14085819286047}
+{'eval_valid_loss': 0.03297360613942146, 'eval_valid_runtime': 0.797, 'eval_valid_samples_per_second': 204.519, 'eval_valid_steps_per_second': 3.764, 'epoch': 4.14085819286047}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0284, 'grad_norm': 0.016080752635145763, 'learning_rate': 8.267632914455876e-05, 'epoch': 4.149484980762263}
+{'loss': 0.0284, 'grad_norm': 0.015518441968225785, 'learning_rate': 8.260758099439936e-05, 'epoch': 4.158111768664056}
+{'eval_valid_loss': 0.03283774107694626, 'eval_valid_runtime': 0.796, 'eval_valid_samples_per_second': 204.771, 'eval_valid_steps_per_second': 3.769, 'epoch': 4.158111768664056}
+{'loss': 0.0285, 'grad_norm': 0.016043964786743775, 'learning_rate': 8.253872541079793e-05, 'epoch': 4.166738556565848}
+{'loss': 0.0285, 'grad_norm': 0.015093205257326324, 'learning_rate': 8.246976262061561e-05, 'epoch': 4.175365344467641}
+{'eval_valid_loss': 0.0332053117454052, 'eval_valid_runtime': 0.7934, 'eval_valid_samples_per_second': 205.44, 'eval_valid_steps_per_second': 3.781, 'epoch': 4.175365344467641}
+{'loss': 0.0285, 'grad_norm': 0.01682016239655106, 'learning_rate': 8.240069285106669e-05, 'epoch': 4.183992132369434}
+{'loss': 0.0284, 'grad_norm': 0.015659039836010278, 'learning_rate': 8.233151632971802e-05, 'epoch': 4.192618920271226}
+{'eval_valid_loss': 0.03294213488698006, 'eval_valid_runtime': 0.8039, 'eval_valid_samples_per_second': 202.773, 'eval_valid_steps_per_second': 3.732, 'epoch': 4.192618920271226}
+{'loss': 0.0285, 'grad_norm': 0.017839011342022478, 'learning_rate': 8.22622332844881e-05, 'epoch': 4.201245708173019}
+{'loss': 0.0285, 'grad_norm': 0.018612225698567016, 'learning_rate': 8.219284394364644e-05, 'epoch': 4.209872496074811}
+{'eval_valid_loss': 0.03311695531010628, 'eval_valid_runtime': 0.7932, 'eval_valid_samples_per_second': 205.486, 'eval_valid_steps_per_second': 3.782, 'epoch': 4.209872496074811}
+{'loss': 0.0284, 'grad_norm': 0.014082453664849157, 'learning_rate': 8.212334853581273e-05, 'epoch': 4.2184992839766045}
+{'loss': 0.0285, 'grad_norm': 0.01466317198869013, 'learning_rate': 8.205374728995616e-05, 'epoch': 4.227126071878397}
+{'eval_valid_loss': 0.03316851332783699, 'eval_valid_runtime': 0.7909, 'eval_valid_samples_per_second': 206.094, 'eval_valid_steps_per_second': 3.793, 'epoch': 4.227126071878397}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0285, 'grad_norm': 0.015437517247827166, 'learning_rate': 8.198404043539462e-05, 'epoch': 4.23575285978019}
+{'loss': 0.0286, 'grad_norm': 0.015688033292096074, 'learning_rate': 8.191422820179393e-05, 'epoch': 4.244379647681982}
+{'eval_valid_loss': 0.03305084630846977, 'eval_valid_runtime': 0.796, 'eval_valid_samples_per_second': 204.785, 'eval_valid_steps_per_second': 3.769, 'epoch': 4.244379647681982}
+{'loss': 0.0285, 'grad_norm': 0.014772598993565597, 'learning_rate': 8.184431081916713e-05, 'epoch': 4.2530064355837744}
+{'loss': 0.0285, 'grad_norm': 0.013737588040607656, 'learning_rate': 8.177428851787368e-05, 'epoch': 4.261633223485568}
+{'eval_valid_loss': 0.03302277624607086, 'eval_valid_runtime': 0.7919, 'eval_valid_samples_per_second': 205.825, 'eval_valid_steps_per_second': 3.788, 'epoch': 4.261633223485568}
+{'loss': 0.0284, 'grad_norm': 0.01798858529109868, 'learning_rate': 8.170416152861873e-05, 'epoch': 4.27026001138736}
+{'loss': 0.0285, 'grad_norm': 0.015078086436965163, 'learning_rate': 8.163393008245235e-05, 'epoch': 4.278886799289153}
+{'eval_valid_loss': 0.032959263771772385, 'eval_valid_runtime': 0.8042, 'eval_valid_samples_per_second': 202.687, 'eval_valid_steps_per_second': 3.73, 'epoch': 4.278886799289153}
+{'loss': 0.0284, 'grad_norm': 0.01673172958259279, 'learning_rate': 8.156359441076878e-05, 'epoch': 4.287513587190945}
+{'loss': 0.0285, 'grad_norm': 0.015325839763713944, 'learning_rate': 8.149315474530563e-05, 'epoch': 4.296140375092738}
+{'eval_valid_loss': 0.033043235540390015, 'eval_valid_runtime': 0.7945, 'eval_valid_samples_per_second': 205.154, 'eval_valid_steps_per_second': 3.776, 'epoch': 4.296140375092738}
+{'loss': 0.0284, 'grad_norm': 0.016721361857643394, 'learning_rate': 8.142261131814317e-05, 'epoch': 4.304767162994531}
+{'loss': 0.0284, 'grad_norm': 0.015598304598873082, 'learning_rate': 8.135196436170349e-05, 'epoch': 4.313393950896323}
+{'eval_valid_loss': 0.03298791125416756, 'eval_valid_runtime': 0.794, 'eval_valid_samples_per_second': 205.294, 'eval_valid_steps_per_second': 3.778, 'epoch': 4.313393950896323}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0284, 'grad_norm': 0.015281264707866473, 'learning_rate': 8.128121410874986e-05, 'epoch': 4.322020738798116}
+{'loss': 0.0284, 'grad_norm': 0.016576045431364282, 'learning_rate': 8.121036079238581e-05, 'epoch': 4.3306475266999085}
+{'eval_valid_loss': 0.03267204388976097, 'eval_valid_runtime': 0.7934, 'eval_valid_samples_per_second': 205.432, 'eval_valid_steps_per_second': 3.781, 'epoch': 4.3306475266999085}
+{'loss': 0.0285, 'grad_norm': 0.01632659413217731, 'learning_rate': 8.113940464605447e-05, 'epoch': 4.339274314601701}
+{'loss': 0.0285, 'grad_norm': 0.01608036048745678, 'learning_rate': 8.106834590353775e-05, 'epoch': 4.347901102503494}
+{'eval_valid_loss': 0.033091966062784195, 'eval_valid_runtime': 0.7942, 'eval_valid_samples_per_second': 205.242, 'eval_valid_steps_per_second': 3.777, 'epoch': 4.347901102503494}
+{'loss': 0.0285, 'grad_norm': 0.013408812118707768, 'learning_rate': 8.099718479895564e-05, 'epoch': 4.356527890405286}
+{'loss': 0.0284, 'grad_norm': 0.01312025053444817, 'learning_rate': 8.092592156676532e-05, 'epoch': 4.365154678307079}
+{'eval_valid_loss': 0.033119481056928635, 'eval_valid_runtime': 0.7937, 'eval_valid_samples_per_second': 205.369, 'eval_valid_steps_per_second': 3.78, 'epoch': 4.365154678307079}
+{'loss': 0.0285, 'grad_norm': 0.01594899091513332, 'learning_rate': 8.085455644176049e-05, 'epoch': 4.373781466208872}
+{'loss': 0.0285, 'grad_norm': 0.014233044970554673, 'learning_rate': 8.078308965907055e-05, 'epoch': 4.382408254110665}
+{'eval_valid_loss': 0.03292961046099663, 'eval_valid_runtime': 0.8061, 'eval_valid_samples_per_second': 202.199, 'eval_valid_steps_per_second': 3.721, 'epoch': 4.382408254110665}
+{'loss': 0.0284, 'grad_norm': 0.0165325851525263, 'learning_rate': 8.071152145415983e-05, 'epoch': 4.391035042012457}
+{'loss': 0.0284, 'grad_norm': 0.01458297591818555, 'learning_rate': 8.063985206282686e-05, 'epoch': 4.399661829914249}
+{'eval_valid_loss': 0.032668355852365494, 'eval_valid_runtime': 0.7923, 'eval_valid_samples_per_second': 205.719, 'eval_valid_steps_per_second': 3.786, 'epoch': 4.399661829914249}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0285, 'grad_norm': 0.0161018524618049, 'learning_rate': 8.056808172120347e-05, 'epoch': 4.4082886178160425}
+{'loss': 0.0284, 'grad_norm': 0.01690625037381358, 'learning_rate': 8.049621066575418e-05, 'epoch': 4.416915405717835}
+{'eval_valid_loss': 0.03287997469305992, 'eval_valid_runtime': 0.7897, 'eval_valid_samples_per_second': 206.399, 'eval_valid_steps_per_second': 3.799, 'epoch': 4.416915405717835}
+{'loss': 0.0284, 'grad_norm': 0.01278053589113359, 'learning_rate': 8.042423913327528e-05, 'epoch': 4.425542193619628}
+{'loss': 0.0285, 'grad_norm': 0.013548195042042011, 'learning_rate': 8.035216736089415e-05, 'epoch': 4.43416898152142}
+{'eval_valid_loss': 0.03269743546843529, 'eval_valid_runtime': 0.8133, 'eval_valid_samples_per_second': 200.419, 'eval_valid_steps_per_second': 3.689, 'epoch': 4.43416898152142}
+{'loss': 0.0284, 'grad_norm': 0.014872000682336592, 'learning_rate': 8.027999558606837e-05, 'epoch': 4.442795769423213}
+{'loss': 0.0284, 'grad_norm': 0.014310428995241289, 'learning_rate': 8.020772404658511e-05, 'epoch': 4.451422557325006}
+{'eval_valid_loss': 0.03292444720864296, 'eval_valid_runtime': 0.7902, 'eval_valid_samples_per_second': 206.266, 'eval_valid_steps_per_second': 3.796, 'epoch': 4.451422557325006}
+{'loss': 0.0285, 'grad_norm': 0.016303499124742014, 'learning_rate': 8.013535298056011e-05, 'epoch': 4.460049345226798}
+{'loss': 0.0284, 'grad_norm': 0.013576823725533503, 'learning_rate': 8.006288262643711e-05, 'epoch': 4.468676133128591}
+{'eval_valid_loss': 0.032879576086997986, 'eval_valid_runtime': 0.8049, 'eval_valid_samples_per_second': 202.503, 'eval_valid_steps_per_second': 3.727, 'epoch': 4.468676133128591}
+{'loss': 0.0284, 'grad_norm': 0.014999629312865706, 'learning_rate': 7.99903132229869e-05, 'epoch': 4.477302921030383}
+{'loss': 0.0284, 'grad_norm': 0.015395015315873726, 'learning_rate': 7.991764500930676e-05, 'epoch': 4.485929708932177}
+{'eval_valid_loss': 0.03282913193106651, 'eval_valid_runtime': 0.7916, 'eval_valid_samples_per_second': 205.92, 'eval_valid_steps_per_second': 3.79, 'epoch': 4.485929708932177}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0285, 'grad_norm': 0.01658082103496123, 'learning_rate': 7.984487822481937e-05, 'epoch': 4.494556496833969}
+{'loss': 0.0285, 'grad_norm': 0.014545921217591696, 'learning_rate': 7.977201310927223e-05, 'epoch': 4.503183284735761}
+{'eval_valid_loss': 0.03288358449935913, 'eval_valid_runtime': 0.7934, 'eval_valid_samples_per_second': 205.457, 'eval_valid_steps_per_second': 3.781, 'epoch': 4.503183284735761}
+{'loss': 0.0285, 'grad_norm': 0.014029569210114168, 'learning_rate': 7.969904990273683e-05, 'epoch': 4.511810072637554}
+{'loss': 0.0284, 'grad_norm': 0.016319742345563416, 'learning_rate': 7.962598884560784e-05, 'epoch': 4.520436860539347}
+{'eval_valid_loss': 0.03293032571673393, 'eval_valid_runtime': 0.7928, 'eval_valid_samples_per_second': 205.611, 'eval_valid_steps_per_second': 3.784, 'epoch': 4.520436860539347}
+{'loss': 0.0284, 'grad_norm': 0.013313437096618804, 'learning_rate': 7.95528301786023e-05, 'epoch': 4.52906364844114}
+{'loss': 0.0284, 'grad_norm': 0.014101075872862386, 'learning_rate': 7.947957414275886e-05, 'epoch': 4.537690436342932}
+{'eval_valid_loss': 0.03267889469861984, 'eval_valid_runtime': 0.7938, 'eval_valid_samples_per_second': 205.334, 'eval_valid_steps_per_second': 3.779, 'epoch': 4.537690436342932}
+{'loss': 0.0284, 'grad_norm': 0.014234037508045777, 'learning_rate': 7.9406220979437e-05, 'epoch': 4.546317224244724}
+{'loss': 0.0284, 'grad_norm': 0.014905381715076292, 'learning_rate': 7.933277093031617e-05, 'epoch': 4.5549440121465175}
+{'eval_valid_loss': 0.03290262445807457, 'eval_valid_runtime': 0.802, 'eval_valid_samples_per_second': 203.231, 'eval_valid_steps_per_second': 3.74, 'epoch': 4.5549440121465175}
+{'loss': 0.0284, 'grad_norm': 0.013218516960410532, 'learning_rate': 7.925922423739506e-05, 'epoch': 4.56357080004831}
+{'loss': 0.0285, 'grad_norm': 0.01369755411498647, 'learning_rate': 7.918558114299075e-05, 'epoch': 4.572197587950103}
+{'eval_valid_loss': 0.0326617993414402, 'eval_valid_runtime': 0.795, 'eval_valid_samples_per_second': 205.03, 'eval_valid_steps_per_second': 3.774, 'epoch': 4.572197587950103}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0284, 'grad_norm': 0.013896262125152355, 'learning_rate': 7.911184188973797e-05, 'epoch': 4.580824375851895}
+{'loss': 0.0284, 'grad_norm': 0.01583489603324117, 'learning_rate': 7.903800672058826e-05, 'epoch': 4.589451163753688}
+{'eval_valid_loss': 0.03253977745771408, 'eval_valid_runtime': 0.7913, 'eval_valid_samples_per_second': 206.003, 'eval_valid_steps_per_second': 3.791, 'epoch': 4.589451163753688}
+{'loss': 0.0284, 'grad_norm': 0.017782108374637055, 'learning_rate': 7.896407587880916e-05, 'epoch': 4.598077951655481}
+{'loss': 0.0284, 'grad_norm': 0.015090042753007706, 'learning_rate': 7.889004960798344e-05, 'epoch': 4.606704739557273}
+{'eval_valid_loss': 0.03243645280599594, 'eval_valid_runtime': 0.79, 'eval_valid_samples_per_second': 206.335, 'eval_valid_steps_per_second': 3.798, 'epoch': 4.606704739557273}
+{'loss': 0.0284, 'grad_norm': 0.013635936111818176, 'learning_rate': 7.881592815200826e-05, 'epoch': 4.615331527459066}
+{'loss': 0.0284, 'grad_norm': 0.01325254628811373, 'learning_rate': 7.874171175509446e-05, 'epoch': 4.623958315360858}
+{'eval_valid_loss': 0.03257334977388382, 'eval_valid_runtime': 0.7933, 'eval_valid_samples_per_second': 205.476, 'eval_valid_steps_per_second': 3.782, 'epoch': 4.623958315360858}
+{'loss': 0.0284, 'grad_norm': 0.01318213826686145, 'learning_rate': 7.866740066176559e-05, 'epoch': 4.6325851032626515}
+{'loss': 0.0284, 'grad_norm': 0.01582864868939495, 'learning_rate': 7.859299511685727e-05, 'epoch': 4.641211891164444}
+{'eval_valid_loss': 0.032595451921224594, 'eval_valid_runtime': 0.7939, 'eval_valid_samples_per_second': 205.327, 'eval_valid_steps_per_second': 3.779, 'epoch': 4.641211891164444}
+{'loss': 0.0284, 'grad_norm': 0.014197578786345323, 'learning_rate': 7.851849536551626e-05, 'epoch': 4.649838679066237}
+{'loss': 0.0284, 'grad_norm': 0.014569661386177876, 'learning_rate': 7.844390165319978e-05, 'epoch': 4.658465466968029}
+{'eval_valid_loss': 0.032602548599243164, 'eval_valid_runtime': 0.8037, 'eval_valid_samples_per_second': 202.8, 'eval_valid_steps_per_second': 3.733, 'epoch': 4.658465466968029}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0284, 'grad_norm': 0.014139531283577852, 'learning_rate': 7.836921422567456e-05, 'epoch': 4.6670922548698215}
+{'loss': 0.0284, 'grad_norm': 0.014866474326047409, 'learning_rate': 7.829443332901611e-05, 'epoch': 4.675719042771615}
+{'eval_valid_loss': 0.03264514356851578, 'eval_valid_runtime': 0.7981, 'eval_valid_samples_per_second': 204.247, 'eval_valid_steps_per_second': 3.759, 'epoch': 4.675719042771615}
+{'loss': 0.0283, 'grad_norm': 0.014918556620767711, 'learning_rate': 7.82195592096079e-05, 'epoch': 4.684345830673407}
+{'loss': 0.0285, 'grad_norm': 0.013534605879888265, 'learning_rate': 7.814459211414059e-05, 'epoch': 4.6929726185752}
+{'eval_valid_loss': 0.032565463334321976, 'eval_valid_runtime': 0.7919, 'eval_valid_samples_per_second': 205.844, 'eval_valid_steps_per_second': 3.789, 'epoch': 4.6929726185752}
+{'loss': 0.0284, 'grad_norm': 0.013848515632070386, 'learning_rate': 7.80695322896111e-05, 'epoch': 4.701599406476992}
+{'loss': 0.0284, 'grad_norm': 0.012021890443420238, 'learning_rate': 7.799437998332188e-05, 'epoch': 4.710226194378785}
+{'eval_valid_loss': 0.032395731657743454, 'eval_valid_runtime': 0.7922, 'eval_valid_samples_per_second': 205.749, 'eval_valid_steps_per_second': 3.787, 'epoch': 4.710226194378785}
+{'loss': 0.0284, 'grad_norm': 0.013189249352498442, 'learning_rate': 7.791913544288015e-05, 'epoch': 4.718852982280578}
+{'loss': 0.0284, 'grad_norm': 0.01504901338870311, 'learning_rate': 7.784379891619696e-05, 'epoch': 4.72747977018237}
+{'eval_valid_loss': 0.032525721937417984, 'eval_valid_runtime': 0.794, 'eval_valid_samples_per_second': 205.28, 'eval_valid_steps_per_second': 3.778, 'epoch': 4.72747977018237}
+{'loss': 0.0283, 'grad_norm': 0.016361302261969444, 'learning_rate': 7.77683706514864e-05, 'epoch': 4.736106558084163}
+{'loss': 0.0284, 'grad_norm': 0.012771904934604039, 'learning_rate': 7.769285089726491e-05, 'epoch': 4.7447333459859555}
+{'eval_valid_loss': 0.03245089575648308, 'eval_valid_runtime': 0.803, 'eval_valid_samples_per_second': 202.993, 'eval_valid_steps_per_second': 3.736, 'epoch': 4.7447333459859555}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0284, 'grad_norm': 0.013539821116230647, 'learning_rate': 7.761723990235025e-05, 'epoch': 4.753360133887748}
+{'loss': 0.0284, 'grad_norm': 0.013264811781990132, 'learning_rate': 7.75415379158609e-05, 'epoch': 4.761986921789541}
+{'eval_valid_loss': 0.03253991901874542, 'eval_valid_runtime': 0.9121, 'eval_valid_samples_per_second': 178.713, 'eval_valid_steps_per_second': 3.289, 'epoch': 4.761986921789541}
+{'loss': 0.0284, 'grad_norm': 0.013091737676657753, 'learning_rate': 7.746574518721505e-05, 'epoch': 4.770613709691333}
+{'loss': 0.0283, 'grad_norm': 0.015273906513171344, 'learning_rate': 7.738986196612993e-05, 'epoch': 4.779240497593126}
+{'eval_valid_loss': 0.0325092114508152, 'eval_valid_runtime': 0.7923, 'eval_valid_samples_per_second': 205.73, 'eval_valid_steps_per_second': 3.786, 'epoch': 4.779240497593126}
+{'loss': 0.0284, 'grad_norm': 0.016482785863516675, 'learning_rate': 7.731388850262085e-05, 'epoch': 4.787867285494919}
+{'loss': 0.0283, 'grad_norm': 0.01868658679987405, 'learning_rate': 7.723782504700052e-05, 'epoch': 4.796494073396712}
+{'eval_valid_loss': 0.032473403960466385, 'eval_valid_runtime': 0.7891, 'eval_valid_samples_per_second': 206.571, 'eval_valid_steps_per_second': 3.802, 'epoch': 4.796494073396712}
+{'loss': 0.0283, 'grad_norm': 0.0130786853832244, 'learning_rate': 7.716167184987809e-05, 'epoch': 4.805120861298504}
+{'loss': 0.0283, 'grad_norm': 0.0160941662459246, 'learning_rate': 7.708542916215839e-05, 'epoch': 4.813747649200296}
+{'eval_valid_loss': 0.03268328681588173, 'eval_valid_runtime': 0.7923, 'eval_valid_samples_per_second': 205.727, 'eval_valid_steps_per_second': 3.786, 'epoch': 4.813747649200296}
+{'loss': 0.0284, 'grad_norm': 0.014543804017658982, 'learning_rate': 7.700909723504113e-05, 'epoch': 4.82237443710209}
+{'loss': 0.0283, 'grad_norm': 0.014078304614750679, 'learning_rate': 7.693267632002004e-05, 'epoch': 4.831001225003882}
+{'eval_valid_loss': 0.032547179609537125, 'eval_valid_runtime': 0.8001, 'eval_valid_samples_per_second': 203.732, 'eval_valid_steps_per_second': 3.75, 'epoch': 4.831001225003882}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0283, 'grad_norm': 0.016329064139998507, 'learning_rate': 7.685616666888201e-05, 'epoch': 4.839628012905675}
+{'loss': 0.0284, 'grad_norm': 0.016086307099994854, 'learning_rate': 7.67795685337063e-05, 'epoch': 4.848254800807467}
+{'eval_valid_loss': 0.03221229836344719, 'eval_valid_runtime': 0.7934, 'eval_valid_samples_per_second': 205.432, 'eval_valid_steps_per_second': 3.781, 'epoch': 4.848254800807467}
+{'loss': 0.0283, 'grad_norm': 0.014882691218570492, 'learning_rate': 7.670288216686373e-05, 'epoch': 4.8568815887092605}
+{'loss': 0.0284, 'grad_norm': 0.012775290569874101, 'learning_rate': 7.66261078210158e-05, 'epoch': 4.865508376611053}
+{'eval_valid_loss': 0.03206739202141762, 'eval_valid_runtime': 0.7948, 'eval_valid_samples_per_second': 205.082, 'eval_valid_steps_per_second': 3.775, 'epoch': 4.865508376611053}
+{'loss': 0.0283, 'grad_norm': 0.014354196471267565, 'learning_rate': 7.654924574911386e-05, 'epoch': 4.874135164512845}
+{'loss': 0.0282, 'grad_norm': 0.015862825119446894, 'learning_rate': 7.647229620439833e-05, 'epoch': 4.882761952414638}
+{'eval_valid_loss': 0.032291024923324585, 'eval_valid_runtime': 0.793, 'eval_valid_samples_per_second': 205.555, 'eval_valid_steps_per_second': 3.783, 'epoch': 4.882761952414638}
+{'loss': 0.0283, 'grad_norm': 0.011782331475256558, 'learning_rate': 7.639525944039778e-05, 'epoch': 4.8913887403164305}
+{'loss': 0.0283, 'grad_norm': 0.01574037231230235, 'learning_rate': 7.631813571092822e-05, 'epoch': 4.900015528218224}
+{'eval_valid_loss': 0.032427769154310226, 'eval_valid_runtime': 0.7919, 'eval_valid_samples_per_second': 205.83, 'eval_valid_steps_per_second': 3.788, 'epoch': 4.900015528218224}
+{'loss': 0.0282, 'grad_norm': 0.016259468395158443, 'learning_rate': 7.624092527009213e-05, 'epoch': 4.908642316120016}
+{'loss': 0.0282, 'grad_norm': 0.01530185502613564, 'learning_rate': 7.616362837227771e-05, 'epoch': 4.917269104021808}
+{'eval_valid_loss': 0.03245212137699127, 'eval_valid_runtime': 0.7913, 'eval_valid_samples_per_second': 205.978, 'eval_valid_steps_per_second': 3.791, 'epoch': 4.917269104021808}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0283, 'grad_norm': 0.01523511034601317, 'learning_rate': 7.608624527215795e-05, 'epoch': 4.925895891923601}
+{'loss': 0.0283, 'grad_norm': 0.015732208007121915, 'learning_rate': 7.600877622468999e-05, 'epoch': 4.934522679825394}
+{'eval_valid_loss': 0.032417070120573044, 'eval_valid_runtime': 0.802, 'eval_valid_samples_per_second': 203.23, 'eval_valid_steps_per_second': 3.74, 'epoch': 4.934522679825394}
+{'loss': 0.0283, 'grad_norm': 0.01392542956723689, 'learning_rate': 7.593122148511397e-05, 'epoch': 4.943149467727187}
+{'loss': 0.0283, 'grad_norm': 0.016289653639301304, 'learning_rate': 7.58535813089525e-05, 'epoch': 4.951776255628979}
+{'eval_valid_loss': 0.03240133821964264, 'eval_valid_runtime': 0.793, 'eval_valid_samples_per_second': 205.553, 'eval_valid_steps_per_second': 3.783, 'epoch': 4.951776255628979}
+{'loss': 0.0283, 'grad_norm': 0.013156374180996687, 'learning_rate': 7.577585595200964e-05, 'epoch': 4.960403043530771}
+{'loss': 0.0282, 'grad_norm': 0.012293452465749716, 'learning_rate': 7.569804567037007e-05, 'epoch': 4.9690298314325645}
+{'eval_valid_loss': 0.032307807356119156, 'eval_valid_runtime': 0.7907, 'eval_valid_samples_per_second': 206.138, 'eval_valid_steps_per_second': 3.794, 'epoch': 4.9690298314325645}
+{'loss': 0.0282, 'grad_norm': 0.015602712223280286, 'learning_rate': 7.562015072039829e-05, 'epoch': 4.977656619334357}
+{'loss': 0.0283, 'grad_norm': 0.014060739555212821, 'learning_rate': 7.554217135873778e-05, 'epoch': 4.98628340723615}
+{'eval_valid_loss': 0.03236007317900658, 'eval_valid_runtime': 0.7928, 'eval_valid_samples_per_second': 205.59, 'eval_valid_steps_per_second': 3.784, 'epoch': 4.98628340723615}
+{'loss': 0.0282, 'grad_norm': 0.01444955971930046, 'learning_rate': 7.546410784231011e-05, 'epoch': 4.994910195137942}
+{'loss': 0.0281, 'grad_norm': 0.01445382202260639, 'learning_rate': 7.538596042831415e-05, 'epoch': 5.003536983039735}
+{'eval_valid_loss': 0.032542645931243896, 'eval_valid_runtime': 0.7924, 'eval_valid_samples_per_second': 205.712, 'eval_valid_steps_per_second': 3.786, 'epoch': 5.003536983039735}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0277, 'grad_norm': 0.012667869966454854, 'learning_rate': 7.530772937422515e-05, 'epoch': 5.012163770941528}
+{'loss': 0.0277, 'grad_norm': 0.012084629255113246, 'learning_rate': 7.522941493779394e-05, 'epoch': 5.02079055884332}
+{'eval_valid_loss': 0.03244628757238388, 'eval_valid_runtime': 0.8021, 'eval_valid_samples_per_second': 203.22, 'eval_valid_steps_per_second': 3.74, 'epoch': 5.02079055884332}
+{'loss': 0.0277, 'grad_norm': 0.01690145826315958, 'learning_rate': 7.51510173770461e-05, 'epoch': 5.029417346745113}
+{'loss': 0.0277, 'grad_norm': 0.015282402254453015, 'learning_rate': 7.507253695028107e-05, 'epoch': 5.038044134646905}
+{'eval_valid_loss': 0.03268640488386154, 'eval_valid_runtime': 0.7943, 'eval_valid_samples_per_second': 205.207, 'eval_valid_steps_per_second': 3.777, 'epoch': 5.038044134646905}
+{'loss': 0.0278, 'grad_norm': 0.014519741247354872, 'learning_rate': 7.49939739160713e-05, 'epoch': 5.0466709225486985}
+{'loss': 0.0277, 'grad_norm': 0.013866520720870591, 'learning_rate': 7.491532853326142e-05, 'epoch': 5.055297710450491}
+{'eval_valid_loss': 0.03264592960476875, 'eval_valid_runtime': 0.7939, 'eval_valid_samples_per_second': 205.317, 'eval_valid_steps_per_second': 3.779, 'epoch': 5.055297710450491}
+{'loss': 0.0277, 'grad_norm': 0.012765249239706497, 'learning_rate': 7.483660106096737e-05, 'epoch': 5.063924498352283}
+{'loss': 0.0277, 'grad_norm': 0.013530194828557853, 'learning_rate': 7.475779175857556e-05, 'epoch': 5.072551286254076}
+{'eval_valid_loss': 0.032440513372421265, 'eval_valid_runtime': 0.7928, 'eval_valid_samples_per_second': 205.598, 'eval_valid_steps_per_second': 3.784, 'epoch': 5.072551286254076}
+{'loss': 0.0278, 'grad_norm': 0.014008070643678103, 'learning_rate': 7.467890088574203e-05, 'epoch': 5.0811780741558685}
+{'loss': 0.0276, 'grad_norm': 0.014853627278190996, 'learning_rate': 7.459992870239151e-05, 'epoch': 5.089804862057662}
+{'eval_valid_loss': 0.032371677458286285, 'eval_valid_runtime': 0.7944, 'eval_valid_samples_per_second': 205.175, 'eval_valid_steps_per_second': 3.776, 'epoch': 5.089804862057662}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0277, 'grad_norm': 0.014622720923785734, 'learning_rate': 7.452087546871671e-05, 'epoch': 5.098431649959454}
+{'loss': 0.0277, 'grad_norm': 0.018631778785297957, 'learning_rate': 7.444174144517731e-05, 'epoch': 5.107058437861247}
+{'eval_valid_loss': 0.03271181136369705, 'eval_valid_runtime': 0.8029, 'eval_valid_samples_per_second': 203.021, 'eval_valid_steps_per_second': 3.737, 'epoch': 5.107058437861247}
+{'loss': 0.0277, 'grad_norm': 0.013925482744197132, 'learning_rate': 7.436252689249921e-05, 'epoch': 5.115685225763039}
+{'loss': 0.0278, 'grad_norm': 0.01572888984226423, 'learning_rate': 7.42832320716736e-05, 'epoch': 5.124312013664832}
+{'eval_valid_loss': 0.032811567187309265, 'eval_valid_runtime': 0.7923, 'eval_valid_samples_per_second': 205.74, 'eval_valid_steps_per_second': 3.787, 'epoch': 5.124312013664832}
+{'loss': 0.0278, 'grad_norm': 0.013662244969798003, 'learning_rate': 7.42038572439562e-05, 'epoch': 5.132938801566625}
+{'loss': 0.0278, 'grad_norm': 0.013241929339644383, 'learning_rate': 7.412440267086624e-05, 'epoch': 5.141565589468417}
+{'eval_valid_loss': 0.032646577805280685, 'eval_valid_runtime': 0.802, 'eval_valid_samples_per_second': 203.23, 'eval_valid_steps_per_second': 3.74, 'epoch': 5.141565589468417}
+{'loss': 0.0278, 'grad_norm': 0.014422932794171709, 'learning_rate': 7.404486861418573e-05, 'epoch': 5.15019237737021}
+{'loss': 0.0278, 'grad_norm': 0.013660584103015705, 'learning_rate': 7.396525533595862e-05, 'epoch': 5.158819165272003}
+{'eval_valid_loss': 0.032427236437797546, 'eval_valid_runtime': 0.7961, 'eval_valid_samples_per_second': 204.747, 'eval_valid_steps_per_second': 3.768, 'epoch': 5.158819165272003}
+{'loss': 0.0278, 'grad_norm': 0.014398238045891989, 'learning_rate': 7.388556309848975e-05, 'epoch': 5.167445953173795}
+{'loss': 0.0278, 'grad_norm': 0.014879831759504273, 'learning_rate': 7.380579216434423e-05, 'epoch': 5.176072741075588}
+{'eval_valid_loss': 0.03277032822370529, 'eval_valid_runtime': 0.7934, 'eval_valid_samples_per_second': 205.454, 'eval_valid_steps_per_second': 3.781, 'epoch': 5.176072741075588}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0278, 'grad_norm': 0.012661002466335109, 'learning_rate': 7.372594279634637e-05, 'epoch': 5.18469952897738}
+{'loss': 0.0277, 'grad_norm': 0.014594335678551236, 'learning_rate': 7.364601525757895e-05, 'epoch': 5.1933263168791735}
+{'eval_valid_loss': 0.03249834105372429, 'eval_valid_runtime': 0.7921, 'eval_valid_samples_per_second': 205.779, 'eval_valid_steps_per_second': 3.787, 'epoch': 5.1933263168791735}
+{'loss': 0.0278, 'grad_norm': 0.015177420073520104, 'learning_rate': 7.356600981138228e-05, 'epoch': 5.201953104780966}
+{'loss': 0.0277, 'grad_norm': 0.014728345718473724, 'learning_rate': 7.348592672135335e-05, 'epoch': 5.210579892682759}
+{'eval_valid_loss': 0.032477475702762604, 'eval_valid_runtime': 0.8037, 'eval_valid_samples_per_second': 202.804, 'eval_valid_steps_per_second': 3.733, 'epoch': 5.210579892682759}
+{'loss': 0.0277, 'grad_norm': 0.013430436284813588, 'learning_rate': 7.340576625134499e-05, 'epoch': 5.219206680584551}
+{'loss': 0.0277, 'grad_norm': 0.017705649074466433, 'learning_rate': 7.332552866546491e-05, 'epoch': 5.2278334684863434}
+{'eval_valid_loss': 0.03250874578952789, 'eval_valid_runtime': 0.7907, 'eval_valid_samples_per_second': 206.155, 'eval_valid_steps_per_second': 3.794, 'epoch': 5.2278334684863434}
+{'loss': 0.0278, 'grad_norm': 0.014650520371271009, 'learning_rate': 7.324521422807503e-05, 'epoch': 5.236460256388137}
+{'loss': 0.0278, 'grad_norm': 0.01283656856961948, 'learning_rate': 7.316482320379034e-05, 'epoch': 5.245087044289929}
+{'eval_valid_loss': 0.032374538481235504, 'eval_valid_runtime': 0.7923, 'eval_valid_samples_per_second': 205.724, 'eval_valid_steps_per_second': 3.786, 'epoch': 5.245087044289929}
+{'loss': 0.0278, 'grad_norm': 0.012890295192408897, 'learning_rate': 7.308435585747822e-05, 'epoch': 5.253713832191722}
+{'loss': 0.0278, 'grad_norm': 0.012686541807085864, 'learning_rate': 7.300381245425751e-05, 'epoch': 5.262340620093514}
+{'eval_valid_loss': 0.03227124363183975, 'eval_valid_runtime': 0.792, 'eval_valid_samples_per_second': 205.803, 'eval_valid_steps_per_second': 3.788, 'epoch': 5.262340620093514}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0277, 'grad_norm': 0.015526826793373673, 'learning_rate': 7.292319325949763e-05, 'epoch': 5.2709674079953075}
+{'loss': 0.0278, 'grad_norm': 0.013537287036578895, 'learning_rate': 7.284249853881776e-05, 'epoch': 5.2795941958971}
+{'eval_valid_loss': 0.032438844442367554, 'eval_valid_runtime': 0.793, 'eval_valid_samples_per_second': 205.544, 'eval_valid_steps_per_second': 3.783, 'epoch': 5.2795941958971}
+{'loss': 0.0278, 'grad_norm': 0.013597335981709197, 'learning_rate': 7.276172855808584e-05, 'epoch': 5.288220983798892}
+{'loss': 0.0278, 'grad_norm': 0.015699194944236945, 'learning_rate': 7.26808835834178e-05, 'epoch': 5.296847771700685}
+{'eval_valid_loss': 0.03222234919667244, 'eval_valid_runtime': 0.8008, 'eval_valid_samples_per_second': 203.555, 'eval_valid_steps_per_second': 3.746, 'epoch': 5.296847771700685}
+{'loss': 0.0278, 'grad_norm': 0.012123208930980763, 'learning_rate': 7.25999638811767e-05, 'epoch': 5.3054745596024775}
+{'loss': 0.0278, 'grad_norm': 0.013711317813868954, 'learning_rate': 7.251896971797175e-05, 'epoch': 5.314101347504271}
+{'eval_valid_loss': 0.0324447900056839, 'eval_valid_runtime': 0.7932, 'eval_valid_samples_per_second': 205.509, 'eval_valid_steps_per_second': 3.782, 'epoch': 5.314101347504271}
+{'loss': 0.0277, 'grad_norm': 0.01582010961438786, 'learning_rate': 7.243790136065751e-05, 'epoch': 5.322728135406063}
+{'loss': 0.0278, 'grad_norm': 0.014325496899366262, 'learning_rate': 7.2356759076333e-05, 'epoch': 5.331354923307855}
+{'eval_valid_loss': 0.032334499061107635, 'eval_valid_runtime': 0.7926, 'eval_valid_samples_per_second': 205.659, 'eval_valid_steps_per_second': 3.785, 'epoch': 5.331354923307855}
+{'loss': 0.0278, 'grad_norm': 0.012987518308446022, 'learning_rate': 7.22755431323408e-05, 'epoch': 5.339981711209648}
+{'loss': 0.0277, 'grad_norm': 0.012917525326469032, 'learning_rate': 7.219425379626617e-05, 'epoch': 5.348608499111441}
+{'eval_valid_loss': 0.03229444473981857, 'eval_valid_runtime': 0.7936, 'eval_valid_samples_per_second': 205.399, 'eval_valid_steps_per_second': 3.78, 'epoch': 5.348608499111441}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0278, 'grad_norm': 0.013219551459365115, 'learning_rate': 7.21128913359362e-05, 'epoch': 5.357235287013234}
+{'loss': 0.0278, 'grad_norm': 0.014855116383312226, 'learning_rate': 7.20314560194189e-05, 'epoch': 5.365862074915026}
+{'eval_valid_loss': 0.03217745199799538, 'eval_valid_runtime': 0.7935, 'eval_valid_samples_per_second': 205.42, 'eval_valid_steps_per_second': 3.781, 'epoch': 5.365862074915026}
+{'loss': 0.0278, 'grad_norm': 0.0130889951453159, 'learning_rate': 7.194994811502231e-05, 'epoch': 5.374488862816818}
+{'loss': 0.0278, 'grad_norm': 0.01467213319504801, 'learning_rate': 7.186836789129365e-05, 'epoch': 5.3831156507186115}
+{'eval_valid_loss': 0.03228641673922539, 'eval_valid_runtime': 0.7995, 'eval_valid_samples_per_second': 203.872, 'eval_valid_steps_per_second': 3.752, 'epoch': 5.3831156507186115}
+{'loss': 0.0278, 'grad_norm': 0.012070591412174462, 'learning_rate': 7.178671561701837e-05, 'epoch': 5.391742438620404}
+{'loss': 0.0278, 'grad_norm': 0.014453360594295316, 'learning_rate': 7.170499156121935e-05, 'epoch': 5.400369226522197}
+{'eval_valid_loss': 0.032213423401117325, 'eval_valid_runtime': 0.7939, 'eval_valid_samples_per_second': 205.315, 'eval_valid_steps_per_second': 3.779, 'epoch': 5.400369226522197}
+{'loss': 0.0278, 'grad_norm': 0.015498178715725739, 'learning_rate': 7.162319599315595e-05, 'epoch': 5.408996014423989}
+{'loss': 0.0277, 'grad_norm': 0.014979822396956865, 'learning_rate': 7.154132918232316e-05, 'epoch': 5.417622802325782}
+{'eval_valid_loss': 0.03232809528708458, 'eval_valid_runtime': 0.7912, 'eval_valid_samples_per_second': 206.023, 'eval_valid_steps_per_second': 3.792, 'epoch': 5.417622802325782}
+{'loss': 0.0279, 'grad_norm': 0.016059282212897284, 'learning_rate': 7.145939139845069e-05, 'epoch': 5.426249590227575}
+{'loss': 0.0278, 'grad_norm': 0.015094952511100719, 'learning_rate': 7.137738291150206e-05, 'epoch': 5.434876378129367}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+{'eval_valid_loss': 0.032306939363479614, 'eval_valid_runtime': 0.7909, 'eval_valid_samples_per_second': 206.102, 'eval_valid_steps_per_second': 3.793, 'epoch': 5.434876378129367}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0278, 'grad_norm': 0.012140961897805079, 'learning_rate': 7.12953039916738e-05, 'epoch': 5.44350316603116}
+{'loss': 0.0277, 'grad_norm': 0.012517385381841788, 'learning_rate': 7.121315490939443e-05, 'epoch': 5.452129953932952}
+{'eval_valid_loss': 0.03226896747946739, 'eval_valid_runtime': 0.7968, 'eval_valid_samples_per_second': 204.579, 'eval_valid_steps_per_second': 3.765, 'epoch': 5.452129953932952}
+{'loss': 0.0278, 'grad_norm': 0.01455165032075657, 'learning_rate': 7.113093593532369e-05, 'epoch': 5.460756741834746}
+{'loss': 0.0278, 'grad_norm': 0.01372672004296417, 'learning_rate': 7.104864734035156e-05, 'epoch': 5.469383529736538}
+{'eval_valid_loss': 0.03220108523964882, 'eval_valid_runtime': 0.7912, 'eval_valid_samples_per_second': 206.005, 'eval_valid_steps_per_second': 3.791, 'epoch': 5.469383529736538}
+{'loss': 0.0277, 'grad_norm': 0.01465960584986561, 'learning_rate': 7.096628939559742e-05, 'epoch': 5.47801031763833}
+{'loss': 0.0278, 'grad_norm': 0.014631306316179572, 'learning_rate': 7.088386237240912e-05, 'epoch': 5.486637105540123}
+{'eval_valid_loss': 0.03215222433209419, 'eval_valid_runtime': 0.8031, 'eval_valid_samples_per_second': 202.957, 'eval_valid_steps_per_second': 3.735, 'epoch': 5.486637105540123}
+{'loss': 0.0278, 'grad_norm': 0.01594575699003692, 'learning_rate': 7.080136654236215e-05, 'epoch': 5.495263893441916}
+{'loss': 0.0278, 'grad_norm': 0.012964712311380109, 'learning_rate': 7.071880217725864e-05, 'epoch': 5.503890681343709}
+{'eval_valid_loss': 0.03215009346604347, 'eval_valid_runtime': 0.7918, 'eval_valid_samples_per_second': 205.861, 'eval_valid_steps_per_second': 3.789, 'epoch': 5.503890681343709}
+{'loss': 0.0277, 'grad_norm': 0.012966361604305142, 'learning_rate': 7.063616954912658e-05, 'epoch': 5.512517469245501}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+{'loss': 0.0278, 'grad_norm': 0.014039812936591007, 'learning_rate': 7.055346893021883e-05, 'epoch': 5.521144257147293}
+{'eval_valid_loss': 0.03225522115826607, 'eval_valid_runtime': 0.7917, 'eval_valid_samples_per_second': 205.894, 'eval_valid_steps_per_second': 3.789, 'epoch': 5.521144257147293}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0277, 'grad_norm': 0.012730443293169429, 'learning_rate': 7.047070059301228e-05, 'epoch': 5.5297710450490865}
+{'loss': 0.0278, 'grad_norm': 0.014987482583799701, 'learning_rate': 7.038786481020694e-05, 'epoch': 5.538397832950879}
+{'eval_valid_loss': 0.03217042610049248, 'eval_valid_runtime': 0.7983, 'eval_valid_samples_per_second': 204.181, 'eval_valid_steps_per_second': 3.758, 'epoch': 5.538397832950879}
+{'loss': 0.0278, 'grad_norm': 0.014885672456010779, 'learning_rate': 7.030496185472501e-05, 'epoch': 5.547024620852672}
+{'loss': 0.0277, 'grad_norm': 0.013376817485521527, 'learning_rate': 7.022199199971004e-05, 'epoch': 5.555651408754464}
+{'eval_valid_loss': 0.032266657799482346, 'eval_valid_runtime': 0.7908, 'eval_valid_samples_per_second': 206.125, 'eval_valid_steps_per_second': 3.794, 'epoch': 5.555651408754464}
+{'loss': 0.0277, 'grad_norm': 0.012959644509896881, 'learning_rate': 7.013895551852598e-05, 'epoch': 5.564278196656257}
+{'loss': 0.0278, 'grad_norm': 0.016081739269244253, 'learning_rate': 7.005585268475626e-05, 'epoch': 5.57290498455805}
+{'eval_valid_loss': 0.032293032854795456, 'eval_valid_runtime': 0.8022, 'eval_valid_samples_per_second': 203.19, 'eval_valid_steps_per_second': 3.74, 'epoch': 5.57290498455805}
+{'loss': 0.0277, 'grad_norm': 0.012079884753672679, 'learning_rate': 6.9972683772203e-05, 'epoch': 5.581531772459842}
+{'loss': 0.0277, 'grad_norm': 0.013916848425081134, 'learning_rate': 6.988944905488598e-05, 'epoch': 5.590158560361635}
+{'eval_valid_loss': 0.03213290125131607, 'eval_valid_runtime': 0.7949, 'eval_valid_samples_per_second': 205.051, 'eval_valid_steps_per_second': 3.774, 'epoch': 5.590158560361635}
+{'loss': 0.0278, 'grad_norm': 0.01440287135212052, 'learning_rate': 6.980614880704178e-05, 'epoch': 5.598785348263427}
+{'loss': 0.0278, 'grad_norm': 0.013934216107632381, 'learning_rate': 6.972278330312292e-05, 'epoch': 5.6074121361652205}
+{'eval_valid_loss': 0.03200521692633629, 'eval_valid_runtime': 0.7922, 'eval_valid_samples_per_second': 205.745, 'eval_valid_steps_per_second': 3.787, 'epoch': 5.6074121361652205}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0278, 'grad_norm': 0.015005836558559749, 'learning_rate': 6.963935281779694e-05, 'epoch': 5.616038924067013}
+{'loss': 0.0278, 'grad_norm': 0.013277746169871964, 'learning_rate': 6.955585762594539e-05, 'epoch': 5.624665711968806}
+{'eval_valid_loss': 0.03221670910716057, 'eval_valid_runtime': 0.7939, 'eval_valid_samples_per_second': 205.328, 'eval_valid_steps_per_second': 3.779, 'epoch': 5.624665711968806}
+{'loss': 0.0278, 'grad_norm': 0.014817554598838824, 'learning_rate': 6.94722980026631e-05, 'epoch': 5.633292499870598}
+{'loss': 0.0278, 'grad_norm': 0.012252009692478548, 'learning_rate': 6.938867422325716e-05, 'epoch': 5.6419192877723905}
+{'eval_valid_loss': 0.03201097249984741, 'eval_valid_runtime': 0.7909, 'eval_valid_samples_per_second': 206.085, 'eval_valid_steps_per_second': 3.793, 'epoch': 5.6419192877723905}
+{'loss': 0.0278, 'grad_norm': 0.013512267609561148, 'learning_rate': 6.930498656324601e-05, 'epoch': 5.650546075674184}
+{'loss': 0.0278, 'grad_norm': 0.015076286275607293, 'learning_rate': 6.922123529835858e-05, 'epoch': 5.659172863575976}
+{'eval_valid_loss': 0.03208521008491516, 'eval_valid_runtime': 0.8028, 'eval_valid_samples_per_second': 203.041, 'eval_valid_steps_per_second': 3.737, 'epoch': 5.659172863575976}
+{'loss': 0.0277, 'grad_norm': 0.01368943763945722, 'learning_rate': 6.913742070453336e-05, 'epoch': 5.667799651477769}
+{'loss': 0.0277, 'grad_norm': 0.015607810262256407, 'learning_rate': 6.905354305791749e-05, 'epoch': 5.676426439379561}
+{'eval_valid_loss': 0.03215380385518074, 'eval_valid_runtime': 0.7938, 'eval_valid_samples_per_second': 205.334, 'eval_valid_steps_per_second': 3.779, 'epoch': 5.676426439379561}
+{'loss': 0.0277, 'grad_norm': 0.013624065511373419, 'learning_rate': 6.896960263486585e-05, 'epoch': 5.6850532272813545}
+{'loss': 0.0278, 'grad_norm': 0.011470142548802938, 'learning_rate': 6.888559971194017e-05, 'epoch': 5.693680015183147}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+{'eval_valid_loss': 0.03216492012143135, 'eval_valid_runtime': 0.789, 'eval_valid_samples_per_second': 206.586, 'eval_valid_steps_per_second': 3.802, 'epoch': 5.693680015183147}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0278, 'grad_norm': 0.014303086605940537, 'learning_rate': 6.88015345659081e-05, 'epoch': 5.702306803084939}
+{'loss': 0.0277, 'grad_norm': 0.012689042329041438, 'learning_rate': 6.871740747374225e-05, 'epoch': 5.710933590986732}
+{'eval_valid_loss': 0.03221205994486809, 'eval_valid_runtime': 0.7955, 'eval_valid_samples_per_second': 204.912, 'eval_valid_steps_per_second': 3.771, 'epoch': 5.710933590986732}
+{'loss': 0.0278, 'grad_norm': 0.013941562495770025, 'learning_rate': 6.863321871261939e-05, 'epoch': 5.7195603788885245}
+{'loss': 0.0277, 'grad_norm': 0.013103129536381557, 'learning_rate': 6.854896855991946e-05, 'epoch': 5.728187166790317}
+{'eval_valid_loss': 0.03190644457936287, 'eval_valid_runtime': 0.7915, 'eval_valid_samples_per_second': 205.949, 'eval_valid_steps_per_second': 3.79, 'epoch': 5.728187166790317}
+{'loss': 0.0277, 'grad_norm': 0.013753820285422288, 'learning_rate': 6.846465729322461e-05, 'epoch': 5.73681395469211}
+{'loss': 0.0278, 'grad_norm': 0.01259040462981515, 'learning_rate': 6.83802851903184e-05, 'epoch': 5.745440742593902}
+{'eval_valid_loss': 0.03198970481753349, 'eval_valid_runtime': 0.7953, 'eval_valid_samples_per_second': 204.965, 'eval_valid_steps_per_second': 3.772, 'epoch': 5.745440742593902}
+{'loss': 0.0278, 'grad_norm': 0.014073801494950824, 'learning_rate': 6.829585252918484e-05, 'epoch': 5.754067530495695}
+{'loss': 0.0277, 'grad_norm': 0.013183514684356837, 'learning_rate': 6.821135958800744e-05, 'epoch': 5.762694318397488}
+{'eval_valid_loss': 0.031948015093803406, 'eval_valid_runtime': 0.8024, 'eval_valid_samples_per_second': 203.134, 'eval_valid_steps_per_second': 3.739, 'epoch': 5.762694318397488}
+{'loss': 0.0278, 'grad_norm': 0.012355781399214262, 'learning_rate': 6.812680664516831e-05, 'epoch': 5.771321106299281}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+{'loss': 0.0278, 'grad_norm': 0.013669061748428748, 'learning_rate': 6.804219397924724e-05, 'epoch': 5.779947894201073}
+{'eval_valid_loss': 0.03207620233297348, 'eval_valid_runtime': 0.7934, 'eval_valid_samples_per_second': 205.446, 'eval_valid_steps_per_second': 3.781, 'epoch': 5.779947894201073}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0277, 'grad_norm': 0.015285952533655339, 'learning_rate': 6.795752186902084e-05, 'epoch': 5.788574682102865}
+{'loss': 0.0278, 'grad_norm': 0.011592766565661031, 'learning_rate': 6.787279059346155e-05, 'epoch': 5.797201470004659}
+{'eval_valid_loss': 0.032162632793188095, 'eval_valid_runtime': 0.7924, 'eval_valid_samples_per_second': 205.714, 'eval_valid_steps_per_second': 3.786, 'epoch': 5.797201470004659}
+{'loss': 0.0277, 'grad_norm': 0.013463231675283384, 'learning_rate': 6.778800043173671e-05, 'epoch': 5.805828257906451}
+{'loss': 0.0277, 'grad_norm': 0.012860539983127769, 'learning_rate': 6.770315166320773e-05, 'epoch': 5.814455045808244}
+{'eval_valid_loss': 0.03202018141746521, 'eval_valid_runtime': 0.7947, 'eval_valid_samples_per_second': 205.119, 'eval_valid_steps_per_second': 3.775, 'epoch': 5.814455045808244}
+{'loss': 0.0278, 'grad_norm': 0.012503409674116934, 'learning_rate': 6.761824456742907e-05, 'epoch': 5.823081833710036}
+{'loss': 0.0277, 'grad_norm': 0.012109479997105347, 'learning_rate': 6.753327942414737e-05, 'epoch': 5.8317086216118295}
+{'eval_valid_loss': 0.03217457979917526, 'eval_valid_runtime': 0.7922, 'eval_valid_samples_per_second': 205.754, 'eval_valid_steps_per_second': 3.787, 'epoch': 5.8317086216118295}
+{'loss': 0.0278, 'grad_norm': 0.014803276727252, 'learning_rate': 6.744825651330056e-05, 'epoch': 5.840335409513622}
+{'loss': 0.0278, 'grad_norm': 0.013360077693168819, 'learning_rate': 6.736317611501684e-05, 'epoch': 5.848962197415414}
+{'eval_valid_loss': 0.0321904793381691, 'eval_valid_runtime': 0.8044, 'eval_valid_samples_per_second': 202.636, 'eval_valid_steps_per_second': 3.729, 'epoch': 5.848962197415414}
+{'loss': 0.0277, 'grad_norm': 0.01246860507502476, 'learning_rate': 6.727803850961388e-05, 'epoch': 5.857588985317207}
+{'loss': 0.0276, 'grad_norm': 0.014884429939906865, 'learning_rate': 6.719284397759777e-05, 'epoch': 5.8662157732189995}
+{'eval_valid_loss': 0.032074593007564545, 'eval_valid_runtime': 0.7923, 'eval_valid_samples_per_second': 205.72, 'eval_valid_steps_per_second': 3.786, 'epoch': 5.8662157732189995}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0277, 'grad_norm': 0.013619233750741297, 'learning_rate': 6.710759279966222e-05, 'epoch': 5.874842561120793}
+{'loss': 0.0276, 'grad_norm': 0.013498235729012164, 'learning_rate': 6.702228525668749e-05, 'epoch': 5.883469349022585}
+{'eval_valid_loss': 0.03190457448363304, 'eval_valid_runtime': 0.7958, 'eval_valid_samples_per_second': 204.837, 'eval_valid_steps_per_second': 3.77, 'epoch': 5.883469349022585}
+{'loss': 0.0277, 'grad_norm': 0.013156748639834164, 'learning_rate': 6.693692162973963e-05, 'epoch': 5.892096136924378}
+{'loss': 0.0277, 'grad_norm': 0.012738944485481468, 'learning_rate': 6.685150220006947e-05, 'epoch': 5.90072292482617}
+{'eval_valid_loss': 0.03209643438458443, 'eval_valid_runtime': 0.7934, 'eval_valid_samples_per_second': 205.445, 'eval_valid_steps_per_second': 3.781, 'epoch': 5.90072292482617}
+{'loss': 0.0277, 'grad_norm': 0.013603510015254535, 'learning_rate': 6.676602724911164e-05, 'epoch': 5.909349712727963}
+{'loss': 0.0277, 'grad_norm': 0.013412375890610968, 'learning_rate': 6.668049705848367e-05, 'epoch': 5.917976500629756}
+{'eval_valid_loss': 0.031991202384233475, 'eval_valid_runtime': 0.7925, 'eval_valid_samples_per_second': 205.68, 'eval_valid_steps_per_second': 3.786, 'epoch': 5.917976500629756}
+{'loss': 0.0277, 'grad_norm': 0.013870481721273656, 'learning_rate': 6.659491190998522e-05, 'epoch': 5.926603288531548}
+{'loss': 0.0278, 'grad_norm': 0.01454538216134852, 'learning_rate': 6.650927208559693e-05, 'epoch': 5.93523007643334}
+{'eval_valid_loss': 0.032129060477018356, 'eval_valid_runtime': 0.8029, 'eval_valid_samples_per_second': 203.007, 'eval_valid_steps_per_second': 3.736, 'epoch': 5.93523007643334}
+{'loss': 0.0277, 'grad_norm': 0.012697043296513534, 'learning_rate': 6.642357786747959e-05, 'epoch': 5.9438568643351335}
+{'loss': 0.0277, 'grad_norm': 0.013160404368379912, 'learning_rate': 6.633782953797318e-05, 'epoch': 5.952483652236926}
+{'eval_valid_loss': 0.03204784914851189, 'eval_valid_runtime': 0.7953, 'eval_valid_samples_per_second': 204.958, 'eval_valid_steps_per_second': 3.772, 'epoch': 5.952483652236926}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0277, 'grad_norm': 0.013503273883754453, 'learning_rate': 6.625202737959606e-05, 'epoch': 5.961110440138719}
+{'loss': 0.0277, 'grad_norm': 0.012959828332576306, 'learning_rate': 6.616617167504383e-05, 'epoch': 5.969737228040511}
+{'eval_valid_loss': 0.03202640637755394, 'eval_valid_runtime': 0.7939, 'eval_valid_samples_per_second': 205.319, 'eval_valid_steps_per_second': 3.779, 'epoch': 5.969737228040511}
+{'loss': 0.0278, 'grad_norm': 0.014455290755337084, 'learning_rate': 6.608026270718858e-05, 'epoch': 5.978364015942304}
+{'loss': 0.0278, 'grad_norm': 0.013728846786618017, 'learning_rate': 6.599430075907786e-05, 'epoch': 5.986990803844097}
+{'eval_valid_loss': 0.03189720958471298, 'eval_valid_runtime': 0.7939, 'eval_valid_samples_per_second': 205.312, 'eval_valid_steps_per_second': 3.779, 'epoch': 5.986990803844097}
+{'loss': 0.0276, 'grad_norm': 0.012791139470663754, 'learning_rate': 6.590828611393377e-05, 'epoch': 5.995617591745889}
+{'loss': 0.0273, 'grad_norm': 0.013495002461424124, 'learning_rate': 6.582221905515206e-05, 'epoch': 6.004244379647682}
+{'eval_valid_loss': 0.032175641506910324, 'eval_valid_runtime': 0.7964, 'eval_valid_samples_per_second': 204.664, 'eval_valid_steps_per_second': 3.767, 'epoch': 6.004244379647682}
+{'loss': 0.027, 'grad_norm': 0.014769501058895445, 'learning_rate': 6.573609986630115e-05, 'epoch': 6.012871167549474}
+{'loss': 0.0271, 'grad_norm': 0.014384403918034852, 'learning_rate': 6.564992883112121e-05, 'epoch': 6.0214979554512675}
+{'eval_valid_loss': 0.03227728232741356, 'eval_valid_runtime': 0.7933, 'eval_valid_samples_per_second': 205.458, 'eval_valid_steps_per_second': 3.781, 'epoch': 6.0214979554512675}
+{'loss': 0.0271, 'grad_norm': 0.015502990337014069, 'learning_rate': 6.556370623352326e-05, 'epoch': 6.03012474335306}
+{'loss': 0.0271, 'grad_norm': 0.013681896310041032, 'learning_rate': 6.547743235758818e-05, 'epoch': 6.038751531254853}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+{'eval_valid_loss': 0.03229494020342827, 'eval_valid_runtime': 0.8017, 'eval_valid_samples_per_second': 203.308, 'eval_valid_steps_per_second': 3.742, 'epoch': 6.038751531254853}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0271, 'grad_norm': 0.012748902244252618, 'learning_rate': 6.539110748756579e-05, 'epoch': 6.047378319156645}
+{'loss': 0.0271, 'grad_norm': 0.013362330252089162, 'learning_rate': 6.530473190787393e-05, 'epoch': 6.0560051070584375}
+{'eval_valid_loss': 0.03228779882192612, 'eval_valid_runtime': 0.7973, 'eval_valid_samples_per_second': 204.429, 'eval_valid_steps_per_second': 3.763, 'epoch': 6.0560051070584375}
+{'loss': 0.027, 'grad_norm': 0.01502936168855436, 'learning_rate': 6.521830590309754e-05, 'epoch': 6.064631894960231}
+{'loss': 0.0271, 'grad_norm': 0.012270208620230073, 'learning_rate': 6.513182975798767e-05, 'epoch': 6.073258682862023}
+{'eval_valid_loss': 0.032153014093637466, 'eval_valid_runtime': 0.7917, 'eval_valid_samples_per_second': 205.873, 'eval_valid_steps_per_second': 3.789, 'epoch': 6.073258682862023}
+{'loss': 0.0271, 'grad_norm': 0.012970417175865372, 'learning_rate': 6.504530375746059e-05, 'epoch': 6.081885470763816}
+{'loss': 0.0271, 'grad_norm': 0.012873944446696418, 'learning_rate': 6.495872818659678e-05, 'epoch': 6.090512258665608}
+{'eval_valid_loss': 0.032065290957689285, 'eval_valid_runtime': 0.7971, 'eval_valid_samples_per_second': 204.504, 'eval_valid_steps_per_second': 3.764, 'epoch': 6.090512258665608}
+{'loss': 0.0271, 'grad_norm': 0.014724723730292176, 'learning_rate': 6.48721033306401e-05, 'epoch': 6.099139046567401}
+{'loss': 0.0271, 'grad_norm': 0.013514982111693014, 'learning_rate': 6.47854294749968e-05, 'epoch': 6.107765834469194}
+{'eval_valid_loss': 0.032200977206230164, 'eval_valid_runtime': 0.7946, 'eval_valid_samples_per_second': 205.127, 'eval_valid_steps_per_second': 3.775, 'epoch': 6.107765834469194}
+{'loss': 0.0271, 'grad_norm': 0.013825680347000916, 'learning_rate': 6.46987069052345e-05, 'epoch': 6.116392622370986}
+{'loss': 0.0271, 'grad_norm': 0.013003418696322912, 'learning_rate': 6.461193590708136e-05, 'epoch': 6.125019410272779}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+{'eval_valid_loss': 0.03210613131523132, 'eval_valid_runtime': 0.8019, 'eval_valid_samples_per_second': 203.269, 'eval_valid_steps_per_second': 3.741, 'epoch': 6.125019410272779}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0272, 'grad_norm': 0.014382685931989585, 'learning_rate': 6.452511676642512e-05, 'epoch': 6.133646198174572}
+{'loss': 0.0271, 'grad_norm': 0.01224629869345426, 'learning_rate': 6.443824976931213e-05, 'epoch': 6.142272986076365}
+{'eval_valid_loss': 0.03185369819402695, 'eval_valid_runtime': 0.7926, 'eval_valid_samples_per_second': 205.642, 'eval_valid_steps_per_second': 3.785, 'epoch': 6.142272986076365}
+{'loss': 0.0272, 'grad_norm': 0.017077881834169226, 'learning_rate': 6.435133520194638e-05, 'epoch': 6.150899773978157}
+{'loss': 0.0272, 'grad_norm': 0.011435840043233713, 'learning_rate': 6.426437335068863e-05, 'epoch': 6.159526561879949}
+{'eval_valid_loss': 0.03219839558005333, 'eval_valid_runtime': 0.7922, 'eval_valid_samples_per_second': 205.745, 'eval_valid_steps_per_second': 3.787, 'epoch': 6.159526561879949}
+{'loss': 0.0271, 'grad_norm': 0.013564317071697302, 'learning_rate': 6.417736450205538e-05, 'epoch': 6.1681533497817425}
+{'loss': 0.0271, 'grad_norm': 0.014459289802417459, 'learning_rate': 6.409030894271802e-05, 'epoch': 6.176780137683535}
+{'eval_valid_loss': 0.03221440315246582, 'eval_valid_runtime': 0.7913, 'eval_valid_samples_per_second': 205.99, 'eval_valid_steps_per_second': 3.791, 'epoch': 6.176780137683535}
+{'loss': 0.0272, 'grad_norm': 0.01335292042465367, 'learning_rate': 6.400320695950185e-05, 'epoch': 6.185406925585328}
+{'loss': 0.0271, 'grad_norm': 0.013908732694499177, 'learning_rate': 6.391605883938507e-05, 'epoch': 6.19403371348712}
+{'eval_valid_loss': 0.03194902464747429, 'eval_valid_runtime': 0.7923, 'eval_valid_samples_per_second': 205.73, 'eval_valid_steps_per_second': 3.786, 'epoch': 6.19403371348712}
+{'loss': 0.0272, 'grad_norm': 0.014755421160123598, 'learning_rate': 6.382886486949793e-05, 'epoch': 6.2026605013889125}
+{'loss': 0.0272, 'grad_norm': 0.012273350527343503, 'learning_rate': 6.374162533712172e-05, 'epoch': 6.211287289290706}
+{'eval_valid_loss': 0.03192953020334244, 'eval_valid_runtime': 0.8035, 'eval_valid_samples_per_second': 202.855, 'eval_valid_steps_per_second': 3.734, 'epoch': 6.211287289290706}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0271, 'grad_norm': 0.012623199938355593, 'learning_rate': 6.365434052968789e-05, 'epoch': 6.219914077192498}
+{'loss': 0.0272, 'grad_norm': 0.012061566518509089, 'learning_rate': 6.356701073477698e-05, 'epoch': 6.228540865094291}
+{'eval_valid_loss': 0.03190431743860245, 'eval_valid_runtime': 0.7997, 'eval_valid_samples_per_second': 203.83, 'eval_valid_steps_per_second': 3.751, 'epoch': 6.228540865094291}
+{'loss': 0.0272, 'grad_norm': 0.012328197039900672, 'learning_rate': 6.347963624011783e-05, 'epoch': 6.237167652996083}
+{'loss': 0.0272, 'grad_norm': 0.011592297378899528, 'learning_rate': 6.339221733358653e-05, 'epoch': 6.2457944408978765}
+{'eval_valid_loss': 0.03207011893391609, 'eval_valid_runtime': 0.7925, 'eval_valid_samples_per_second': 205.682, 'eval_valid_steps_per_second': 3.786, 'epoch': 6.2457944408978765}
+{'loss': 0.0271, 'grad_norm': 0.012513662951271046, 'learning_rate': 6.33047543032055e-05, 'epoch': 6.254421228799669}
+{'loss': 0.0272, 'grad_norm': 0.014189404633059456, 'learning_rate': 6.321724743714247e-05, 'epoch': 6.263048016701461}
+{'eval_valid_loss': 0.03213505819439888, 'eval_valid_runtime': 0.7924, 'eval_valid_samples_per_second': 205.703, 'eval_valid_steps_per_second': 3.786, 'epoch': 6.263048016701461}
+{'loss': 0.0271, 'grad_norm': 0.012676829994836413, 'learning_rate': 6.312969702370969e-05, 'epoch': 6.271674804603254}
+{'loss': 0.0272, 'grad_norm': 0.012289055197128664, 'learning_rate': 6.304210335136285e-05, 'epoch': 6.2803015925050465}
+{'eval_valid_loss': 0.03205498307943344, 'eval_valid_runtime': 0.7904, 'eval_valid_samples_per_second': 206.224, 'eval_valid_steps_per_second': 3.796, 'epoch': 6.2803015925050465}
+{'loss': 0.0271, 'grad_norm': 0.013034149108373777, 'learning_rate': 6.295446670870016e-05, 'epoch': 6.28892838040684}
+{'loss': 0.0272, 'grad_norm': 0.013698283653421127, 'learning_rate': 6.286678738446141e-05, 'epoch': 6.297555168308632}
+{'eval_valid_loss': 0.03192581981420517, 'eval_valid_runtime': 0.7914, 'eval_valid_samples_per_second': 205.957, 'eval_valid_steps_per_second': 3.791, 'epoch': 6.297555168308632}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0272, 'grad_norm': 0.014477728197409782, 'learning_rate': 6.277906566752703e-05, 'epoch': 6.306181956210424}
+{'loss': 0.0271, 'grad_norm': 0.013356228516964863, 'learning_rate': 6.269130184691709e-05, 'epoch': 6.314808744112217}
+{'eval_valid_loss': 0.03198553994297981, 'eval_valid_runtime': 0.803, 'eval_valid_samples_per_second': 202.987, 'eval_valid_steps_per_second': 3.736, 'epoch': 6.314808744112217}
+{'loss': 0.0272, 'grad_norm': 0.014151613151836523, 'learning_rate': 6.260349621179043e-05, 'epoch': 6.32343553201401}
+{'loss': 0.0272, 'grad_norm': 0.013991250337157396, 'learning_rate': 6.25156490514436e-05, 'epoch': 6.332062319915803}
+{'eval_valid_loss': 0.03188549727201462, 'eval_valid_runtime': 0.7924, 'eval_valid_samples_per_second': 205.706, 'eval_valid_steps_per_second': 3.786, 'epoch': 6.332062319915803}
+{'loss': 0.0272, 'grad_norm': 0.01629924778703655, 'learning_rate': 6.242776065531001e-05, 'epoch': 6.340689107817595}
+{'loss': 0.0272, 'grad_norm': 0.011778047435905785, 'learning_rate': 6.23398313129589e-05, 'epoch': 6.349315895719388}
+{'eval_valid_loss': 0.03200609236955643, 'eval_valid_runtime': 0.7907, 'eval_valid_samples_per_second': 206.159, 'eval_valid_steps_per_second': 3.794, 'epoch': 6.349315895719388}
+{'loss': 0.0273, 'grad_norm': 0.013942704407845296, 'learning_rate': 6.225186131409444e-05, 'epoch': 6.3579426836211805}
+{'loss': 0.0272, 'grad_norm': 0.012539213294630392, 'learning_rate': 6.216385094855474e-05, 'epoch': 6.366569471522973}
+{'eval_valid_loss': 0.03207075223326683, 'eval_valid_runtime': 0.7893, 'eval_valid_samples_per_second': 206.506, 'eval_valid_steps_per_second': 3.801, 'epoch': 6.366569471522973}
+{'loss': 0.0272, 'grad_norm': 0.013777258095536305, 'learning_rate': 6.207580050631093e-05, 'epoch': 6.375196259424766}
+{'loss': 0.0272, 'grad_norm': 0.015654208323477845, 'learning_rate': 6.198771027746613e-05, 'epoch': 6.383823047326558}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+{'eval_valid_loss': 0.031790029257535934, 'eval_valid_runtime': 0.7922, 'eval_valid_samples_per_second': 205.761, 'eval_valid_steps_per_second': 3.787, 'epoch': 6.383823047326558}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0272, 'grad_norm': 0.014381078830459833, 'learning_rate': 6.18995805522546e-05, 'epoch': 6.392449835228351}
+{'loss': 0.0272, 'grad_norm': 0.013279116492483341, 'learning_rate': 6.18114116210407e-05, 'epoch': 6.401076623130144}
+{'eval_valid_loss': 0.031967174261808395, 'eval_valid_runtime': 0.8058, 'eval_valid_samples_per_second': 202.28, 'eval_valid_steps_per_second': 3.723, 'epoch': 6.401076623130144}
+{'loss': 0.0272, 'grad_norm': 0.014183393758921055, 'learning_rate': 6.172320377431801e-05, 'epoch': 6.409703411031936}
+{'loss': 0.0272, 'grad_norm': 0.013723926176009125, 'learning_rate': 6.163495730270824e-05, 'epoch': 6.418330198933729}
+{'eval_valid_loss': 0.031847089529037476, 'eval_valid_runtime': 0.7913, 'eval_valid_samples_per_second': 206.0, 'eval_valid_steps_per_second': 3.791, 'epoch': 6.418330198933729}
+{'loss': 0.0272, 'grad_norm': 0.012379204538987804, 'learning_rate': 6.154667249696046e-05, 'epoch': 6.426956986835521}
+{'loss': 0.0272, 'grad_norm': 0.013223291364961653, 'learning_rate': 6.145834964794994e-05, 'epoch': 6.435583774737315}
+{'eval_valid_loss': 0.03189318627119064, 'eval_valid_runtime': 0.7967, 'eval_valid_samples_per_second': 204.595, 'eval_valid_steps_per_second': 3.766, 'epoch': 6.435583774737315}
+{'loss': 0.0272, 'grad_norm': 0.014357314482513815, 'learning_rate': 6.136998904667735e-05, 'epoch': 6.444210562639107}
+{'loss': 0.0273, 'grad_norm': 0.013370070695843317, 'learning_rate': 6.128159098426777e-05, 'epoch': 6.4528373505409}
+{'eval_valid_loss': 0.03187583386898041, 'eval_valid_runtime': 0.792, 'eval_valid_samples_per_second': 205.804, 'eval_valid_steps_per_second': 3.788, 'epoch': 6.4528373505409}
+{'loss': 0.0271, 'grad_norm': 0.015339991035572752, 'learning_rate': 6.119315575196964e-05, 'epoch': 6.461464138442692}
+{'loss': 0.0272, 'grad_norm': 0.015269861849177252, 'learning_rate': 6.110468364115393e-05, 'epoch': 6.470090926344485}
+{'eval_valid_loss': 0.03201606869697571, 'eval_valid_runtime': 0.7929, 'eval_valid_samples_per_second': 205.568, 'eval_valid_steps_per_second': 3.783, 'epoch': 6.470090926344485}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0272, 'grad_norm': 0.011931427238215702, 'learning_rate': 6.101617494331305e-05, 'epoch': 6.478717714246278}
+{'loss': 0.0272, 'grad_norm': 0.012235875510269252, 'learning_rate': 6.0927629950060006e-05, 'epoch': 6.48734450214807}
+{'eval_valid_loss': 0.03205985948443413, 'eval_valid_runtime': 0.8127, 'eval_valid_samples_per_second': 200.562, 'eval_valid_steps_per_second': 3.691, 'epoch': 6.48734450214807}
+{'loss': 0.0272, 'grad_norm': 0.013520226737050958, 'learning_rate': 6.0839048953127344e-05, 'epoch': 6.495971290049863}
+{'loss': 0.0273, 'grad_norm': 0.012361837956620053, 'learning_rate': 6.0750432244366276e-05, 'epoch': 6.5045980779516555}
+{'eval_valid_loss': 0.03200994059443474, 'eval_valid_runtime': 0.798, 'eval_valid_samples_per_second': 204.26, 'eval_valid_steps_per_second': 3.759, 'epoch': 6.5045980779516555}
+{'loss': 0.0272, 'grad_norm': 0.012868745353090495, 'learning_rate': 6.066178011574566e-05, 'epoch': 6.513224865853449}
+{'loss': 0.0272, 'grad_norm': 0.012818769181917695, 'learning_rate': 6.0573092859351025e-05, 'epoch': 6.521851653755241}
+{'eval_valid_loss': 0.03200901299715042, 'eval_valid_runtime': 0.7934, 'eval_valid_samples_per_second': 205.454, 'eval_valid_steps_per_second': 3.781, 'epoch': 6.521851653755241}
+{'loss': 0.0272, 'grad_norm': 0.013834968760848543, 'learning_rate': 6.048437076738367e-05, 'epoch': 6.530478441657033}
+{'loss': 0.0272, 'grad_norm': 0.015505712123327747, 'learning_rate': 6.039561413215967e-05, 'epoch': 6.539105229558826}
+{'eval_valid_loss': 0.03205099701881409, 'eval_valid_runtime': 0.7932, 'eval_valid_samples_per_second': 205.507, 'eval_valid_steps_per_second': 3.782, 'epoch': 6.539105229558826}
+{'loss': 0.0272, 'grad_norm': 0.014781583287272916, 'learning_rate': 6.030682324610889e-05, 'epoch': 6.547732017460619}
+{'loss': 0.0273, 'grad_norm': 0.012394996122712894, 'learning_rate': 6.0217998401774066e-05, 'epoch': 6.556358805362411}
+{'eval_valid_loss': 0.032060008496046066, 'eval_valid_runtime': 0.7955, 'eval_valid_samples_per_second': 204.911, 'eval_valid_steps_per_second': 3.771, 'epoch': 6.556358805362411}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0273, 'grad_norm': 0.015131583339780978, 'learning_rate': 6.012913989180977e-05, 'epoch': 6.564985593264204}
+{'loss': 0.0272, 'grad_norm': 0.013613282011840552, 'learning_rate': 6.004024800898158e-05, 'epoch': 6.573612381165996}
+{'eval_valid_loss': 0.032107699662446976, 'eval_valid_runtime': 0.7954, 'eval_valid_samples_per_second': 204.928, 'eval_valid_steps_per_second': 3.772, 'epoch': 6.573612381165996}
+{'loss': 0.0273, 'grad_norm': 0.014568874713914758, 'learning_rate': 5.995132304616493e-05, 'epoch': 6.5822391690677895}
+{'loss': 0.0272, 'grad_norm': 0.012765048586782565, 'learning_rate': 5.986236529634431e-05, 'epoch': 6.590865956969582}
+{'eval_valid_loss': 0.032121382653713226, 'eval_valid_runtime': 0.8063, 'eval_valid_samples_per_second': 202.151, 'eval_valid_steps_per_second': 3.721, 'epoch': 6.590865956969582}
+{'loss': 0.0272, 'grad_norm': 0.013596365439805335, 'learning_rate': 5.9773375052612216e-05, 'epoch': 6.599492744871375}
+{'loss': 0.0272, 'grad_norm': 0.013080068824749736, 'learning_rate': 5.9684352608168195e-05, 'epoch': 6.608119532773167}
+{'eval_valid_loss': 0.03194178268313408, 'eval_valid_runtime': 0.7941, 'eval_valid_samples_per_second': 205.264, 'eval_valid_steps_per_second': 3.778, 'epoch': 6.608119532773167}
+{'loss': 0.0273, 'grad_norm': 0.012563080582184829, 'learning_rate': 5.95952982563179e-05, 'epoch': 6.6167463206749595}
+{'loss': 0.0273, 'grad_norm': 0.014755014921564311, 'learning_rate': 5.950621229047208e-05, 'epoch': 6.625373108576753}
+{'eval_valid_loss': 0.032089415937662125, 'eval_valid_runtime': 0.7943, 'eval_valid_samples_per_second': 205.22, 'eval_valid_steps_per_second': 3.777, 'epoch': 6.625373108576753}
+{'loss': 0.0272, 'grad_norm': 0.01160577144431921, 'learning_rate': 5.941709500414571e-05, 'epoch': 6.633999896478545}
+{'loss': 0.0272, 'grad_norm': 0.012011513810813806, 'learning_rate': 5.932794669095688e-05, 'epoch': 6.642626684380338}
+{'eval_valid_loss': 0.031961023807525635, 'eval_valid_runtime': 0.7949, 'eval_valid_samples_per_second': 205.045, 'eval_valid_steps_per_second': 3.774, 'epoch': 6.642626684380338}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0272, 'grad_norm': 0.01248241988922426, 'learning_rate': 5.923876764462596e-05, 'epoch': 6.65125347228213}
+{'loss': 0.0272, 'grad_norm': 0.01243860848702691, 'learning_rate': 5.914955815897455e-05, 'epoch': 6.6598802601839235}
+{'eval_valid_loss': 0.03188823163509369, 'eval_valid_runtime': 0.7907, 'eval_valid_samples_per_second': 206.144, 'eval_valid_steps_per_second': 3.794, 'epoch': 6.6598802601839235}
+{'loss': 0.0273, 'grad_norm': 0.013953195986791608, 'learning_rate': 5.906031852792455e-05, 'epoch': 6.668507048085716}
+{'loss': 0.0272, 'grad_norm': 0.01307757577625617, 'learning_rate': 5.89710490454972e-05, 'epoch': 6.677133835987508}
+{'eval_valid_loss': 0.031855467706918716, 'eval_valid_runtime': 0.8051, 'eval_valid_samples_per_second': 202.455, 'eval_valid_steps_per_second': 3.726, 'epoch': 6.677133835987508}
+{'loss': 0.0272, 'grad_norm': 0.011042855097169435, 'learning_rate': 5.888175000581203e-05, 'epoch': 6.685760623889301}
+{'loss': 0.0272, 'grad_norm': 0.01549685938150393, 'learning_rate': 5.879242170308602e-05, 'epoch': 6.6943874117910935}
+{'eval_valid_loss': 0.031780168414115906, 'eval_valid_runtime': 0.7948, 'eval_valid_samples_per_second': 205.081, 'eval_valid_steps_per_second': 3.775, 'epoch': 6.6943874117910935}
+{'loss': 0.0272, 'grad_norm': 0.012398618478543049, 'learning_rate': 5.870306443163254e-05, 'epoch': 6.703014199692887}
+{'loss': 0.0272, 'grad_norm': 0.012517716876275465, 'learning_rate': 5.86136784858604e-05, 'epoch': 6.711640987594679}
+{'eval_valid_loss': 0.031907908618450165, 'eval_valid_runtime': 0.7916, 'eval_valid_samples_per_second': 205.91, 'eval_valid_steps_per_second': 3.79, 'epoch': 6.711640987594679}
+{'loss': 0.0272, 'grad_norm': 0.012964651326518712, 'learning_rate': 5.8524264160272904e-05, 'epoch': 6.720267775496472}
+{'loss': 0.0273, 'grad_norm': 0.012741059987232106, 'learning_rate': 5.8434821749466816e-05, 'epoch': 6.728894563398264}
+{'eval_valid_loss': 0.031977877020835876, 'eval_valid_runtime': 0.7947, 'eval_valid_samples_per_second': 205.109, 'eval_valid_steps_per_second': 3.775, 'epoch': 6.728894563398264}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0272, 'grad_norm': 0.010963391472342907, 'learning_rate': 5.8345351548131464e-05, 'epoch': 6.737521351300057}
+{'loss': 0.0272, 'grad_norm': 0.012592686770923024, 'learning_rate': 5.825585385104777e-05, 'epoch': 6.74614813920185}
+{'eval_valid_loss': 0.03182298317551613, 'eval_valid_runtime': 0.793, 'eval_valid_samples_per_second': 205.56, 'eval_valid_steps_per_second': 3.783, 'epoch': 6.74614813920185}
+{'loss': 0.0272, 'grad_norm': 0.013341773858326595, 'learning_rate': 5.816632895308718e-05, 'epoch': 6.754774927103642}
+{'loss': 0.0272, 'grad_norm': 0.013106938755551148, 'learning_rate': 5.807677714921081e-05, 'epoch': 6.763401715005434}
+{'eval_valid_loss': 0.03165847808122635, 'eval_valid_runtime': 0.7932, 'eval_valid_samples_per_second': 205.493, 'eval_valid_steps_per_second': 3.782, 'epoch': 6.763401715005434}
+{'loss': 0.0272, 'grad_norm': 0.012246455870227112, 'learning_rate': 5.798719873446841e-05, 'epoch': 6.772028502907228}
+{'loss': 0.0272, 'grad_norm': 0.012405097934652757, 'learning_rate': 5.789759400399739e-05, 'epoch': 6.78065529080902}
+{'eval_valid_loss': 0.03184236213564873, 'eval_valid_runtime': 0.805, 'eval_valid_samples_per_second': 202.492, 'eval_valid_steps_per_second': 3.727, 'epoch': 6.78065529080902}
+{'loss': 0.0271, 'grad_norm': 0.011873793689860648, 'learning_rate': 5.780796325302188e-05, 'epoch': 6.789282078710813}
+{'loss': 0.0272, 'grad_norm': 0.012526387311420854, 'learning_rate': 5.771830677685174e-05, 'epoch': 6.797908866612605}
+{'eval_valid_loss': 0.03206723555922508, 'eval_valid_runtime': 0.7951, 'eval_valid_samples_per_second': 205.004, 'eval_valid_steps_per_second': 3.773, 'epoch': 6.797908866612605}
+{'loss': 0.0272, 'grad_norm': 0.013784308440261895, 'learning_rate': 5.7628624870881565e-05, 'epoch': 6.8065356545143985}
+{'loss': 0.0272, 'grad_norm': 0.012564940942538861, 'learning_rate': 5.753891783058979e-05, 'epoch': 6.815162442416191}
+{'eval_valid_loss': 0.03180322051048279, 'eval_valid_runtime': 0.7942, 'eval_valid_samples_per_second': 205.227, 'eval_valid_steps_per_second': 3.777, 'epoch': 6.815162442416191}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0271, 'grad_norm': 0.011966449280336125, 'learning_rate': 5.744918595153761e-05, 'epoch': 6.823789230317983}
+{'loss': 0.0273, 'grad_norm': 0.013228258928570259, 'learning_rate': 5.735942952936808e-05, 'epoch': 6.832416018219776}
+{'eval_valid_loss': 0.03184962645173073, 'eval_valid_runtime': 0.7966, 'eval_valid_samples_per_second': 204.614, 'eval_valid_steps_per_second': 3.766, 'epoch': 6.832416018219776}

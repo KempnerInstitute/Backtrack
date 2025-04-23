@@ -1,0 +1,11 @@
+Tokenizer vocab size: 109
+Model size: 21,068,288
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/table.py:1421: FutureWarning: promote has been superseded by promote_options='default'.
+  table = cls._concat_blocks(blocks, axis=0)
+
+
+
+
+
+
+

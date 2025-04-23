@@ -1,0 +1,44 @@
+Traceback (most recent call last):
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 214, in <module>
+    main(args)
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 81, in main
+    model = GPT2LMHeadModel(model_config)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/models/gpt2/modeling_gpt2.py", line 983, in __init__
+    self.transformer = GPT2Model(config)
+                       ^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/models/gpt2/modeling_gpt2.py", line 693, in __init__
+    self.h = nn.ModuleList([GPT2Block(config, layer_idx=i) for i in range(config.num_hidden_layers)])
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/models/gpt2/modeling_gpt2.py", line 693, in <listcomp>
+    self.h = nn.ModuleList([GPT2Block(config, layer_idx=i) for i in range(config.num_hidden_layers)])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/models/gpt2/modeling_gpt2.py", line 382, in __init__
+    self.attn = GPT2Attention(config=config, layer_idx=layer_idx)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/models/gpt2/modeling_gpt2.py", line 164, in __init__
+    torch.tril(torch.ones((max_positions, max_positions), dtype=torch.bool)).view(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/n/home05/sqin/self-correct/sudoku/train.py", line 214, in <module>
+[rank0]:     main(args)
+[rank0]:   File "/n/home05/sqin/self-correct/sudoku/train.py", line 81, in main
+[rank0]:     model = GPT2LMHeadModel(model_config)
+[rank0]:             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/models/gpt2/modeling_gpt2.py", line 983, in __init__
+[rank0]:     self.transformer = GPT2Model(config)
+[rank0]:                        ^^^^^^^^^^^^^^^^^
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/models/gpt2/modeling_gpt2.py", line 693, in __init__
+[rank0]:     self.h = nn.ModuleList([GPT2Block(config, layer_idx=i) for i in range(config.num_hidden_layers)])
+[rank0]:                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/models/gpt2/modeling_gpt2.py", line 693, in <listcomp>
+[rank0]:     self.h = nn.ModuleList([GPT2Block(config, layer_idx=i) for i in range(config.num_hidden_layers)])
+[rank0]:                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/models/gpt2/modeling_gpt2.py", line 382, in __init__
+[rank0]:     self.attn = GPT2Attention(config=config, layer_idx=layer_idx)
+[rank0]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/models/gpt2/modeling_gpt2.py", line 164, in __init__
+[rank0]:     torch.tril(torch.ones((max_positions, max_positions), dtype=torch.bool)).view(
+[rank0]:     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]: KeyboardInterrupt

@@ -1,0 +1,141 @@
+
+Loading checkpoint shards: 100%|██████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:01<00:00,  1.66it/s]
+torch.bfloat16
+Qwen2ForCausalLM(
+  (model): Qwen2Model(
+    (embed_tokens): Embedding(151936, 2048)
+    (layers): ModuleList(
+      (0-35): 36 x Qwen2DecoderLayer(
+        (self_attn): Qwen2Attention(
+          (q_proj): Linear(in_features=2048, out_features=2048, bias=True)
+          (k_proj): Linear(in_features=2048, out_features=256, bias=True)
+          (v_proj): Linear(in_features=2048, out_features=256, bias=True)
+          (o_proj): Linear(in_features=2048, out_features=2048, bias=False)
+        )
+        (mlp): Qwen2MLP(
+          (gate_proj): Linear(in_features=2048, out_features=11008, bias=False)
+          (up_proj): Linear(in_features=2048, out_features=11008, bias=False)
+          (down_proj): Linear(in_features=11008, out_features=2048, bias=False)
+          (act_fn): SiLU()
+        )
+        (input_layernorm): Qwen2RMSNorm((2048,), eps=1e-06)
+        (post_attention_layernorm): Qwen2RMSNorm((2048,), eps=1e-06)
+      )
+    )
+    (norm): Qwen2RMSNorm((2048,), eps=1e-06)
+    (rotary_emb): Qwen2RotaryEmbedding()
+  )
+  (lm_head): Linear(in_features=2048, out_features=151936, bias=False)
+)
+tokenized dataset DatasetDict({
+    train: Dataset({
+        features: ['input_ids'],
+        num_rows: 28
+    })
+    val: Dataset({
+        features: ['input_ids'],
+        num_rows: 28
+    })
+})
+[2025-01-15 13:25:16,620] [INFO] [real_accelerator.py:158:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/training_args.py:1575: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+/n/home05/sqin/self-correct/sudoku/train.py:152: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+Traceback (most recent call last):
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 182, in <module>
+    main(args)
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 167, in main
+    trainer.train()
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/trainer.py", line 2171, in train
+    return inner_training_loop(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/trainer.py", line 2531, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/trainer.py", line 3676, in training_step
+    loss = self.compute_loss(model, inputs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/trainer.py", line 3734, in compute_loss
+    outputs = model(**inputs)
+              ^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/_dynamo/eval_frame.py", line 451, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/accelerate/utils/operations.py", line 820, in forward
+    return model_forward(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/accelerate/utils/operations.py", line 808, in __call__
+    return convert_to_fp32(self.model_forward(*args, **kwargs))
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/accelerate/utils/operations.py", line 808, in torch_dynamo_resume_in___call___at_808
+    return convert_to_fp32(self.model_forward(*args, **kwargs))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/accelerate/utils/operations.py", line 787, in convert_to_fp32
+    return recursively_apply(_convert_to_fp32, tensor, test_type=_is_fp16_bf16_tensor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/accelerate/utils/operations.py", line 119, in recursively_apply
+    {
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/accelerate/utils/operations.py", line 120, in <dictcomp>
+    k: recursively_apply(
+       ^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/accelerate/utils/operations.py", line 127, in recursively_apply
+    return func(data, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/accelerate/utils/operations.py", line 778, in _convert_to_fp32
+    def _convert_to_fp32(tensor):
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/_dynamo/eval_frame.py", line 451, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/_dynamo/external_utils.py", line 36, in inner
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/_functorch/aot_autograd.py", line 917, in forward
+    return compiled_fn(full_args)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/_functorch/_aot_autograd/utils.py", line 89, in g
+    return f(*args)
+           ^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 88, in runtime_wrapper
+    all_outs = call_func_at_runtime_with_args(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/_functorch/_aot_autograd/utils.py", line 113, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+                            ^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/_functorch/_aot_autograd/utils.py", line 89, in g
+    return f(*args)
+           ^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/function.py", line 598, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/_functorch/_aot_autograd/jit_compile_runtime_wrappers.py", line 505, in forward
+    fw_outs = call_func_at_runtime_with_args(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/_functorch/_aot_autograd/utils.py", line 113, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+                            ^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/_inductor/codecache.py", line 906, in __call__
+    return self.get_current_callable()(inputs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/_inductor/compile_fx.py", line 784, in run
+    return model(new_inputs)
+           ^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/_inductor/codecache.py", line 934, in _run_from_cache
+    return compiled_graph.compiled_artifact(inputs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/torchinductor_sqin/jw/cjwefwz6kfp5tqcbggynfmujpbhvng7ixxtczi4coanmgqp2cp6o.py", line 77, in call
+    buf0 = empty_strided_cuda((s0, s1, 151936), (151936*s1, 151936, 1), torch.float32)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 74.19 GiB. GPU

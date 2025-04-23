@@ -1,0 +1,99 @@
+
+
+
+Loading checkpoint shards: 100%|██████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.83s/it]
+torch.bfloat16
+Qwen2ForCausalLM(
+  (model): Qwen2Model(
+    (embed_tokens): Embedding(151936, 2048)
+    (layers): ModuleList(
+      (0-35): 36 x Qwen2DecoderLayer(
+        (self_attn): Qwen2Attention(
+          (q_proj): Linear(in_features=2048, out_features=2048, bias=True)
+          (k_proj): Linear(in_features=2048, out_features=256, bias=True)
+          (v_proj): Linear(in_features=2048, out_features=256, bias=True)
+          (o_proj): Linear(in_features=2048, out_features=2048, bias=False)
+        )
+        (mlp): Qwen2MLP(
+          (gate_proj): Linear(in_features=2048, out_features=11008, bias=False)
+          (up_proj): Linear(in_features=2048, out_features=11008, bias=False)
+          (down_proj): Linear(in_features=11008, out_features=2048, bias=False)
+          (act_fn): SiLU()
+        )
+        (input_layernorm): Qwen2RMSNorm((2048,), eps=1e-06)
+        (post_attention_layernorm): Qwen2RMSNorm((2048,), eps=1e-06)
+      )
+    )
+    (norm): Qwen2RMSNorm((2048,), eps=1e-06)
+    (rotary_emb): Qwen2RotaryEmbedding()
+  )
+  (lm_head): Linear(in_features=2048, out_features=151936, bias=False)
+)
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/training_args.py:1575: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+/n/home05/sqin/self-correct/sudoku/train.py:155: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+tokenized dataset DatasetDict({
+    train: Dataset({
+        features: ['input_ids'],
+        num_rows: 49520
+    })
+    val: Dataset({
+        features: ['input_ids'],
+        num_rows: 28
+    })
+})
+[2025-01-15 15:28:14,634] [INFO] [real_accelerator.py:158:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+{'eval_valid_loss': 0.23353400826454163, 'eval_valid_runtime': 22.0327, 'eval_valid_samples_per_second': 1.271, 'eval_valid_steps_per_second': 0.635, 'epoch': 0.0008077544426494346}
+{'eval_valid_loss': 0.21627794206142426, 'eval_valid_runtime': 7.1917, 'eval_valid_samples_per_second': 3.893, 'eval_valid_steps_per_second': 1.947, 'epoch': 0.0016155088852988692}
+{'eval_valid_loss': 0.2044868767261505, 'eval_valid_runtime': 7.1901, 'eval_valid_samples_per_second': 3.894, 'eval_valid_steps_per_second': 1.947, 'epoch': 0.0024232633279483036}
+{'eval_valid_loss': 0.19635732471942902, 'eval_valid_runtime': 7.1878, 'eval_valid_samples_per_second': 3.895, 'eval_valid_steps_per_second': 1.948, 'epoch': 0.0032310177705977385}
+{'eval_valid_loss': 0.1902373880147934, 'eval_valid_runtime': 7.1945, 'eval_valid_samples_per_second': 3.892, 'eval_valid_steps_per_second': 1.946, 'epoch': 0.004038772213247173}
+{'eval_valid_loss': 0.18579255044460297, 'eval_valid_runtime': 7.1904, 'eval_valid_samples_per_second': 3.894, 'eval_valid_steps_per_second': 1.947, 'epoch': 0.004846526655896607}
+{'eval_valid_loss': 0.182157963514328, 'eval_valid_runtime': 7.1933, 'eval_valid_samples_per_second': 3.893, 'eval_valid_steps_per_second': 1.946, 'epoch': 0.005654281098546042}
+{'eval_valid_loss': 0.17909087240695953, 'eval_valid_runtime': 7.1897, 'eval_valid_samples_per_second': 3.894, 'eval_valid_steps_per_second': 1.947, 'epoch': 0.006462035541195477}
+{'eval_valid_loss': 0.17636778950691223, 'eval_valid_runtime': 7.1892, 'eval_valid_samples_per_second': 3.895, 'eval_valid_steps_per_second': 1.947, 'epoch': 0.007269789983844911}
+{'eval_valid_loss': 0.17474614083766937, 'eval_valid_runtime': 7.1891, 'eval_valid_samples_per_second': 3.895, 'eval_valid_steps_per_second': 1.947, 'epoch': 0.008077544426494346}
+Error in sys.excepthook:
+Traceback (most recent call last):
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/linecache.py", line 46, in getlines
+    return updatecache(filename, module_globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/linecache.py", line 136, in updatecache
+    with tokenize.open(fullname) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/tokenize.py", line 398, in open
+    encoding, lines = detect_encoding(buffer.readline)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/tokenize.py", line 367, in detect_encoding
+    first = read_or_stop()
+            ^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/tokenize.py", line 325, in read_or_stop
+    return readline()
+           ^^^^^^^^^^
+KeyboardInterrupt
+Original exception was:
+Traceback (most recent call last):
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 184, in <module>
+    main(args)
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 170, in main
+    trainer.train()
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/trainer.py", line 2171, in train
+    return inner_training_loop(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/trainer.py", line 2531, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/trainer.py", line 3715, in training_step
+    self.accelerator.backward(loss, **kwargs)
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/accelerate/accelerator.py", line 2196, in backward
+    loss.backward(**kwargs)
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/_tensor.py", line 525, in backward
+    torch.autograd.backward(
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/__init__.py", line 267, in backward
+    _engine_run_backward(
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py", line 744, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

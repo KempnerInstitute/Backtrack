@@ -1,0 +1,1165 @@
+Tokenizer vocab size: 109
+Qwen2ForCausalLM(
+  (model): Qwen2Model(
+    (embed_tokens): Embedding(109, 512)
+    (layers): ModuleList(
+      (0-7): 8 x Qwen2DecoderLayer(
+        (self_attn): Qwen2Attention(
+          (q_proj): Linear(in_features=512, out_features=512, bias=True)
+          (k_proj): Linear(in_features=512, out_features=128, bias=True)
+          (v_proj): Linear(in_features=512, out_features=128, bias=True)
+          (o_proj): Linear(in_features=512, out_features=512, bias=False)
+        )
+        (mlp): Qwen2MLP(
+          (gate_proj): Linear(in_features=512, out_features=1024, bias=False)
+          (up_proj): Linear(in_features=512, out_features=1024, bias=False)
+          (down_proj): Linear(in_features=1024, out_features=512, bias=False)
+          (act_fn): SiLU()
+        )
+        (input_layernorm): Qwen2RMSNorm((512,), eps=1e-06)
+        (post_attention_layernorm): Qwen2RMSNorm((512,), eps=1e-06)
+      )
+    )
+    (norm): Qwen2RMSNorm((512,), eps=1e-06)
+    (rotary_emb): Qwen2RotaryEmbedding()
+  )
+  (lm_head): Linear(in_features=512, out_features=109, bias=False)
+)
+Model size: 17,952,256
+Tokenized dataset example
+tokenized dataset DatasetDict({
+    train: Dataset({
+        features: ['input_ids'],
+        num_rows: 2800000
+    })
+    val: Dataset({
+        features: ['input_ids'],
+        num_rows: 100
+    })
+})
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/table.py:1421: FutureWarning: promote has been superseded by promote_options='default'.
+  table = cls._concat_blocks(blocks, axis=0)
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/training_args.py:1575: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+/n/home05/sqin/self-correct/sudoku/train.py:269: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/deepspeed/runtime/zero/stage_1_and_2.py:1586: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at ../torch/csrc/tensor/python_tensor.cpp:78.)
+  total_norm_cuda = get_accelerator().FloatTensor([float(total_norm)])
+{'loss': 1.1924, 'grad_norm': 2.2672679820044697, 'learning_rate': 1.25e-05, 'epoch': 0.022857142857142857}
+{'loss': 0.4496, 'grad_norm': 3.1053628429611657, 'learning_rate': 2.5e-05, 'epoch': 0.045714285714285714}
+{'eval_valid_loss': 0.3895542621612549, 'eval_valid_runtime': 0.0912, 'eval_valid_samples_per_second': 1096.398, 'eval_valid_steps_per_second': 10.964, 'epoch': 0.045714285714285714}
+{'loss': 0.3688, 'grad_norm': 3.352225289244252, 'learning_rate': 3.7500000000000003e-05, 'epoch': 0.06857142857142857}
+{'loss': 0.3297, 'grad_norm': 2.77150232471893, 'learning_rate': 5e-05, 'epoch': 0.09142857142857143}
+{'eval_valid_loss': 0.3119280934333801, 'eval_valid_runtime': 0.0906, 'eval_valid_samples_per_second': 1104.026, 'eval_valid_steps_per_second': 11.04, 'epoch': 0.09142857142857143}
+{'loss': 0.3048, 'grad_norm': 1.6918272987647738, 'learning_rate': 6.25e-05, 'epoch': 0.11428571428571428}
+{'loss': 0.2921, 'grad_norm': 0.9769612470988543, 'learning_rate': 7.500000000000001e-05, 'epoch': 0.13714285714285715}
+{'eval_valid_loss': 0.28622350096702576, 'eval_valid_runtime': 0.0905, 'eval_valid_samples_per_second': 1104.837, 'eval_valid_steps_per_second': 11.048, 'epoch': 0.13714285714285715}
+{'loss': 0.2849, 'grad_norm': 0.751648058254344, 'learning_rate': 8.75e-05, 'epoch': 0.16}
+{'loss': 0.2793, 'grad_norm': 0.6043305489060257, 'learning_rate': 0.0001, 'epoch': 0.18285714285714286}
+{'eval_valid_loss': 0.2753537893295288, 'eval_valid_runtime': 0.09, 'eval_valid_samples_per_second': 1110.636, 'eval_valid_steps_per_second': 11.106, 'epoch': 0.18285714285714286}
+{'loss': 0.264, 'grad_norm': 0.7234618516535197, 'learning_rate': 9.999941284352682e-05, 'epoch': 0.2057142857142857}
+{'loss': 0.2068, 'grad_norm': 0.46584088102150606, 'learning_rate': 9.999765138789738e-05, 'epoch': 0.22857142857142856}
+{'eval_valid_loss': 0.1990533471107483, 'eval_valid_runtime': 0.0904, 'eval_valid_samples_per_second': 1105.725, 'eval_valid_steps_per_second': 11.057, 'epoch': 0.22857142857142856}
+{'loss': 0.1967, 'grad_norm': 0.43390120954954886, 'learning_rate': 9.999471567448169e-05, 'epoch': 0.25142857142857145}
+{'loss': 0.1817, 'grad_norm': 0.4166831651540531, 'learning_rate': 9.999060577222867e-05, 'epoch': 0.2742857142857143}
+{'eval_valid_loss': 0.17142042517662048, 'eval_valid_runtime': 0.0903, 'eval_valid_samples_per_second': 1107.773, 'eval_valid_steps_per_second': 11.078, 'epoch': 0.2742857142857143}
+{'loss': 0.1696, 'grad_norm': 0.30626960384199453, 'learning_rate': 9.998532177766456e-05, 'epoch': 0.29714285714285715}
+{'loss': 0.1679, 'grad_norm': 0.30891334230209694, 'learning_rate': 9.99788638148906e-05, 'epoch': 0.32}
+{'eval_valid_loss': 0.16690532863140106, 'eval_valid_runtime': 0.0901, 'eval_valid_samples_per_second': 1109.299, 'eval_valid_steps_per_second': 11.093, 'epoch': 0.32}
+{'loss': 0.1669, 'grad_norm': 0.2784933865471312, 'learning_rate': 9.99712320355802e-05, 'epoch': 0.34285714285714286}
+{'loss': 0.1659, 'grad_norm': 0.24648305020527964, 'learning_rate': 9.99624266189753e-05, 'epoch': 0.3657142857142857}
+{'eval_valid_loss': 0.16485682129859924, 'eval_valid_runtime': 0.0905, 'eval_valid_samples_per_second': 1105.067, 'eval_valid_steps_per_second': 11.051, 'epoch': 0.3657142857142857}
+{'loss': 0.1652, 'grad_norm': 0.2324841309763491, 'learning_rate': 9.995244777188218e-05, 'epoch': 0.38857142857142857}
+{'loss': 0.1645, 'grad_norm': 0.19622396313624682, 'learning_rate': 9.994129572866664e-05, 'epoch': 0.4114285714285714}
+{'eval_valid_loss': 0.16353456676006317, 'eval_valid_runtime': 0.0903, 'eval_valid_samples_per_second': 1106.995, 'eval_valid_steps_per_second': 11.07, 'epoch': 0.4114285714285714}
+{'loss': 0.1638, 'grad_norm': 0.2176796578652095, 'learning_rate': 9.992897075124845e-05, 'epoch': 0.4342857142857143}
+{'loss': 0.1631, 'grad_norm': 0.17889850575748012, 'learning_rate': 9.991547312909522e-05, 'epoch': 0.45714285714285713}
+{'eval_valid_loss': 0.16282251477241516, 'eval_valid_runtime': 0.095, 'eval_valid_samples_per_second': 1052.761, 'eval_valid_steps_per_second': 10.528, 'epoch': 0.45714285714285713}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.1625, 'grad_norm': 0.16788302721594708, 'learning_rate': 9.990080317921562e-05, 'epoch': 0.48}
+{'loss': 0.162, 'grad_norm': 0.17255843221357867, 'learning_rate': 9.988496124615186e-05, 'epoch': 0.5028571428571429}
+{'eval_valid_loss': 0.16120649874210358, 'eval_valid_runtime': 0.0901, 'eval_valid_samples_per_second': 1110.012, 'eval_valid_steps_per_second': 11.1, 'epoch': 0.5028571428571429}
+{'loss': 0.1614, 'grad_norm': 0.1812118377311648, 'learning_rate': 9.986794770197169e-05, 'epoch': 0.5257142857142857}
+{'loss': 0.1609, 'grad_norm': 0.18250815781915858, 'learning_rate': 9.984976294625963e-05, 'epoch': 0.5485714285714286}
+{'eval_valid_loss': 0.16019821166992188, 'eval_valid_runtime': 0.0908, 'eval_valid_samples_per_second': 1101.469, 'eval_valid_steps_per_second': 11.015, 'epoch': 0.5485714285714286}
+{'loss': 0.1604, 'grad_norm': 0.1556800385967635, 'learning_rate': 9.983040740610755e-05, 'epoch': 0.5714285714285714}
+{'loss': 0.16, 'grad_norm': 0.15237277469709717, 'learning_rate': 9.980988153610466e-05, 'epoch': 0.5942857142857143}
+{'eval_valid_loss': 0.15900075435638428, 'eval_valid_runtime': 0.0904, 'eval_valid_samples_per_second': 1106.519, 'eval_valid_steps_per_second': 11.065, 'epoch': 0.5942857142857143}
+{'loss': 0.1595, 'grad_norm': 0.1410121823687115, 'learning_rate': 9.978818581832687e-05, 'epoch': 0.6171428571428571}
+{'loss': 0.1591, 'grad_norm': 0.14560167714164235, 'learning_rate': 9.976532076232545e-05, 'epoch': 0.64}
+{'eval_valid_loss': 0.1589527577161789, 'eval_valid_runtime': 0.0904, 'eval_valid_samples_per_second': 1106.636, 'eval_valid_steps_per_second': 11.066, 'epoch': 0.64}
+{'loss': 0.1588, 'grad_norm': 0.13459807606616472, 'learning_rate': 9.9741286905115e-05, 'epoch': 0.6628571428571428}
+{'loss': 0.1584, 'grad_norm': 0.12341947991761579, 'learning_rate': 9.971608481116092e-05, 'epoch': 0.6857142857142857}
+{'eval_valid_loss': 0.15838581323623657, 'eval_valid_runtime': 0.0909, 'eval_valid_samples_per_second': 1100.399, 'eval_valid_steps_per_second': 11.004, 'epoch': 0.6857142857142857}
+{'loss': 0.1582, 'grad_norm': 0.13001206785593614, 'learning_rate': 9.968971507236612e-05, 'epoch': 0.7085714285714285}
+{'loss': 0.1578, 'grad_norm': 0.1224414179328521, 'learning_rate': 9.96621783080571e-05, 'epoch': 0.7314285714285714}
+{'eval_valid_loss': 0.15750180184841156, 'eval_valid_runtime': 0.0902, 'eval_valid_samples_per_second': 1108.466, 'eval_valid_steps_per_second': 11.085, 'epoch': 0.7314285714285714}
+{'loss': 0.1576, 'grad_norm': 0.12122794495955162, 'learning_rate': 9.963347516496944e-05, 'epoch': 0.7542857142857143}
+{'loss': 0.1572, 'grad_norm': 0.1109497043398927, 'learning_rate': 9.96036063172326e-05, 'epoch': 0.7771428571428571}
+{'eval_valid_loss': 0.15733863413333893, 'eval_valid_runtime': 0.0902, 'eval_valid_samples_per_second': 1108.115, 'eval_valid_steps_per_second': 11.081, 'epoch': 0.7771428571428571}
+{'loss': 0.1569, 'grad_norm': 0.1048482365674675, 'learning_rate': 9.957257246635405e-05, 'epoch': 0.8}
+{'loss': 0.1567, 'grad_norm': 0.10794274562996871, 'learning_rate': 9.954037434120289e-05, 'epoch': 0.8228571428571428}
+{'eval_valid_loss': 0.1558927446603775, 'eval_valid_runtime': 0.0903, 'eval_valid_samples_per_second': 1107.471, 'eval_valid_steps_per_second': 11.075, 'epoch': 0.8228571428571428}
+{'loss': 0.1565, 'grad_norm': 0.1075559387761248, 'learning_rate': 9.950701269799257e-05, 'epoch': 0.8457142857142858}
+{'loss': 0.1561, 'grad_norm': 0.10220143486349936, 'learning_rate': 9.947248832026332e-05, 'epoch': 0.8685714285714285}
+{'eval_valid_loss': 0.15629835426807404, 'eval_valid_runtime': 0.0912, 'eval_valid_samples_per_second': 1096.501, 'eval_valid_steps_per_second': 10.965, 'epoch': 0.8685714285714285}
+{'loss': 0.1559, 'grad_norm': 0.10317781878330233, 'learning_rate': 9.943680201886361e-05, 'epoch': 0.8914285714285715}
+{'loss': 0.1558, 'grad_norm': 0.10314195368947847, 'learning_rate': 9.939995463193115e-05, 'epoch': 0.9142857142857143}
+{'eval_valid_loss': 0.15544776618480682, 'eval_valid_runtime': 0.09, 'eval_valid_samples_per_second': 1110.533, 'eval_valid_steps_per_second': 11.105, 'epoch': 0.9142857142857143}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.1554, 'grad_norm': 0.10128550370182261, 'learning_rate': 9.936194702487318e-05, 'epoch': 0.9371428571428572}
+{'loss': 0.1553, 'grad_norm': 0.09847932959363541, 'learning_rate': 9.932278009034625e-05, 'epoch': 0.96}
+{'eval_valid_loss': 0.15475179255008698, 'eval_valid_runtime': 0.0901, 'eval_valid_samples_per_second': 1109.998, 'eval_valid_steps_per_second': 11.1, 'epoch': 0.96}
+{'loss': 0.1551, 'grad_norm': 0.09665052348551079, 'learning_rate': 9.92824547482351e-05, 'epoch': 0.9828571428571429}
+{'loss': 0.1547, 'grad_norm': 0.09272493550191518, 'learning_rate': 9.924097194563116e-05, 'epoch': 1.0057142857142858}
+{'eval_valid_loss': 0.1547280251979828, 'eval_valid_runtime': 0.1193, 'eval_valid_samples_per_second': 837.896, 'eval_valid_steps_per_second': 8.379, 'epoch': 1.0057142857142858}
+{'loss': 0.1543, 'grad_norm': 0.08743433243743869, 'learning_rate': 9.919833265681027e-05, 'epoch': 1.0285714285714285}
+{'loss': 0.1539, 'grad_norm': 0.10742788013557562, 'learning_rate': 9.915453788320981e-05, 'epoch': 1.0514285714285714}
+{'eval_valid_loss': 0.15372127294540405, 'eval_valid_runtime': 0.1236, 'eval_valid_samples_per_second': 809.285, 'eval_valid_steps_per_second': 8.093, 'epoch': 1.0514285714285714}
+{'loss': 0.1536, 'grad_norm': 0.09227678220589587, 'learning_rate': 9.910958865340518e-05, 'epoch': 1.0742857142857143}
+{'loss': 0.1533, 'grad_norm': 0.09784219042239782, 'learning_rate': 9.906348602308561e-05, 'epoch': 1.0971428571428572}
+{'eval_valid_loss': 0.15285533666610718, 'eval_valid_runtime': 0.0909, 'eval_valid_samples_per_second': 1100.483, 'eval_valid_steps_per_second': 11.005, 'epoch': 1.0971428571428572}
+{'loss': 0.1531, 'grad_norm': 0.09744519971921137, 'learning_rate': 9.901623107502945e-05, 'epoch': 1.12}
+{'loss': 0.1529, 'grad_norm': 0.08502860498678066, 'learning_rate': 9.89678249190786e-05, 'epoch': 1.1428571428571428}
+{'eval_valid_loss': 0.15227454900741577, 'eval_valid_runtime': 0.1198, 'eval_valid_samples_per_second': 835.046, 'eval_valid_steps_per_second': 8.35, 'epoch': 1.1428571428571428}
+{'loss': 0.1527, 'grad_norm': 0.0955502230755724, 'learning_rate': 9.89182686921126e-05, 'epoch': 1.1657142857142857}
+{'loss': 0.1525, 'grad_norm': 0.09343001228336555, 'learning_rate': 9.886756355802182e-05, 'epoch': 1.1885714285714286}
+{'eval_valid_loss': 0.15261007845401764, 'eval_valid_runtime': 0.0906, 'eval_valid_samples_per_second': 1104.177, 'eval_valid_steps_per_second': 11.042, 'epoch': 1.1885714285714286}
+{'loss': 0.1523, 'grad_norm': 0.08360106039196125, 'learning_rate': 9.881571070768017e-05, 'epoch': 1.2114285714285715}
+{'loss': 0.1521, 'grad_norm': 0.08029049658878411, 'learning_rate': 9.876271135891713e-05, 'epoch': 1.2342857142857142}
+{'eval_valid_loss': 0.15210483968257904, 'eval_valid_runtime': 0.0904, 'eval_valid_samples_per_second': 1106.204, 'eval_valid_steps_per_second': 11.062, 'epoch': 1.2342857142857142}
+{'loss': 0.1519, 'grad_norm': 0.09292810708644214, 'learning_rate': 9.87085667564891e-05, 'epoch': 1.2571428571428571}
+{'loss': 0.1517, 'grad_norm': 0.08467515631821619, 'learning_rate': 9.865327817205026e-05, 'epoch': 1.28}
+{'eval_valid_loss': 0.1513271927833557, 'eval_valid_runtime': 0.0908, 'eval_valid_samples_per_second': 1101.9, 'eval_valid_steps_per_second': 11.019, 'epoch': 1.28}
+{'loss': 0.1516, 'grad_norm': 0.0932978927680702, 'learning_rate': 9.859684690412261e-05, 'epoch': 1.302857142857143}
+{'loss': 0.1514, 'grad_norm': 0.09320139775380414, 'learning_rate': 9.853927427806551e-05, 'epoch': 1.3257142857142856}
+{'eval_valid_loss': 0.15132306516170502, 'eval_valid_runtime': 0.0987, 'eval_valid_samples_per_second': 1012.806, 'eval_valid_steps_per_second': 10.128, 'epoch': 1.3257142857142856}
+{'loss': 0.1512, 'grad_norm': 0.08464015262944581, 'learning_rate': 9.848056164604458e-05, 'epoch': 1.3485714285714285}
+{'loss': 0.151, 'grad_norm': 0.08205721958888443, 'learning_rate': 9.84207103869999e-05, 'epoch': 1.3714285714285714}
+{'eval_valid_loss': 0.15077006816864014, 'eval_valid_runtime': 0.0914, 'eval_valid_samples_per_second': 1094.641, 'eval_valid_steps_per_second': 10.946, 'epoch': 1.3714285714285714}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.1508, 'grad_norm': 0.08977482358755391, 'learning_rate': 9.83597219066136e-05, 'epoch': 1.3942857142857144}
+{'loss': 0.1506, 'grad_norm': 0.08133140793059164, 'learning_rate': 9.829759763727697e-05, 'epoch': 1.4171428571428573}
+{'eval_valid_loss': 0.15030768513679504, 'eval_valid_runtime': 0.09, 'eval_valid_samples_per_second': 1111.395, 'eval_valid_steps_per_second': 11.114, 'epoch': 1.4171428571428573}
+{'loss': 0.1504, 'grad_norm': 0.08120574093171373, 'learning_rate': 9.823433903805666e-05, 'epoch': 1.44}
+{'loss': 0.1502, 'grad_norm': 0.08563312588260047, 'learning_rate': 9.816994759466052e-05, 'epoch': 1.4628571428571429}
+{'eval_valid_loss': 0.14977222681045532, 'eval_valid_runtime': 0.0903, 'eval_valid_samples_per_second': 1106.893, 'eval_valid_steps_per_second': 11.069, 'epoch': 1.4628571428571429}
+{'loss': 0.15, 'grad_norm': 0.08089780706171963, 'learning_rate': 9.810442481940265e-05, 'epoch': 1.4857142857142858}
+{'loss': 0.1498, 'grad_norm': 0.08696995067425135, 'learning_rate': 9.803777225116792e-05, 'epoch': 1.5085714285714285}
+{'eval_valid_loss': 0.149545818567276, 'eval_valid_runtime': 0.0913, 'eval_valid_samples_per_second': 1094.993, 'eval_valid_steps_per_second': 10.95, 'epoch': 1.5085714285714285}
+{'loss': 0.1497, 'grad_norm': 0.08116043050313275, 'learning_rate': 9.79699914553758e-05, 'epoch': 1.5314285714285716}
+{'loss': 0.1495, 'grad_norm': 0.07526477159795138, 'learning_rate': 9.790108402394364e-05, 'epoch': 1.5542857142857143}
+{'eval_valid_loss': 0.14881213009357452, 'eval_valid_runtime': 0.0903, 'eval_valid_samples_per_second': 1107.881, 'eval_valid_steps_per_second': 11.079, 'epoch': 1.5542857142857143}
+{'loss': 0.1493, 'grad_norm': 0.07234705866699762, 'learning_rate': 9.783105157524919e-05, 'epoch': 1.5771428571428572}
+{'loss': 0.1491, 'grad_norm': 0.08647354050330569, 'learning_rate': 9.775989575409267e-05, 'epoch': 1.6}
+{'eval_valid_loss': 0.14915233850479126, 'eval_valid_runtime': 0.0906, 'eval_valid_samples_per_second': 1103.697, 'eval_valid_steps_per_second': 11.037, 'epoch': 1.6}
+{'loss': 0.1488, 'grad_norm': 0.08055550093248676, 'learning_rate': 9.768761823165813e-05, 'epoch': 1.6228571428571428}
+{'loss': 0.1482, 'grad_norm': 0.07820744653084655, 'learning_rate': 9.761422070547418e-05, 'epoch': 1.6457142857142857}
+{'eval_valid_loss': 0.14802652597427368, 'eval_valid_runtime': 0.0903, 'eval_valid_samples_per_second': 1108.01, 'eval_valid_steps_per_second': 11.08, 'epoch': 1.6457142857142857}
+{'loss': 0.1472, 'grad_norm': 0.08325477223713196, 'learning_rate': 9.753970489937412e-05, 'epoch': 1.6685714285714286}
+{'loss': 0.1461, 'grad_norm': 0.08149565731160596, 'learning_rate': 9.746407256345546e-05, 'epoch': 1.6914285714285713}
+{'eval_valid_loss': 0.14548367261886597, 'eval_valid_runtime': 0.0901, 'eval_valid_samples_per_second': 1109.698, 'eval_valid_steps_per_second': 11.097, 'epoch': 1.6914285714285713}
+{'loss': 0.1453, 'grad_norm': 0.08000437663159438, 'learning_rate': 9.738732547403884e-05, 'epoch': 1.7142857142857144}
+{'loss': 0.1444, 'grad_norm': 0.09170937172173513, 'learning_rate': 9.730946543362625e-05, 'epoch': 1.737142857142857}
+{'eval_valid_loss': 0.1437327116727829, 'eval_valid_runtime': 0.0908, 'eval_valid_samples_per_second': 1101.35, 'eval_valid_steps_per_second': 11.013, 'epoch': 1.737142857142857}
+{'loss': 0.1435, 'grad_norm': 0.08324650034498757, 'learning_rate': 9.723049427085878e-05, 'epoch': 1.76}
+{'loss': 0.1424, 'grad_norm': 0.08121037557935279, 'learning_rate': 9.715041384047361e-05, 'epoch': 1.782857142857143}
+{'eval_valid_loss': 0.14229857921600342, 'eval_valid_runtime': 0.0906, 'eval_valid_samples_per_second': 1104.311, 'eval_valid_steps_per_second': 11.043, 'epoch': 1.782857142857143}
+{'loss': 0.1411, 'grad_norm': 0.10761319917222008, 'learning_rate': 9.706922602326044e-05, 'epoch': 1.8057142857142856}
+{'loss': 0.1396, 'grad_norm': 0.09922054647124989, 'learning_rate': 9.698693272601739e-05, 'epoch': 1.8285714285714287}
+{'eval_valid_loss': 0.13901951909065247, 'eval_valid_runtime': 0.0902, 'eval_valid_samples_per_second': 1108.833, 'eval_valid_steps_per_second': 11.088, 'epoch': 1.8285714285714287}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.1377, 'grad_norm': 0.10013866209762896, 'learning_rate': 9.690353588150614e-05, 'epoch': 1.8514285714285714}
+{'loss': 0.1357, 'grad_norm': 0.10902105751768396, 'learning_rate': 9.681903744840654e-05, 'epoch': 1.8742857142857143}
+{'eval_valid_loss': 0.1350935846567154, 'eval_valid_runtime': 0.0899, 'eval_valid_samples_per_second': 1112.801, 'eval_valid_steps_per_second': 11.128, 'epoch': 1.8742857142857143}
+{'loss': 0.1333, 'grad_norm': 0.10829091229740449, 'learning_rate': 9.673343941127073e-05, 'epoch': 1.8971428571428572}
+{'loss': 0.1305, 'grad_norm': 0.11361494211139897, 'learning_rate': 9.664674378047633e-05, 'epoch': 1.92}
+{'eval_valid_loss': 0.12898224592208862, 'eval_valid_runtime': 0.0902, 'eval_valid_samples_per_second': 1108.798, 'eval_valid_steps_per_second': 11.088, 'epoch': 1.92}
+{'loss': 0.1269, 'grad_norm': 0.11846451471090949, 'learning_rate': 9.655895259217939e-05, 'epoch': 1.9428571428571428}
+{'loss': 0.1221, 'grad_norm': 0.13565987747509137, 'learning_rate': 9.647006790826651e-05, 'epoch': 1.9657142857142857}
+{'eval_valid_loss': 0.12068214267492294, 'eval_valid_runtime': 0.091, 'eval_valid_samples_per_second': 1099.28, 'eval_valid_steps_per_second': 10.993, 'epoch': 1.9657142857142857}
+{'loss': 0.1183, 'grad_norm': 0.12223681431412531, 'learning_rate': 9.638009181630634e-05, 'epoch': 1.9885714285714284}
+{'loss': 0.115, 'grad_norm': 0.15071309184748927, 'learning_rate': 9.62890264295007e-05, 'epoch': 2.0114285714285716}
+{'eval_valid_loss': 0.11441025882959366, 'eval_valid_runtime': 0.09, 'eval_valid_samples_per_second': 1111.333, 'eval_valid_steps_per_second': 11.113, 'epoch': 2.0114285714285716}
+{'loss': 0.1126, 'grad_norm': 0.1416086174588606, 'learning_rate': 9.619687388663485e-05, 'epoch': 2.0342857142857143}
+{'loss': 0.1106, 'grad_norm': 0.15662864704812504, 'learning_rate': 9.610363635202728e-05, 'epoch': 2.057142857142857}
+{'eval_valid_loss': 0.1102273240685463, 'eval_valid_runtime': 0.1204, 'eval_valid_samples_per_second': 830.675, 'eval_valid_steps_per_second': 8.307, 'epoch': 2.057142857142857}
+{'loss': 0.109, 'grad_norm': 0.1263986217607929, 'learning_rate': 9.600931601547885e-05, 'epoch': 2.08}
+{'loss': 0.1075, 'grad_norm': 0.1585564741192636, 'learning_rate': 9.59139150922214e-05, 'epoch': 2.1028571428571428}
+{'eval_valid_loss': 0.10808511823415756, 'eval_valid_runtime': 0.1235, 'eval_valid_samples_per_second': 809.685, 'eval_valid_steps_per_second': 8.097, 'epoch': 2.1028571428571428}
+{'loss': 0.1063, 'grad_norm': 0.15113905531472507, 'learning_rate': 9.581743582286573e-05, 'epoch': 2.125714285714286}
+{'loss': 0.1053, 'grad_norm': 0.13692980456339748, 'learning_rate': 9.571988047334894e-05, 'epoch': 2.1485714285714286}
+{'eval_valid_loss': 0.10641241818666458, 'eval_valid_runtime': 0.0904, 'eval_valid_samples_per_second': 1106.56, 'eval_valid_steps_per_second': 11.066, 'epoch': 2.1485714285714286}
+{'loss': 0.1043, 'grad_norm': 0.14256016133504618, 'learning_rate': 9.562125133488124e-05, 'epoch': 2.1714285714285713}
+{'loss': 0.1036, 'grad_norm': 0.12026656307933886, 'learning_rate': 9.552155072389209e-05, 'epoch': 2.1942857142857144}
+{'eval_valid_loss': 0.10445603728294373, 'eval_valid_runtime': 0.0993, 'eval_valid_samples_per_second': 1007.123, 'eval_valid_steps_per_second': 10.071, 'epoch': 2.1942857142857144}
+{'loss': 0.103, 'grad_norm': 0.13330801515810378, 'learning_rate': 9.542078098197587e-05, 'epoch': 2.217142857142857}
+{'loss': 0.1024, 'grad_norm': 0.1264269236423961, 'learning_rate': 9.531894447583682e-05, 'epoch': 2.24}
+{'eval_valid_loss': 0.10283538699150085, 'eval_valid_runtime': 0.0911, 'eval_valid_samples_per_second': 1098.138, 'eval_valid_steps_per_second': 10.981, 'epoch': 2.24}
+{'loss': 0.1019, 'grad_norm': 0.1499840468299538, 'learning_rate': 9.521604359723351e-05, 'epoch': 2.262857142857143}
+{'loss': 0.1014, 'grad_norm': 0.11634884718453056, 'learning_rate': 9.51120807629226e-05, 'epoch': 2.2857142857142856}
+{'eval_valid_loss': 0.10216521471738815, 'eval_valid_runtime': 0.0901, 'eval_valid_samples_per_second': 1110.109, 'eval_valid_steps_per_second': 11.101, 'epoch': 2.2857142857142856}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.1011, 'grad_norm': 0.124071700010583, 'learning_rate': 9.500705841460213e-05, 'epoch': 2.3085714285714287}
+{'loss': 0.1007, 'grad_norm': 0.11796113640566774, 'learning_rate': 9.49009790188542e-05, 'epoch': 2.3314285714285714}
+{'eval_valid_loss': 0.10235130041837692, 'eval_valid_runtime': 0.0902, 'eval_valid_samples_per_second': 1108.346, 'eval_valid_steps_per_second': 11.083, 'epoch': 2.3314285714285714}
+{'loss': 0.1004, 'grad_norm': 0.10286078921237725, 'learning_rate': 9.479384506708694e-05, 'epoch': 2.354285714285714}
+{'loss': 0.1001, 'grad_norm': 0.11806703926047675, 'learning_rate': 9.468565907547609e-05, 'epoch': 2.3771428571428572}
+{'eval_valid_loss': 0.10090508311986923, 'eval_valid_runtime': 0.0906, 'eval_valid_samples_per_second': 1104.014, 'eval_valid_steps_per_second': 11.04, 'epoch': 2.3771428571428572}
+{'loss': 0.0997, 'grad_norm': 0.1188021913570562, 'learning_rate': 9.457642358490584e-05, 'epoch': 2.4}
+{'loss': 0.0995, 'grad_norm': 0.10817622431774977, 'learning_rate': 9.446614116090923e-05, 'epoch': 2.422857142857143}
+{'eval_valid_loss': 0.10119543224573135, 'eval_valid_runtime': 0.0905, 'eval_valid_samples_per_second': 1105.061, 'eval_valid_steps_per_second': 11.051, 'epoch': 2.422857142857143}
+{'loss': 0.0992, 'grad_norm': 0.12999733502233032, 'learning_rate': 9.435481439360782e-05, 'epoch': 2.4457142857142857}
+{'loss': 0.0989, 'grad_norm': 0.11229621256591557, 'learning_rate': 9.424244589765087e-05, 'epoch': 2.4685714285714284}
+{'eval_valid_loss': 0.09980126470327377, 'eval_valid_runtime': 0.091, 'eval_valid_samples_per_second': 1099.012, 'eval_valid_steps_per_second': 10.99, 'epoch': 2.4685714285714284}
+{'loss': 0.0987, 'grad_norm': 0.11107090254666681, 'learning_rate': 9.412903831215402e-05, 'epoch': 2.4914285714285715}
+{'loss': 0.0985, 'grad_norm': 0.1124676094715906, 'learning_rate': 9.401459430063714e-05, 'epoch': 2.5142857142857142}
+{'eval_valid_loss': 0.0992198958992958, 'eval_valid_runtime': 0.0901, 'eval_valid_samples_per_second': 1109.648, 'eval_valid_steps_per_second': 11.096, 'epoch': 2.5142857142857142}
+{'loss': 0.0982, 'grad_norm': 0.11751557226143232, 'learning_rate': 9.389911655096195e-05, 'epoch': 2.5371428571428574}
+{'loss': 0.0981, 'grad_norm': 0.09325288748245586, 'learning_rate': 9.378260777526874e-05, 'epoch': 2.56}
+{'eval_valid_loss': 0.09939247369766235, 'eval_valid_runtime': 0.091, 'eval_valid_samples_per_second': 1098.748, 'eval_valid_steps_per_second': 10.987, 'epoch': 2.56}
+{'loss': 0.0979, 'grad_norm': 0.09577320557915493, 'learning_rate': 9.366507070991282e-05, 'epoch': 2.5828571428571427}
+{'loss': 0.0978, 'grad_norm': 0.08523715019003654, 'learning_rate': 9.354650811540014e-05, 'epoch': 2.605714285714286}
+{'eval_valid_loss': 0.09898733347654343, 'eval_valid_runtime': 0.0902, 'eval_valid_samples_per_second': 1108.449, 'eval_valid_steps_per_second': 11.084, 'epoch': 2.605714285714286}
+{'loss': 0.0976, 'grad_norm': 0.09458600440423807, 'learning_rate': 9.342692277632247e-05, 'epoch': 2.6285714285714286}
+{'loss': 0.0975, 'grad_norm': 0.07755666536431749, 'learning_rate': 9.330631750129207e-05, 'epoch': 2.6514285714285712}
+{'eval_valid_loss': 0.09859135001897812, 'eval_valid_runtime': 0.0904, 'eval_valid_samples_per_second': 1106.282, 'eval_valid_steps_per_second': 11.063, 'epoch': 2.6514285714285712}
+{'loss': 0.0975, 'grad_norm': 0.09115727273362731, 'learning_rate': 9.318469512287564e-05, 'epoch': 2.6742857142857144}
+{'loss': 0.0973, 'grad_norm': 0.09113977862191151, 'learning_rate': 9.306205849752785e-05, 'epoch': 2.697142857142857}
+{'eval_valid_loss': 0.09817429631948471, 'eval_valid_runtime': 0.1187, 'eval_valid_samples_per_second': 842.384, 'eval_valid_steps_per_second': 8.424, 'epoch': 2.697142857142857}
+{'loss': 0.0973, 'grad_norm': 0.09474760805232425, 'learning_rate': 9.293841050552424e-05, 'epoch': 2.7199999999999998}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0972, 'grad_norm': 0.10598563727465457, 'learning_rate': 9.281375405089359e-05, 'epoch': 2.742857142857143}
+{'eval_valid_loss': 0.09829729795455933, 'eval_valid_runtime': 0.092, 'eval_valid_samples_per_second': 1087.331, 'eval_valid_steps_per_second': 10.873, 'epoch': 2.742857142857143}
+{'loss': 0.0971, 'grad_norm': 0.09252494508315706, 'learning_rate': 9.268809206134964e-05, 'epoch': 2.7657142857142856}
+{'loss': 0.097, 'grad_norm': 0.08516516799420745, 'learning_rate': 9.256142748822243e-05, 'epoch': 2.7885714285714287}
+{'eval_valid_loss': 0.09811732918024063, 'eval_valid_runtime': 0.0902, 'eval_valid_samples_per_second': 1109.038, 'eval_valid_steps_per_second': 11.09, 'epoch': 2.7885714285714287}
+{'loss': 0.097, 'grad_norm': 0.0933014374900897, 'learning_rate': 9.243376330638891e-05, 'epoch': 2.8114285714285714}
+{'loss': 0.0969, 'grad_norm': 0.08911560600280902, 'learning_rate': 9.230510251420312e-05, 'epoch': 2.8342857142857145}
+{'eval_valid_loss': 0.09799972176551819, 'eval_valid_runtime': 0.0901, 'eval_valid_samples_per_second': 1109.323, 'eval_valid_steps_per_second': 11.093, 'epoch': 2.8342857142857145}
+{'loss': 0.0968, 'grad_norm': 0.09638412212050221, 'learning_rate': 9.217544813342573e-05, 'epoch': 2.857142857142857}
+{'loss': 0.0968, 'grad_norm': 0.09017494306614751, 'learning_rate': 9.204480320915311e-05, 'epoch': 2.88}
+{'eval_valid_loss': 0.09794045239686966, 'eval_valid_runtime': 0.0905, 'eval_valid_samples_per_second': 1104.758, 'eval_valid_steps_per_second': 11.048, 'epoch': 2.88}
+{'loss': 0.0968, 'grad_norm': 0.08647597870262203, 'learning_rate': 9.191317080974577e-05, 'epoch': 2.902857142857143}
+{'loss': 0.0967, 'grad_norm': 0.07408373069894492, 'learning_rate': 9.178055402675632e-05, 'epoch': 2.9257142857142857}
+{'eval_valid_loss': 0.09793127328157425, 'eval_valid_runtime': 0.0903, 'eval_valid_samples_per_second': 1107.328, 'eval_valid_steps_per_second': 11.073, 'epoch': 2.9257142857142857}
+{'loss': 0.0967, 'grad_norm': 0.06903923517681416, 'learning_rate': 9.164695597485689e-05, 'epoch': 2.9485714285714284}
+{'loss': 0.0966, 'grad_norm': 0.07787609781796308, 'learning_rate': 9.151237979176588e-05, 'epoch': 2.9714285714285715}
+{'eval_valid_loss': 0.09738421440124512, 'eval_valid_runtime': 0.0902, 'eval_valid_samples_per_second': 1108.777, 'eval_valid_steps_per_second': 11.088, 'epoch': 2.9714285714285715}
+{'loss': 0.0965, 'grad_norm': 0.08119334789920313, 'learning_rate': 9.137682863817441e-05, 'epoch': 2.994285714285714}
+{'loss': 0.0964, 'grad_norm': 0.08707232770985292, 'learning_rate': 9.124030569767194e-05, 'epoch': 3.0171428571428573}
+{'eval_valid_loss': 0.09758449345827103, 'eval_valid_runtime': 0.1237, 'eval_valid_samples_per_second': 808.614, 'eval_valid_steps_per_second': 8.086, 'epoch': 3.0171428571428573}
+{'loss': 0.0964, 'grad_norm': 0.07656038780158958, 'learning_rate': 9.110281417667161e-05, 'epoch': 3.04}
+{'loss': 0.0963, 'grad_norm': 0.07928114704099128, 'learning_rate': 9.09643573043349e-05, 'epoch': 3.0628571428571427}
+{'eval_valid_loss': 0.0972190648317337, 'eval_valid_runtime': 0.1112, 'eval_valid_samples_per_second': 899.266, 'eval_valid_steps_per_second': 8.993, 'epoch': 3.0628571428571427}
+{'loss': 0.0963, 'grad_norm': 0.06963334481125225, 'learning_rate': 9.082493833249575e-05, 'epoch': 3.085714285714286}
+{'loss': 0.0963, 'grad_norm': 0.06557599022482243, 'learning_rate': 9.068456053558423e-05, 'epoch': 3.1085714285714285}
+{'eval_valid_loss': 0.09782664477825165, 'eval_valid_runtime': 0.1211, 'eval_valid_samples_per_second': 825.811, 'eval_valid_steps_per_second': 8.258, 'epoch': 3.1085714285714285}
+{'loss': 0.0963, 'grad_norm': 0.09499160267270504, 'learning_rate': 9.054322721054961e-05, 'epoch': 3.1314285714285712}
+{'loss': 0.0962, 'grad_norm': 0.08151880217760532, 'learning_rate': 9.040094167678301e-05, 'epoch': 3.1542857142857144}
+{'eval_valid_loss': 0.09705629199743271, 'eval_valid_runtime': 0.0913, 'eval_valid_samples_per_second': 1094.95, 'eval_valid_steps_per_second': 10.949, 'epoch': 3.1542857142857144}
+{'loss': 0.0962, 'grad_norm': 0.07073448932418046, 'learning_rate': 9.025770727603925e-05, 'epoch': 3.177142857142857}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0962, 'grad_norm': 0.08426774543629442, 'learning_rate': 9.01135273723586e-05, 'epoch': 3.2}
+{'eval_valid_loss': 0.09742678701877594, 'eval_valid_runtime': 0.0904, 'eval_valid_samples_per_second': 1106.802, 'eval_valid_steps_per_second': 11.068, 'epoch': 3.2}
+{'loss': 0.0962, 'grad_norm': 0.07171568246324614, 'learning_rate': 8.996840535198759e-05, 'epoch': 3.222857142857143}
+{'loss': 0.0961, 'grad_norm': 0.0710133025117098, 'learning_rate': 8.982234462329956e-05, 'epoch': 3.2457142857142856}
+{'eval_valid_loss': 0.09692727029323578, 'eval_valid_runtime': 0.0907, 'eval_valid_samples_per_second': 1101.94, 'eval_valid_steps_per_second': 11.019, 'epoch': 3.2457142857142856}
+{'loss': 0.0961, 'grad_norm': 0.0631166968323951, 'learning_rate': 8.967534861671465e-05, 'epoch': 3.2685714285714287}
+{'loss': 0.0961, 'grad_norm': 0.0558362610776714, 'learning_rate': 8.952742078461906e-05, 'epoch': 3.2914285714285714}
+{'eval_valid_loss': 0.09712641686201096, 'eval_valid_runtime': 0.0907, 'eval_valid_samples_per_second': 1102.67, 'eval_valid_steps_per_second': 11.027, 'epoch': 3.2914285714285714}
+{'loss': 0.0961, 'grad_norm': 0.07354896685130291, 'learning_rate': 8.937856460128422e-05, 'epoch': 3.314285714285714}
+{'loss': 0.096, 'grad_norm': 0.0660348836930077, 'learning_rate': 8.922878356278496e-05, 'epoch': 3.337142857142857}
+{'eval_valid_loss': 0.09698333591222763, 'eval_valid_runtime': 0.0908, 'eval_valid_samples_per_second': 1101.587, 'eval_valid_steps_per_second': 11.016, 'epoch': 3.337142857142857}
+{'loss': 0.096, 'grad_norm': 0.06153853345126309, 'learning_rate': 8.907808118691754e-05, 'epoch': 3.36}
+{'loss': 0.096, 'grad_norm': 0.0691158497178813, 'learning_rate': 8.892646101311699e-05, 'epoch': 3.382857142857143}
+{'eval_valid_loss': 0.09691892564296722, 'eval_valid_runtime': 0.0905, 'eval_valid_samples_per_second': 1104.392, 'eval_valid_steps_per_second': 11.044, 'epoch': 3.382857142857143}
+{'loss': 0.0959, 'grad_norm': 0.06476362885776767, 'learning_rate': 8.877392660237394e-05, 'epoch': 3.4057142857142857}
+{'loss': 0.0959, 'grad_norm': 0.06512375911498544, 'learning_rate': 8.86204815371511e-05, 'epoch': 3.4285714285714284}
+{'eval_valid_loss': 0.09693000465631485, 'eval_valid_runtime': 0.0902, 'eval_valid_samples_per_second': 1108.232, 'eval_valid_steps_per_second': 11.082, 'epoch': 3.4285714285714284}
+{'loss': 0.0959, 'grad_norm': 0.061170741166036394, 'learning_rate': 8.846612942129897e-05, 'epoch': 3.4514285714285715}
+{'loss': 0.0959, 'grad_norm': 0.06284771208435297, 'learning_rate': 8.831087387997133e-05, 'epoch': 3.474285714285714}
+{'eval_valid_loss': 0.09706360101699829, 'eval_valid_runtime': 0.0907, 'eval_valid_samples_per_second': 1102.896, 'eval_valid_steps_per_second': 11.029, 'epoch': 3.474285714285714}
+{'loss': 0.0959, 'grad_norm': 0.0733780194921266, 'learning_rate': 8.815471855954e-05, 'epoch': 3.4971428571428573}
+{'loss': 0.0958, 'grad_norm': 0.06256713401328139, 'learning_rate': 8.79976671275093e-05, 'epoch': 3.52}
+{'eval_valid_loss': 0.09678374230861664, 'eval_valid_runtime': 0.0906, 'eval_valid_samples_per_second': 1104.357, 'eval_valid_steps_per_second': 11.044, 'epoch': 3.52}
+{'loss': 0.0958, 'grad_norm': 0.07130298377533015, 'learning_rate': 8.783972327242979e-05, 'epoch': 3.5428571428571427}
+{'loss': 0.0958, 'grad_norm': 0.056633974998553716, 'learning_rate': 8.768089070381179e-05, 'epoch': 3.565714285714286}
+{'eval_valid_loss': 0.09659119695425034, 'eval_valid_runtime': 0.0905, 'eval_valid_samples_per_second': 1105.137, 'eval_valid_steps_per_second': 11.051, 'epoch': 3.565714285714286}
+{'loss': 0.0958, 'grad_norm': 0.053978042770978604, 'learning_rate': 8.75211731520381e-05, 'epoch': 3.5885714285714285}
+{'loss': 0.0958, 'grad_norm': 0.05788941631513488, 'learning_rate': 8.73605743682765e-05, 'epoch': 3.611428571428571}
+{'eval_valid_loss': 0.09693272411823273, 'eval_valid_runtime': 0.0911, 'eval_valid_samples_per_second': 1097.5, 'eval_valid_steps_per_second': 10.975, 'epoch': 3.611428571428571}
+{'loss': 0.0957, 'grad_norm': 0.054190810654588, 'learning_rate': 8.71990981243916e-05, 'epoch': 3.6342857142857143}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0957, 'grad_norm': 0.06143885497499038, 'learning_rate': 8.703674821285632e-05, 'epoch': 3.657142857142857}
+{'eval_valid_loss': 0.09686484187841415, 'eval_valid_runtime': 0.0903, 'eval_valid_samples_per_second': 1107.901, 'eval_valid_steps_per_second': 11.079, 'epoch': 3.657142857142857}
+{'loss': 0.0957, 'grad_norm': 0.05765150481999842, 'learning_rate': 8.687352844666267e-05, 'epoch': 3.68}
+{'loss': 0.0956, 'grad_norm': 0.06832194756576793, 'learning_rate': 8.670944265923235e-05, 'epoch': 3.702857142857143}
+{'eval_valid_loss': 0.09674839675426483, 'eval_valid_runtime': 0.0902, 'eval_valid_samples_per_second': 1109.24, 'eval_valid_steps_per_second': 11.092, 'epoch': 3.702857142857143}
+{'loss': 0.0956, 'grad_norm': 0.05117118228184591, 'learning_rate': 8.654449470432667e-05, 'epoch': 3.725714285714286}
+{'loss': 0.0957, 'grad_norm': 0.057358768359111585, 'learning_rate': 8.6378688455956e-05, 'epoch': 3.7485714285714287}
+{'eval_valid_loss': 0.09681029617786407, 'eval_valid_runtime': 0.0908, 'eval_valid_samples_per_second': 1101.093, 'eval_valid_steps_per_second': 11.011, 'epoch': 3.7485714285714287}
+{'loss': 0.0956, 'grad_norm': 0.05574493640010744, 'learning_rate': 8.621202780828881e-05, 'epoch': 3.7714285714285714}
+{'loss': 0.0956, 'grad_norm': 0.05039611020441737, 'learning_rate': 8.604451667556024e-05, 'epoch': 3.7942857142857145}
+{'eval_valid_loss': 0.0965777188539505, 'eval_valid_runtime': 0.0904, 'eval_valid_samples_per_second': 1105.679, 'eval_valid_steps_per_second': 11.057, 'epoch': 3.7942857142857145}
+{'loss': 0.0956, 'grad_norm': 0.05070571801264285, 'learning_rate': 8.587615899198012e-05, 'epoch': 3.817142857142857}
+{'loss': 0.0955, 'grad_norm': 0.05478841690288619, 'learning_rate': 8.570695871164059e-05, 'epoch': 3.84}
+{'eval_valid_loss': 0.09680810570716858, 'eval_valid_runtime': 0.0902, 'eval_valid_samples_per_second': 1108.531, 'eval_valid_steps_per_second': 11.085, 'epoch': 3.84}
+{'loss': 0.0956, 'grad_norm': 0.0728783885638126, 'learning_rate': 8.553691980842325e-05, 'epoch': 3.862857142857143}
+{'loss': 0.0955, 'grad_norm': 0.0591389119888309, 'learning_rate': 8.53660462759058e-05, 'epoch': 3.8857142857142857}
+{'eval_valid_loss': 0.09639916568994522, 'eval_valid_runtime': 0.0904, 'eval_valid_samples_per_second': 1105.985, 'eval_valid_steps_per_second': 11.06, 'epoch': 3.8857142857142857}
+{'loss': 0.0955, 'grad_norm': 0.05427535273276612, 'learning_rate': 8.51943421272683e-05, 'epoch': 3.9085714285714284}
+{'loss': 0.0955, 'grad_norm': 0.056062796447302644, 'learning_rate': 8.502181139519883e-05, 'epoch': 3.9314285714285715}
+{'eval_valid_loss': 0.09631062299013138, 'eval_valid_runtime': 0.0984, 'eval_valid_samples_per_second': 1016.057, 'eval_valid_steps_per_second': 10.161, 'epoch': 3.9314285714285715}
+{'loss': 0.0955, 'grad_norm': 0.05002869604170942, 'learning_rate': 8.48484581317988e-05, 'epoch': 3.954285714285714}
+{'loss': 0.0954, 'grad_norm': 0.05797749376348237, 'learning_rate': 8.467428640848789e-05, 'epoch': 3.977142857142857}
+{'eval_valid_loss': 0.09623254835605621, 'eval_valid_runtime': 0.0916, 'eval_valid_samples_per_second': 1092.184, 'eval_valid_steps_per_second': 10.922, 'epoch': 3.977142857142857}
+{'loss': 0.0954, 'grad_norm': 0.06379608019859027, 'learning_rate': 8.449930031590827e-05, 'epoch': 4.0}
+{'loss': 0.0953, 'grad_norm': 0.04965783062973806, 'learning_rate': 8.43235039638286e-05, 'epoch': 4.022857142857143}
+{'eval_valid_loss': 0.09630617499351501, 'eval_valid_runtime': 0.1164, 'eval_valid_samples_per_second': 858.973, 'eval_valid_steps_per_second': 8.59, 'epoch': 4.022857142857143}
+{'loss': 0.0953, 'grad_norm': 0.04701824407935247, 'learning_rate': 8.414690148104757e-05, 'epoch': 4.045714285714285}
+{'loss': 0.0953, 'grad_norm': 0.052759973776327934, 'learning_rate': 8.396949701529677e-05, 'epoch': 4.0685714285714285}
+{'eval_valid_loss': 0.09656668454408646, 'eval_valid_runtime': 0.1244, 'eval_valid_samples_per_second': 803.551, 'eval_valid_steps_per_second': 8.036, 'epoch': 4.0685714285714285}
+{'loss': 0.0953, 'grad_norm': 0.053405330179378326, 'learning_rate': 8.379129473314346e-05, 'epoch': 4.091428571428572}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0953, 'grad_norm': 0.06021966958361271, 'learning_rate': 8.361229881989255e-05, 'epoch': 4.114285714285714}
+{'eval_valid_loss': 0.0966038629412651, 'eval_valid_runtime': 0.0903, 'eval_valid_samples_per_second': 1107.966, 'eval_valid_steps_per_second': 11.08, 'epoch': 4.114285714285714}
+{'loss': 0.0953, 'grad_norm': 0.05586834184339048, 'learning_rate': 8.343251347948839e-05, 'epoch': 4.137142857142857}
+{'loss': 0.0952, 'grad_norm': 0.05751499873271301, 'learning_rate': 8.325194293441609e-05, 'epoch': 4.16}
+{'eval_valid_loss': 0.09638500958681107, 'eval_valid_runtime': 0.0902, 'eval_valid_samples_per_second': 1109.05, 'eval_valid_steps_per_second': 11.09, 'epoch': 4.16}
+{'loss': 0.0952, 'grad_norm': 0.05590231942702015, 'learning_rate': 8.307059142560218e-05, 'epoch': 4.182857142857143}
+{'loss': 0.0953, 'grad_norm': 0.04826564820814656, 'learning_rate': 8.288846321231518e-05, 'epoch': 4.2057142857142855}
+{'eval_valid_loss': 0.09656289219856262, 'eval_valid_runtime': 0.0903, 'eval_valid_samples_per_second': 1107.717, 'eval_valid_steps_per_second': 11.077, 'epoch': 4.2057142857142855}
+{'loss': 0.0952, 'grad_norm': 0.052184413465338086, 'learning_rate': 8.270556257206546e-05, 'epoch': 4.228571428571429}
+{'loss': 0.0952, 'grad_norm': 0.05959048055580408, 'learning_rate': 8.252189380050479e-05, 'epoch': 4.251428571428572}
+{'eval_valid_loss': 0.09636855870485306, 'eval_valid_runtime': 0.1221, 'eval_valid_samples_per_second': 818.942, 'eval_valid_steps_per_second': 8.189, 'epoch': 4.251428571428572}
+{'loss': 0.0952, 'grad_norm': 0.05820285582090144, 'learning_rate': 8.233746121132553e-05, 'epoch': 4.274285714285714}
+{'loss': 0.0952, 'grad_norm': 0.05205345957535375, 'learning_rate': 8.215226913615921e-05, 'epoch': 4.297142857142857}
+{'eval_valid_loss': 0.09589502215385437, 'eval_valid_runtime': 0.0902, 'eval_valid_samples_per_second': 1108.329, 'eval_valid_steps_per_second': 11.083, 'epoch': 4.297142857142857}
+{'loss': 0.0951, 'grad_norm': 0.04353271742425565, 'learning_rate': 8.196632192447485e-05, 'epoch': 4.32}
+{'loss': 0.0952, 'grad_norm': 0.04512740164778747, 'learning_rate': 8.177962394347682e-05, 'epoch': 4.3428571428571425}
+{'eval_valid_loss': 0.09635119140148163, 'eval_valid_runtime': 0.09, 'eval_valid_samples_per_second': 1110.515, 'eval_valid_steps_per_second': 11.105, 'epoch': 4.3428571428571425}
+{'loss': 0.0951, 'grad_norm': 0.06745644997537184, 'learning_rate': 8.159217957800225e-05, 'epoch': 4.365714285714286}
+{'loss': 0.0951, 'grad_norm': 0.05049579618792184, 'learning_rate': 8.140399323041802e-05, 'epoch': 4.388571428571429}
+{'eval_valid_loss': 0.09630556404590607, 'eval_valid_runtime': 0.0908, 'eval_valid_samples_per_second': 1101.228, 'eval_valid_steps_per_second': 11.012, 'epoch': 4.388571428571429}
+{'loss': 0.0951, 'grad_norm': 0.0510391935075292, 'learning_rate': 8.121506932051744e-05, 'epoch': 4.411428571428571}
+{'loss': 0.0951, 'grad_norm': 0.06085209158381411, 'learning_rate': 8.102541228541636e-05, 'epoch': 4.434285714285714}
+{'eval_valid_loss': 0.09627535194158554, 'eval_valid_runtime': 0.0904, 'eval_valid_samples_per_second': 1105.874, 'eval_valid_steps_per_second': 11.059, 'epoch': 4.434285714285714}
+{'loss': 0.0951, 'grad_norm': 0.05505812579943022, 'learning_rate': 8.083502657944902e-05, 'epoch': 4.457142857142857}
+{'loss': 0.0951, 'grad_norm': 0.04743884312039381, 'learning_rate': 8.064391667406339e-05, 'epoch': 4.48}
+{'eval_valid_loss': 0.09650229662656784, 'eval_valid_runtime': 0.09, 'eval_valid_samples_per_second': 1111.701, 'eval_valid_steps_per_second': 11.117, 'epoch': 4.48}
+{'loss': 0.0951, 'grad_norm': 0.04744302328209945, 'learning_rate': 8.045208705771623e-05, 'epoch': 4.502857142857143}
+{'loss': 0.095, 'grad_norm': 0.05596065357903657, 'learning_rate': 8.025954223576755e-05, 'epoch': 4.525714285714286}
+{'eval_valid_loss': 0.0959027111530304, 'eval_valid_runtime': 0.0904, 'eval_valid_samples_per_second': 1106.714, 'eval_valid_steps_per_second': 11.067, 'epoch': 4.525714285714286}
+{'loss': 0.0951, 'grad_norm': 0.06016581753118621, 'learning_rate': 8.006628673037488e-05, 'epoch': 4.548571428571429}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+{'loss': 0.095, 'grad_norm': 0.05468189950428047, 'learning_rate': 7.987232508038709e-05, 'epoch': 4.571428571428571}
+{'eval_valid_loss': 0.09606214612722397, 'eval_valid_runtime': 0.0903, 'eval_valid_samples_per_second': 1107.243, 'eval_valid_steps_per_second': 11.072, 'epoch': 4.571428571428571}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.095, 'grad_norm': 0.052229163566323566, 'learning_rate': 7.96776618412377e-05, 'epoch': 4.594285714285714}
+{'loss': 0.095, 'grad_norm': 0.04440988336079542, 'learning_rate': 7.948230158483798e-05, 'epoch': 4.617142857142857}
+{'eval_valid_loss': 0.0959070473909378, 'eval_valid_runtime': 0.0903, 'eval_valid_samples_per_second': 1107.042, 'eval_valid_steps_per_second': 11.07, 'epoch': 4.617142857142857}
+{'loss': 0.095, 'grad_norm': 0.05310977926090155, 'learning_rate': 7.928624889946943e-05, 'epoch': 4.64}
+{'loss': 0.095, 'grad_norm': 0.040615121646681324, 'learning_rate': 7.908950838967621e-05, 'epoch': 4.662857142857143}
+{'eval_valid_loss': 0.09595195949077606, 'eval_valid_runtime': 0.0915, 'eval_valid_samples_per_second': 1092.881, 'eval_valid_steps_per_second': 10.929, 'epoch': 4.662857142857143}
+{'loss': 0.095, 'grad_norm': 0.05188492331491741, 'learning_rate': 7.88920846761569e-05, 'epoch': 4.685714285714286}
+{'loss': 0.095, 'grad_norm': 0.04448315725349401, 'learning_rate': 7.869398239565595e-05, 'epoch': 4.708571428571428}
+{'eval_valid_loss': 0.09601299464702606, 'eval_valid_runtime': 0.091, 'eval_valid_samples_per_second': 1099.004, 'eval_valid_steps_per_second': 10.99, 'epoch': 4.708571428571428}
+{'loss': 0.095, 'grad_norm': 0.04236403573635577, 'learning_rate': 7.849520620085477e-05, 'epoch': 4.731428571428571}
+{'loss': 0.095, 'grad_norm': 0.05392664879413125, 'learning_rate': 7.829576076026259e-05, 'epoch': 4.7542857142857144}
+{'eval_valid_loss': 0.09583228081464767, 'eval_valid_runtime': 0.0906, 'eval_valid_samples_per_second': 1103.329, 'eval_valid_steps_per_second': 11.033, 'epoch': 4.7542857142857144}
+{'loss': 0.095, 'grad_norm': 0.049208103552854585, 'learning_rate': 7.809565075810665e-05, 'epoch': 4.777142857142858}
+{'loss': 0.0949, 'grad_norm': 0.043222182920305136, 'learning_rate': 7.789488089422228e-05, 'epoch': 4.8}
+{'eval_valid_loss': 0.09611497074365616, 'eval_valid_runtime': 0.0971, 'eval_valid_samples_per_second': 1029.927, 'eval_valid_steps_per_second': 10.299, 'epoch': 4.8}
+{'loss': 0.0949, 'grad_norm': 0.04569589874620482, 'learning_rate': 7.769345588394246e-05, 'epoch': 4.822857142857143}
+{'loss': 0.0949, 'grad_norm': 0.03933488775090423, 'learning_rate': 7.749138045798716e-05, 'epoch': 4.845714285714286}
+{'eval_valid_loss': 0.09603801369667053, 'eval_valid_runtime': 0.0922, 'eval_valid_samples_per_second': 1084.666, 'eval_valid_steps_per_second': 10.847, 'epoch': 4.845714285714286}
+{'loss': 0.0949, 'grad_norm': 0.043068444018367055, 'learning_rate': 7.728865936235216e-05, 'epoch': 4.868571428571428}
+{'loss': 0.0949, 'grad_norm': 0.05414826612114496, 'learning_rate': 7.708529735819762e-05, 'epoch': 4.8914285714285715}
+{'eval_valid_loss': 0.09601376205682755, 'eval_valid_runtime': 0.0906, 'eval_valid_samples_per_second': 1104.308, 'eval_valid_steps_per_second': 11.043, 'epoch': 4.8914285714285715}
+{'loss': 0.0949, 'grad_norm': 0.04603554574577122, 'learning_rate': 7.688129922173619e-05, 'epoch': 4.914285714285715}
+{'loss': 0.0949, 'grad_norm': 0.04653816565693995, 'learning_rate': 7.667666974412092e-05, 'epoch': 4.937142857142857}
+{'eval_valid_loss': 0.09588217735290527, 'eval_valid_runtime': 0.0913, 'eval_valid_samples_per_second': 1094.738, 'eval_valid_steps_per_second': 10.947, 'epoch': 4.937142857142857}
+{'loss': 0.0949, 'grad_norm': 0.041313537367523204, 'learning_rate': 7.647141373133273e-05, 'epoch': 4.96}
+{'loss': 0.0949, 'grad_norm': 0.04525350246071924, 'learning_rate': 7.626553600406747e-05, 'epoch': 4.982857142857143}
+{'eval_valid_loss': 0.09582620859146118, 'eval_valid_runtime': 0.0926, 'eval_valid_samples_per_second': 1079.907, 'eval_valid_steps_per_second': 10.799, 'epoch': 4.982857142857143}
+{'loss': 0.0948, 'grad_norm': 0.051120020378790425, 'learning_rate': 7.605904139762277e-05, 'epoch': 5.005714285714285}
+{'loss': 0.0947, 'grad_norm': 0.04368849705719863, 'learning_rate': 7.585193476178439e-05, 'epoch': 5.0285714285714285}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'eval_valid_loss': 0.09602512419223785, 'eval_valid_runtime': 0.0904, 'eval_valid_samples_per_second': 1106.227, 'eval_valid_steps_per_second': 11.062, 'epoch': 5.0285714285714285}
+{'loss': 0.0947, 'grad_norm': 0.042356582646999534, 'learning_rate': 7.564422096071244e-05, 'epoch': 5.051428571428572}
+{'loss': 0.0947, 'grad_norm': 0.04067047921545753, 'learning_rate': 7.543590487282702e-05, 'epoch': 5.074285714285715}
+{'eval_valid_loss': 0.09582281112670898, 'eval_valid_runtime': 0.0903, 'eval_valid_samples_per_second': 1107.714, 'eval_valid_steps_per_second': 11.077, 'epoch': 5.074285714285715}
+{'loss': 0.0947, 'grad_norm': 0.0441231870213719, 'learning_rate': 7.522699139069367e-05, 'epoch': 5.097142857142857}
+{'loss': 0.0947, 'grad_norm': 0.03738627276232366, 'learning_rate': 7.501748542090858e-05, 'epoch': 5.12}
+{'eval_valid_loss': 0.09576263278722763, 'eval_valid_runtime': 0.0906, 'eval_valid_samples_per_second': 1103.758, 'eval_valid_steps_per_second': 11.038, 'epoch': 5.12}
+{'loss': 0.0947, 'grad_norm': 0.046380798591830384, 'learning_rate': 7.48073918839832e-05, 'epoch': 5.142857142857143}
+{'loss': 0.0947, 'grad_norm': 0.04911954575047213, 'learning_rate': 7.459671571422873e-05, 'epoch': 5.1657142857142855}
+{'eval_valid_loss': 0.09605371206998825, 'eval_valid_runtime': 0.0909, 'eval_valid_samples_per_second': 1099.753, 'eval_valid_steps_per_second': 10.998, 'epoch': 5.1657142857142855}
+{'loss': 0.0947, 'grad_norm': 0.044571629551767, 'learning_rate': 7.43854618596402e-05, 'epoch': 5.188571428571429}
+{'loss': 0.0947, 'grad_norm': 0.04345812149066575, 'learning_rate': 7.417363528178038e-05, 'epoch': 5.211428571428572}
+{'eval_valid_loss': 0.09568905830383301, 'eval_valid_runtime': 0.0902, 'eval_valid_samples_per_second': 1108.133, 'eval_valid_steps_per_second': 11.081, 'epoch': 5.211428571428572}
+{'loss': 0.0946, 'grad_norm': 0.05498417474768539, 'learning_rate': 7.396124095566313e-05, 'epoch': 5.234285714285714}
+{'loss': 0.0947, 'grad_norm': 0.03906371726620492, 'learning_rate': 7.374828386963658e-05, 'epoch': 5.257142857142857}
+{'eval_valid_loss': 0.0957852378487587, 'eval_valid_runtime': 0.0904, 'eval_valid_samples_per_second': 1105.935, 'eval_valid_steps_per_second': 11.059, 'epoch': 5.257142857142857}
+{'loss': 0.0947, 'grad_norm': 0.04570486629885393, 'learning_rate': 7.353476902526598e-05, 'epoch': 5.28}
+{'loss': 0.0946, 'grad_norm': 0.044192510474066166, 'learning_rate': 7.332070143721626e-05, 'epoch': 5.3028571428571425}
+{'eval_valid_loss': 0.09564334899187088, 'eval_valid_runtime': 0.0911, 'eval_valid_samples_per_second': 1097.101, 'eval_valid_steps_per_second': 10.971, 'epoch': 5.3028571428571425}
+{'loss': 0.0946, 'grad_norm': 0.05073558814530608, 'learning_rate': 7.310608613313422e-05, 'epoch': 5.325714285714286}
+{'loss': 0.0946, 'grad_norm': 0.03672628268872184, 'learning_rate': 7.289092815353048e-05, 'epoch': 5.348571428571429}
+{'eval_valid_loss': 0.09564319252967834, 'eval_valid_runtime': 0.091, 'eval_valid_samples_per_second': 1099.289, 'eval_valid_steps_per_second': 10.993, 'epoch': 5.348571428571429}
+{'loss': 0.0946, 'grad_norm': 0.03610337897452335, 'learning_rate': 7.2675232551661e-05, 'epoch': 5.371428571428572}
+{'loss': 0.0946, 'grad_norm': 0.043916461252220075, 'learning_rate': 7.245900439340859e-05, 'epoch': 5.394285714285714}
+{'eval_valid_loss': 0.09552346169948578, 'eval_valid_runtime': 0.0906, 'eval_valid_samples_per_second': 1103.462, 'eval_valid_steps_per_second': 11.035, 'epoch': 5.394285714285714}
+{'loss': 0.0946, 'grad_norm': 0.04295063809698143, 'learning_rate': 7.224224875716377e-05, 'epoch': 5.417142857142857}
+{'loss': 0.0946, 'grad_norm': 0.03737492972344521, 'learning_rate': 7.202497073370548e-05, 'epoch': 5.44}
+{'eval_valid_loss': 0.09567263722419739, 'eval_valid_runtime': 0.0912, 'eval_valid_samples_per_second': 1096.046, 'eval_valid_steps_per_second': 10.96, 'epoch': 5.44}
+{'loss': 0.0946, 'grad_norm': 0.03596997219880496, 'learning_rate': 7.18071754260817e-05, 'epoch': 5.462857142857143}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+{'loss': 0.0946, 'grad_norm': 0.03877711851291606, 'learning_rate': 7.158886794948937e-05, 'epoch': 5.485714285714286}
+{'eval_valid_loss': 0.09558694809675217, 'eval_valid_runtime': 0.0904, 'eval_valid_samples_per_second': 1105.842, 'eval_valid_steps_per_second': 11.058, 'epoch': 5.485714285714286}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0946, 'grad_norm': 0.04160038576209407, 'learning_rate': 7.137005343115444e-05, 'epoch': 5.508571428571429}
+{'loss': 0.0946, 'grad_norm': 0.045711750897244816, 'learning_rate': 7.115073701021133e-05, 'epoch': 5.531428571428571}
+{'eval_valid_loss': 0.09537775814533234, 'eval_valid_runtime': 0.0903, 'eval_valid_samples_per_second': 1107.173, 'eval_valid_steps_per_second': 11.072, 'epoch': 5.531428571428571}
+{'loss': 0.0946, 'grad_norm': 0.03548305206940061, 'learning_rate': 7.093092383758231e-05, 'epoch': 5.554285714285714}
+{'loss': 0.0946, 'grad_norm': 0.03527699470298169, 'learning_rate': 7.071061907585645e-05, 'epoch': 5.577142857142857}
+{'eval_valid_loss': 0.09550142288208008, 'eval_valid_runtime': 0.0913, 'eval_valid_samples_per_second': 1095.216, 'eval_valid_steps_per_second': 10.952, 'epoch': 5.577142857142857}
+{'loss': 0.0945, 'grad_norm': 0.04054741712850583, 'learning_rate': 7.04898278991684e-05, 'epoch': 5.6}
+{'loss': 0.0945, 'grad_norm': 0.03659397241020514, 'learning_rate': 7.026855549307696e-05, 'epoch': 5.622857142857143}
+{'eval_valid_loss': 0.09550648927688599, 'eval_valid_runtime': 0.0904, 'eval_valid_samples_per_second': 1105.822, 'eval_valid_steps_per_second': 11.058, 'epoch': 5.622857142857143}
+{'loss': 0.0945, 'grad_norm': 0.0415454100819237, 'learning_rate': 7.004680705444313e-05, 'epoch': 5.645714285714286}
+{'loss': 0.0945, 'grad_norm': 0.03723654763346406, 'learning_rate': 6.982458779130814e-05, 'epoch': 5.668571428571429}
+{'eval_valid_loss': 0.09538087993860245, 'eval_valid_runtime': 0.0972, 'eval_valid_samples_per_second': 1029.277, 'eval_valid_steps_per_second': 10.293, 'epoch': 5.668571428571429}
+{'loss': 0.0945, 'grad_norm': 0.0322284446409061, 'learning_rate': 6.960190292277118e-05, 'epoch': 5.691428571428571}
+{'loss': 0.0945, 'grad_norm': 0.038849934113503244, 'learning_rate': 6.93787576788667e-05, 'epoch': 5.714285714285714}
+{'eval_valid_loss': 0.09571075439453125, 'eval_valid_runtime': 0.0909, 'eval_valid_samples_per_second': 1099.909, 'eval_valid_steps_per_second': 10.999, 'epoch': 5.714285714285714}
+{'loss': 0.0945, 'grad_norm': 0.033555101037070566, 'learning_rate': 6.915515730044166e-05, 'epoch': 5.737142857142857}
+{'loss': 0.0945, 'grad_norm': 0.04400641106364196, 'learning_rate': 6.893110703903248e-05, 'epoch': 5.76}
+{'eval_valid_loss': 0.09516414999961853, 'eval_valid_runtime': 0.0905, 'eval_valid_samples_per_second': 1104.796, 'eval_valid_steps_per_second': 11.048, 'epoch': 5.76}
+{'loss': 0.0945, 'grad_norm': 0.03569006633095972, 'learning_rate': 6.870661215674161e-05, 'epoch': 5.782857142857143}
+{'loss': 0.0945, 'grad_norm': 0.040265072708072475, 'learning_rate': 6.848167792611398e-05, 'epoch': 5.805714285714286}
+{'eval_valid_loss': 0.09552540630102158, 'eval_valid_runtime': 0.093, 'eval_valid_samples_per_second': 1075.206, 'eval_valid_steps_per_second': 10.752, 'epoch': 5.805714285714286}
+{'loss': 0.0945, 'grad_norm': 0.036649869649940964, 'learning_rate': 6.825630963001315e-05, 'epoch': 5.828571428571428}
+{'loss': 0.0945, 'grad_norm': 0.036384678631737784, 'learning_rate': 6.803051256149731e-05, 'epoch': 5.851428571428571}
+{'eval_valid_loss': 0.09539522975683212, 'eval_valid_runtime': 0.1237, 'eval_valid_samples_per_second': 808.17, 'eval_valid_steps_per_second': 8.082, 'epoch': 5.851428571428571}
+{'loss': 0.0945, 'grad_norm': 0.04473302621848651, 'learning_rate': 6.780429202369482e-05, 'epoch': 5.8742857142857146}
+{'loss': 0.0944, 'grad_norm': 0.0400277783230614, 'learning_rate': 6.757765332967989e-05, 'epoch': 5.897142857142857}
+{'eval_valid_loss': 0.09509842097759247, 'eval_valid_runtime': 0.0906, 'eval_valid_samples_per_second': 1103.146, 'eval_valid_steps_per_second': 11.031, 'epoch': 5.897142857142857}
+{'loss': 0.0945, 'grad_norm': 0.04432461972550796, 'learning_rate': 6.73506018023475e-05, 'epoch': 5.92}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0944, 'grad_norm': 0.045309021276693236, 'learning_rate': 6.712314277428864e-05, 'epoch': 5.942857142857143}
+{'eval_valid_loss': 0.09526500850915909, 'eval_valid_runtime': 0.091, 'eval_valid_samples_per_second': 1099.433, 'eval_valid_steps_per_second': 10.994, 'epoch': 5.942857142857143}
+{'loss': 0.0944, 'grad_norm': 0.04542692813493191, 'learning_rate': 6.689528158766493e-05, 'epoch': 5.965714285714286}
+{'loss': 0.0944, 'grad_norm': 0.03255712397407724, 'learning_rate': 6.666702359408322e-05, 'epoch': 5.988571428571428}
+{'eval_valid_loss': 0.09542230516672134, 'eval_valid_runtime': 0.0908, 'eval_valid_samples_per_second': 1101.848, 'eval_valid_steps_per_second': 11.018, 'epoch': 5.988571428571428}
+{'loss': 0.0943, 'grad_norm': 0.04026238026787428, 'learning_rate': 6.643837415446983e-05, 'epoch': 6.011428571428572}
+{'loss': 0.0942, 'grad_norm': 0.030832242641181513, 'learning_rate': 6.620933863894469e-05, 'epoch': 6.034285714285715}
+{'eval_valid_loss': 0.0952870100736618, 'eval_valid_runtime': 0.0905, 'eval_valid_samples_per_second': 1104.77, 'eval_valid_steps_per_second': 11.048, 'epoch': 6.034285714285715}
+{'loss': 0.0943, 'grad_norm': 0.04529857781061926, 'learning_rate': 6.597992242669523e-05, 'epoch': 6.057142857142857}
+{'loss': 0.0943, 'grad_norm': 0.04662793684193808, 'learning_rate': 6.575013090585004e-05, 'epoch': 6.08}
+{'eval_valid_loss': 0.09528159350156784, 'eval_valid_runtime': 0.1241, 'eval_valid_samples_per_second': 805.53, 'eval_valid_steps_per_second': 8.055, 'epoch': 6.08}
+{'loss': 0.0943, 'grad_norm': 0.04288639582101306, 'learning_rate': 6.551996947335224e-05, 'epoch': 6.102857142857143}
+{'loss': 0.0942, 'grad_norm': 0.0393365526494915, 'learning_rate': 6.528944353483285e-05, 'epoch': 6.1257142857142854}
+{'eval_valid_loss': 0.09522184729576111, 'eval_valid_runtime': 0.0904, 'eval_valid_samples_per_second': 1105.813, 'eval_valid_steps_per_second': 11.058, 'epoch': 6.1257142857142854}
+{'loss': 0.0943, 'grad_norm': 0.051539758756636876, 'learning_rate': 6.505855850448375e-05, 'epoch': 6.148571428571429}
+{'loss': 0.0942, 'grad_norm': 0.03350550961508201, 'learning_rate': 6.482731980493052e-05, 'epoch': 6.171428571428572}
+{'eval_valid_loss': 0.09538934379816055, 'eval_valid_runtime': 0.0905, 'eval_valid_samples_per_second': 1104.817, 'eval_valid_steps_per_second': 11.048, 'epoch': 6.171428571428572}
+{'loss': 0.0942, 'grad_norm': 0.03648433786811017, 'learning_rate': 6.459573286710519e-05, 'epoch': 6.194285714285714}
+{'loss': 0.0942, 'grad_norm': 0.03391105390062173, 'learning_rate': 6.436380313011849e-05, 'epoch': 6.217142857142857}
+{'eval_valid_loss': 0.09529032558202744, 'eval_valid_runtime': 0.0908, 'eval_valid_samples_per_second': 1101.616, 'eval_valid_steps_per_second': 11.016, 'epoch': 6.217142857142857}
+{'loss': 0.0942, 'grad_norm': 0.0338815471218189, 'learning_rate': 6.41315360411323e-05, 'epoch': 6.24}
+{'loss': 0.0942, 'grad_norm': 0.039584778193994204, 'learning_rate': 6.38989370552316e-05, 'epoch': 6.2628571428571425}
+{'eval_valid_loss': 0.09518859535455704, 'eval_valid_runtime': 0.0912, 'eval_valid_samples_per_second': 1096.536, 'eval_valid_steps_per_second': 10.965, 'epoch': 6.2628571428571425}
+{'loss': 0.0942, 'grad_norm': 0.03490317018453822, 'learning_rate': 6.366601163529641e-05, 'epoch': 6.285714285714286}
+{'loss': 0.0942, 'grad_norm': 0.03379582582705777, 'learning_rate': 6.343276525187345e-05, 'epoch': 6.308571428571429}
+{'eval_valid_loss': 0.0951988622546196, 'eval_valid_runtime': 0.0905, 'eval_valid_samples_per_second': 1105.402, 'eval_valid_steps_per_second': 11.054, 'epoch': 6.308571428571429}
+{'loss': 0.0942, 'grad_norm': 0.04083410383473827, 'learning_rate': 6.319920338304768e-05, 'epoch': 6.331428571428571}
+{'loss': 0.0942, 'grad_norm': 0.031079953386299666, 'learning_rate': 6.296533151431362e-05, 'epoch': 6.354285714285714}
+{'eval_valid_loss': 0.09523503482341766, 'eval_valid_runtime': 0.0909, 'eval_valid_samples_per_second': 1100.417, 'eval_valid_steps_per_second': 11.004, 'epoch': 6.354285714285714}
+{'loss': 0.0942, 'grad_norm': 0.03530389455766721, 'learning_rate': 6.273115513844654e-05, 'epoch': 6.377142857142857}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+{'loss': 0.0941, 'grad_norm': 0.04207844814161971, 'learning_rate': 6.249667975537343e-05, 'epoch': 6.4}
+{'eval_valid_loss': 0.09520281106233597, 'eval_valid_runtime': 0.0904, 'eval_valid_samples_per_second': 1106.77, 'eval_valid_steps_per_second': 11.068, 'epoch': 6.4}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0942, 'grad_norm': 0.03416108291363801, 'learning_rate': 6.226191087204384e-05, 'epoch': 6.422857142857143}
+{'loss': 0.0942, 'grad_norm': 0.035092052441628316, 'learning_rate': 6.202685400230058e-05, 'epoch': 6.445714285714286}
+{'eval_valid_loss': 0.09543745219707489, 'eval_valid_runtime': 0.0902, 'eval_valid_samples_per_second': 1108.144, 'eval_valid_steps_per_second': 11.081, 'epoch': 6.445714285714286}
+{'loss': 0.0942, 'grad_norm': 0.03266528425239651, 'learning_rate': 6.179151466675014e-05, 'epoch': 6.468571428571429}
+{'loss': 0.0941, 'grad_norm': 0.0336761364150364, 'learning_rate': 6.155589839263309e-05, 'epoch': 6.491428571428571}
+{'eval_valid_loss': 0.09508030861616135, 'eval_valid_runtime': 0.0915, 'eval_valid_samples_per_second': 1093.38, 'eval_valid_steps_per_second': 10.934, 'epoch': 6.491428571428571}
+{'loss': 0.0941, 'grad_norm': 0.043823972608109565, 'learning_rate': 6.132001071369426e-05, 'epoch': 6.514285714285714}
+{'loss': 0.0941, 'grad_norm': 0.03741804345770443, 'learning_rate': 6.108385717005272e-05, 'epoch': 6.537142857142857}
+{'eval_valid_loss': 0.09517711400985718, 'eval_valid_runtime': 0.1319, 'eval_valid_samples_per_second': 758.183, 'eval_valid_steps_per_second': 7.582, 'epoch': 6.537142857142857}
+{'loss': 0.0941, 'grad_norm': 0.03720549423216394, 'learning_rate': 6.0847443308071806e-05, 'epoch': 6.5600000000000005}
+{'loss': 0.0941, 'grad_norm': 0.030518626329182556, 'learning_rate': 6.061077468022864e-05, 'epoch': 6.582857142857143}
+{'eval_valid_loss': 0.09506970643997192, 'eval_valid_runtime': 0.0905, 'eval_valid_samples_per_second': 1105.463, 'eval_valid_steps_per_second': 11.055, 'epoch': 6.582857142857143}
+{'loss': 0.0941, 'grad_norm': 0.031593373715044774, 'learning_rate': 6.037385684498392e-05, 'epoch': 6.605714285714286}
+{'loss': 0.0941, 'grad_norm': 0.03930493158199814, 'learning_rate': 6.013669536665127e-05, 'epoch': 6.628571428571428}
+{'eval_valid_loss': 0.09510401636362076, 'eval_valid_runtime': 0.0902, 'eval_valid_samples_per_second': 1108.056, 'eval_valid_steps_per_second': 11.081, 'epoch': 6.628571428571428}
+{'loss': 0.0941, 'grad_norm': 0.03611787556703075, 'learning_rate': 5.989929581526657e-05, 'epoch': 6.651428571428571}
+{'loss': 0.0941, 'grad_norm': 0.034200100239573365, 'learning_rate': 5.966166376645715e-05, 'epoch': 6.674285714285714}
+{'eval_valid_loss': 0.09487414360046387, 'eval_valid_runtime': 0.0918, 'eval_valid_samples_per_second': 1089.011, 'eval_valid_steps_per_second': 10.89, 'epoch': 6.674285714285714}
+{'loss': 0.0941, 'grad_norm': 0.03824761642054062, 'learning_rate': 5.9423804801310843e-05, 'epoch': 6.6971428571428575}
+{'loss': 0.0941, 'grad_norm': 0.03028352298985415, 'learning_rate': 5.918572450624489e-05, 'epoch': 6.72}
+{'eval_valid_loss': 0.09496478736400604, 'eval_valid_runtime': 0.0912, 'eval_valid_samples_per_second': 1096.143, 'eval_valid_steps_per_second': 10.961, 'epoch': 6.72}
+{'loss': 0.0941, 'grad_norm': 0.03324930428421217, 'learning_rate': 5.894742847287476e-05, 'epoch': 6.742857142857143}
+{'loss': 0.094, 'grad_norm': 0.03110036479002627, 'learning_rate': 5.8708922297882775e-05, 'epoch': 6.765714285714286}
+{'eval_valid_loss': 0.09473416209220886, 'eval_valid_runtime': 0.0905, 'eval_valid_samples_per_second': 1104.898, 'eval_valid_steps_per_second': 11.049, 'epoch': 6.765714285714286}
+{'loss': 0.094, 'grad_norm': 0.027411146259682228, 'learning_rate': 5.8470211582886724e-05, 'epoch': 6.788571428571428}
+{'loss': 0.094, 'grad_norm': 0.03904681472910635, 'learning_rate': 5.8231301934308256e-05, 'epoch': 6.811428571428571}
+{'eval_valid_loss': 0.095009945333004, 'eval_valid_runtime': 0.0935, 'eval_valid_samples_per_second': 1069.13, 'eval_valid_steps_per_second': 10.691, 'epoch': 6.811428571428571}
+{'loss': 0.0941, 'grad_norm': 0.031119808474047096, 'learning_rate': 5.799219896324127e-05, 'epoch': 6.8342857142857145}
+{'loss': 0.094, 'grad_norm': 0.029940627915661863, 'learning_rate': 5.775290828532003e-05, 'epoch': 6.857142857142857}
+{'eval_valid_loss': 0.09470401704311371, 'eval_valid_runtime': 0.0902, 'eval_valid_samples_per_second': 1109.208, 'eval_valid_steps_per_second': 11.092, 'epoch': 6.857142857142857}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.094, 'grad_norm': 0.03102789185301722, 'learning_rate': 5.751343552058736e-05, 'epoch': 6.88}
+{'loss': 0.094, 'grad_norm': 0.030361966555854932, 'learning_rate': 5.7273786293362606e-05, 'epoch': 6.902857142857143}
+{'eval_valid_loss': 0.09492660313844681, 'eval_valid_runtime': 0.0904, 'eval_valid_samples_per_second': 1105.673, 'eval_valid_steps_per_second': 11.057, 'epoch': 6.902857142857143}
+{'loss': 0.094, 'grad_norm': 0.037459171383192484, 'learning_rate': 5.7033966232109616e-05, 'epoch': 6.925714285714285}
+{'loss': 0.094, 'grad_norm': 0.03658392874291827, 'learning_rate': 5.679398096930439e-05, 'epoch': 6.948571428571428}
+{'eval_valid_loss': 0.09504389762878418, 'eval_valid_runtime': 0.0903, 'eval_valid_samples_per_second': 1107.354, 'eval_valid_steps_per_second': 11.074, 'epoch': 6.948571428571428}
+{'loss': 0.094, 'grad_norm': 0.03231362407254574, 'learning_rate': 5.6553836141302964e-05, 'epoch': 6.9714285714285715}
+{'loss': 0.094, 'grad_norm': 0.03347738814343615, 'learning_rate': 5.631353738820896e-05, 'epoch': 6.994285714285715}
+{'eval_valid_loss': 0.09476728737354279, 'eval_valid_runtime': 0.0903, 'eval_valid_samples_per_second': 1106.84, 'eval_valid_steps_per_second': 11.068, 'epoch': 6.994285714285715}
+{'loss': 0.0939, 'grad_norm': 0.03526079537152418, 'learning_rate': 5.607309035374112e-05, 'epoch': 7.017142857142857}
+{'loss': 0.0938, 'grad_norm': 0.03836057166210322, 'learning_rate': 5.583250068510075e-05, 'epoch': 7.04}
+{'eval_valid_loss': 0.09476736932992935, 'eval_valid_runtime': 0.0904, 'eval_valid_samples_per_second': 1106.747, 'eval_valid_steps_per_second': 11.067, 'epoch': 7.04}
+{'loss': 0.0939, 'grad_norm': 0.03123172587693491, 'learning_rate': 5.559177403283908e-05, 'epoch': 7.062857142857143}
+{'loss': 0.0938, 'grad_norm': 0.03484394139119151, 'learning_rate': 5.535091605072461e-05, 'epoch': 7.085714285714285}
+{'eval_valid_loss': 0.09492693096399307, 'eval_valid_runtime': 0.0917, 'eval_valid_samples_per_second': 1091.045, 'eval_valid_steps_per_second': 10.91, 'epoch': 7.085714285714285}
+{'loss': 0.0938, 'grad_norm': 0.026204189749258363, 'learning_rate': 5.510993239561029e-05, 'epoch': 7.1085714285714285}
+{'loss': 0.0938, 'grad_norm': 0.03157940443606917, 'learning_rate': 5.4868828727300614e-05, 'epoch': 7.131428571428572}
+{'eval_valid_loss': 0.09479433298110962, 'eval_valid_runtime': 0.1247, 'eval_valid_samples_per_second': 801.829, 'eval_valid_steps_per_second': 8.018, 'epoch': 7.131428571428572}
+{'loss': 0.0938, 'grad_norm': 0.033980195766967085, 'learning_rate': 5.462761070841878e-05, 'epoch': 7.154285714285714}
+{'loss': 0.0938, 'grad_norm': 0.03363628655084131, 'learning_rate': 5.4386284004273635e-05, 'epoch': 7.177142857142857}
+{'eval_valid_loss': 0.09477735310792923, 'eval_valid_runtime': 0.091, 'eval_valid_samples_per_second': 1098.46, 'eval_valid_steps_per_second': 10.985, 'epoch': 7.177142857142857}
+{'loss': 0.0938, 'grad_norm': 0.04011154562532458, 'learning_rate': 5.414485428272664e-05, 'epoch': 7.2}
+{'loss': 0.0938, 'grad_norm': 0.030180220144000097, 'learning_rate': 5.390332721405873e-05, 'epoch': 7.222857142857142}
+{'eval_valid_loss': 0.09473457932472229, 'eval_valid_runtime': 0.0904, 'eval_valid_samples_per_second': 1106.277, 'eval_valid_steps_per_second': 11.063, 'epoch': 7.222857142857142}
+{'loss': 0.0938, 'grad_norm': 0.031985727821073374, 'learning_rate': 5.36617084708372e-05, 'epoch': 7.2457142857142856}
+{'loss': 0.0938, 'grad_norm': 0.029617277372731864, 'learning_rate': 5.3420003727782406e-05, 'epoch': 7.268571428571429}
+{'eval_valid_loss': 0.09461798518896103, 'eval_valid_runtime': 0.0904, 'eval_valid_samples_per_second': 1106.023, 'eval_valid_steps_per_second': 11.06, 'epoch': 7.268571428571429}
+{'loss': 0.0938, 'grad_norm': 0.030122805100617905, 'learning_rate': 5.3178218661634546e-05, 'epoch': 7.291428571428572}
+{'loss': 0.0938, 'grad_norm': 0.05070868875010064, 'learning_rate': 5.293635895102026e-05, 'epoch': 7.314285714285714}
+{'eval_valid_loss': 0.09503743052482605, 'eval_valid_runtime': 0.0903, 'eval_valid_samples_per_second': 1107.065, 'eval_valid_steps_per_second': 11.071, 'epoch': 7.314285714285714}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0938, 'grad_norm': 0.02923992840616257, 'learning_rate': 5.269443027631934e-05, 'epoch': 7.337142857142857}
+{'loss': 0.0938, 'grad_norm': 0.033485618341013317, 'learning_rate': 5.2452438319531284e-05, 'epoch': 7.36}
+{'eval_valid_loss': 0.09479853510856628, 'eval_valid_runtime': 0.0906, 'eval_valid_samples_per_second': 1104.101, 'eval_valid_steps_per_second': 11.041, 'epoch': 7.36}
+{'loss': 0.0938, 'grad_norm': 0.02811671466628217, 'learning_rate': 5.2210388764141874e-05, 'epoch': 7.382857142857143}
+{'loss': 0.0938, 'grad_norm': 0.04125588730530721, 'learning_rate': 5.1968287294989605e-05, 'epoch': 7.405714285714286}
+{'eval_valid_loss': 0.09471365064382553, 'eval_valid_runtime': 0.1314, 'eval_valid_samples_per_second': 761.273, 'eval_valid_steps_per_second': 7.613, 'epoch': 7.405714285714286}
+{'loss': 0.0938, 'grad_norm': 0.04755276152080243, 'learning_rate': 5.172613959813228e-05, 'epoch': 7.428571428571429}
+{'loss': 0.0937, 'grad_norm': 0.029853821501474743, 'learning_rate': 5.148395136071341e-05, 'epoch': 7.451428571428571}
+{'eval_valid_loss': 0.0950375497341156, 'eval_valid_runtime': 0.0907, 'eval_valid_samples_per_second': 1103.041, 'eval_valid_steps_per_second': 11.03, 'epoch': 7.451428571428571}
+{'loss': 0.0938, 'grad_norm': 0.028220906317005294, 'learning_rate': 5.1241728270828645e-05, 'epoch': 7.474285714285714}
+{'loss': 0.0938, 'grad_norm': 0.03522085005926636, 'learning_rate': 5.099947601739221e-05, 'epoch': 7.497142857142857}
+{'eval_valid_loss': 0.0949099138379097, 'eval_valid_runtime': 0.0913, 'eval_valid_samples_per_second': 1095.342, 'eval_valid_steps_per_second': 10.953, 'epoch': 7.497142857142857}
+{'loss': 0.0937, 'grad_norm': 0.03059152041318976, 'learning_rate': 5.0757200290003226e-05, 'epoch': 7.52}
+{'loss': 0.0937, 'grad_norm': 0.037747686631661434, 'learning_rate': 5.051490677881218e-05, 'epoch': 7.542857142857143}
+{'eval_valid_loss': 0.09481343626976013, 'eval_valid_runtime': 0.0924, 'eval_valid_samples_per_second': 1082.714, 'eval_valid_steps_per_second': 10.827, 'epoch': 7.542857142857143}
+{'loss': 0.0937, 'grad_norm': 0.02353943585697185, 'learning_rate': 5.027260117438719e-05, 'epoch': 7.565714285714286}
+{'loss': 0.0937, 'grad_norm': 0.0328791621709452, 'learning_rate': 5.0030289167580445e-05, 'epoch': 7.588571428571429}
+{'eval_valid_loss': 0.09479545801877975, 'eval_valid_runtime': 0.091, 'eval_valid_samples_per_second': 1099.214, 'eval_valid_steps_per_second': 10.992, 'epoch': 7.588571428571429}
+{'loss': 0.0937, 'grad_norm': 0.03314159215357828, 'learning_rate': 4.978797644939446e-05, 'epoch': 7.611428571428571}
+{'loss': 0.0937, 'grad_norm': 0.02773520167485134, 'learning_rate': 4.954566871084848e-05, 'epoch': 7.634285714285714}
+{'eval_valid_loss': 0.09485045075416565, 'eval_valid_runtime': 0.0905, 'eval_valid_samples_per_second': 1105.245, 'eval_valid_steps_per_second': 11.052, 'epoch': 7.634285714285714}
+{'loss': 0.0937, 'grad_norm': 0.04905278720179809, 'learning_rate': 4.93033716428448e-05, 'epoch': 7.6571428571428575}
+{'loss': 0.0937, 'grad_norm': 0.03198620454141723, 'learning_rate': 4.9061090936035107e-05, 'epoch': 7.68}
+{'eval_valid_loss': 0.09467153251171112, 'eval_valid_runtime': 0.0914, 'eval_valid_samples_per_second': 1093.885, 'eval_valid_steps_per_second': 10.939, 'epoch': 7.68}
+{'loss': 0.0937, 'grad_norm': 0.03923509593883509, 'learning_rate': 4.881883228068678e-05, 'epoch': 7.702857142857143}
+{'loss': 0.0937, 'grad_norm': 0.02996208153049678, 'learning_rate': 4.857660136654937e-05, 'epoch': 7.725714285714286}
+{'eval_valid_loss': 0.09465816617012024, 'eval_valid_runtime': 0.0909, 'eval_valid_samples_per_second': 1099.834, 'eval_valid_steps_per_second': 10.998, 'epoch': 7.725714285714286}
+{'loss': 0.0937, 'grad_norm': 0.027697471725318952, 'learning_rate': 4.8334403882720794e-05, 'epoch': 7.748571428571428}
+{'loss': 0.0936, 'grad_norm': 0.0338375529945577, 'learning_rate': 4.8092245517513905e-05, 'epoch': 7.771428571428571}
+{'eval_valid_loss': 0.09459815919399261, 'eval_valid_runtime': 0.0913, 'eval_valid_samples_per_second': 1095.731, 'eval_valid_steps_per_second': 10.957, 'epoch': 7.771428571428571}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0937, 'grad_norm': 0.029113290315958627, 'learning_rate': 4.7850131958322766e-05, 'epoch': 7.7942857142857145}
+{'loss': 0.0937, 'grad_norm': 0.029307944898228702, 'learning_rate': 4.760806889148911e-05, 'epoch': 7.817142857142857}
+{'eval_valid_loss': 0.09486384689807892, 'eval_valid_runtime': 0.0908, 'eval_valid_samples_per_second': 1101.714, 'eval_valid_steps_per_second': 11.017, 'epoch': 7.817142857142857}
+{'loss': 0.0937, 'grad_norm': 0.038274081701162574, 'learning_rate': 4.736606200216881e-05, 'epoch': 7.84}
+{'loss': 0.0937, 'grad_norm': 0.027542727600939964, 'learning_rate': 4.712411697419831e-05, 'epoch': 7.862857142857143}
+{'eval_valid_loss': 0.09450913220643997, 'eval_valid_runtime': 0.0905, 'eval_valid_samples_per_second': 1105.052, 'eval_valid_steps_per_second': 11.051, 'epoch': 7.862857142857143}
+{'loss': 0.0936, 'grad_norm': 0.02889979127753235, 'learning_rate': 4.6882239489961204e-05, 'epoch': 7.885714285714286}
+{'loss': 0.0936, 'grad_norm': 0.029828094394049567, 'learning_rate': 4.664043523025474e-05, 'epoch': 7.908571428571428}
+{'eval_valid_loss': 0.09459540992975235, 'eval_valid_runtime': 0.0911, 'eval_valid_samples_per_second': 1098.046, 'eval_valid_steps_per_second': 10.98, 'epoch': 7.908571428571428}
+{'loss': 0.0937, 'grad_norm': 0.024361749823367918, 'learning_rate': 4.639870987415631e-05, 'epoch': 7.9314285714285715}
+{'loss': 0.0936, 'grad_norm': 0.034991751118993296, 'learning_rate': 4.615706909889026e-05, 'epoch': 7.954285714285715}
+{'eval_valid_loss': 0.09452345222234726, 'eval_valid_runtime': 0.0906, 'eval_valid_samples_per_second': 1104.354, 'eval_valid_steps_per_second': 11.044, 'epoch': 7.954285714285715}
+{'loss': 0.0936, 'grad_norm': 0.028238246868402973, 'learning_rate': 4.591551857969438e-05, 'epoch': 7.977142857142857}
+{'loss': 0.0936, 'grad_norm': 0.032960886246392845, 'learning_rate': 4.567406398968673e-05, 'epoch': 8.0}
+{'eval_valid_loss': 0.09458506852388382, 'eval_valid_runtime': 0.0913, 'eval_valid_samples_per_second': 1095.714, 'eval_valid_steps_per_second': 10.957, 'epoch': 8.0}
+{'loss': 0.0935, 'grad_norm': 0.029271626555189605, 'learning_rate': 4.543271099973232e-05, 'epoch': 8.022857142857143}
+{'loss': 0.0934, 'grad_norm': 0.03380830758937721, 'learning_rate': 4.519146527830996e-05, 'epoch': 8.045714285714286}
+{'eval_valid_loss': 0.09447771310806274, 'eval_valid_runtime': 0.1275, 'eval_valid_samples_per_second': 784.148, 'eval_valid_steps_per_second': 7.841, 'epoch': 8.045714285714286}
+{'loss': 0.0935, 'grad_norm': 0.03142718562032483, 'learning_rate': 4.4950332491379144e-05, 'epoch': 8.06857142857143}
+{'loss': 0.0935, 'grad_norm': 0.027293810852198414, 'learning_rate': 4.470931830224694e-05, 'epoch': 8.09142857142857}
+{'eval_valid_loss': 0.09468133747577667, 'eval_valid_runtime': 0.0906, 'eval_valid_samples_per_second': 1103.343, 'eval_valid_steps_per_second': 11.033, 'epoch': 8.09142857142857}
+{'loss': 0.0935, 'grad_norm': 0.025881523722731177, 'learning_rate': 4.4468428371434985e-05, 'epoch': 8.114285714285714}
+{'loss': 0.0934, 'grad_norm': 0.03379249089645728, 'learning_rate': 4.422766835654656e-05, 'epoch': 8.137142857142857}
+{'eval_valid_loss': 0.09469538927078247, 'eval_valid_runtime': 0.0905, 'eval_valid_samples_per_second': 1104.863, 'eval_valid_steps_per_second': 11.049, 'epoch': 8.137142857142857}
+{'loss': 0.0935, 'grad_norm': 0.028666014137275826, 'learning_rate': 4.398704391213373e-05, 'epoch': 8.16}
+{'loss': 0.0935, 'grad_norm': 0.03193690777571605, 'learning_rate': 4.374656068956451e-05, 'epoch': 8.182857142857143}
+{'eval_valid_loss': 0.09487184882164001, 'eval_valid_runtime': 0.0909, 'eval_valid_samples_per_second': 1100.495, 'eval_valid_steps_per_second': 11.005, 'epoch': 8.182857142857143}
+{'loss': 0.0935, 'grad_norm': 0.03028486396341211, 'learning_rate': 4.3506224336890115e-05, 'epoch': 8.205714285714286}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+{'loss': 0.0935, 'grad_norm': 0.031314888176468804, 'learning_rate': 4.326604049871236e-05, 'epoch': 8.228571428571428}
+{'eval_valid_loss': 0.09464972466230392, 'eval_valid_runtime': 0.0906, 'eval_valid_samples_per_second': 1104.18, 'eval_valid_steps_per_second': 11.042, 'epoch': 8.228571428571428}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0935, 'grad_norm': 0.03363188520424563, 'learning_rate': 4.302601481605105e-05, 'epoch': 8.251428571428571}
+{'loss': 0.0935, 'grad_norm': 0.03733233123290743, 'learning_rate': 4.278615292621156e-05, 'epoch': 8.274285714285714}
+{'eval_valid_loss': 0.09483341872692108, 'eval_valid_runtime': 0.0984, 'eval_valid_samples_per_second': 1016.318, 'eval_valid_steps_per_second': 10.163, 'epoch': 8.274285714285714}
+{'loss': 0.0935, 'grad_norm': 0.036289116254194946, 'learning_rate': 4.254646046265227e-05, 'epoch': 8.297142857142857}
+{'loss': 0.0935, 'grad_norm': 0.026666867971633024, 'learning_rate': 4.230694305485249e-05, 'epoch': 8.32}
+{'eval_valid_loss': 0.09454917907714844, 'eval_valid_runtime': 0.0905, 'eval_valid_samples_per_second': 1105.411, 'eval_valid_steps_per_second': 11.054, 'epoch': 8.32}
+{'loss': 0.0934, 'grad_norm': 0.026421599666891882, 'learning_rate': 4.206760632818007e-05, 'epoch': 8.342857142857143}
+{'loss': 0.0934, 'grad_norm': 0.03092750568540552, 'learning_rate': 4.182845590375933e-05, 'epoch': 8.365714285714287}
+{'eval_valid_loss': 0.09484594315290451, 'eval_valid_runtime': 0.091, 'eval_valid_samples_per_second': 1099.393, 'eval_valid_steps_per_second': 10.994, 'epoch': 8.365714285714287}
+{'loss': 0.0934, 'grad_norm': 0.02857436035273322, 'learning_rate': 4.1589497398339074e-05, 'epoch': 8.388571428571428}
+{'loss': 0.0934, 'grad_norm': 0.029058172011259025, 'learning_rate': 4.135073642416063e-05, 'epoch': 8.411428571428571}
+{'eval_valid_loss': 0.09463375806808472, 'eval_valid_runtime': 0.0904, 'eval_valid_samples_per_second': 1105.862, 'eval_valid_steps_per_second': 11.059, 'epoch': 8.411428571428571}
+{'loss': 0.0934, 'grad_norm': 0.03221356387167923, 'learning_rate': 4.111217858882605e-05, 'epoch': 8.434285714285714}
+{'loss': 0.0934, 'grad_norm': 0.02935189209582483, 'learning_rate': 4.087382949516646e-05, 'epoch': 8.457142857142857}
+{'eval_valid_loss': 0.09451229125261307, 'eval_valid_runtime': 0.0905, 'eval_valid_samples_per_second': 1104.598, 'eval_valid_steps_per_second': 11.046, 'epoch': 8.457142857142857}
+{'loss': 0.0934, 'grad_norm': 0.02459962677779321, 'learning_rate': 4.063569474111034e-05, 'epoch': 8.48}
+{'loss': 0.0934, 'grad_norm': 0.02225802956102849, 'learning_rate': 4.039777991955221e-05, 'epoch': 8.502857142857144}
+{'eval_valid_loss': 0.09449999034404755, 'eval_valid_runtime': 0.0907, 'eval_valid_samples_per_second': 1102.896, 'eval_valid_steps_per_second': 11.029, 'epoch': 8.502857142857144}
+{'loss': 0.0934, 'grad_norm': 0.03845969139869602, 'learning_rate': 4.016009061822116e-05, 'epoch': 8.525714285714285}
+{'loss': 0.0934, 'grad_norm': 0.043297307793073884, 'learning_rate': 3.992263241954968e-05, 'epoch': 8.548571428571428}
+{'eval_valid_loss': 0.094459667801857, 'eval_valid_runtime': 0.0931, 'eval_valid_samples_per_second': 1073.747, 'eval_valid_steps_per_second': 10.737, 'epoch': 8.548571428571428}
+{'loss': 0.0935, 'grad_norm': 0.024200353869948885, 'learning_rate': 3.9685410900542484e-05, 'epoch': 8.571428571428571}
+{'loss': 0.0934, 'grad_norm': 0.034836541277725196, 'learning_rate': 3.944843163264563e-05, 'epoch': 8.594285714285714}
+{'eval_valid_loss': 0.09472174942493439, 'eval_valid_runtime': 0.0911, 'eval_valid_samples_per_second': 1097.649, 'eval_valid_steps_per_second': 10.976, 'epoch': 8.594285714285714}
+{'loss': 0.0934, 'grad_norm': 0.03306695217944821, 'learning_rate': 3.921170018161552e-05, 'epoch': 8.617142857142857}
+{'loss': 0.0934, 'grad_norm': 0.025966616844615553, 'learning_rate': 3.897522210738836e-05, 'epoch': 8.64}
+{'eval_valid_loss': 0.09456649422645569, 'eval_valid_runtime': 0.0907, 'eval_valid_samples_per_second': 1102.496, 'eval_valid_steps_per_second': 11.025, 'epoch': 8.64}
+{'loss': 0.0934, 'grad_norm': 0.02730642472304768, 'learning_rate': 3.873900296394938e-05, 'epoch': 8.662857142857142}
+{'loss': 0.0934, 'grad_norm': 0.02724345441321301, 'learning_rate': 3.850304829920256e-05, 'epoch': 8.685714285714285}
+{'eval_valid_loss': 0.09461355209350586, 'eval_valid_runtime': 0.0906, 'eval_valid_samples_per_second': 1103.436, 'eval_valid_steps_per_second': 11.034, 'epoch': 8.685714285714285}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0934, 'grad_norm': 0.026690072112589745, 'learning_rate': 3.826736365484027e-05, 'epoch': 8.708571428571428}
+{'loss': 0.0934, 'grad_norm': 0.02590002623305476, 'learning_rate': 3.803195456621308e-05, 'epoch': 8.731428571428571}
+{'eval_valid_loss': 0.09454015642404556, 'eval_valid_runtime': 0.0904, 'eval_valid_samples_per_second': 1105.938, 'eval_valid_steps_per_second': 11.059, 'epoch': 8.731428571428571}
+{'loss': 0.0934, 'grad_norm': 0.03277577809432845, 'learning_rate': 3.7796826562199804e-05, 'epoch': 8.754285714285714}
+{'loss': 0.0934, 'grad_norm': 0.02999313312787767, 'learning_rate': 3.756198516507762e-05, 'epoch': 8.777142857142858}
+{'eval_valid_loss': 0.09457764029502869, 'eval_valid_runtime': 0.0906, 'eval_valid_samples_per_second': 1103.398, 'eval_valid_steps_per_second': 11.034, 'epoch': 8.777142857142858}
+{'loss': 0.0934, 'grad_norm': 0.03370134383193206, 'learning_rate': 3.732743589039238e-05, 'epoch': 8.8}
+{'loss': 0.0934, 'grad_norm': 0.026869794952194753, 'learning_rate': 3.709318424682913e-05, 'epoch': 8.822857142857142}
+{'eval_valid_loss': 0.09467840194702148, 'eval_valid_runtime': 0.0908, 'eval_valid_samples_per_second': 1101.202, 'eval_valid_steps_per_second': 11.012, 'epoch': 8.822857142857142}
+{'loss': 0.0933, 'grad_norm': 0.027211200822033536, 'learning_rate': 3.685923573608255e-05, 'epoch': 8.845714285714285}
+{'loss': 0.0934, 'grad_norm': 0.030485389855695457, 'learning_rate': 3.662559585272798e-05, 'epoch': 8.868571428571428}
+{'eval_valid_loss': 0.09442424029111862, 'eval_valid_runtime': 0.0904, 'eval_valid_samples_per_second': 1106.122, 'eval_valid_steps_per_second': 11.061, 'epoch': 8.868571428571428}
+{'loss': 0.0934, 'grad_norm': 0.029603254778270534, 'learning_rate': 3.639227008409222e-05, 'epoch': 8.891428571428571}
+{'loss': 0.0934, 'grad_norm': 0.02880779389460219, 'learning_rate': 3.6159263910124674e-05, 'epoch': 8.914285714285715}
+{'eval_valid_loss': 0.09461797028779984, 'eval_valid_runtime': 0.0905, 'eval_valid_samples_per_second': 1105.242, 'eval_valid_steps_per_second': 11.052, 'epoch': 8.914285714285715}
+{'loss': 0.0934, 'grad_norm': 0.022777203196319616, 'learning_rate': 3.592658280326867e-05, 'epoch': 8.937142857142858}
+{'loss': 0.0934, 'grad_norm': 0.023915237669119942, 'learning_rate': 3.5694232228332946e-05, 'epoch': 8.96}
+{'eval_valid_loss': 0.09445717930793762, 'eval_valid_runtime': 0.1195, 'eval_valid_samples_per_second': 836.61, 'eval_valid_steps_per_second': 8.366, 'epoch': 8.96}
+{'loss': 0.0934, 'grad_norm': 0.025698020816787147, 'learning_rate': 3.546221764236327e-05, 'epoch': 8.982857142857142}
+{'loss': 0.0933, 'grad_norm': 0.022737197876528566, 'learning_rate': 3.523054449451426e-05, 'epoch': 9.005714285714285}
+{'eval_valid_loss': 0.09468362480401993, 'eval_valid_runtime': 0.0906, 'eval_valid_samples_per_second': 1103.247, 'eval_valid_steps_per_second': 11.032, 'epoch': 9.005714285714285}
+{'loss': 0.0932, 'grad_norm': 0.0377300039737149, 'learning_rate': 3.49992182259215e-05, 'epoch': 9.028571428571428}
+{'loss': 0.0932, 'grad_norm': 0.02610656276544136, 'learning_rate': 3.4768244269573566e-05, 'epoch': 9.051428571428572}
+{'eval_valid_loss': 0.09456586092710495, 'eval_valid_runtime': 0.0907, 'eval_valid_samples_per_second': 1102.007, 'eval_valid_steps_per_second': 11.02, 'epoch': 9.051428571428572}
+{'loss': 0.0932, 'grad_norm': 0.028670798116961865, 'learning_rate': 3.453762805018464e-05, 'epoch': 9.074285714285715}
+{'loss': 0.0932, 'grad_norm': 0.02659770657093439, 'learning_rate': 3.430737498406695e-05, 'epoch': 9.097142857142858}
+{'eval_valid_loss': 0.0945977047085762, 'eval_valid_runtime': 0.1245, 'eval_valid_samples_per_second': 802.956, 'eval_valid_steps_per_second': 8.03, 'epoch': 9.097142857142858}
+{'loss': 0.0932, 'grad_norm': 0.023585955097333793, 'learning_rate': 3.407749047900364e-05, 'epoch': 9.12}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0932, 'grad_norm': 0.027981440885335693, 'learning_rate': 3.384797993412172e-05, 'epoch': 9.142857142857142}
+{'eval_valid_loss': 0.09440436959266663, 'eval_valid_runtime': 0.0982, 'eval_valid_samples_per_second': 1018.28, 'eval_valid_steps_per_second': 10.183, 'epoch': 9.142857142857142}
+{'loss': 0.0932, 'grad_norm': 0.02379265721613092, 'learning_rate': 3.3618848739765266e-05, 'epoch': 9.165714285714285}
+{'loss': 0.0932, 'grad_norm': 0.024390357376975733, 'learning_rate': 3.339010227736882e-05, 'epoch': 9.188571428571429}
+{'eval_valid_loss': 0.09448114037513733, 'eval_valid_runtime': 0.0911, 'eval_valid_samples_per_second': 1097.494, 'eval_valid_steps_per_second': 10.975, 'epoch': 9.188571428571429}
+{'loss': 0.0932, 'grad_norm': 0.029626674356282648, 'learning_rate': 3.316174591933108e-05, 'epoch': 9.211428571428572}
+{'loss': 0.0932, 'grad_norm': 0.027053800827000235, 'learning_rate': 3.293378502888853e-05, 'epoch': 9.234285714285715}
+{'eval_valid_loss': 0.09441279619932175, 'eval_valid_runtime': 0.0909, 'eval_valid_samples_per_second': 1100.163, 'eval_valid_steps_per_second': 11.002, 'epoch': 9.234285714285715}
+{'loss': 0.0932, 'grad_norm': 0.02957817265509719, 'learning_rate': 3.2706224959989705e-05, 'epoch': 9.257142857142856}
+{'loss': 0.0932, 'grad_norm': 0.021263303975581026, 'learning_rate': 3.247907105716931e-05, 'epoch': 9.28}
+{'eval_valid_loss': 0.09442673623561859, 'eval_valid_runtime': 0.0919, 'eval_valid_samples_per_second': 1088.42, 'eval_valid_steps_per_second': 10.884, 'epoch': 9.28}
+{'loss': 0.0932, 'grad_norm': 0.024346428178575498, 'learning_rate': 3.22523286554227e-05, 'epoch': 9.302857142857142}
+{'loss': 0.0932, 'grad_norm': 0.02774324004365344, 'learning_rate': 3.202600308008065e-05, 'epoch': 9.325714285714286}
+{'eval_valid_loss': 0.09446917474269867, 'eval_valid_runtime': 0.0907, 'eval_valid_samples_per_second': 1102.383, 'eval_valid_steps_per_second': 11.024, 'epoch': 9.325714285714286}
+{'loss': 0.0932, 'grad_norm': 0.02442659864120986, 'learning_rate': 3.180009964668422e-05, 'epoch': 9.348571428571429}
+{'loss': 0.0932, 'grad_norm': 0.03132465515214388, 'learning_rate': 3.1574623660859934e-05, 'epoch': 9.371428571428572}
+{'eval_valid_loss': 0.09447738528251648, 'eval_valid_runtime': 0.091, 'eval_valid_samples_per_second': 1098.601, 'eval_valid_steps_per_second': 10.986, 'epoch': 9.371428571428572}
+{'loss': 0.0932, 'grad_norm': 0.02728774622609541, 'learning_rate': 3.134958041819521e-05, 'epoch': 9.394285714285715}
+{'loss': 0.0932, 'grad_norm': 0.022540324275800144, 'learning_rate': 3.112497520411387e-05, 'epoch': 9.417142857142856}
+{'eval_valid_loss': 0.09438226372003555, 'eval_valid_runtime': 0.0913, 'eval_valid_samples_per_second': 1095.201, 'eval_valid_steps_per_second': 10.952, 'epoch': 9.417142857142856}
+{'loss': 0.0932, 'grad_norm': 0.027950095026616002, 'learning_rate': 3.090081329375214e-05, 'epoch': 9.44}
+{'loss': 0.0932, 'grad_norm': 0.028053263274741197, 'learning_rate': 3.067709995183469e-05, 'epoch': 9.462857142857143}
+{'eval_valid_loss': 0.09434845298528671, 'eval_valid_runtime': 0.0903, 'eval_valid_samples_per_second': 1106.831, 'eval_valid_steps_per_second': 11.068, 'epoch': 9.462857142857143}
+{'loss': 0.0932, 'grad_norm': 0.03195318022068637, 'learning_rate': 3.0453840432551e-05, 'epoch': 9.485714285714286}
+{'loss': 0.0932, 'grad_norm': 0.03029414255292525, 'learning_rate': 3.023103997943194e-05, 'epoch': 9.508571428571429}
+{'eval_valid_loss': 0.09424544125795364, 'eval_valid_runtime': 0.0906, 'eval_valid_samples_per_second': 1103.337, 'eval_valid_steps_per_second': 11.033, 'epoch': 9.508571428571429}
+{'loss': 0.0932, 'grad_norm': 0.027111600994550195, 'learning_rate': 3.0008703825226668e-05, 'epoch': 9.531428571428572}
+{'loss': 0.0932, 'grad_norm': 0.0227967549929908, 'learning_rate': 2.9786837191779625e-05, 'epoch': 9.554285714285715}
+{'eval_valid_loss': 0.09440483897924423, 'eval_valid_runtime': 0.0907, 'eval_valid_samples_per_second': 1101.958, 'eval_valid_steps_per_second': 11.02, 'epoch': 9.554285714285715}
+{'loss': 0.0932, 'grad_norm': 0.03117700365385199, 'learning_rate': 2.9565445289908068e-05, 'epoch': 9.577142857142857}
+{'loss': 0.0932, 'grad_norm': 0.030146950690755025, 'learning_rate': 2.934453331927947e-05, 'epoch': 9.6}
+{'eval_valid_loss': 0.09438781440258026, 'eval_valid_runtime': 0.0902, 'eval_valid_samples_per_second': 1108.074, 'eval_valid_steps_per_second': 11.081, 'epoch': 9.6}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0932, 'grad_norm': 0.031263925059417545, 'learning_rate': 2.9124106468289603e-05, 'epoch': 9.622857142857143}
+{'loss': 0.0932, 'grad_norm': 0.02552988474876529, 'learning_rate': 2.890416991394057e-05, 'epoch': 9.645714285714286}
+{'eval_valid_loss': 0.09436177462339401, 'eval_valid_runtime': 0.0902, 'eval_valid_samples_per_second': 1108.777, 'eval_valid_steps_per_second': 11.088, 'epoch': 9.645714285714286}
+{'loss': 0.0931, 'grad_norm': 0.027206856237852836, 'learning_rate': 2.8684728821719198e-05, 'epoch': 9.668571428571429}
+{'loss': 0.0932, 'grad_norm': 0.028463462917799203, 'learning_rate': 2.8465788345475854e-05, 'epoch': 9.691428571428572}
+{'eval_valid_loss': 0.09424625337123871, 'eval_valid_runtime': 0.0902, 'eval_valid_samples_per_second': 1108.871, 'eval_valid_steps_per_second': 11.089, 'epoch': 9.691428571428572}
+{'loss': 0.0932, 'grad_norm': 0.026979493104557852, 'learning_rate': 2.824735362730322e-05, 'epoch': 9.714285714285714}
+{'loss': 0.0932, 'grad_norm': 0.02331267234641084, 'learning_rate': 2.8029429797415623e-05, 'epoch': 9.737142857142857}
+{'eval_valid_loss': 0.09433703124523163, 'eval_valid_runtime': 0.0904, 'eval_valid_samples_per_second': 1105.994, 'eval_valid_steps_per_second': 11.06, 'epoch': 9.737142857142857}
+{'loss': 0.0931, 'grad_norm': 0.023008582025147006, 'learning_rate': 2.7812021974028636e-05, 'epoch': 9.76}
+{'loss': 0.0932, 'grad_norm': 0.027474173535573937, 'learning_rate': 2.759513526323859e-05, 'epoch': 9.782857142857143}
+{'eval_valid_loss': 0.09432684630155563, 'eval_valid_runtime': 0.0904, 'eval_valid_samples_per_second': 1105.655, 'eval_valid_steps_per_second': 11.057, 'epoch': 9.782857142857143}
+{'loss': 0.0932, 'grad_norm': 0.02292748913836633, 'learning_rate': 2.7378774758903003e-05, 'epoch': 9.805714285714286}
+{'loss': 0.0931, 'grad_norm': 0.02901200430448427, 'learning_rate': 2.716294554252067e-05, 'epoch': 9.82857142857143}
+{'eval_valid_loss': 0.09418340772390366, 'eval_valid_runtime': 0.0906, 'eval_valid_samples_per_second': 1103.297, 'eval_valid_steps_per_second': 11.033, 'epoch': 9.82857142857143}
+{'loss': 0.0931, 'grad_norm': 0.023759579431214338, 'learning_rate': 2.6947652683112473e-05, 'epoch': 9.85142857142857}
+{'loss': 0.0932, 'grad_norm': 0.026352034524500564, 'learning_rate': 2.6732901237102247e-05, 'epoch': 9.874285714285714}
+{'eval_valid_loss': 0.09443070739507675, 'eval_valid_runtime': 0.0908, 'eval_valid_samples_per_second': 1101.006, 'eval_valid_steps_per_second': 11.01, 'epoch': 9.874285714285714}
+{'loss': 0.0932, 'grad_norm': 0.029749336538251337, 'learning_rate': 2.6518696248198034e-05, 'epoch': 9.897142857142857}
+{'loss': 0.0931, 'grad_norm': 0.029345251857157303, 'learning_rate': 2.63050427472737e-05, 'epoch': 9.92}
+{'eval_valid_loss': 0.09444271773099899, 'eval_valid_runtime': 0.0906, 'eval_valid_samples_per_second': 1103.424, 'eval_valid_steps_per_second': 11.034, 'epoch': 9.92}
+{'loss': 0.0931, 'grad_norm': 0.025714943678026132, 'learning_rate': 2.6091945752250685e-05, 'epoch': 9.942857142857143}
+{'loss': 0.0932, 'grad_norm': 0.024429494559820512, 'learning_rate': 2.5879410267980176e-05, 'epoch': 9.965714285714286}
+{'eval_valid_loss': 0.09430698305368423, 'eval_valid_runtime': 0.0902, 'eval_valid_samples_per_second': 1108.194, 'eval_valid_steps_per_second': 11.082, 'epoch': 9.965714285714286}
+{'loss': 0.0931, 'grad_norm': 0.024259186423484312, 'learning_rate': 2.566744128612557e-05, 'epoch': 9.98857142857143}
+{'loss': 0.0931, 'grad_norm': 0.028825218254533096, 'learning_rate': 2.5456043785045303e-05, 'epoch': 10.01142857142857}
+{'eval_valid_loss': 0.0942053347826004, 'eval_valid_runtime': 0.1322, 'eval_valid_samples_per_second': 756.261, 'eval_valid_steps_per_second': 7.563, 'epoch': 10.01142857142857}
+{'loss': 0.093, 'grad_norm': 0.0249967248431116, 'learning_rate': 2.5245222729675804e-05, 'epoch': 10.034285714285714}
+{'loss': 0.093, 'grad_norm': 0.02418104776767199, 'learning_rate': 2.503498307141494e-05, 'epoch': 10.057142857142857}
+{'eval_valid_loss': 0.09448540955781937, 'eval_valid_runtime': 0.0905, 'eval_valid_samples_per_second': 1105.154, 'eval_valid_steps_per_second': 11.052, 'epoch': 10.057142857142857}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.093, 'grad_norm': 0.02372571898483878, 'learning_rate': 2.482532974800581e-05, 'epoch': 10.08}
+{'loss': 0.093, 'grad_norm': 0.027375531128393842, 'learning_rate': 2.4616267683420602e-05, 'epoch': 10.102857142857143}
+{'eval_valid_loss': 0.09458406269550323, 'eval_valid_runtime': 0.0908, 'eval_valid_samples_per_second': 1101.431, 'eval_valid_steps_per_second': 11.014, 'epoch': 10.102857142857143}
+{'loss': 0.093, 'grad_norm': 0.02661880511639046, 'learning_rate': 2.4407801787745167e-05, 'epoch': 10.125714285714286}
+{'loss': 0.093, 'grad_norm': 0.025439171004376995, 'learning_rate': 2.419993695706344e-05, 'epoch': 10.14857142857143}
+{'eval_valid_loss': 0.09427519887685776, 'eval_valid_runtime': 0.0912, 'eval_valid_samples_per_second': 1096.627, 'eval_valid_steps_per_second': 10.966, 'epoch': 10.14857142857143}
+{'loss': 0.093, 'grad_norm': 0.022892344950832425, 'learning_rate': 2.399267807334266e-05, 'epoch': 10.17142857142857}
+{'loss': 0.093, 'grad_norm': 0.027780306006859934, 'learning_rate': 2.3786030004318676e-05, 'epoch': 10.194285714285714}
+{'eval_valid_loss': 0.09427808970212936, 'eval_valid_runtime': 0.0907, 'eval_valid_samples_per_second': 1102.294, 'eval_valid_steps_per_second': 11.023, 'epoch': 10.194285714285714}
+{'loss': 0.093, 'grad_norm': 0.024165120049144135, 'learning_rate': 2.3579997603381504e-05, 'epoch': 10.217142857142857}
+{'loss': 0.093, 'grad_norm': 0.023596333763559116, 'learning_rate': 2.33745857094615e-05, 'epoch': 10.24}
+{'eval_valid_loss': 0.09430668503046036, 'eval_valid_runtime': 0.0904, 'eval_valid_samples_per_second': 1106.703, 'eval_valid_steps_per_second': 11.067, 'epoch': 10.24}
+{'loss': 0.093, 'grad_norm': 0.02580953018649407, 'learning_rate': 2.3169799146915568e-05, 'epoch': 10.262857142857143}
+{'loss': 0.093, 'grad_norm': 0.03056840723460222, 'learning_rate': 2.2965642725413928e-05, 'epoch': 10.285714285714286}
+{'eval_valid_loss': 0.0943223312497139, 'eval_valid_runtime': 0.0915, 'eval_valid_samples_per_second': 1092.497, 'eval_valid_steps_per_second': 10.925, 'epoch': 10.285714285714286}
+{'loss': 0.093, 'grad_norm': 0.02653978967680021, 'learning_rate': 2.276212123982718e-05, 'epoch': 10.308571428571428}
+{'loss': 0.093, 'grad_norm': 0.0266942700654415, 'learning_rate': 2.2559239470113636e-05, 'epoch': 10.331428571428571}
+{'eval_valid_loss': 0.09439124912023544, 'eval_valid_runtime': 0.0907, 'eval_valid_samples_per_second': 1102.931, 'eval_valid_steps_per_second': 11.029, 'epoch': 10.331428571428571}
+{'loss': 0.093, 'grad_norm': 0.025977528143907674, 'learning_rate': 2.2357002181207054e-05, 'epoch': 10.354285714285714}
+{'loss': 0.093, 'grad_norm': 0.02596404976178199, 'learning_rate': 2.2155414122904755e-05, 'epoch': 10.377142857142857}
+{'eval_valid_loss': 0.09434438496828079, 'eval_valid_runtime': 0.0903, 'eval_valid_samples_per_second': 1107.17, 'eval_valid_steps_per_second': 11.072, 'epoch': 10.377142857142857}
+{'loss': 0.093, 'grad_norm': 0.026531926895709407, 'learning_rate': 2.19544800297561e-05, 'epoch': 10.4}
+{'loss': 0.093, 'grad_norm': 0.030018305400905092, 'learning_rate': 2.175420462095123e-05, 'epoch': 10.422857142857143}
+{'eval_valid_loss': 0.09432550519704819, 'eval_valid_runtime': 0.0903, 'eval_valid_samples_per_second': 1107.746, 'eval_valid_steps_per_second': 11.077, 'epoch': 10.422857142857143}
+{'loss': 0.093, 'grad_norm': 0.02656705273565228, 'learning_rate': 2.155459260021021e-05, 'epoch': 10.445714285714285}
+{'loss': 0.093, 'grad_norm': 0.023373255266367948, 'learning_rate': 2.1355648655672694e-05, 'epoch': 10.468571428571428}
+{'eval_valid_loss': 0.09440939128398895, 'eval_valid_runtime': 0.0934, 'eval_valid_samples_per_second': 1070.309, 'eval_valid_steps_per_second': 10.703, 'epoch': 10.468571428571428}
+{'loss': 0.093, 'grad_norm': 0.028755731422841234, 'learning_rate': 2.1157377459787643e-05, 'epoch': 10.491428571428571}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.093, 'grad_norm': 0.02315155417042487, 'learning_rate': 2.095978366920375e-05, 'epoch': 10.514285714285714}
+{'eval_valid_loss': 0.09439709782600403, 'eval_valid_runtime': 0.0902, 'eval_valid_samples_per_second': 1108.54, 'eval_valid_steps_per_second': 11.085, 'epoch': 10.514285714285714}
+{'loss': 0.093, 'grad_norm': 0.027588212988475202, 'learning_rate': 2.0762871924659866e-05, 'epoch': 10.537142857142857}
+{'loss': 0.0929, 'grad_norm': 0.027479900527648073, 'learning_rate': 2.0566646850876264e-05, 'epoch': 10.56}
+{'eval_valid_loss': 0.09423813968896866, 'eval_valid_runtime': 0.0903, 'eval_valid_samples_per_second': 1107.316, 'eval_valid_steps_per_second': 11.073, 'epoch': 10.56}
+{'loss': 0.093, 'grad_norm': 0.02545004824266976, 'learning_rate': 2.037111305644583e-05, 'epoch': 10.582857142857144}
+{'loss': 0.093, 'grad_norm': 0.023445991883382776, 'learning_rate': 2.017627513372586e-05, 'epoch': 10.605714285714285}
+{'eval_valid_loss': 0.09438467025756836, 'eval_valid_runtime': 0.0902, 'eval_valid_samples_per_second': 1109.085, 'eval_valid_steps_per_second': 11.091, 'epoch': 10.605714285714285}
+{'loss': 0.093, 'grad_norm': 0.021204313950024627, 'learning_rate': 1.9982137658730287e-05, 'epoch': 10.628571428571428}
+{'loss': 0.0929, 'grad_norm': 0.023699613798242817, 'learning_rate': 1.978870519102211e-05, 'epoch': 10.651428571428571}
+{'eval_valid_loss': 0.09423648566007614, 'eval_valid_runtime': 0.0906, 'eval_valid_samples_per_second': 1104.072, 'eval_valid_steps_per_second': 11.041, 'epoch': 10.651428571428571}
+{'loss': 0.093, 'grad_norm': 0.023263881550882975, 'learning_rate': 1.9595982273606334e-05, 'epoch': 10.674285714285714}
+{'loss': 0.093, 'grad_norm': 0.022134740133794496, 'learning_rate': 1.9403973432823335e-05, 'epoch': 10.697142857142858}
+{'eval_valid_loss': 0.09433484077453613, 'eval_valid_runtime': 0.0905, 'eval_valid_samples_per_second': 1105.047, 'eval_valid_steps_per_second': 11.05, 'epoch': 10.697142857142858}
+{'loss': 0.093, 'grad_norm': 0.022899007564942626, 'learning_rate': 1.9212683178242414e-05, 'epoch': 10.72}
+{'loss': 0.093, 'grad_norm': 0.024954092812957702, 'learning_rate': 1.9022116002556057e-05, 'epoch': 10.742857142857144}
+{'eval_valid_loss': 0.09419890493154526, 'eval_valid_runtime': 0.0899, 'eval_valid_samples_per_second': 1112.258, 'eval_valid_steps_per_second': 11.123, 'epoch': 10.742857142857144}
+{'loss': 0.093, 'grad_norm': 0.022551972250503136, 'learning_rate': 1.8832276381474268e-05, 'epoch': 10.765714285714285}
+{'loss': 0.093, 'grad_norm': 0.02618674546098481, 'learning_rate': 1.8643168773619572e-05, 'epoch': 10.788571428571428}
+{'eval_valid_loss': 0.09426842629909515, 'eval_valid_runtime': 0.0902, 'eval_valid_samples_per_second': 1108.086, 'eval_valid_steps_per_second': 11.081, 'epoch': 10.788571428571428}
+{'loss': 0.093, 'grad_norm': 0.024260766946189408, 'learning_rate': 1.8454797620422205e-05, 'epoch': 10.811428571428571}
+{'loss': 0.0929, 'grad_norm': 0.0216826607696576, 'learning_rate': 1.826716734601582e-05, 'epoch': 10.834285714285715}
+{'eval_valid_loss': 0.09426761418581009, 'eval_valid_runtime': 0.0898, 'eval_valid_samples_per_second': 1113.082, 'eval_valid_steps_per_second': 11.131, 'epoch': 10.834285714285715}
+{'loss': 0.0929, 'grad_norm': 0.021842406023222558, 'learning_rate': 1.8080282357133656e-05, 'epoch': 10.857142857142858}
+{'loss': 0.0929, 'grad_norm': 0.022438324274332472, 'learning_rate': 1.7894147043004937e-05, 'epoch': 10.88}
+{'eval_valid_loss': 0.09425714612007141, 'eval_valid_runtime': 0.0993, 'eval_valid_samples_per_second': 1007.033, 'eval_valid_steps_per_second': 10.07, 'epoch': 10.88}
+{'loss': 0.0929, 'grad_norm': 0.023848517415289865, 'learning_rate': 1.7708765775251855e-05, 'epoch': 10.902857142857142}
+{'loss': 0.0929, 'grad_norm': 0.02521444939560613, 'learning_rate': 1.7524142907786838e-05, 'epoch': 10.925714285714285}
+{'eval_valid_loss': 0.094292551279068, 'eval_valid_runtime': 0.09, 'eval_valid_samples_per_second': 1110.921, 'eval_valid_steps_per_second': 11.109, 'epoch': 10.925714285714285}
+{'loss': 0.0929, 'grad_norm': 0.025435488299354957, 'learning_rate': 1.7340282776710393e-05, 'epoch': 10.948571428571428}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+{'loss': 0.0929, 'grad_norm': 0.023727713849251417, 'learning_rate': 1.7157189700209143e-05, 'epoch': 10.971428571428572}
+{'eval_valid_loss': 0.09419400244951248, 'eval_valid_runtime': 0.0897, 'eval_valid_samples_per_second': 1114.389, 'eval_valid_steps_per_second': 11.144, 'epoch': 10.971428571428572}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0929, 'grad_norm': 0.02404766979790267, 'learning_rate': 1.697486797845448e-05, 'epoch': 10.994285714285715}
+{'loss': 0.0928, 'grad_norm': 0.025116566919035035, 'learning_rate': 1.67933218935016e-05, 'epoch': 11.017142857142858}
+{'eval_valid_loss': 0.09435443580150604, 'eval_valid_runtime': 0.0897, 'eval_valid_samples_per_second': 1115.032, 'eval_valid_steps_per_second': 11.15, 'epoch': 11.017142857142858}
+{'loss': 0.0928, 'grad_norm': 0.024920298796172524, 'learning_rate': 1.6612555709188843e-05, 'epoch': 11.04}
+{'loss': 0.0928, 'grad_norm': 0.03352424701073519, 'learning_rate': 1.6432573671037623e-05, 'epoch': 11.062857142857142}
+{'eval_valid_loss': 0.09437942504882812, 'eval_valid_runtime': 0.1169, 'eval_valid_samples_per_second': 855.544, 'eval_valid_steps_per_second': 8.555, 'epoch': 11.062857142857142}
+{'loss': 0.0928, 'grad_norm': 0.023949275208691487, 'learning_rate': 1.6253380006152686e-05, 'epoch': 11.085714285714285}
+{'loss': 0.0928, 'grad_norm': 0.02362887650905906, 'learning_rate': 1.607497892312283e-05, 'epoch': 11.108571428571429}
+{'eval_valid_loss': 0.09432388097047806, 'eval_valid_runtime': 0.1237, 'eval_valid_samples_per_second': 808.396, 'eval_valid_steps_per_second': 8.084, 'epoch': 11.108571428571429}
+{'loss': 0.0928, 'grad_norm': 0.023605715059139696, 'learning_rate': 1.5897374611922117e-05, 'epoch': 11.131428571428572}
+{'loss': 0.0928, 'grad_norm': 0.02346087874407503, 'learning_rate': 1.5720571243811357e-05, 'epoch': 11.154285714285715}
+{'eval_valid_loss': 0.09428507834672928, 'eval_valid_runtime': 0.0899, 'eval_valid_samples_per_second': 1112.866, 'eval_valid_steps_per_second': 11.129, 'epoch': 11.154285714285715}
+{'loss': 0.0928, 'grad_norm': 0.02773752805175054, 'learning_rate': 1.554457297124025e-05, 'epoch': 11.177142857142858}
+{'loss': 0.0928, 'grad_norm': 0.026673629875452087, 'learning_rate': 1.53693839277498e-05, 'epoch': 11.2}
+{'eval_valid_loss': 0.09424090385437012, 'eval_valid_runtime': 0.0898, 'eval_valid_samples_per_second': 1113.315, 'eval_valid_steps_per_second': 11.133, 'epoch': 11.2}
+{'loss': 0.0928, 'grad_norm': 0.025497440897476364, 'learning_rate': 1.5195008227875218e-05, 'epoch': 11.222857142857142}
+{'loss': 0.0928, 'grad_norm': 0.022065767517625248, 'learning_rate': 1.5021449967049388e-05, 'epoch': 11.245714285714286}
+{'eval_valid_loss': 0.09420245885848999, 'eval_valid_runtime': 0.0899, 'eval_valid_samples_per_second': 1112.559, 'eval_valid_steps_per_second': 11.126, 'epoch': 11.245714285714286}
+{'loss': 0.0928, 'grad_norm': 0.02992387870307264, 'learning_rate': 1.48487132215065e-05, 'epoch': 11.268571428571429}
+{'loss': 0.0928, 'grad_norm': 0.02410516272290623, 'learning_rate': 1.4676802048186539e-05, 'epoch': 11.291428571428572}
+{'eval_valid_loss': 0.09427356719970703, 'eval_valid_runtime': 0.0899, 'eval_valid_samples_per_second': 1112.931, 'eval_valid_steps_per_second': 11.129, 'epoch': 11.291428571428572}
+{'loss': 0.0928, 'grad_norm': 0.023810808534636112, 'learning_rate': 1.4505720484639795e-05, 'epoch': 11.314285714285715}
+{'loss': 0.0928, 'grad_norm': 0.025147082923470062, 'learning_rate': 1.4335472548932206e-05, 'epoch': 11.337142857142856}
+{'eval_valid_loss': 0.09427321702241898, 'eval_valid_runtime': 0.0902, 'eval_valid_samples_per_second': 1109.185, 'eval_valid_steps_per_second': 11.092, 'epoch': 11.337142857142856}
+{'loss': 0.0928, 'grad_norm': 0.027379798012378224, 'learning_rate': 1.4166062239550854e-05, 'epoch': 11.36}
+{'loss': 0.0928, 'grad_norm': 0.025182939316101313, 'learning_rate': 1.3997493535310108e-05, 'epoch': 11.382857142857143}
+{'eval_valid_loss': 0.09426665306091309, 'eval_valid_runtime': 0.0906, 'eval_valid_samples_per_second': 1104.299, 'eval_valid_steps_per_second': 11.043, 'epoch': 11.382857142857143}
+{'loss': 0.0928, 'grad_norm': 0.024718481028512398, 'learning_rate': 1.3829770395258246e-05, 'epoch': 11.405714285714286}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+{'loss': 0.0928, 'grad_norm': 0.02459684727971231, 'learning_rate': 1.3662896758584337e-05, 'epoch': 11.428571428571429}
+{'eval_valid_loss': 0.09430155903100967, 'eval_valid_runtime': 0.0897, 'eval_valid_samples_per_second': 1115.195, 'eval_valid_steps_per_second': 11.152, 'epoch': 11.428571428571429}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0928, 'grad_norm': 0.022813398956560777, 'learning_rate': 1.3496876544525822e-05, 'epoch': 11.451428571428572}
+{'loss': 0.0928, 'grad_norm': 0.022825598619301425, 'learning_rate': 1.3331713652276439e-05, 'epoch': 11.474285714285715}
+{'eval_valid_loss': 0.09431713074445724, 'eval_valid_runtime': 0.0898, 'eval_valid_samples_per_second': 1113.114, 'eval_valid_steps_per_second': 11.131, 'epoch': 11.474285714285715}
+{'loss': 0.0928, 'grad_norm': 0.024095155148858374, 'learning_rate': 1.3167411960894621e-05, 'epoch': 11.497142857142856}
+{'loss': 0.0928, 'grad_norm': 0.024174826949609377, 'learning_rate': 1.3003975329212475e-05, 'epoch': 11.52}
+{'eval_valid_loss': 0.09425802528858185, 'eval_valid_runtime': 0.0897, 'eval_valid_samples_per_second': 1115.325, 'eval_valid_steps_per_second': 11.153, 'epoch': 11.52}
+{'loss': 0.0928, 'grad_norm': 0.0235092333899394, 'learning_rate': 1.2841407595745009e-05, 'epoch': 11.542857142857143}
+{'loss': 0.0928, 'grad_norm': 0.022996476236999942, 'learning_rate': 1.2679712578600133e-05, 'epoch': 11.565714285714286}
+{'eval_valid_loss': 0.09421142935752869, 'eval_valid_runtime': 0.0901, 'eval_valid_samples_per_second': 1110.159, 'eval_valid_steps_per_second': 11.102, 'epoch': 11.565714285714286}
+{'loss': 0.0928, 'grad_norm': 0.024636340022135897, 'learning_rate': 1.2518894075388882e-05, 'epoch': 11.588571428571429}
+{'loss': 0.0927, 'grad_norm': 0.02505245818895102, 'learning_rate': 1.2358955863136257e-05, 'epoch': 11.611428571428572}
+{'eval_valid_loss': 0.09416506439447403, 'eval_valid_runtime': 0.0901, 'eval_valid_samples_per_second': 1110.062, 'eval_valid_steps_per_second': 11.101, 'epoch': 11.611428571428572}
+{'loss': 0.0928, 'grad_norm': 0.021428361196016515, 'learning_rate': 1.2199901698192529e-05, 'epoch': 11.634285714285713}
+{'loss': 0.0928, 'grad_norm': 0.02653026750931998, 'learning_rate': 1.2041735316144976e-05, 'epoch': 11.657142857142857}
+{'eval_valid_loss': 0.09411600232124329, 'eval_valid_runtime': 0.09, 'eval_valid_samples_per_second': 1110.918, 'eval_valid_steps_per_second': 11.109, 'epoch': 11.657142857142857}
+{'loss': 0.0927, 'grad_norm': 0.023451384797765682, 'learning_rate': 1.1884460431730232e-05, 'epoch': 11.68}
+{'loss': 0.0928, 'grad_norm': 0.027271272331905544, 'learning_rate': 1.1728080738746928e-05, 'epoch': 11.702857142857143}
+{'eval_valid_loss': 0.09412568062543869, 'eval_valid_runtime': 0.09, 'eval_valid_samples_per_second': 1110.883, 'eval_valid_steps_per_second': 11.109, 'epoch': 11.702857142857143}
+{'loss': 0.0928, 'grad_norm': 0.022994128153856874, 'learning_rate': 1.1572599909969056e-05, 'epoch': 11.725714285714286}
+{'loss': 0.0928, 'grad_norm': 0.02381713312820859, 'learning_rate': 1.1418021597059596e-05, 'epoch': 11.748571428571429}
+{'eval_valid_loss': 0.09421385079622269, 'eval_valid_runtime': 0.0973, 'eval_valid_samples_per_second': 1028.101, 'eval_valid_steps_per_second': 10.281, 'epoch': 11.748571428571429}
+{'loss': 0.0928, 'grad_norm': 0.023588301382424643, 'learning_rate': 1.1264349430484828e-05, 'epoch': 11.771428571428572}
+{'loss': 0.0928, 'grad_norm': 0.022271284925302375, 'learning_rate': 1.1111587019429065e-05, 'epoch': 11.794285714285714}
+{'eval_valid_loss': 0.09417642652988434, 'eval_valid_runtime': 0.0899, 'eval_valid_samples_per_second': 1112.911, 'eval_valid_steps_per_second': 11.129, 'epoch': 11.794285714285714}
+{'loss': 0.0928, 'grad_norm': 0.024225663979190917, 'learning_rate': 1.095973795170983e-05, 'epoch': 11.817142857142857}
+{'loss': 0.0928, 'grad_norm': 0.023090247071310015, 'learning_rate': 1.080880579369366e-05, 'epoch': 11.84}
+{'eval_valid_loss': 0.09419045597314835, 'eval_valid_runtime': 0.0908, 'eval_valid_samples_per_second': 1101.257, 'eval_valid_steps_per_second': 11.013, 'epoch': 11.84}
+{'loss': 0.0927, 'grad_norm': 0.022327191509122477, 'learning_rate': 1.0658794090212282e-05, 'epoch': 11.862857142857143}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0928, 'grad_norm': 0.026871027716243338, 'learning_rate': 1.0509706364479406e-05, 'epoch': 11.885714285714286}
+{'eval_valid_loss': 0.09418338537216187, 'eval_valid_runtime': 0.0899, 'eval_valid_samples_per_second': 1112.801, 'eval_valid_steps_per_second': 11.128, 'epoch': 11.885714285714286}
+{'loss': 0.0927, 'grad_norm': 0.023013474060992817, 'learning_rate': 1.0361546118007976e-05, 'epoch': 11.90857142857143}
+{'loss': 0.0928, 'grad_norm': 0.04220109043979344, 'learning_rate': 1.0214316830527887e-05, 'epoch': 11.93142857142857}
+{'eval_valid_loss': 0.094122976064682, 'eval_valid_runtime': 0.0904, 'eval_valid_samples_per_second': 1106.639, 'eval_valid_steps_per_second': 11.066, 'epoch': 11.93142857142857}
+{'loss': 0.0928, 'grad_norm': 0.02390831374913119, 'learning_rate': 1.0068021959904328e-05, 'epoch': 11.954285714285714}
+{'loss': 0.0928, 'grad_norm': 0.025523104038769874, 'learning_rate': 9.922664942056497e-06, 'epoch': 11.977142857142857}
+{'eval_valid_loss': 0.0941464826464653, 'eval_valid_runtime': 0.0899, 'eval_valid_samples_per_second': 1112.624, 'eval_valid_steps_per_second': 11.126, 'epoch': 11.977142857142857}
+{'loss': 0.0928, 'grad_norm': 0.023583468509012724, 'learning_rate': 9.778249190876953e-06, 'epoch': 12.0}
+{'loss': 0.0926, 'grad_norm': 0.02490618136614935, 'learning_rate': 9.63477809815142e-06, 'epoch': 12.022857142857143}
+{'eval_valid_loss': 0.09424342215061188, 'eval_valid_runtime': 0.1219, 'eval_valid_samples_per_second': 820.153, 'eval_valid_steps_per_second': 8.202, 'epoch': 12.022857142857143}
+{'loss': 0.0926, 'grad_norm': 0.024426368260738126, 'learning_rate': 9.492255033479125e-06, 'epoch': 12.045714285714286}
+{'loss': 0.0926, 'grad_norm': 0.02387273971864793, 'learning_rate': 9.350683344193683e-06, 'epoch': 12.06857142857143}
+{'eval_valid_loss': 0.09421668201684952, 'eval_valid_runtime': 0.09, 'eval_valid_samples_per_second': 1111.713, 'eval_valid_steps_per_second': 11.117, 'epoch': 12.06857142857143}
+{'loss': 0.0926, 'grad_norm': 0.02283538804957948, 'learning_rate': 9.210066355284425e-06, 'epoch': 12.09142857142857}
+{'loss': 0.0926, 'grad_norm': 0.02734052749636864, 'learning_rate': 9.070407369318384e-06, 'epoch': 12.114285714285714}
+{'eval_valid_loss': 0.09417115896940231, 'eval_valid_runtime': 0.1168, 'eval_valid_samples_per_second': 855.865, 'eval_valid_steps_per_second': 8.559, 'epoch': 12.114285714285714}
+{'loss': 0.0926, 'grad_norm': 0.02419807145725947, 'learning_rate': 8.931709666362664e-06, 'epoch': 12.137142857142857}
+{'loss': 0.0926, 'grad_norm': 0.025797024275242993, 'learning_rate': 8.793976503907404e-06, 'epoch': 12.16}
+{'eval_valid_loss': 0.0941375270485878, 'eval_valid_runtime': 0.09, 'eval_valid_samples_per_second': 1110.986, 'eval_valid_steps_per_second': 11.11, 'epoch': 12.16}
+{'loss': 0.0926, 'grad_norm': 0.024623298896925418, 'learning_rate': 8.65721111678936e-06, 'epoch': 12.182857142857143}
+{'loss': 0.0926, 'grad_norm': 0.023627580663417164, 'learning_rate': 8.521416717115782e-06, 'epoch': 12.205714285714286}
+{'eval_valid_loss': 0.09416213631629944, 'eval_valid_runtime': 0.0898, 'eval_valid_samples_per_second': 1113.862, 'eval_valid_steps_per_second': 11.139, 'epoch': 12.205714285714286}
+{'loss': 0.0926, 'grad_norm': 0.02240436456868385, 'learning_rate': 8.386596494189136e-06, 'epoch': 12.228571428571428}
+{'loss': 0.0926, 'grad_norm': 0.023228051646831883, 'learning_rate': 8.252753614432074e-06, 'epoch': 12.251428571428571}
+{'eval_valid_loss': 0.09406787157058716, 'eval_valid_runtime': 0.0909, 'eval_valid_samples_per_second': 1100.682, 'eval_valid_steps_per_second': 11.007, 'epoch': 12.251428571428571}
+{'loss': 0.0926, 'grad_norm': 0.02372030035453881, 'learning_rate': 8.119891221313108e-06, 'epoch': 12.274285714285714}
+{'loss': 0.0926, 'grad_norm': 0.028995310792147507, 'learning_rate': 7.98801243527284e-06, 'epoch': 12.297142857142857}
+{'eval_valid_loss': 0.0941142588853836, 'eval_valid_runtime': 0.1232, 'eval_valid_samples_per_second': 811.954, 'eval_valid_steps_per_second': 8.12, 'epoch': 12.297142857142857}
+{'loss': 0.0926, 'grad_norm': 0.021674081092280056, 'learning_rate': 7.857120353650554e-06, 'epoch': 12.32}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+{'loss': 0.0926, 'grad_norm': 0.0236771867416358, 'learning_rate': 7.727218050611596e-06, 'epoch': 12.342857142857143}
+{'eval_valid_loss': 0.09418893605470657, 'eval_valid_runtime': 0.0901, 'eval_valid_samples_per_second': 1109.725, 'eval_valid_steps_per_second': 11.097, 'epoch': 12.342857142857143}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0926, 'grad_norm': 0.02268464876036396, 'learning_rate': 7.598308577075081e-06, 'epoch': 12.365714285714287}
+{'loss': 0.0926, 'grad_norm': 0.02403041447974117, 'learning_rate': 7.470394960642274e-06, 'epoch': 12.388571428571428}
+{'eval_valid_loss': 0.09418432414531708, 'eval_valid_runtime': 0.0898, 'eval_valid_samples_per_second': 1113.221, 'eval_valid_steps_per_second': 11.132, 'epoch': 12.388571428571428}
+{'loss': 0.0926, 'grad_norm': 0.025473843405646193, 'learning_rate': 7.3434802055255045e-06, 'epoch': 12.411428571428571}
+{'loss': 0.0926, 'grad_norm': 0.024983146550877692, 'learning_rate': 7.217567292477551e-06, 'epoch': 12.434285714285714}
+{'eval_valid_loss': 0.09420660883188248, 'eval_valid_runtime': 0.0899, 'eval_valid_samples_per_second': 1112.804, 'eval_valid_steps_per_second': 11.128, 'epoch': 12.434285714285714}
+{'loss': 0.0926, 'grad_norm': 0.02486389065695901, 'learning_rate': 7.092659178721717e-06, 'epoch': 12.457142857142857}
+{'loss': 0.0926, 'grad_norm': 0.023800368279214012, 'learning_rate': 6.96875879788228e-06, 'epoch': 12.48}
+{'eval_valid_loss': 0.09419842809438705, 'eval_valid_runtime': 0.0901, 'eval_valid_samples_per_second': 1110.477, 'eval_valid_steps_per_second': 11.105, 'epoch': 12.48}
+{'loss': 0.0926, 'grad_norm': 0.025113072799291855, 'learning_rate': 6.845869059915694e-06, 'epoch': 12.502857142857144}
+{'loss': 0.0926, 'grad_norm': 0.02558754146730531, 'learning_rate': 6.723992851042149e-06, 'epoch': 12.525714285714285}
+{'eval_valid_loss': 0.09416797012090683, 'eval_valid_runtime': 0.0898, 'eval_valid_samples_per_second': 1113.519, 'eval_valid_steps_per_second': 11.135, 'epoch': 12.525714285714285}
+{'loss': 0.0926, 'grad_norm': 0.023381819600307364, 'learning_rate': 6.603133033677844e-06, 'epoch': 12.548571428571428}
+{'loss': 0.0926, 'grad_norm': 0.02530558812313933, 'learning_rate': 6.483292446367745e-06, 'epoch': 12.571428571428571}
+{'eval_valid_loss': 0.0942373275756836, 'eval_valid_runtime': 0.0896, 'eval_valid_samples_per_second': 1115.64, 'eval_valid_steps_per_second': 11.156, 'epoch': 12.571428571428571}
+{'loss': 0.0926, 'grad_norm': 0.02303068863772149, 'learning_rate': 6.3644739037188986e-06, 'epoch': 12.594285714285714}
+{'loss': 0.0926, 'grad_norm': 0.023449997161114084, 'learning_rate': 6.246680196334392e-06, 'epoch': 12.617142857142857}
+{'eval_valid_loss': 0.09414277225732803, 'eval_valid_runtime': 0.0973, 'eval_valid_samples_per_second': 1027.776, 'eval_valid_steps_per_second': 10.278, 'epoch': 12.617142857142857}
+{'loss': 0.0926, 'grad_norm': 0.02471886547346144, 'learning_rate': 6.129914090747713e-06, 'epoch': 12.64}
+{'loss': 0.0926, 'grad_norm': 0.021697607817897313, 'learning_rate': 6.014178329357873e-06, 'epoch': 12.662857142857142}
+{'eval_valid_loss': 0.09415487945079803, 'eval_valid_runtime': 0.09, 'eval_valid_samples_per_second': 1110.783, 'eval_valid_steps_per_second': 11.108, 'epoch': 12.662857142857142}
+{'loss': 0.0926, 'grad_norm': 0.02513589973012685, 'learning_rate': 5.899475630364914e-06, 'epoch': 12.685714285714285}
+{'loss': 0.0926, 'grad_norm': 0.02311976817758242, 'learning_rate': 5.7858086877061294e-06, 'epoch': 12.708571428571428}
+{'eval_valid_loss': 0.09418737143278122, 'eval_valid_runtime': 0.0898, 'eval_valid_samples_per_second': 1113.357, 'eval_valid_steps_per_second': 11.134, 'epoch': 12.708571428571428}
+{'loss': 0.0926, 'grad_norm': 0.02956291455490347, 'learning_rate': 5.673180170992781e-06, 'epoch': 12.731428571428571}
+{'loss': 0.0926, 'grad_norm': 0.024398779823870502, 'learning_rate': 5.56159272544734e-06, 'epoch': 12.754285714285714}
+{'eval_valid_loss': 0.09412074089050293, 'eval_valid_runtime': 0.0905, 'eval_valid_samples_per_second': 1104.814, 'eval_valid_steps_per_second': 11.048, 'epoch': 12.754285714285714}
+{'loss': 0.0926, 'grad_norm': 0.028057498016532553, 'learning_rate': 5.451048971841477e-06, 'epoch': 12.777142857142858}
+{'loss': 0.0926, 'grad_norm': 0.022608019711619215, 'learning_rate': 5.3415515064344e-06, 'epoch': 12.8}
+{'eval_valid_loss': 0.09417431801557541, 'eval_valid_runtime': 0.0898, 'eval_valid_samples_per_second': 1113.507, 'eval_valid_steps_per_second': 11.135, 'epoch': 12.8}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0926, 'grad_norm': 0.0269007910928086, 'learning_rate': 5.233102900911929e-06, 'epoch': 12.822857142857142}
+{'loss': 0.0926, 'grad_norm': 0.02498353727549204, 'learning_rate': 5.125705702326106e-06, 'epoch': 12.845714285714285}
+{'eval_valid_loss': 0.09420783817768097, 'eval_valid_runtime': 0.09, 'eval_valid_samples_per_second': 1110.841, 'eval_valid_steps_per_second': 11.108, 'epoch': 12.845714285714285}
+{'loss': 0.0926, 'grad_norm': 0.024215012563106063, 'learning_rate': 5.019362433035324e-06, 'epoch': 12.868571428571428}
+{'loss': 0.0926, 'grad_norm': 0.027954512764827237, 'learning_rate': 4.914075590645167e-06, 'epoch': 12.891428571428571}
+{'eval_valid_loss': 0.09415897727012634, 'eval_valid_runtime': 0.0897, 'eval_valid_samples_per_second': 1114.946, 'eval_valid_steps_per_second': 11.149, 'epoch': 12.891428571428571}
+{'loss': 0.0926, 'grad_norm': 0.025433549158992423, 'learning_rate': 4.809847647949667e-06, 'epoch': 12.914285714285715}
+{'loss': 0.0926, 'grad_norm': 0.025654951287733565, 'learning_rate': 4.7066810528732745e-06, 'epoch': 12.937142857142858}
+{'eval_valid_loss': 0.09415390342473984, 'eval_valid_runtime': 0.0901, 'eval_valid_samples_per_second': 1109.604, 'eval_valid_steps_per_second': 11.096, 'epoch': 12.937142857142858}
+{'loss': 0.0926, 'grad_norm': 0.022113055502615466, 'learning_rate': 4.604578228413348e-06, 'epoch': 12.96}
+{'loss': 0.0926, 'grad_norm': 0.023467394395151223, 'learning_rate': 4.503541572583247e-06, 'epoch': 12.982857142857142}
+{'eval_valid_loss': 0.094082310795784, 'eval_valid_runtime': 0.09, 'eval_valid_samples_per_second': 1110.992, 'eval_valid_steps_per_second': 11.11, 'epoch': 12.982857142857142}
+{'loss': 0.0926, 'grad_norm': 0.02341255351093674, 'learning_rate': 4.4035734583560636e-06, 'epoch': 13.005714285714285}
+{'loss': 0.0925, 'grad_norm': 0.026650588847662617, 'learning_rate': 4.30467623360879e-06, 'epoch': 13.028571428571428}
+{'eval_valid_loss': 0.0941392257809639, 'eval_valid_runtime': 0.1172, 'eval_valid_samples_per_second': 852.912, 'eval_valid_steps_per_second': 8.529, 'epoch': 13.028571428571428}
+{'loss': 0.0925, 'grad_norm': 0.025196110047122425, 'learning_rate': 4.206852221067264e-06, 'epoch': 13.051428571428572}
+{'loss': 0.0925, 'grad_norm': 0.024385613689701418, 'learning_rate': 4.110103718251573e-06, 'epoch': 13.074285714285715}
+{'eval_valid_loss': 0.09418157488107681, 'eval_valid_runtime': 0.1219, 'eval_valid_samples_per_second': 820.389, 'eval_valid_steps_per_second': 8.204, 'epoch': 13.074285714285715}
+{'loss': 0.0925, 'grad_norm': 0.02403441524407377, 'learning_rate': 4.014432997422102e-06, 'epoch': 13.097142857142858}
+{'loss': 0.0925, 'grad_norm': 0.023249551653131386, 'learning_rate': 3.919842305526172e-06, 'epoch': 13.12}
+{'eval_valid_loss': 0.09414909034967422, 'eval_valid_runtime': 0.0898, 'eval_valid_samples_per_second': 1113.218, 'eval_valid_steps_per_second': 11.132, 'epoch': 13.12}
+{'loss': 0.0925, 'grad_norm': 0.025096608318275388, 'learning_rate': 3.8263338641452595e-06, 'epoch': 13.142857142857142}
+{'loss': 0.0925, 'grad_norm': 0.023984501270691624, 'learning_rate': 3.733909869442842e-06, 'epoch': 13.165714285714285}
+{'eval_valid_loss': 0.09423697739839554, 'eval_valid_runtime': 0.0898, 'eval_valid_samples_per_second': 1113.499, 'eval_valid_steps_per_second': 11.135, 'epoch': 13.165714285714285}
+{'loss': 0.0925, 'grad_norm': 0.024727350436967114, 'learning_rate': 3.6425724921127835e-06, 'epoch': 13.188571428571429}
+{'loss': 0.0925, 'grad_norm': 0.023241253660333673, 'learning_rate': 3.552323877328373e-06, 'epoch': 13.211428571428572}
+{'eval_valid_loss': 0.09422650188207626, 'eval_valid_runtime': 0.0901, 'eval_valid_samples_per_second': 1110.283, 'eval_valid_steps_per_second': 11.103, 'epoch': 13.211428571428572}
+{'loss': 0.0925, 'grad_norm': 0.025555005792668624, 'learning_rate': 3.463166144691954e-06, 'epoch': 13.234285714285715}
+{'loss': 0.0925, 'grad_norm': 0.024329967807880812, 'learning_rate': 3.3751013881851144e-06, 'epoch': 13.257142857142856}
+{'eval_valid_loss': 0.09423749893903732, 'eval_valid_runtime': 0.0909, 'eval_valid_samples_per_second': 1099.669, 'eval_valid_steps_per_second': 10.997, 'epoch': 13.257142857142856}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0925, 'grad_norm': 0.02282062647478099, 'learning_rate': 3.288131676119538e-06, 'epoch': 13.28}
+{'loss': 0.0925, 'grad_norm': 0.024687043904071105, 'learning_rate': 3.2022590510883964e-06, 'epoch': 13.302857142857142}
+{'eval_valid_loss': 0.0941762700676918, 'eval_valid_runtime': 0.09, 'eval_valid_samples_per_second': 1111.53, 'eval_valid_steps_per_second': 11.115, 'epoch': 13.302857142857142}
+{'loss': 0.0925, 'grad_norm': 0.02535535692024656, 'learning_rate': 3.11748552991839e-06, 'epoch': 13.325714285714286}
+{'loss': 0.0925, 'grad_norm': 0.025198259776038737, 'learning_rate': 3.0338131036223903e-06, 'epoch': 13.348571428571429}
+{'eval_valid_loss': 0.09416007995605469, 'eval_valid_runtime': 0.0897, 'eval_valid_samples_per_second': 1114.351, 'eval_valid_steps_per_second': 11.144, 'epoch': 13.348571428571429}
+{'loss': 0.0925, 'grad_norm': 0.023181957919561947, 'learning_rate': 2.9512437373526604e-06, 'epoch': 13.371428571428572}
+{'loss': 0.0925, 'grad_norm': 0.022410847731885418, 'learning_rate': 2.869779370354736e-06, 'epoch': 13.394285714285715}
+{'eval_valid_loss': 0.09414871037006378, 'eval_valid_runtime': 0.0903, 'eval_valid_samples_per_second': 1107.778, 'eval_valid_steps_per_second': 11.078, 'epoch': 13.394285714285715}
+{'loss': 0.0925, 'grad_norm': 0.026269509256842814, 'learning_rate': 2.7894219159218026e-06, 'epoch': 13.417142857142856}
+{'loss': 0.0925, 'grad_norm': 0.025882494417877485, 'learning_rate': 2.7101732613498744e-06, 'epoch': 13.44}
+{'eval_valid_loss': 0.09415080398321152, 'eval_valid_runtime': 0.0904, 'eval_valid_samples_per_second': 1105.953, 'eval_valid_steps_per_second': 11.06, 'epoch': 13.44}
+{'loss': 0.0925, 'grad_norm': 0.02399611251950473, 'learning_rate': 2.632035267893357e-06, 'epoch': 13.462857142857143}
+{'loss': 0.0925, 'grad_norm': 0.025555083495962774, 'learning_rate': 2.555009770721395e-06, 'epoch': 13.485714285714286}
+{'eval_valid_loss': 0.09411516785621643, 'eval_valid_runtime': 0.0972, 'eval_valid_samples_per_second': 1029.08, 'eval_valid_steps_per_second': 10.291, 'epoch': 13.485714285714286}
+{'loss': 0.0925, 'grad_norm': 0.022545854289213938, 'learning_rate': 2.4790985788747612e-06, 'epoch': 13.508571428571429}
+{'loss': 0.0925, 'grad_norm': 0.023465906115519127, 'learning_rate': 2.4043034752233516e-06, 'epoch': 13.531428571428572}
+{'eval_valid_loss': 0.09413930773735046, 'eval_valid_runtime': 0.0911, 'eval_valid_samples_per_second': 1097.434, 'eval_valid_steps_per_second': 10.974, 'epoch': 13.531428571428572}
+{'loss': 0.0925, 'grad_norm': 0.023801104051521936, 'learning_rate': 2.3306262164243643e-06, 'epoch': 13.554285714285715}
+{'loss': 0.0925, 'grad_norm': 0.02299358355222206, 'learning_rate': 2.2580685328809526e-06, 'epoch': 13.577142857142857}
+{'eval_valid_loss': 0.09413869678974152, 'eval_valid_runtime': 0.09, 'eval_valid_samples_per_second': 1110.95, 'eval_valid_steps_per_second': 11.11, 'epoch': 13.577142857142857}
+{'loss': 0.0925, 'grad_norm': 0.02648669873848304, 'learning_rate': 2.18663212870166e-06, 'epoch': 13.6}
+{'loss': 0.0925, 'grad_norm': 0.02382020019563324, 'learning_rate': 2.1163186816603895e-06, 'epoch': 13.622857142857143}
+{'eval_valid_loss': 0.0941128060221672, 'eval_valid_runtime': 0.0898, 'eval_valid_samples_per_second': 1113.171, 'eval_valid_steps_per_second': 11.132, 'epoch': 13.622857142857143}
+{'loss': 0.0925, 'grad_norm': 0.025290030381372692, 'learning_rate': 2.0471298431569474e-06, 'epoch': 13.645714285714286}
+{'loss': 0.0925, 'grad_norm': 0.025035374119578492, 'learning_rate': 1.979067238178328e-06, 'epoch': 13.668571428571429}
+{'eval_valid_loss': 0.09412553906440735, 'eval_valid_runtime': 0.1177, 'eval_valid_samples_per_second': 849.287, 'eval_valid_steps_per_second': 8.493, 'epoch': 13.668571428571429}
+{'loss': 0.0925, 'grad_norm': 0.0234955188370069, 'learning_rate': 1.9121324652604688e-06, 'epoch': 13.691428571428572}
+{'loss': 0.0925, 'grad_norm': 0.022935407836181965, 'learning_rate': 1.8463270964508005e-06, 'epoch': 13.714285714285714}
+{'eval_valid_loss': 0.09416321665048599, 'eval_valid_runtime': 0.0897, 'eval_valid_samples_per_second': 1114.839, 'eval_valid_steps_per_second': 11.148, 'epoch': 13.714285714285714}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0925, 'grad_norm': 0.02408329098783656, 'learning_rate': 1.781652677271245e-06, 'epoch': 13.737142857142857}
+{'loss': 0.0925, 'grad_norm': 0.024900090358730084, 'learning_rate': 1.7181107266819541e-06, 'epoch': 13.76}
+{'eval_valid_loss': 0.09417915344238281, 'eval_valid_runtime': 0.0897, 'eval_valid_samples_per_second': 1114.661, 'eval_valid_steps_per_second': 11.147, 'epoch': 13.76}
+{'loss': 0.0925, 'grad_norm': 0.026082206161541704, 'learning_rate': 1.6557027370456392e-06, 'epoch': 13.782857142857143}
+{'loss': 0.0925, 'grad_norm': 0.024191419431549645, 'learning_rate': 1.5944301740924927e-06, 'epoch': 13.805714285714286}
+{'eval_valid_loss': 0.09416484832763672, 'eval_valid_runtime': 0.0897, 'eval_valid_samples_per_second': 1114.398, 'eval_valid_steps_per_second': 11.144, 'epoch': 13.805714285714286}
+{'loss': 0.0925, 'grad_norm': 0.023114036051346435, 'learning_rate': 1.5342944768858113e-06, 'epoch': 13.82857142857143}
+{'loss': 0.0925, 'grad_norm': 0.0257711878130544, 'learning_rate': 1.4752970577881386e-06, 'epoch': 13.85142857142857}
+{'eval_valid_loss': 0.0941680446267128, 'eval_valid_runtime': 0.0904, 'eval_valid_samples_per_second': 1105.586, 'eval_valid_steps_per_second': 11.056, 'epoch': 13.85142857142857}
+{'loss': 0.0925, 'grad_norm': 0.02362696136186932, 'learning_rate': 1.4174393024281362e-06, 'epoch': 13.874285714285714}
+{'loss': 0.0925, 'grad_norm': 0.02450920109744061, 'learning_rate': 1.3607225696680271e-06, 'epoch': 13.897142857142857}
+{'eval_valid_loss': 0.09412761777639389, 'eval_valid_runtime': 0.0898, 'eval_valid_samples_per_second': 1113.404, 'eval_valid_steps_per_second': 11.134, 'epoch': 13.897142857142857}
+{'loss': 0.0925, 'grad_norm': 0.022639366192140076, 'learning_rate': 1.3051481915716812e-06, 'epoch': 13.92}
+{'loss': 0.0925, 'grad_norm': 0.027349973648948357, 'learning_rate': 1.2507174733733362e-06, 'epoch': 13.942857142857143}
+{'eval_valid_loss': 0.09415218979120255, 'eval_valid_runtime': 0.09, 'eval_valid_samples_per_second': 1110.665, 'eval_valid_steps_per_second': 11.107, 'epoch': 13.942857142857143}
+{'loss': 0.0925, 'grad_norm': 0.02539755594167487, 'learning_rate': 1.1974316934469321e-06, 'epoch': 13.965714285714286}
+{'loss': 0.0925, 'grad_norm': 0.023696130413392524, 'learning_rate': 1.1452921032760911e-06, 'epoch': 13.98857142857143}
+{'eval_valid_loss': 0.0941629409790039, 'eval_valid_runtime': 0.0902, 'eval_valid_samples_per_second': 1108.554, 'eval_valid_steps_per_second': 11.086, 'epoch': 13.98857142857143}
+{'loss': 0.0925, 'grad_norm': 0.02638518029932891, 'learning_rate': 1.0942999274247302e-06, 'epoch': 14.01142857142857}
+{'loss': 0.0924, 'grad_norm': 0.023367020533579492, 'learning_rate': 1.0444563635083004e-06, 'epoch': 14.034285714285714}
+{'eval_valid_loss': 0.09419573098421097, 'eval_valid_runtime': 0.0898, 'eval_valid_samples_per_second': 1113.416, 'eval_valid_steps_per_second': 11.134, 'epoch': 14.034285714285714}
+{'loss': 0.0925, 'grad_norm': 0.023809325763554486, 'learning_rate': 9.95762582165638e-07, 'epoch': 14.057142857142857}
+{'loss': 0.0924, 'grad_norm': 0.023512645478680465, 'learning_rate': 9.482197270315074e-07, 'epoch': 14.08}
+{'eval_valid_loss': 0.09417587518692017, 'eval_valid_runtime': 0.1168, 'eval_valid_samples_per_second': 855.86, 'eval_valid_steps_per_second': 8.559, 'epoch': 14.08}
+{'loss': 0.0924, 'grad_norm': 0.02367122931363642, 'learning_rate': 9.018289147097125e-07, 'epoch': 14.102857142857143}
+{'loss': 0.0924, 'grad_norm': 0.02338316340279857, 'learning_rate': 8.565912347468897e-07, 'epoch': 14.125714285714286}
+{'eval_valid_loss': 0.09419985115528107, 'eval_valid_runtime': 0.1238, 'eval_valid_samples_per_second': 807.862, 'eval_valid_steps_per_second': 8.079, 'epoch': 14.125714285714286}
+{'loss': 0.0924, 'grad_norm': 0.02355895485465541, 'learning_rate': 8.125077496068889e-07, 'epoch': 14.14857142857143}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+{'loss': 0.0924, 'grad_norm': 0.024308582952341548, 'learning_rate': 7.695794946458668e-07, 'epoch': 14.17142857142857}
+{'eval_valid_loss': 0.09418946504592896, 'eval_valid_runtime': 0.0906, 'eval_valid_samples_per_second': 1103.581, 'eval_valid_steps_per_second': 11.036, 'epoch': 14.17142857142857}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0924, 'grad_norm': 0.02390136266387842, 'learning_rate': 7.278074780879329e-07, 'epoch': 14.194285714285714}
+{'loss': 0.0924, 'grad_norm': 0.024041045770501722, 'learning_rate': 6.871926810014917e-07, 'epoch': 14.217142857142857}
+{'eval_valid_loss': 0.0941552221775055, 'eval_valid_runtime': 0.0898, 'eval_valid_samples_per_second': 1113.904, 'eval_valid_steps_per_second': 11.139, 'epoch': 14.217142857142857}
+{'loss': 0.0924, 'grad_norm': 0.026162512295597136, 'learning_rate': 6.477360572761715e-07, 'epoch': 14.24}
+{'loss': 0.0924, 'grad_norm': 0.026693583306726106, 'learning_rate': 6.094385336004593e-07, 'epoch': 14.262857142857143}
+{'eval_valid_loss': 0.09415346384048462, 'eval_valid_runtime': 0.0899, 'eval_valid_samples_per_second': 1112.35, 'eval_valid_steps_per_second': 11.123, 'epoch': 14.262857142857143}
+{'loss': 0.0924, 'grad_norm': 0.023853518702886774, 'learning_rate': 5.723010094399129e-07, 'epoch': 14.285714285714286}
+{'loss': 0.0924, 'grad_norm': 0.027159669864805426, 'learning_rate': 5.363243570160381e-07, 'epoch': 14.308571428571428}
+{'eval_valid_loss': 0.09418032318353653, 'eval_valid_runtime': 0.0903, 'eval_valid_samples_per_second': 1107.729, 'eval_valid_steps_per_second': 11.077, 'epoch': 14.308571428571428}
+{'loss': 0.0924, 'grad_norm': 0.026675809433794332, 'learning_rate': 5.015094212858062e-07, 'epoch': 14.331428571428571}
+{'loss': 0.0924, 'grad_norm': 0.023417280656977124, 'learning_rate': 4.6785701992181907e-07, 'epoch': 14.354285714285714}
+{'eval_valid_loss': 0.09419171512126923, 'eval_valid_runtime': 0.0971, 'eval_valid_samples_per_second': 1029.497, 'eval_valid_steps_per_second': 10.295, 'epoch': 14.354285714285714}
+{'loss': 0.0924, 'grad_norm': 0.02591067249867017, 'learning_rate': 4.3536794329309126e-07, 'epoch': 14.377142857142857}
+{'loss': 0.0925, 'grad_norm': 0.02393045427961424, 'learning_rate': 4.040429544464819e-07, 'epoch': 14.4}
+{'eval_valid_loss': 0.09418848901987076, 'eval_valid_runtime': 0.09, 'eval_valid_samples_per_second': 1111.298, 'eval_valid_steps_per_second': 11.113, 'epoch': 14.4}
+{'loss': 0.0924, 'grad_norm': 0.02286317441215866, 'learning_rate': 3.7388278908879194e-07, 'epoch': 14.422857142857143}
+{'loss': 0.0924, 'grad_norm': 0.022227084325808187, 'learning_rate': 3.4488815556947274e-07, 'epoch': 14.445714285714285}
+{'eval_valid_loss': 0.09416698664426804, 'eval_valid_runtime': 0.1233, 'eval_valid_samples_per_second': 810.903, 'eval_valid_steps_per_second': 8.109, 'epoch': 14.445714285714285}
+{'loss': 0.0924, 'grad_norm': 0.025966562222232988, 'learning_rate': 3.170597348639892e-07, 'epoch': 14.468571428571428}
+{'loss': 0.0924, 'grad_norm': 0.02507164478799661, 'learning_rate': 2.903981805578493e-07, 'epoch': 14.491428571428571}
+{'eval_valid_loss': 0.09416694939136505, 'eval_valid_runtime': 0.09, 'eval_valid_samples_per_second': 1110.594, 'eval_valid_steps_per_second': 11.106, 'epoch': 14.491428571428571}
+{'loss': 0.0924, 'grad_norm': 0.024441722366932324, 'learning_rate': 2.6490411883121625e-07, 'epoch': 14.514285714285714}
+{'loss': 0.0924, 'grad_norm': 0.02596892983244893, 'learning_rate': 2.405781484442149e-07, 'epoch': 14.537142857142857}
+{'eval_valid_loss': 0.09417108446359634, 'eval_valid_runtime': 0.091, 'eval_valid_samples_per_second': 1099.476, 'eval_valid_steps_per_second': 10.995, 'epoch': 14.537142857142857}
+{'loss': 0.0924, 'grad_norm': 0.025095280449806415, 'learning_rate': 2.1742084072289836e-07, 'epoch': 14.56}
+{'loss': 0.0924, 'grad_norm': 0.023792698629032223, 'learning_rate': 1.9543273954578667e-07, 'epoch': 14.582857142857144}
+{'eval_valid_loss': 0.0941704660654068, 'eval_valid_runtime': 0.09, 'eval_valid_samples_per_second': 1110.865, 'eval_valid_steps_per_second': 11.109, 'epoch': 14.582857142857144}
+{'loss': 0.0924, 'grad_norm': 0.023176253052801393, 'learning_rate': 1.746143613311102e-07, 'epoch': 14.605714285714285}
+{'loss': 0.0924, 'grad_norm': 0.024445362288207394, 'learning_rate': 1.5496619502469724e-07, 'epoch': 14.628571428571428}
+{'eval_valid_loss': 0.09418337047100067, 'eval_valid_runtime': 0.09, 'eval_valid_samples_per_second': 1111.124, 'eval_valid_steps_per_second': 11.111, 'epoch': 14.628571428571428}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{'loss': 0.0924, 'grad_norm': 0.02708991863629579, 'learning_rate': 1.3648870208847199e-07, 'epoch': 14.651428571428571}
+{'loss': 0.0924, 'grad_norm': 0.025778020234527542, 'learning_rate': 1.1918231648961331e-07, 'epoch': 14.674285714285714}
+{'eval_valid_loss': 0.09420309215784073, 'eval_valid_runtime': 0.0901, 'eval_valid_samples_per_second': 1110.465, 'eval_valid_steps_per_second': 11.105, 'epoch': 14.674285714285714}
+{'loss': 0.0924, 'grad_norm': 0.024675455971935763, 'learning_rate': 1.0304744469036843e-07, 'epoch': 14.697142857142858}
+{'loss': 0.0924, 'grad_norm': 0.023943663105185062, 'learning_rate': 8.808446563852712e-08, 'epoch': 14.72}
+{'eval_valid_loss': 0.09417807310819626, 'eval_valid_runtime': 0.0899, 'eval_valid_samples_per_second': 1111.81, 'eval_valid_steps_per_second': 11.118, 'epoch': 14.72}
+{'loss': 0.0924, 'grad_norm': 0.026414727762299507, 'learning_rate': 7.4293730758479e-08, 'epoch': 14.742857142857144}
+{'loss': 0.0924, 'grad_norm': 0.023702425668422258, 'learning_rate': 6.167556394300333e-08, 'epoch': 14.765714285714285}
+{'eval_valid_loss': 0.09419110417366028, 'eval_valid_runtime': 0.0902, 'eval_valid_samples_per_second': 1108.323, 'eval_valid_steps_per_second': 11.083, 'epoch': 14.765714285714285}
+{'loss': 0.0924, 'grad_norm': 0.023714117835803444, 'learning_rate': 5.0230261545625155e-08, 'epoch': 14.788571428571428}
+{'loss': 0.0924, 'grad_norm': 0.02573145743643781, 'learning_rate': 3.9958092373687526e-08, 'epoch': 14.811428571428571}
+{'eval_valid_loss': 0.09417562186717987, 'eval_valid_runtime': 0.0901, 'eval_valid_samples_per_second': 1109.813, 'eval_valid_steps_per_second': 11.098, 'epoch': 14.811428571428571}
+{'loss': 0.0924, 'grad_norm': 0.024200928757777653, 'learning_rate': 3.0859297682006574e-08, 'epoch': 14.834285714285715}
+{'loss': 0.0925, 'grad_norm': 0.02423689254264238, 'learning_rate': 2.2934091167237104e-08, 'epoch': 14.857142857142858}
+{'eval_valid_loss': 0.09418544918298721, 'eval_valid_runtime': 0.09, 'eval_valid_samples_per_second': 1110.524, 'eval_valid_steps_per_second': 11.105, 'epoch': 14.857142857142858}
+{'loss': 0.0924, 'grad_norm': 0.025595170422814086, 'learning_rate': 1.618265896283222e-08, 'epoch': 14.88}
+{'loss': 0.0924, 'grad_norm': 0.02708818869360764, 'learning_rate': 1.0605159634669015e-08, 'epoch': 14.902857142857142}
+{'eval_valid_loss': 0.09417421370744705, 'eval_valid_runtime': 0.0903, 'eval_valid_samples_per_second': 1107.255, 'eval_valid_steps_per_second': 11.073, 'epoch': 14.902857142857142}
+{'loss': 0.0924, 'grad_norm': 0.02427225623563698, 'learning_rate': 6.201724177345991e-09, 'epoch': 14.925714285714285}
+{'loss': 0.0924, 'grad_norm': 0.024649826901642757, 'learning_rate': 2.972456011091085e-09, 'epoch': 14.948571428571428}
+{'eval_valid_loss': 0.09417412430047989, 'eval_valid_runtime': 0.0899, 'eval_valid_samples_per_second': 1112.341, 'eval_valid_steps_per_second': 11.123, 'epoch': 14.948571428571428}
+{'loss': 0.0925, 'grad_norm': 0.026354444896059807, 'learning_rate': 9.174309793302805e-10, 'epoch': 14.971428571428572}
+{'loss': 0.0924, 'grad_norm': 0.024981296443921254, 'learning_rate': 3.669734691125193e-11, 'epoch': 14.994285714285715}
+{'eval_valid_loss': 0.09417884796857834, 'eval_valid_runtime': 0.0899, 'eval_valid_samples_per_second': 1111.849, 'eval_valid_steps_per_second': 11.118, 'epoch': 14.994285714285715}
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/modules/module.py:1898: UserWarning: Positional args are being deprecated, use kwargs instead. Refer to https://pytorch.org/docs/master/generated/torch.nn.Module.html#torch.nn.Module.state_dict for details.
+  warnings.warn(
+{'train_runtime': 67526.5352, 'train_samples_per_second': 621.978, 'train_steps_per_second': 4.859, 'train_loss': 0.1056733914242699, 'epoch': 15.0}

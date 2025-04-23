@@ -1,0 +1,112 @@
+Tokenizer vocab size: 109
+Qwen2ForCausalLM(
+  (model): Qwen2Model(
+    (embed_tokens): Embedding(109, 256)
+    (layers): ModuleList(
+      (0-5): 6 x Qwen2DecoderLayer(
+        (self_attn): Qwen2Attention(
+          (q_proj): Linear(in_features=256, out_features=256, bias=True)
+          (k_proj): Linear(in_features=256, out_features=64, bias=True)
+          (v_proj): Linear(in_features=256, out_features=64, bias=True)
+          (o_proj): Linear(in_features=256, out_features=256, bias=False)
+        )
+        (mlp): Qwen2MLP(
+          (gate_proj): Linear(in_features=256, out_features=512, bias=False)
+          (up_proj): Linear(in_features=256, out_features=512, bias=False)
+          (down_proj): Linear(in_features=512, out_features=256, bias=False)
+          (act_fn): SiLU()
+        )
+        (input_layernorm): Qwen2RMSNorm((256,), eps=1e-06)
+        (post_attention_layernorm): Qwen2RMSNorm((256,), eps=1e-06)
+      )
+    )
+    (norm): Qwen2RMSNorm((256,), eps=1e-06)
+    (rotary_emb): Qwen2RotaryEmbedding()
+  )
+  (lm_head): Linear(in_features=256, out_features=109, bias=False)
+)
+Model size: 3,403,776
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/table.py:1421: FutureWarning: promote has been superseded by promote_options='default'.
+  table = cls._concat_blocks(blocks, axis=0)
+Traceback (most recent call last):
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 295, in <module>
+    main(args)
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 214, in main
+    tokenized_datasets = hf_datasets.map(
+                         ^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/dataset_dict.py", line 853, in map
+    {
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/dataset_dict.py", line 854, in <dictcomp>
+    k: dataset.map(
+       ^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/arrow_dataset.py", line 592, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/arrow_dataset.py", line 557, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/arrow_dataset.py", line 3097, in map
+    for rank, done, content in Dataset._map_single(**dataset_kwargs):
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/arrow_dataset.py", line 3474, in _map_single
+    batch = apply_function_on_filtered_inputs(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/arrow_dataset.py", line 3353, in apply_function_on_filtered_inputs
+    processed_inputs = function(*fn_args, *additional_args, **fn_kwargs)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 194, in tokenize
+    outputs = tokenizer(processed_text,
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 2868, in __call__
+    encodings = self._call_one(text=text, text_pair=text_pair, **all_kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 2956, in _call_one
+    return self.batch_encode_plus(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 3158, in batch_encode_plus
+    return self._batch_encode_plus(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/tokenization_utils_fast.py", line 539, in _batch_encode_plus
+    encodings = self._tokenizer.encode_batch(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/n/home05/sqin/self-correct/sudoku/train.py", line 295, in <module>
+[rank0]:     main(args)
+[rank0]:   File "/n/home05/sqin/self-correct/sudoku/train.py", line 214, in main
+[rank0]:     tokenized_datasets = hf_datasets.map(
+[rank0]:                          ^^^^^^^^^^^^^^^^
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/dataset_dict.py", line 853, in map
+[rank0]:     {
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/dataset_dict.py", line 854, in <dictcomp>
+[rank0]:     k: dataset.map(
+[rank0]:        ^^^^^^^^^^^^
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/arrow_dataset.py", line 592, in wrapper
+[rank0]:     out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+[rank0]:                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/arrow_dataset.py", line 557, in wrapper
+[rank0]:     out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+[rank0]:                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/arrow_dataset.py", line 3097, in map
+[rank0]:     for rank, done, content in Dataset._map_single(**dataset_kwargs):
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/arrow_dataset.py", line 3474, in _map_single
+[rank0]:     batch = apply_function_on_filtered_inputs(
+[rank0]:             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/arrow_dataset.py", line 3353, in apply_function_on_filtered_inputs
+[rank0]:     processed_inputs = function(*fn_args, *additional_args, **fn_kwargs)
+[rank0]:                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/n/home05/sqin/self-correct/sudoku/train.py", line 194, in tokenize
+[rank0]:     outputs = tokenizer(processed_text,
+[rank0]:               ^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 2868, in __call__
+[rank0]:     encodings = self._call_one(text=text, text_pair=text_pair, **all_kwargs)
+[rank0]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 2956, in _call_one
+[rank0]:     return self.batch_encode_plus(
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 3158, in batch_encode_plus
+[rank0]:     return self._batch_encode_plus(
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/tokenization_utils_fast.py", line 539, in _batch_encode_plus
+[rank0]:     encodings = self._tokenizer.encode_batch(
+[rank0]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]: KeyboardInterrupt

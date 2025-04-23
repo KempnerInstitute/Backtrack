@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 216, in <module>
+    main(args)
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 148, in main
+    print(i, len(d['input_ids']))
+                 ~^^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'

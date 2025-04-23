@@ -1,0 +1,36 @@
+tokenized dataset DatasetDict({
+    train: Dataset({
+        features: ['input_ids'],
+        num_rows: 26444
+    })
+    val: Dataset({
+        features: ['input_ids'],
+        num_rows: 28
+    })
+})
+[2025-01-15 16:53:29,842] [INFO] [real_accelerator.py:158:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/training_args.py:1575: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+/n/home05/sqin/self-correct/sudoku/train.py:174: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+{'loss': 0.9272, 'grad_norm': 8.125, 'learning_rate': 7.564296520423602e-09, 'epoch': 0.0003025260928755105}
+{'loss': 1.0307, 'grad_norm': 8.375, 'learning_rate': 1.5128593040847203e-08, 'epoch': 0.000605052185751021}
+{'loss': 1.0683, 'grad_norm': 8.375, 'learning_rate': 2.2692889561270803e-08, 'epoch': 0.0009075782786265315}
+{'loss': 1.0222, 'grad_norm': 8.25, 'learning_rate': 3.0257186081694406e-08, 'epoch': 0.001210104371502042}
+{'loss': 1.0293, 'grad_norm': 8.0625, 'learning_rate': 3.782148260211801e-08, 'epoch': 0.0015126304643775525}
+{'loss': 1.2819, 'grad_norm': 9.0, 'learning_rate': 4.5385779122541606e-08, 'epoch': 0.001815156557253063}
+{'loss': 1.0628, 'grad_norm': 8.5625, 'learning_rate': 5.29500756429652e-08, 'epoch': 0.0021176826501285734}
+{'loss': 1.3372, 'grad_norm': 8.75, 'learning_rate': 6.051437216338881e-08, 'epoch': 0.002420208743004084}
+Traceback (most recent call last):
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 201, in <module>
+    main(args)
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 189, in main
+    trainer.train()
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/trainer.py", line 2171, in train
+    return inner_training_loop(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/trainer.py", line 2536, in _inner_training_loop
+    and (torch.isnan(tr_loss_step) or torch.isinf(tr_loss_step))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

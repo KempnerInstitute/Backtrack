@@ -1,0 +1,154 @@
+Tokenizer vocab size: 109
+Model size: 23,165,440
+train_files ['/n/netscratch/dam_lab/Lab/sqin/reason/sudoku/data/sudoku_data_0_10000.json', '/n/netscratch/dam_lab/Lab/sqin/reason/sudoku/data/sudoku_data_10000_20000.json', '/n/netscratch/dam_lab/Lab/sqin/reason/sudoku/data/sudoku_data_20000_30000.json', '/n/netscratch/dam_lab/Lab/sqin/reason/sudoku/data/sudoku_data_30000_40000.json', '/n/netscratch/dam_lab/Lab/sqin/reason/sudoku/data/sudoku_data_40000_50000.json', '/n/netscratch/dam_lab/Lab/sqin/reason/sudoku/data/sudoku_data_50000_60000.json', '/n/netscratch/dam_lab/Lab/sqin/reason/sudoku/data/sudoku_data_60000_70000.json', '/n/netscratch/dam_lab/Lab/sqin/reason/sudoku/data/sudoku_data_70000_80000.json', '/n/netscratch/dam_lab/Lab/sqin/reason/sudoku/data/sudoku_data_80000_90000.json', '/n/netscratch/dam_lab/Lab/sqin/reason/sudoku/data/sudoku_data_90000_100000.json']
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/table.py:1421: FutureWarning: promote has been superseded by promote_options='default'.
+  table = cls._concat_blocks(blocks, axis=0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Map: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100000/100000 [19:24<00:00, 85.91 examples/s]
+Map: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:00<00:00, 103.07 examples/s]
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/training_args.py:1575: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+/n/home05/sqin/self-correct/sudoku/train.py:204: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+tokenized dataset DatasetDict({
+    train: Dataset({
+        features: ['input_ids'],
+        num_rows: 383109
+    })
+    val: Dataset({
+        features: ['input_ids'],
+        num_rows: 278
+    })
+})
+Traceback (most recent call last):
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 231, in <module>
+    main(args)
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 204, in main
+    trainer = Trainer(
+              ^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/utils/deprecation.py", line 165, in wrapped_func
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/trainer.py", line 690, in __init__
+    if args.max_steps > 0 and args.num_train_epochs > 0:
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '>' not supported between instances of 'NoneType' and 'int'
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/n/home05/sqin/self-correct/sudoku/train.py", line 231, in <module>
+[rank0]:     main(args)
+[rank0]:   File "/n/home05/sqin/self-correct/sudoku/train.py", line 204, in main
+[rank0]:     trainer = Trainer(
+[rank0]:               ^^^^^^^^
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/utils/deprecation.py", line 165, in wrapped_func
+[rank0]:     return func(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/trainer.py", line 690, in __init__
+[rank0]:     if args.max_steps > 0 and args.num_train_epochs > 0:
+[rank0]:                               ^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]: TypeError: '>' not supported between instances of 'NoneType' and 'int'

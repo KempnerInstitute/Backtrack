@@ -1,0 +1,87 @@
+
+Tokenizer vocab size: 109
+Qwen2ForCausalLM(
+  (model): Qwen2Model(
+    (embed_tokens): Embedding(109, 1024)
+    (layers): ModuleList(
+      (0-23): 24 x Qwen2DecoderLayer(
+        (self_attn): Qwen2Attention(
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (k_proj): Linear(in_features=1024, out_features=256, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=256, bias=True)
+          (o_proj): Linear(in_features=1024, out_features=1024, bias=False)
+        )
+        (mlp): Qwen2MLP(
+          (gate_proj): Linear(in_features=1024, out_features=4096, bias=False)
+          (up_proj): Linear(in_features=1024, out_features=4096, bias=False)
+          (down_proj): Linear(in_features=4096, out_features=1024, bias=False)
+          (act_fn): SiLU()
+        )
+        (input_layernorm): Qwen2RMSNorm((1024,), eps=1e-06)
+        (post_attention_layernorm): Qwen2RMSNorm((1024,), eps=1e-06)
+      )
+    )
+    (norm): Qwen2RMSNorm((1024,), eps=1e-06)
+    (rotary_emb): Qwen2RotaryEmbedding()
+  )
+  (lm_head): Linear(in_features=1024, out_features=109, bias=False)
+)
+Model size: 365,214,720
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/table.py:1421: FutureWarning: promote has been superseded by promote_options='default'.
+  table = cls._concat_blocks(blocks, axis=0)
+Tokenized dataset example
+tokenized dataset DatasetDict({
+    train: Dataset({
+        features: ['input_ids'],
+        num_rows: 3477496
+    })
+    val: Dataset({
+        features: ['input_ids'],
+        num_rows: 3477496
+    })
+})
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/training_args.py:1575: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+/n/home05/sqin/self-correct/sudoku/train.py:269: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+Traceback (most recent call last):
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 296, in <module>
+    args = parser.parse_args()
+    ^^^^^^^^^^
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 284, in main
+    else:
+        ^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/trainer.py", line 2171, in train
+    return inner_training_loop(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/trainer.py", line 2269, in _inner_training_loop
+    self.optimizer, self.lr_scheduler = deepspeed_init(self, num_training_steps=max_steps)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/integrations/deepspeed.py", line 398, in deepspeed_init
+    hf_deepspeed_config.trainer_config_finalize(args, model, num_training_steps)
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/integrations/deepspeed.py", line 270, in trainer_config_finalize
+    raise ValueError(
+ValueError: Please correct the following DeepSpeed config values that mismatch TrainingArguments values:
+- ds gradient_accumulation_steps=2 vs hf gradient_accumulation_steps=1
+The easiest method is to set these DeepSpeed config values to 'auto'.
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/n/home05/sqin/self-correct/sudoku/train.py", line 296, in <module>
+[rank0]:     args = parser.parse_args()
+[rank0]:     ^^^^^^^^^^
+[rank0]:   File "/n/home05/sqin/self-correct/sudoku/train.py", line 284, in main
+[rank0]:     else:
+[rank0]:         ^^
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/trainer.py", line 2171, in train
+[rank0]:     return inner_training_loop(
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/trainer.py", line 2269, in _inner_training_loop
+[rank0]:     self.optimizer, self.lr_scheduler = deepspeed_init(self, num_training_steps=max_steps)
+[rank0]:                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/integrations/deepspeed.py", line 398, in deepspeed_init
+[rank0]:     hf_deepspeed_config.trainer_config_finalize(args, model, num_training_steps)
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/integrations/deepspeed.py", line 270, in trainer_config_finalize
+[rank0]:     raise ValueError(
+[rank0]: ValueError: Please correct the following DeepSpeed config values that mismatch TrainingArguments values:
+[rank0]: - ds gradient_accumulation_steps=2 vs hf gradient_accumulation_steps=1
+[rank0]: The easiest method is to set these DeepSpeed config values to 'auto'.

@@ -1,0 +1,9 @@
+Tokenizer vocab size: 109
+Model size: 23,165,440
+Traceback (most recent call last):
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 218, in <module>
+    main(args)
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 88, in main
+    train_files = os.listdirq(config["data_dir"])
+                  ^^^^^^^^^^^
+AttributeError: module 'os' has no attribute 'listdirq'

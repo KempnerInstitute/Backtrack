@@ -1,0 +1,45 @@
+tokenized dataset DatasetDict({
+    train: Dataset({
+        features: ['input_ids'],
+        num_rows: 26444
+    })
+    val: Dataset({
+        features: ['input_ids'],
+        num_rows: 28
+    })
+})
+[2025-01-15 17:20:05,829] [INFO] [real_accelerator.py:158:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/training_args.py:1575: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+/n/home05/sqin/self-correct/sudoku/train.py:177: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+{'loss': 1.0942, 'grad_norm': 8.1875, 'learning_rate': 7.564296520423602e-08, 'epoch': 0.003025260928755105}
+{'eval_valid_loss': 0.3109188675880432, 'eval_valid_runtime': 2.9121, 'eval_valid_samples_per_second': 9.615, 'eval_valid_steps_per_second': 4.808, 'epoch': 0.003025260928755105}
+{'loss': 1.0225, 'grad_norm': 8.3125, 'learning_rate': 1.5128593040847204e-07, 'epoch': 0.00605052185751021}
+{'eval_valid_loss': 0.31075868010520935, 'eval_valid_runtime': 2.8696, 'eval_valid_samples_per_second': 9.757, 'eval_valid_steps_per_second': 4.879, 'epoch': 0.00605052185751021}
+Traceback (most recent call last):
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 204, in <module>
+    trainer.train()
+    ^^^^^^^^^^
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 192, in main
+    args=training_args,
+    ^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/trainer.py", line 2171, in train
+    return inner_training_loop(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/trainer.py", line 2531, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/trainer.py", line 3715, in training_step
+    self.accelerator.backward(loss, **kwargs)
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/accelerate/accelerator.py", line 2196, in backward
+    loss.backward(**kwargs)
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/_tensor.py", line 525, in backward
+    torch.autograd.backward(
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/__init__.py", line 267, in backward
+    _engine_run_backward(
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py", line 744, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

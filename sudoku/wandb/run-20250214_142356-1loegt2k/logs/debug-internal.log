@@ -1,0 +1,115 @@
+2025-02-14 14:23:56,748 INFO    StreamThr :3900917 [internal.py:wandb_internal():85] W&B internal server running at pid: 3900917, started at: 2025-02-14 14:23:56.743095
+2025-02-14 14:23:56,750 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: status
+2025-02-14 14:23:56,794 INFO    WriterThread:3900917 [datastore.py:open_for_write():87] open: /n/home05/sqin/self-correct/sudoku/wandb/run-20250214_142356-1loegt2k/run-1loegt2k.wandb
+2025-02-14 14:23:56,800 DEBUG   SenderThread:3900917 [sender.py:send():379] send: header
+2025-02-14 14:23:56,800 DEBUG   SenderThread:3900917 [sender.py:send():379] send: run
+2025-02-14 14:23:57,091 INFO    SenderThread:3900917 [dir_watcher.py:__init__():211] watching files in: /n/home05/sqin/self-correct/sudoku/wandb/run-20250214_142356-1loegt2k/files
+2025-02-14 14:23:57,091 INFO    SenderThread:3900917 [sender.py:_start_run_threads():1188] run started: 1loegt2k with start time 1739561036.749326
+2025-02-14 14:23:57,125 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: check_version
+2025-02-14 14:23:57,125 DEBUG   SenderThread:3900917 [sender.py:send_request():406] send_request: check_version
+2025-02-14 14:23:57,200 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: run_start
+2025-02-14 14:23:57,224 DEBUG   HandlerThread:3900917 [system_info.py:__init__():26] System info init
+2025-02-14 14:23:57,224 DEBUG   HandlerThread:3900917 [system_info.py:__init__():41] System info init done
+2025-02-14 14:23:57,224 INFO    HandlerThread:3900917 [system_monitor.py:start():194] Starting system monitor
+2025-02-14 14:23:57,224 INFO    SystemMonitor:3900917 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2025-02-14 14:23:57,225 INFO    HandlerThread:3900917 [system_monitor.py:probe():214] Collecting system info
+2025-02-14 14:23:57,238 INFO    SystemMonitor:3900917 [interfaces.py:start():188] Started cpu monitoring
+2025-02-14 14:23:57,240 INFO    SystemMonitor:3900917 [interfaces.py:start():188] Started disk monitoring
+2025-02-14 14:23:57,240 INFO    SystemMonitor:3900917 [interfaces.py:start():188] Started gpu monitoring
+2025-02-14 14:23:57,241 INFO    SystemMonitor:3900917 [interfaces.py:start():188] Started memory monitoring
+2025-02-14 14:23:57,241 INFO    SystemMonitor:3900917 [interfaces.py:start():188] Started network monitoring
+2025-02-14 14:23:57,242 DEBUG   HandlerThread:3900917 [system_info.py:probe():152] Probing system
+2025-02-14 14:23:57,246 DEBUG   HandlerThread:3900917 [gitlib.py:_init_repo():56] git repository is invalid
+2025-02-14 14:23:57,246 DEBUG   HandlerThread:3900917 [system_info.py:probe():200] Probing system done
+2025-02-14 14:23:57,246 DEBUG   HandlerThread:3900917 [system_monitor.py:probe():223] {'os': 'Linux-4.18.0-513.18.1.el8_9.x86_64-x86_64-with-glibc2.28', 'python': '3.11.9', 'heartbeatAt': '2025-02-14T19:23:57.242640', 'startedAt': '2025-02-14T19:23:56.640035', 'docker': None, 'cuda': None, 'args': ('--config', 'configs/17M_sft.conf'), 'state': 'running', 'program': '/n/home05/sqin/self-correct/sudoku/train.py', 'codePathLocal': 'train.py', 'codePath': 'train.py', 'host': 'holygpu8a19606.rc.fas.harvard.edu', 'username': 'sqin', 'executable': '/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/bin/python3.11', 'cpu_count': 64, 'cpu_count_logical': 64, 'cpu_freq': {'current': 3395.3125, 'min': 3400.0, 'max': 3400.0}, 'cpu_freq_per_core': [{'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3300.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3300.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3300.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}, {'current': 3400.0, 'min': 3400.0, 'max': 3400.0}], 'disk': {'/': {'total': 49.9755859375, 'used': 15.308921813964844}}, 'gpu': 'NVIDIA A100-SXM4-40GB', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA A100-SXM4-40GB', 'memory_total': 42949672960}], 'memory': {'total': 1007.0250968933105}}
+2025-02-14 14:23:57,246 INFO    HandlerThread:3900917 [system_monitor.py:probe():224] Finished collecting system info
+2025-02-14 14:23:57,246 INFO    HandlerThread:3900917 [system_monitor.py:probe():227] Publishing system info
+2025-02-14 14:23:57,246 DEBUG   HandlerThread:3900917 [system_info.py:_save_conda():209] Saving list of conda packages installed into the current environment
+2025-02-14 14:23:58,097 INFO    Thread-12 :3900917 [dir_watcher.py:_on_file_created():271] file/dir created: /n/home05/sqin/self-correct/sudoku/wandb/run-20250214_142356-1loegt2k/files/conda-environment.yaml
+2025-02-14 14:24:00,659 DEBUG   HandlerThread:3900917 [system_info.py:_save_conda():224] Saving conda packages done
+2025-02-14 14:24:00,670 INFO    HandlerThread:3900917 [system_monitor.py:probe():229] Finished publishing system info
+2025-02-14 14:24:00,678 DEBUG   SenderThread:3900917 [sender.py:send():379] send: files
+2025-02-14 14:24:00,678 INFO    SenderThread:3900917 [sender.py:_save_file():1454] saving file wandb-metadata.json with policy now
+2025-02-14 14:24:00,915 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: python_packages
+2025-02-14 14:24:00,915 DEBUG   SenderThread:3900917 [sender.py:send_request():406] send_request: python_packages
+2025-02-14 14:24:00,916 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: stop_status
+2025-02-14 14:24:00,916 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:00,924 DEBUG   SenderThread:3900917 [sender.py:send_request():406] send_request: stop_status
+2025-02-14 14:24:01,037 INFO    wandb-upload_0:3900917 [upload_job.py:push():130] Uploaded file /tmp/tmpx08aahsdwandb/8d1qgpxk-wandb-metadata.json
+2025-02-14 14:24:01,096 DEBUG   SenderThread:3900917 [sender.py:send():379] send: telemetry
+2025-02-14 14:24:01,133 INFO    Thread-12 :3900917 [dir_watcher.py:_on_file_modified():288] file/dir modified: /n/home05/sqin/self-correct/sudoku/wandb/run-20250214_142356-1loegt2k/files/conda-environment.yaml
+2025-02-14 14:24:01,133 INFO    Thread-12 :3900917 [dir_watcher.py:_on_file_created():271] file/dir created: /n/home05/sqin/self-correct/sudoku/wandb/run-20250214_142356-1loegt2k/files/output.log
+2025-02-14 14:24:01,133 INFO    Thread-12 :3900917 [dir_watcher.py:_on_file_created():271] file/dir created: /n/home05/sqin/self-correct/sudoku/wandb/run-20250214_142356-1loegt2k/files/wandb-metadata.json
+2025-02-14 14:24:01,133 INFO    Thread-12 :3900917 [dir_watcher.py:_on_file_created():271] file/dir created: /n/home05/sqin/self-correct/sudoku/wandb/run-20250214_142356-1loegt2k/files/requirements.txt
+2025-02-14 14:24:01,916 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:02,160 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: status_report
+2025-02-14 14:24:02,916 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:03,142 INFO    Thread-12 :3900917 [dir_watcher.py:_on_file_modified():288] file/dir modified: /n/home05/sqin/self-correct/sudoku/wandb/run-20250214_142356-1loegt2k/files/output.log
+2025-02-14 14:24:03,917 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:04,917 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:05,917 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:06,917 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:07,917 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: status_report
+2025-02-14 14:24:07,917 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:08,917 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:09,917 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:10,917 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:11,917 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:12,917 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:13,062 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: status_report
+2025-02-14 14:24:13,917 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:14,195 INFO    Thread-12 :3900917 [dir_watcher.py:_on_file_modified():288] file/dir modified: /n/home05/sqin/self-correct/sudoku/wandb/run-20250214_142356-1loegt2k/files/output.log
+2025-02-14 14:24:14,917 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:15,916 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: stop_status
+2025-02-14 14:24:15,916 DEBUG   SenderThread:3900917 [sender.py:send_request():406] send_request: stop_status
+2025-02-14 14:24:15,956 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:16,918 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:17,918 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:18,918 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:19,033 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: status_report
+2025-02-14 14:24:19,918 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:20,918 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:21,918 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:22,918 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:23,919 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:24,918 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: status_report
+2025-02-14 14:24:24,919 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:25,919 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:26,919 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:27,919 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:28,919 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:29,921 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: status_report
+2025-02-14 14:24:29,921 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:30,252 INFO    Thread-12 :3900917 [dir_watcher.py:_on_file_modified():288] file/dir modified: /n/home05/sqin/self-correct/sudoku/wandb/run-20250214_142356-1loegt2k/files/config.yaml
+2025-02-14 14:24:30,916 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: stop_status
+2025-02-14 14:24:30,916 DEBUG   SenderThread:3900917 [sender.py:send_request():406] send_request: stop_status
+2025-02-14 14:24:30,957 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:31,922 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:32,922 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:33,922 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:34,922 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:35,918 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: status_report
+2025-02-14 14:24:35,922 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:36,922 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:37,922 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:38,922 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:39,922 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:40,918 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: status_report
+2025-02-14 14:24:40,922 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:41,922 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:42,922 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:43,922 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:44,292 INFO    Thread-12 :3900917 [dir_watcher.py:_on_file_modified():288] file/dir modified: /n/home05/sqin/self-correct/sudoku/wandb/run-20250214_142356-1loegt2k/files/output.log
+2025-02-14 14:24:45,023 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:45,297 INFO    Thread-12 :3900917 [dir_watcher.py:_on_file_modified():288] file/dir modified: /n/home05/sqin/self-correct/sudoku/wandb/run-20250214_142356-1loegt2k/files/output.log
+2025-02-14 14:24:45,918 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: stop_status
+2025-02-14 14:24:45,919 DEBUG   SenderThread:3900917 [sender.py:send_request():406] send_request: stop_status
+2025-02-14 14:24:45,986 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: status_report
+2025-02-14 14:24:46,023 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:47,029 DEBUG   HandlerThread:3900917 [handler.py:handle_request():158] handle_request: internal_messages
+2025-02-14 14:24:49,256 INFO    cpu       :3900917 [interfaces.py:monitor():138] Process cpu has exited.
+2025-02-14 14:24:49,257 DEBUG   SystemMonitor:3900917 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2025-02-14 14:24:49,257 DEBUG   SystemMonitor:3900917 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2025-02-14 14:24:49,257 DEBUG   SystemMonitor:3900917 [system_monitor.py:_start():183] Publishing last batch of metrics
+2025-02-14 14:24:49,258 DEBUG   SenderThread:3900917 [sender.py:send():379] send: stats
+2025-02-14 14:24:50,206 INFO    MainThread:3900917 [internal.py:handle_exit():75] Internal process exited

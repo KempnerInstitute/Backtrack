@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 203, in <module>
+    main(args)
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 129, in main
+    tokenized_datasets = hf_datasets.map(
+                         ^^^^^^^^^^^^^^^^
+TypeError: IterableDatasetDict.map() got an unexpected keyword argument 'streaming'

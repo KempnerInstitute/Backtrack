@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 191, in <module>
+    main(args)
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 64, in main
+    model = AutoModelForCausalLM.from_config(model_config,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 440, in from_config
+    return model_class._from_config(config, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/modeling_utils.py", line 1451, in _from_config
+    model = cls(config, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^
+TypeError: Qwen2ForCausalLM.__init__() got an unexpected keyword argument 'use_cache'

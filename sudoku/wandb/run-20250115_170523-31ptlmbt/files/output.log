@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 201, in <module>
+    main(args)
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 69, in main
+    model = AutoModelForCausalLM.from_pretrained(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 564, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/modeling_utils.py", line 4149, in from_pretrained
+    max_memory = get_balanced_memory(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/accelerate/utils/modeling.py", line 1061, in get_balanced_memory
+    max_memory = get_max_memory(max_memory)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/accelerate/utils/modeling.py", line 913, in get_max_memory
+    _ = torch.tensor([0], device=i)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

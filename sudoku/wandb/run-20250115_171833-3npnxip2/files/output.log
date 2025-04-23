@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 208, in <module>
+    main(args)
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 80, in main
+    model = DDP(model)
+            ^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/parallel/distributed.py", line 731, in __init__
+    self.process_group = _get_default_group()
+                         ^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/distributed/distributed_c10d.py", line 1008, in _get_default_group
+    raise ValueError(
+ValueError: Default process group has not been initialized, please make sure to call init_process_group.

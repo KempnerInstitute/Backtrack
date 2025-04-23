@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 208, in <module>
+    main(args)
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 80, in main
+    model = DDP(model, device_ids=[0, 1, 2])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/parallel/distributed.py", line 678, in __init__
+    self._log_and_throw(
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/nn/parallel/distributed.py", line 1089, in _log_and_throw
+    raise err_type(err_msg)
+ValueError: device_ids can only be None or contain a single element.

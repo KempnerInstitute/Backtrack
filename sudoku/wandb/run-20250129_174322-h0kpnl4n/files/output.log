@@ -1,0 +1,28 @@
+Tokenizer vocab size: 109
+Model size: 21,068,288
+Resolving data files: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████| 29/29 [00:00<00:00, 279620.27it/s]
+Traceback (most recent call last):
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 275, in <module>
+    main(args)
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 99, in main
+    hf_datasets = load_dataset(
+                  ^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/load.py", line 2129, in load_dataset
+    builder_instance = load_dataset_builder(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/load.py", line 1815, in load_dataset_builder
+    dataset_module = dataset_module_factory(
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/load.py", line 1430, in dataset_module_factory
+    ).get_module()
+      ^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/load.py", line 958, in get_module
+    data_files = DataFilesDict.from_patterns(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/data_files.py", line 674, in from_patterns
+    DataFilesList.from_patterns(
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/data_files.py", line 579, in from_patterns
+    resolve_pattern(
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/data_files.py", line 368, in resolve_pattern
+    raise FileNotFoundError(error_msg)
+FileNotFoundError: Unable to find '/n/netscratch/dam_lab/Lab/sqin/reason/sudoku/strategy_data/sudoku_data_sample.json'

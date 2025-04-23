@@ -1,0 +1,83 @@
+2025-03-04 20:36:33,787 INFO    StreamThr :1387898 [internal.py:wandb_internal():85] W&B internal server running at pid: 1387898, started at: 2025-03-04 20:36:33.773441
+2025-03-04 20:36:33,789 DEBUG   HandlerThread:1387898 [handler.py:handle_request():158] handle_request: status
+2025-03-04 20:36:33,836 INFO    WriterThread:1387898 [datastore.py:open_for_write():87] open: /n/home05/sqin/self-correct/sudoku/wandb/run-20250304_203633-kijwp584/run-kijwp584.wandb
+2025-03-04 20:36:33,842 DEBUG   SenderThread:1387898 [sender.py:send():379] send: header
+2025-03-04 20:36:33,842 DEBUG   SenderThread:1387898 [sender.py:send():379] send: run
+2025-03-04 20:36:34,170 INFO    SenderThread:1387898 [dir_watcher.py:__init__():211] watching files in: /n/home05/sqin/self-correct/sudoku/wandb/run-20250304_203633-kijwp584/files
+2025-03-04 20:36:34,170 INFO    SenderThread:1387898 [sender.py:_start_run_threads():1188] run started: kijwp584 with start time 1741138593.788414
+2025-03-04 20:36:34,196 DEBUG   HandlerThread:1387898 [handler.py:handle_request():158] handle_request: check_version
+2025-03-04 20:36:34,197 DEBUG   SenderThread:1387898 [sender.py:send_request():406] send_request: check_version
+2025-03-04 20:36:34,268 DEBUG   HandlerThread:1387898 [handler.py:handle_request():158] handle_request: run_start
+2025-03-04 20:36:34,332 DEBUG   HandlerThread:1387898 [system_info.py:__init__():26] System info init
+2025-03-04 20:36:34,332 DEBUG   HandlerThread:1387898 [system_info.py:__init__():41] System info init done
+2025-03-04 20:36:34,332 INFO    HandlerThread:1387898 [system_monitor.py:start():194] Starting system monitor
+2025-03-04 20:36:34,332 INFO    SystemMonitor:1387898 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2025-03-04 20:36:34,332 INFO    HandlerThread:1387898 [system_monitor.py:probe():214] Collecting system info
+2025-03-04 20:36:34,341 INFO    SystemMonitor:1387898 [interfaces.py:start():188] Started cpu monitoring
+2025-03-04 20:36:34,349 INFO    SystemMonitor:1387898 [interfaces.py:start():188] Started disk monitoring
+2025-03-04 20:36:34,360 INFO    SystemMonitor:1387898 [interfaces.py:start():188] Started gpu monitoring
+2025-03-04 20:36:34,367 INFO    SystemMonitor:1387898 [interfaces.py:start():188] Started memory monitoring
+2025-03-04 20:36:34,371 DEBUG   HandlerThread:1387898 [system_info.py:probe():152] Probing system
+2025-03-04 20:36:34,380 INFO    SystemMonitor:1387898 [interfaces.py:start():188] Started network monitoring
+2025-03-04 20:36:34,382 DEBUG   HandlerThread:1387898 [gitlib.py:_init_repo():56] git repository is invalid
+2025-03-04 20:36:34,382 DEBUG   HandlerThread:1387898 [system_info.py:probe():200] Probing system done
+2025-03-04 20:36:34,382 DEBUG   HandlerThread:1387898 [system_monitor.py:probe():223] {'os': 'Linux-4.18.0-513.18.1.el8_9.x86_64-x86_64-with-glibc2.28', 'python': '3.11.9', 'heartbeatAt': '2025-03-05T01:36:34.371849', 'startedAt': '2025-03-05T01:36:33.518656', 'docker': None, 'cuda': None, 'args': ('--config', 'configs/3M_sft_strat.conf'), 'state': 'running', 'program': '/n/home05/sqin/self-correct/sudoku/train.py', 'codePathLocal': 'train.py', 'codePath': 'train.py', 'host': 'holygpu8a15102.rc.fas.harvard.edu', 'username': 'sqin', 'executable': '/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/bin/python3.11', 'cpu_count': 96, 'cpu_count_logical': 96, 'cpu_freq': {'current': 2782.805343749995, 'min': 0.0, 'max': 0.0}, 'cpu_freq_per_core': [{'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 3799.99, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 3799.981, 'min': 0.0, 'max': 0.0}, {'current': 3799.989, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}, {'current': 2749.993, 'min': 0.0, 'max': 0.0}], 'disk': {'/': {'total': 49.9755859375, 'used': 35.849525451660156}}, 'gpu': 'NVIDIA H100 80GB HBM3', 'gpu_count': 2, 'gpu_devices': [{'name': 'NVIDIA H100 80GB HBM3', 'memory_total': 85520809984}, {'name': 'NVIDIA H100 80GB HBM3', 'memory_total': 85520809984}], 'memory': {'total': 1511.1263122558594}}
+2025-03-04 20:36:34,382 INFO    HandlerThread:1387898 [system_monitor.py:probe():224] Finished collecting system info
+2025-03-04 20:36:34,382 INFO    HandlerThread:1387898 [system_monitor.py:probe():227] Publishing system info
+2025-03-04 20:36:34,382 DEBUG   HandlerThread:1387898 [system_info.py:_save_conda():209] Saving list of conda packages installed into the current environment
+2025-03-04 20:36:35,168 INFO    Thread-12 :1387898 [dir_watcher.py:_on_file_created():271] file/dir created: /n/home05/sqin/self-correct/sudoku/wandb/run-20250304_203633-kijwp584/files/conda-environment.yaml
+2025-03-04 20:36:37,442 DEBUG   HandlerThread:1387898 [system_info.py:_save_conda():224] Saving conda packages done
+2025-03-04 20:36:37,454 INFO    HandlerThread:1387898 [system_monitor.py:probe():229] Finished publishing system info
+2025-03-04 20:36:37,457 DEBUG   SenderThread:1387898 [sender.py:send():379] send: files
+2025-03-04 20:36:37,457 INFO    SenderThread:1387898 [sender.py:_save_file():1454] saving file wandb-metadata.json with policy now
+2025-03-04 20:36:37,569 DEBUG   HandlerThread:1387898 [handler.py:handle_request():158] handle_request: python_packages
+2025-03-04 20:36:37,569 DEBUG   SenderThread:1387898 [sender.py:send_request():406] send_request: python_packages
+2025-03-04 20:36:37,570 DEBUG   HandlerThread:1387898 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-04 20:36:37,576 DEBUG   HandlerThread:1387898 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-04 20:36:37,578 DEBUG   SenderThread:1387898 [sender.py:send_request():406] send_request: stop_status
+2025-03-04 20:36:37,792 DEBUG   SenderThread:1387898 [sender.py:send():379] send: telemetry
+2025-03-04 20:36:37,820 INFO    wandb-upload_0:1387898 [upload_job.py:push():130] Uploaded file /tmp/tmpfshuzz2ywandb/je5i49c7-wandb-metadata.json
+2025-03-04 20:36:38,212 INFO    Thread-12 :1387898 [dir_watcher.py:_on_file_modified():288] file/dir modified: /n/home05/sqin/self-correct/sudoku/wandb/run-20250304_203633-kijwp584/files/conda-environment.yaml
+2025-03-04 20:36:38,212 INFO    Thread-12 :1387898 [dir_watcher.py:_on_file_created():271] file/dir created: /n/home05/sqin/self-correct/sudoku/wandb/run-20250304_203633-kijwp584/files/output.log
+2025-03-04 20:36:38,212 INFO    Thread-12 :1387898 [dir_watcher.py:_on_file_created():271] file/dir created: /n/home05/sqin/self-correct/sudoku/wandb/run-20250304_203633-kijwp584/files/wandb-metadata.json
+2025-03-04 20:36:38,212 INFO    Thread-12 :1387898 [dir_watcher.py:_on_file_created():271] file/dir created: /n/home05/sqin/self-correct/sudoku/wandb/run-20250304_203633-kijwp584/files/requirements.txt
+2025-03-04 20:36:38,576 DEBUG   HandlerThread:1387898 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-04 20:36:38,874 DEBUG   HandlerThread:1387898 [handler.py:handle_request():158] handle_request: status_report
+2025-03-04 20:36:39,778 DEBUG   HandlerThread:1387898 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-04 20:36:40,243 INFO    Thread-12 :1387898 [dir_watcher.py:_on_file_modified():288] file/dir modified: /n/home05/sqin/self-correct/sudoku/wandb/run-20250304_203633-kijwp584/files/output.log
+2025-03-04 20:36:40,796 DEBUG   HandlerThread:1387898 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-04 20:36:41,796 DEBUG   HandlerThread:1387898 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-04 20:36:42,306 INFO    Thread-12 :1387898 [dir_watcher.py:_on_file_modified():288] file/dir modified: /n/home05/sqin/self-correct/sudoku/wandb/run-20250304_203633-kijwp584/files/output.log
+2025-03-04 20:36:42,822 DEBUG   HandlerThread:1387898 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-04 20:36:43,827 DEBUG   HandlerThread:1387898 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-04 20:36:44,317 DEBUG   HandlerThread:1387898 [handler.py:handle_request():158] handle_request: status_report
+2025-03-04 20:36:44,329 INFO    Thread-12 :1387898 [dir_watcher.py:_on_file_modified():288] file/dir modified: /n/home05/sqin/self-correct/sudoku/wandb/run-20250304_203633-kijwp584/files/output.log
+2025-03-04 20:36:44,831 DEBUG   HandlerThread:1387898 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-04 20:36:45,835 DEBUG   HandlerThread:1387898 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-04 20:36:46,379 INFO    Thread-12 :1387898 [dir_watcher.py:_on_file_modified():288] file/dir modified: /n/home05/sqin/self-correct/sudoku/wandb/run-20250304_203633-kijwp584/files/output.log
+2025-03-04 20:36:46,847 DEBUG   HandlerThread:1387898 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-04 20:36:47,913 DEBUG   HandlerThread:1387898 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-04 20:36:48,426 INFO    Thread-12 :1387898 [dir_watcher.py:_on_file_modified():288] file/dir modified: /n/home05/sqin/self-correct/sudoku/wandb/run-20250304_203633-kijwp584/files/output.log
+2025-03-04 20:36:48,919 DEBUG   HandlerThread:1387898 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-04 20:36:49,472 DEBUG   HandlerThread:1387898 [handler.py:handle_request():158] handle_request: status_report
+2025-03-04 20:36:49,926 DEBUG   HandlerThread:1387898 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-04 20:36:50,460 INFO    Thread-12 :1387898 [dir_watcher.py:_on_file_modified():288] file/dir modified: /n/home05/sqin/self-correct/sudoku/wandb/run-20250304_203633-kijwp584/files/output.log
+2025-03-04 20:36:50,926 DEBUG   HandlerThread:1387898 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-04 20:36:51,941 DEBUG   HandlerThread:1387898 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-04 20:36:52,507 INFO    Thread-12 :1387898 [dir_watcher.py:_on_file_modified():288] file/dir modified: /n/home05/sqin/self-correct/sudoku/wandb/run-20250304_203633-kijwp584/files/output.log
+2025-03-04 20:36:52,615 DEBUG   HandlerThread:1387898 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-04 20:36:52,615 DEBUG   SenderThread:1387898 [sender.py:send_request():406] send_request: stop_status
+2025-03-04 20:36:52,941 DEBUG   HandlerThread:1387898 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-04 20:36:53,941 DEBUG   HandlerThread:1387898 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-04 20:36:54,524 INFO    Thread-12 :1387898 [dir_watcher.py:_on_file_modified():288] file/dir modified: /n/home05/sqin/self-correct/sudoku/wandb/run-20250304_203633-kijwp584/files/output.log
+2025-03-04 20:36:54,767 DEBUG   HandlerThread:1387898 [handler.py:handle_request():158] handle_request: status_report
+2025-03-04 20:36:55,033 DEBUG   HandlerThread:1387898 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-04 20:36:56,551 INFO    Thread-12 :1387898 [dir_watcher.py:_on_file_modified():288] file/dir modified: /n/home05/sqin/self-correct/sudoku/wandb/run-20250304_203633-kijwp584/files/output.log
+2025-03-04 20:36:58,377 INFO    cpu       :1387898 [interfaces.py:monitor():138] Process cpu has exited.
+2025-03-04 20:36:58,377 DEBUG   SystemMonitor:1387898 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2025-03-04 20:36:58,378 DEBUG   SystemMonitor:1387898 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2025-03-04 20:36:58,378 DEBUG   SystemMonitor:1387898 [system_monitor.py:_start():183] Publishing last batch of metrics
+2025-03-04 20:36:58,379 DEBUG   SenderThread:1387898 [sender.py:send():379] send: stats
+2025-03-04 20:36:58,839 WARNING StreamThr :1387898 [internal.py:is_dead():413] Internal process exiting, parent pid 1387863 disappeared
+2025-03-04 20:36:58,839 ERROR   StreamThr :1387898 [internal.py:wandb_internal():151] Internal process shutdown.
+2025-03-04 20:36:59,320 INFO    MainThread:1387898 [internal.py:handle_exit():75] Internal process exited

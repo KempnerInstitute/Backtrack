@@ -1,0 +1,72 @@
+GPT2LMHeadModel(
+  (transformer): GPT2Model(
+    (wte): Embedding(110, 512)
+    (wpe): Embedding(8192, 512)
+    (drop): Dropout(p=0.1, inplace=False)
+    (h): ModuleList(
+      (0-5): 6 x GPT2Block(
+        (ln_1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (attn): GPT2Attention(
+          (c_attn): Conv1D(nf=1536, nx=512)
+          (c_proj): Conv1D(nf=512, nx=512)
+          (attn_dropout): Dropout(p=0.1, inplace=False)
+          (resid_dropout): Dropout(p=0.1, inplace=False)
+        )
+        (ln_2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (mlp): GPT2MLP(
+          (c_fc): Conv1D(nf=2048, nx=512)
+          (c_proj): Conv1D(nf=512, nx=2048)
+          (act): NewGELUActivation()
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+    (ln_f): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+  )
+  (lm_head): Linear(in_features=512, out_features=110, bias=False)
+)
+Model size: 23,165,952
+torch.float32
+Tokenizer loaded
+Map:   0%|                                                                                                                              | 0/10000 [00:07<?, ? examples/s]
+Error in sys.excepthook:
+Traceback (most recent call last):
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/linecache.py", line 46, in getlines
+    return updatecache(filename, module_globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/linecache.py", line 136, in updatecache
+    with tokenize.open(fullname) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/tokenize.py", line 398, in open
+    encoding, lines = detect_encoding(buffer.readline)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/tokenize.py", line 367, in detect_encoding
+    first = read_or_stop()
+            ^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/tokenize.py", line 325, in read_or_stop
+    return readline()
+           ^^^^^^^^^^
+KeyboardInterrupt
+Original exception was:
+Traceback (most recent call last):
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 225, in <module>
+    main(args)
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 150, in main
+    tokenized_datasets = hf_datasets.map(
+                         ^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/dataset_dict.py", line 853, in map
+    {
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/dataset_dict.py", line 854, in <dictcomp>
+    k: dataset.map(
+       ^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/arrow_dataset.py", line 592, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/arrow_dataset.py", line 557, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/arrow_dataset.py", line 3103, in map
+    pbar.update(content)
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/tqdm/std.py", line 1198, in update
+    def update(self, n=1):
+KeyboardInterrupt

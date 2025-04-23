@@ -1,0 +1,9 @@
+
+Model size: 21,068,288
+Traceback (most recent call last):
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 214, in <module>
+    main(args)
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 85, in main
+    train_files = os.path.join(config["data_dir"], config["train_file"])
+                                                   ~~~~~~^^^^^^^^^^^^^^
+KeyError: 'train_file'

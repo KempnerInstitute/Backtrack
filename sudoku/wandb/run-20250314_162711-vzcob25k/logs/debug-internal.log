@@ -1,0 +1,90 @@
+2025-03-14 16:27:11,794 INFO    StreamThr :2429643 [internal.py:wandb_internal():85] W&B internal server running at pid: 2429643, started at: 2025-03-14 16:27:11.788399
+2025-03-14 16:27:11,795 DEBUG   HandlerThread:2429643 [handler.py:handle_request():158] handle_request: status
+2025-03-14 16:27:11,838 INFO    WriterThread:2429643 [datastore.py:open_for_write():87] open: /n/home05/sqin/self-correct/sudoku/wandb/run-20250314_162711-vzcob25k/run-vzcob25k.wandb
+2025-03-14 16:27:11,845 DEBUG   SenderThread:2429643 [sender.py:send():379] send: header
+2025-03-14 16:27:11,845 DEBUG   SenderThread:2429643 [sender.py:send():379] send: run
+2025-03-14 16:27:12,105 INFO    SenderThread:2429643 [dir_watcher.py:__init__():211] watching files in: /n/home05/sqin/self-correct/sudoku/wandb/run-20250314_162711-vzcob25k/files
+2025-03-14 16:27:12,105 INFO    SenderThread:2429643 [sender.py:_start_run_threads():1188] run started: vzcob25k with start time 1741984031.794124
+2025-03-14 16:27:12,142 DEBUG   HandlerThread:2429643 [handler.py:handle_request():158] handle_request: check_version
+2025-03-14 16:27:12,142 DEBUG   SenderThread:2429643 [sender.py:send_request():406] send_request: check_version
+2025-03-14 16:27:12,217 DEBUG   HandlerThread:2429643 [handler.py:handle_request():158] handle_request: run_start
+2025-03-14 16:27:12,288 DEBUG   HandlerThread:2429643 [system_info.py:__init__():26] System info init
+2025-03-14 16:27:12,288 DEBUG   HandlerThread:2429643 [system_info.py:__init__():41] System info init done
+2025-03-14 16:27:12,288 INFO    HandlerThread:2429643 [system_monitor.py:start():194] Starting system monitor
+2025-03-14 16:27:12,288 INFO    SystemMonitor:2429643 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2025-03-14 16:27:12,288 INFO    HandlerThread:2429643 [system_monitor.py:probe():214] Collecting system info
+2025-03-14 16:27:12,289 INFO    SystemMonitor:2429643 [interfaces.py:start():188] Started cpu monitoring
+2025-03-14 16:27:12,289 INFO    SystemMonitor:2429643 [interfaces.py:start():188] Started disk monitoring
+2025-03-14 16:27:12,290 INFO    SystemMonitor:2429643 [interfaces.py:start():188] Started gpu monitoring
+2025-03-14 16:27:12,290 INFO    SystemMonitor:2429643 [interfaces.py:start():188] Started memory monitoring
+2025-03-14 16:27:12,291 INFO    SystemMonitor:2429643 [interfaces.py:start():188] Started network monitoring
+2025-03-14 16:27:12,330 DEBUG   HandlerThread:2429643 [system_info.py:probe():152] Probing system
+2025-03-14 16:27:12,335 DEBUG   HandlerThread:2429643 [gitlib.py:_init_repo():56] git repository is invalid
+2025-03-14 16:27:12,335 DEBUG   HandlerThread:2429643 [system_info.py:probe():200] Probing system done
+2025-03-14 16:27:12,335 DEBUG   HandlerThread:2429643 [system_monitor.py:probe():223] {'os': 'Linux-4.18.0-513.18.1.el8_9.x86_64-x86_64-with-glibc2.28', 'python': '3.11.9', 'heartbeatAt': '2025-03-14T20:27:12.330508', 'startedAt': '2025-03-14T20:27:11.682838', 'docker': None, 'cuda': None, 'args': ('--config', 'configs/17M_sft_strat.conf', '--resume', '--ckpt', '/n/netscratch/dam_lab/Lab/sqin/reason/sudoku/outputs/17M-sft-strat-fixed/checkpoint-590000'), 'state': 'running', 'program': '/n/home05/sqin/self-correct/sudoku/train.py', 'codePathLocal': 'train.py', 'codePath': 'train.py', 'host': 'holygpu8a15504.rc.fas.harvard.edu', 'username': 'sqin', 'executable': '/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/bin/python3.11', 'cpu_count': 96, 'cpu_count_logical': 96, 'cpu_freq': {'current': 2782.805270833333, 'min': 1500.0, 'max': 3810.791000000006}, 'cpu_freq_per_core': [{'current': 3799.979, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 3799.85, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 3798.756, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 3800.055, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 3800.029, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}], 'disk': {'/': {'total': 49.9755859375, 'used': 17.603378295898438}}, 'gpu': 'NVIDIA H100 80GB HBM3', 'gpu_count': 2, 'gpu_devices': [{'name': 'NVIDIA H100 80GB HBM3', 'memory_total': 85520809984}, {'name': 'NVIDIA H100 80GB HBM3', 'memory_total': 85520809984}], 'memory': {'total': 1511.1288299560547}}
+2025-03-14 16:27:12,335 INFO    HandlerThread:2429643 [system_monitor.py:probe():224] Finished collecting system info
+2025-03-14 16:27:12,335 INFO    HandlerThread:2429643 [system_monitor.py:probe():227] Publishing system info
+2025-03-14 16:27:12,335 DEBUG   HandlerThread:2429643 [system_info.py:_save_conda():209] Saving list of conda packages installed into the current environment
+2025-03-14 16:27:13,111 INFO    Thread-12 :2429643 [dir_watcher.py:_on_file_created():271] file/dir created: /n/home05/sqin/self-correct/sudoku/wandb/run-20250314_162711-vzcob25k/files/conda-environment.yaml
+2025-03-14 16:27:16,277 DEBUG   HandlerThread:2429643 [system_info.py:_save_conda():224] Saving conda packages done
+2025-03-14 16:27:16,286 INFO    HandlerThread:2429643 [system_monitor.py:probe():229] Finished publishing system info
+2025-03-14 16:27:16,294 DEBUG   SenderThread:2429643 [sender.py:send():379] send: files
+2025-03-14 16:27:16,294 INFO    SenderThread:2429643 [sender.py:_save_file():1454] saving file wandb-metadata.json with policy now
+2025-03-14 16:27:16,523 DEBUG   HandlerThread:2429643 [handler.py:handle_request():158] handle_request: python_packages
+2025-03-14 16:27:16,523 DEBUG   SenderThread:2429643 [sender.py:send_request():406] send_request: python_packages
+2025-03-14 16:27:16,523 DEBUG   HandlerThread:2429643 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-14 16:27:16,524 DEBUG   HandlerThread:2429643 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-14 16:27:16,532 DEBUG   SenderThread:2429643 [sender.py:send_request():406] send_request: stop_status
+2025-03-14 16:27:16,636 INFO    wandb-upload_0:2429643 [upload_job.py:push():130] Uploaded file /tmp/tmprexqcluhwandb/i4xhv91n-wandb-metadata.json
+2025-03-14 16:27:16,652 DEBUG   SenderThread:2429643 [sender.py:send():379] send: telemetry
+2025-03-14 16:27:17,129 INFO    Thread-12 :2429643 [dir_watcher.py:_on_file_modified():288] file/dir modified: /n/home05/sqin/self-correct/sudoku/wandb/run-20250314_162711-vzcob25k/files/conda-environment.yaml
+2025-03-14 16:27:17,132 INFO    Thread-12 :2429643 [dir_watcher.py:_on_file_created():271] file/dir created: /n/home05/sqin/self-correct/sudoku/wandb/run-20250314_162711-vzcob25k/files/requirements.txt
+2025-03-14 16:27:17,132 INFO    Thread-12 :2429643 [dir_watcher.py:_on_file_created():271] file/dir created: /n/home05/sqin/self-correct/sudoku/wandb/run-20250314_162711-vzcob25k/files/wandb-metadata.json
+2025-03-14 16:27:17,132 INFO    Thread-12 :2429643 [dir_watcher.py:_on_file_created():271] file/dir created: /n/home05/sqin/self-correct/sudoku/wandb/run-20250314_162711-vzcob25k/files/output.log
+2025-03-14 16:27:17,524 DEBUG   HandlerThread:2429643 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-14 16:27:17,713 DEBUG   HandlerThread:2429643 [handler.py:handle_request():158] handle_request: status_report
+2025-03-14 16:27:18,524 DEBUG   HandlerThread:2429643 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-14 16:27:19,138 INFO    Thread-12 :2429643 [dir_watcher.py:_on_file_modified():288] file/dir modified: /n/home05/sqin/self-correct/sudoku/wandb/run-20250314_162711-vzcob25k/files/output.log
+2025-03-14 16:27:19,524 DEBUG   HandlerThread:2429643 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-14 16:27:20,524 DEBUG   HandlerThread:2429643 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-14 16:27:21,524 DEBUG   HandlerThread:2429643 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-14 16:27:22,154 INFO    Thread-12 :2429643 [dir_watcher.py:_on_file_modified():288] file/dir modified: /n/home05/sqin/self-correct/sudoku/wandb/run-20250314_162711-vzcob25k/files/output.log
+2025-03-14 16:27:22,524 DEBUG   HandlerThread:2429643 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-14 16:27:23,524 DEBUG   HandlerThread:2429643 [handler.py:handle_request():158] handle_request: status_report
+2025-03-14 16:27:23,525 DEBUG   HandlerThread:2429643 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-14 16:27:24,525 DEBUG   HandlerThread:2429643 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-14 16:27:25,525 DEBUG   HandlerThread:2429643 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-14 16:27:26,525 DEBUG   HandlerThread:2429643 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-14 16:27:27,525 DEBUG   HandlerThread:2429643 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-14 16:27:28,525 DEBUG   HandlerThread:2429643 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-14 16:27:29,525 DEBUG   HandlerThread:2429643 [handler.py:handle_request():158] handle_request: status_report
+2025-03-14 16:27:29,525 DEBUG   HandlerThread:2429643 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-14 16:27:30,525 DEBUG   HandlerThread:2429643 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-14 16:27:31,523 DEBUG   HandlerThread:2429643 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-14 16:27:31,524 DEBUG   SenderThread:2429643 [sender.py:send_request():406] send_request: stop_status
+2025-03-14 16:27:31,564 DEBUG   HandlerThread:2429643 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-14 16:27:32,526 DEBUG   HandlerThread:2429643 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-14 16:27:33,526 DEBUG   HandlerThread:2429643 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-14 16:27:34,526 DEBUG   HandlerThread:2429643 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-14 16:27:34,639 DEBUG   HandlerThread:2429643 [handler.py:handle_request():158] handle_request: status_report
+2025-03-14 16:27:35,526 DEBUG   HandlerThread:2429643 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-14 16:27:36,526 DEBUG   HandlerThread:2429643 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-14 16:27:37,526 DEBUG   HandlerThread:2429643 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-14 16:27:38,527 DEBUG   HandlerThread:2429643 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-14 16:27:39,229 INFO    Thread-12 :2429643 [dir_watcher.py:_on_file_modified():288] file/dir modified: /n/home05/sqin/self-correct/sudoku/wandb/run-20250314_162711-vzcob25k/files/output.log
+2025-03-14 16:27:39,527 DEBUG   HandlerThread:2429643 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-14 16:27:40,101 DEBUG   HandlerThread:2429643 [handler.py:handle_request():158] handle_request: status_report
+2025-03-14 16:27:40,315 DEBUG   SenderThread:2429643 [sender.py:send():379] send: config
+2025-03-14 16:27:40,356 DEBUG   SenderThread:2429643 [sender.py:send():379] send: metric
+2025-03-14 16:27:40,356 DEBUG   SenderThread:2429643 [sender.py:send():379] send: telemetry
+2025-03-14 16:27:40,356 DEBUG   SenderThread:2429643 [sender.py:send():379] send: telemetry
+2025-03-14 16:27:40,356 DEBUG   SenderThread:2429643 [sender.py:send():379] send: metric
+2025-03-14 16:27:40,356 WARNING SenderThread:2429643 [sender.py:send_metric():1405] Seen metric with glob (shouldn't happen)
+2025-03-14 16:27:40,356 DEBUG   SenderThread:2429643 [sender.py:send():379] send: telemetry
+2025-03-14 16:27:40,356 DEBUG   SenderThread:2429643 [sender.py:send():379] send: telemetry
+2025-03-14 16:27:40,356 DEBUG   SenderThread:2429643 [sender.py:send():379] send: config
+2025-03-14 16:27:40,580 DEBUG   HandlerThread:2429643 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-14 16:27:41,569 DEBUG   HandlerThread:2429643 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-14 16:27:42,569 DEBUG   HandlerThread:2429643 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-14 16:27:43,249 INFO    Thread-12 :2429643 [dir_watcher.py:_on_file_modified():288] file/dir modified: /n/home05/sqin/self-correct/sudoku/wandb/run-20250314_162711-vzcob25k/files/output.log
+2025-03-14 16:27:43,570 DEBUG   HandlerThread:2429643 [handler.py:handle_request():158] handle_request: internal_messages

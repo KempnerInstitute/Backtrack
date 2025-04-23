@@ -1,0 +1,203 @@
+transformer.wte.weight: cpu
+transformer.wpe.weight: cpu
+transformer.h.0.ln_1.weight: cpu
+transformer.h.0.ln_1.bias: cpu
+transformer.h.0.attn.c_attn.weight: cpu
+transformer.h.0.attn.c_attn.bias: cpu
+transformer.h.0.attn.c_proj.weight: cpu
+transformer.h.0.attn.c_proj.bias: cpu
+transformer.h.0.ln_2.weight: cpu
+transformer.h.0.ln_2.bias: cpu
+transformer.h.0.mlp.c_fc.weight: cpu
+transformer.h.0.mlp.c_fc.bias: cpu
+transformer.h.0.mlp.c_proj.weight: cpu
+transformer.h.0.mlp.c_proj.bias: cpu
+transformer.h.1.ln_1.weight: cpu
+transformer.h.1.ln_1.bias: cpu
+transformer.h.1.attn.c_attn.weight: cpu
+transformer.h.1.attn.c_attn.bias: cpu
+transformer.h.1.attn.c_proj.weight: cpu
+transformer.h.1.attn.c_proj.bias: cpu
+transformer.h.1.ln_2.weight: cpu
+transformer.h.1.ln_2.bias: cpu
+transformer.h.1.mlp.c_fc.weight: cpu
+transformer.h.1.mlp.c_fc.bias: cpu
+transformer.h.1.mlp.c_proj.weight: cpu
+transformer.h.1.mlp.c_proj.bias: cpu
+transformer.h.2.ln_1.weight: cpu
+transformer.h.2.ln_1.bias: cpu
+transformer.h.2.attn.c_attn.weight: cpu
+transformer.h.2.attn.c_attn.bias: cpu
+transformer.h.2.attn.c_proj.weight: cpu
+transformer.h.2.attn.c_proj.bias: cpu
+transformer.h.2.ln_2.weight: cpu
+transformer.h.2.ln_2.bias: cpu
+transformer.h.2.mlp.c_fc.weight: cpu
+transformer.h.2.mlp.c_fc.bias: cpu
+transformer.h.2.mlp.c_proj.weight: cpu
+transformer.h.2.mlp.c_proj.bias: cpu
+transformer.h.3.ln_1.weight: cpu
+transformer.h.3.ln_1.bias: cpu
+transformer.h.3.attn.c_attn.weight: cpu
+transformer.h.3.attn.c_attn.bias: cpu
+transformer.h.3.attn.c_proj.weight: cpu
+transformer.h.3.attn.c_proj.bias: cpu
+transformer.h.3.ln_2.weight: cpu
+transformer.h.3.ln_2.bias: cpu
+transformer.h.3.mlp.c_fc.weight: cpu
+transformer.h.3.mlp.c_fc.bias: cpu
+transformer.h.3.mlp.c_proj.weight: cpu
+transformer.h.3.mlp.c_proj.bias: cpu
+transformer.h.4.ln_1.weight: cpu
+transformer.h.4.ln_1.bias: cpu
+transformer.h.4.attn.c_attn.weight: cpu
+transformer.h.4.attn.c_attn.bias: cpu
+transformer.h.4.attn.c_proj.weight: cpu
+transformer.h.4.attn.c_proj.bias: cpu
+transformer.h.4.ln_2.weight: cpu
+transformer.h.4.ln_2.bias: cpu
+transformer.h.4.mlp.c_fc.weight: cpu
+transformer.h.4.mlp.c_fc.bias: cpu
+transformer.h.4.mlp.c_proj.weight: cpu
+transformer.h.4.mlp.c_proj.bias: cpu
+transformer.h.5.ln_1.weight: cpu
+transformer.h.5.ln_1.bias: cpu
+transformer.h.5.attn.c_attn.weight: cpu
+transformer.h.5.attn.c_attn.bias: cpu
+transformer.h.5.attn.c_proj.weight: cpu
+transformer.h.5.attn.c_proj.bias: cpu
+transformer.h.5.ln_2.weight: cpu
+transformer.h.5.ln_2.bias: cpu
+transformer.h.5.mlp.c_fc.weight: cpu
+transformer.h.5.mlp.c_fc.bias: cpu
+transformer.h.5.mlp.c_proj.weight: cpu
+transformer.h.5.mlp.c_proj.bias: cpu
+transformer.ln_f.weight: cpu
+transformer.ln_f.bias: cpu
+Model size: 21,068,288
+tokenized dataset DatasetDict({
+    train: Dataset({
+        features: ['input_ids'],
+        num_rows: 39165
+    })
+    val: Dataset({
+        features: ['input_ids'],
+        num_rows: 278
+    })
+})
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/training_args.py:1575: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+/n/home05/sqin/self-correct/sudoku/train.py:186: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/deepspeed/runtime/zero/stage_1_and_2.py:1881: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at ../torch/csrc/tensor/python_tensor.cpp:78.)
+  overflow_gpu = get_accelerator().ByteTensor([overflow])
+{'loss': 4.9158, 'grad_norm': 0.0, 'learning_rate': 0.0, 'epoch': 0.008169934640522876}
+{'loss': 4.9143, 'grad_norm': 26.136408746853824, 'learning_rate': 6.122448979591837e-07, 'epoch': 0.016339869281045753}
+{'loss': 4.6592, 'grad_norm': 20.2130084368396, 'learning_rate': 2.653061224489796e-06, 'epoch': 0.024509803921568627}
+{'loss': 3.8489, 'grad_norm': 5.948074275821917, 'learning_rate': 4.693877551020408e-06, 'epoch': 0.032679738562091505}
+{'loss': 3.353, 'grad_norm': 4.874270323406987, 'learning_rate': 6.734693877551021e-06, 'epoch': 0.04084967320261438}
+{'loss': 2.9148, 'grad_norm': 4.06786587011606, 'learning_rate': 8.775510204081633e-06, 'epoch': 0.049019607843137254}
+{'loss': 2.4544, 'grad_norm': 2.090730758737532, 'learning_rate': 1.0816326530612246e-05, 'epoch': 0.05718954248366013}
+{'loss': 2.134, 'grad_norm': 1.160598542133213, 'learning_rate': 1.2857142857142857e-05, 'epoch': 0.06535947712418301}
+{'loss': 1.9899, 'grad_norm': 0.7982199710127896, 'learning_rate': 1.4897959183673472e-05, 'epoch': 0.07352941176470588}
+{'loss': 1.9344, 'grad_norm': 0.6515384038693615, 'learning_rate': 1.693877551020408e-05, 'epoch': 0.08169934640522876}
+{'eval_valid_loss': 1.8984375, 'eval_valid_runtime': 0.5746, 'eval_valid_samples_per_second': 483.823, 'eval_valid_steps_per_second': 15.663, 'epoch': 0.08169934640522876}
+{'loss': 1.9015, 'grad_norm': 0.6091904123737515, 'learning_rate': 1.8979591836734696e-05, 'epoch': 0.08986928104575163}
+{'loss': 1.883, 'grad_norm': 1.0935569081843441, 'learning_rate': 2.1020408163265307e-05, 'epoch': 0.09803921568627451}
+{'loss': 1.869, 'grad_norm': 0.750381546521611, 'learning_rate': 2.306122448979592e-05, 'epoch': 0.10620915032679738}
+{'loss': 1.8571, 'grad_norm': 0.8667847411177575, 'learning_rate': 2.5102040816326533e-05, 'epoch': 0.11437908496732026}
+{'loss': 1.8492, 'grad_norm': 0.5024359640673818, 'learning_rate': 2.714285714285714e-05, 'epoch': 0.12254901960784313}
+{'loss': 1.8395, 'grad_norm': 0.6823585467768434, 'learning_rate': 2.9183673469387756e-05, 'epoch': 0.13071895424836602}
+{'loss': 1.8309, 'grad_norm': 1.0951932887125881, 'learning_rate': 3.1224489795918374e-05, 'epoch': 0.1388888888888889}
+{'loss': 1.8269, 'grad_norm': 0.7350697756388471, 'learning_rate': 3.326530612244898e-05, 'epoch': 0.14705882352941177}
+{'loss': 1.8168, 'grad_norm': 0.812512782803264, 'learning_rate': 3.5306122448979596e-05, 'epoch': 0.15522875816993464}
+{'loss': 1.8076, 'grad_norm': 0.7524912531120994, 'learning_rate': 3.734693877551021e-05, 'epoch': 0.16339869281045752}
+{'eval_valid_loss': 1.802734375, 'eval_valid_runtime': 0.4564, 'eval_valid_samples_per_second': 609.159, 'eval_valid_steps_per_second': 19.721, 'epoch': 0.16339869281045752}
+{'loss': 1.8019, 'grad_norm': 0.6353609579841615, 'learning_rate': 3.938775510204082e-05, 'epoch': 0.1715686274509804}
+{'loss': 1.7944, 'grad_norm': 0.8386183603924843, 'learning_rate': 4.1428571428571437e-05, 'epoch': 0.17973856209150327}
+{'loss': 1.785, 'grad_norm': 0.7227843583455084, 'learning_rate': 4.346938775510204e-05, 'epoch': 0.18790849673202614}
+{'loss': 1.7768, 'grad_norm': 1.3131102437566047, 'learning_rate': 4.551020408163266e-05, 'epoch': 0.19607843137254902}
+{'loss': 1.7721, 'grad_norm': 0.9439850069331357, 'learning_rate': 4.7551020408163263e-05, 'epoch': 0.2042483660130719}
+{'loss': 1.771, 'grad_norm': 0.595545514941023, 'learning_rate': 4.959183673469388e-05, 'epoch': 0.21241830065359477}
+{'loss': 1.758, 'grad_norm': 0.6941462148936121, 'learning_rate': 5.163265306122449e-05, 'epoch': 0.22058823529411764}
+{'loss': 1.7498, 'grad_norm': 1.2581814645337548, 'learning_rate': 5.3673469387755104e-05, 'epoch': 0.22875816993464052}
+{'loss': 1.7399, 'grad_norm': 1.2194653331334417, 'learning_rate': 5.571428571428572e-05, 'epoch': 0.2369281045751634}
+Traceback (most recent call last):
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 213, in <module>
+    main(args)
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 201, in main
+    trainer.train()
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/trainer.py", line 2171, in train
+    return inner_training_loop(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/trainer.py", line 2531, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/trainer.py", line 3715, in training_step
+    self.accelerator.backward(loss, **kwargs)
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/accelerate/accelerator.py", line 2188, in backward
+    self.deepspeed_engine_wrapped.backward(loss, **kwargs)
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/accelerate/utils/deepspeed.py", line 175, in backward
+    self.engine.step()
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/deepspeed/runtime/engine.py", line 2133, in step
+    self._take_model_step(lr_kwargs)
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/deepspeed/runtime/engine.py", line 2039, in _take_model_step
+    self.optimizer.step()
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/deepspeed/runtime/zero/stage_1_and_2.py", line 1709, in step
+    self.check_overflow()
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/deepspeed/runtime/zero/stage_1_and_2.py", line 1960, in check_overflow
+    self._check_overflow(partition_gradients)
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/deepspeed/runtime/zero/stage_1_and_2.py", line 1861, in _check_overflow
+    self.overflow = self.has_overflow(partition_gradients)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/deepspeed/runtime/zero/stage_1_and_2.py", line 1880, in has_overflow
+    overflow = self.local_overflow if self.cpu_offload else self.has_overflow_partitioned_grads_serial()
+                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/deepspeed/runtime/zero/stage_1_and_2.py", line 1874, in has_overflow_partitioned_grads_serial
+    if grad is not None and self._has_inf_or_nan(grad.data, j):
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/deepspeed/runtime/zero/stage_1_and_2.py", line 1909, in _has_inf_or_nan
+    cpu_sum = float(x.float().sum())
+              ^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/n/home05/sqin/self-correct/sudoku/train.py", line 213, in <module>
+[rank0]:     main(args)
+[rank0]:   File "/n/home05/sqin/self-correct/sudoku/train.py", line 201, in main
+[rank0]:     trainer.train()
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/trainer.py", line 2171, in train
+[rank0]:     return inner_training_loop(
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/trainer.py", line 2531, in _inner_training_loop
+[rank0]:     tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+[rank0]:                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/trainer.py", line 3715, in training_step
+[rank0]:     self.accelerator.backward(loss, **kwargs)
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/accelerate/accelerator.py", line 2188, in backward
+[rank0]:     self.deepspeed_engine_wrapped.backward(loss, **kwargs)
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/accelerate/utils/deepspeed.py", line 175, in backward
+[rank0]:     self.engine.step()
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/deepspeed/runtime/engine.py", line 2133, in step
+[rank0]:     self._take_model_step(lr_kwargs)
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/deepspeed/runtime/engine.py", line 2039, in _take_model_step
+[rank0]:     self.optimizer.step()
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/deepspeed/runtime/zero/stage_1_and_2.py", line 1709, in step
+[rank0]:     self.check_overflow()
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/deepspeed/runtime/zero/stage_1_and_2.py", line 1960, in check_overflow
+[rank0]:     self._check_overflow(partition_gradients)
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/deepspeed/runtime/zero/stage_1_and_2.py", line 1861, in _check_overflow
+[rank0]:     self.overflow = self.has_overflow(partition_gradients)
+[rank0]:                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/deepspeed/runtime/zero/stage_1_and_2.py", line 1880, in has_overflow
+[rank0]:     overflow = self.local_overflow if self.cpu_offload else self.has_overflow_partitioned_grads_serial()
+[rank0]:                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/deepspeed/runtime/zero/stage_1_and_2.py", line 1874, in has_overflow_partitioned_grads_serial
+[rank0]:     if grad is not None and self._has_inf_or_nan(grad.data, j):
+[rank0]:                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/deepspeed/runtime/zero/stage_1_and_2.py", line 1909, in _has_inf_or_nan
+[rank0]:     cpu_sum = float(x.float().sum())
+[rank0]:               ^^^^^^^^^^^^^^^^^^^^^^
+[rank0]: KeyboardInterrupt

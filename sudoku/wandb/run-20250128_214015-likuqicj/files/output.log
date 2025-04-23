@@ -1,0 +1,10 @@
+Tokenizer vocab size: 109
+Model size: 21,068,288
+Resolving data files: 100%|█████████████████████████████████████████████████████████████████████| 149/149 [00:00<00:00, 535519.53it/s]
+Traceback (most recent call last):
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 245, in <module>
+    main(args)
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 108, in main
+    hf_datasets["val"] = hf_datasets["val"].select(range(100))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'IterableDataset' object has no attribute 'select'

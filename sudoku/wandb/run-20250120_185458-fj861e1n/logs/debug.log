@@ -1,0 +1,29 @@
+2025-01-20 18:54:58,980 INFO    MainThread:1635498 [wandb_setup.py:_flush():76] Current SDK version is 0.17.1
+2025-01-20 18:54:58,981 INFO    MainThread:1635498 [wandb_setup.py:_flush():76] Configure stats pid to 1635498
+2025-01-20 18:54:58,981 INFO    MainThread:1635498 [wandb_setup.py:_flush():76] Loading settings from /n/home05/sqin/.config/wandb/settings
+2025-01-20 18:54:58,981 INFO    MainThread:1635498 [wandb_setup.py:_flush():76] Loading settings from /n/home05/sqin/self-correct/sudoku/wandb/settings
+2025-01-20 18:54:58,981 INFO    MainThread:1635498 [wandb_setup.py:_flush():76] Loading settings from environment variables: {'entity': 'harvardml', 'project': 'reason'}
+2025-01-20 18:54:58,981 INFO    MainThread:1635498 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2025-01-20 18:54:58,981 INFO    MainThread:1635498 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'train.py', 'program_abspath': '/n/home05/sqin/self-correct/sudoku/train.py', 'program': '/n/home05/sqin/self-correct/sudoku/train.py'}
+2025-01-20 18:54:58,981 INFO    MainThread:1635498 [wandb_setup.py:_flush():76] Applying login settings: {}
+2025-01-20 18:54:58,981 INFO    MainThread:1635498 [wandb_init.py:_log_setup():520] Logging user logs to /n/home05/sqin/self-correct/sudoku/wandb/run-20250120_185458-fj861e1n/logs/debug.log
+2025-01-20 18:54:58,981 INFO    MainThread:1635498 [wandb_init.py:_log_setup():521] Logging internal logs to /n/home05/sqin/self-correct/sudoku/wandb/run-20250120_185458-fj861e1n/logs/debug-internal.log
+2025-01-20 18:54:58,981 INFO    MainThread:1635498 [wandb_init.py:init():560] calling init triggers
+2025-01-20 18:54:58,981 INFO    MainThread:1635498 [wandb_init.py:init():567] wandb.init called with sweep_config: {}
+config: {}
+2025-01-20 18:54:58,981 INFO    MainThread:1635498 [wandb_init.py:init():610] starting backend
+2025-01-20 18:54:58,981 INFO    MainThread:1635498 [wandb_init.py:init():614] setting up manager
+2025-01-20 18:54:59,005 INFO    MainThread:1635498 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2025-01-20 18:54:59,027 INFO    MainThread:1635498 [wandb_init.py:init():622] backend started and connected
+2025-01-20 18:54:59,080 INFO    MainThread:1635498 [wandb_init.py:init():711] updated telemetry
+2025-01-20 18:54:59,080 INFO    MainThread:1635498 [wandb_init.py:init():744] communicating run to backend with 90.0 second timeout
+2025-01-20 18:54:59,364 INFO    MainThread:1635498 [wandb_run.py:_on_init():2402] communicating current version
+2025-01-20 18:54:59,415 INFO    MainThread:1635498 [wandb_run.py:_on_init():2411] got version response upgrade_message: "wandb version 0.19.4 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2025-01-20 18:54:59,415 INFO    MainThread:1635498 [wandb_init.py:init():795] starting run threads in backend
+2025-01-20 18:55:13,065 INFO    MainThread:1635498 [wandb_run.py:_console_start():2380] atexit reg
+2025-01-20 18:55:13,076 INFO    MainThread:1635498 [wandb_run.py:_redirect():2235] redirect: wrap_raw
+2025-01-20 18:55:13,076 INFO    MainThread:1635498 [wandb_run.py:_redirect():2300] Wrapping output streams.
+2025-01-20 18:55:13,076 INFO    MainThread:1635498 [wandb_run.py:_redirect():2325] Redirects installed.
+2025-01-20 18:55:13,269 INFO    MainThread:1635498 [wandb_init.py:init():838] run started, returning control to user process
+2025-01-20 18:56:16,394 WARNING MsgRouterThr:1635498 [router.py:message_loop():77] message_loop has been closed

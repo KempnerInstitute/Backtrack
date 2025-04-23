@@ -1,0 +1,216 @@
+2025-01-20 10:22:33,903 INFO    StreamThr :3897519 [internal.py:wandb_internal():85] W&B internal server running at pid: 3897519, started at: 2025-01-20 10:22:33.898162
+2025-01-20 10:22:33,912 DEBUG   HandlerThread:3897519 [handler.py:handle_request():158] handle_request: status
+2025-01-20 10:22:33,936 INFO    WriterThread:3897519 [datastore.py:open_for_write():87] open: /n/home05/sqin/self-correct/sudoku/wandb/run-20250120_102233-mbdq1j7n/run-mbdq1j7n.wandb
+2025-01-20 10:22:33,942 DEBUG   SenderThread:3897519 [sender.py:send():379] send: header
+2025-01-20 10:22:33,942 DEBUG   SenderThread:3897519 [sender.py:send():379] send: run
+2025-01-20 10:22:34,219 INFO    SenderThread:3897519 [dir_watcher.py:__init__():211] watching files in: /n/home05/sqin/self-correct/sudoku/wandb/run-20250120_102233-mbdq1j7n/files
+2025-01-20 10:22:34,219 INFO    SenderThread:3897519 [sender.py:_start_run_threads():1188] run started: mbdq1j7n with start time 1737386553.89512
+2025-01-20 10:22:34,252 DEBUG   HandlerThread:3897519 [handler.py:handle_request():158] handle_request: check_version
+2025-01-20 10:22:34,252 DEBUG   SenderThread:3897519 [sender.py:send_request():406] send_request: check_version
+2025-01-20 10:22:34,321 DEBUG   HandlerThread:3897519 [handler.py:handle_request():158] handle_request: run_start
+2025-01-20 10:22:34,375 DEBUG   HandlerThread:3897519 [system_info.py:__init__():26] System info init
+2025-01-20 10:22:34,375 DEBUG   HandlerThread:3897519 [system_info.py:__init__():41] System info init done
+2025-01-20 10:22:34,375 INFO    HandlerThread:3897519 [system_monitor.py:start():194] Starting system monitor
+2025-01-20 10:22:34,375 INFO    SystemMonitor:3897519 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2025-01-20 10:22:34,375 INFO    HandlerThread:3897519 [system_monitor.py:probe():214] Collecting system info
+2025-01-20 10:22:34,375 INFO    SystemMonitor:3897519 [interfaces.py:start():188] Started cpu monitoring
+2025-01-20 10:22:34,376 INFO    SystemMonitor:3897519 [interfaces.py:start():188] Started disk monitoring
+2025-01-20 10:22:34,377 INFO    SystemMonitor:3897519 [interfaces.py:start():188] Started gpu monitoring
+2025-01-20 10:22:34,380 INFO    SystemMonitor:3897519 [interfaces.py:start():188] Started memory monitoring
+2025-01-20 10:22:34,381 INFO    SystemMonitor:3897519 [interfaces.py:start():188] Started network monitoring
+2025-01-20 10:22:34,402 DEBUG   HandlerThread:3897519 [system_info.py:probe():152] Probing system
+2025-01-20 10:22:34,407 DEBUG   HandlerThread:3897519 [gitlib.py:_init_repo():56] git repository is invalid
+2025-01-20 10:22:34,407 DEBUG   HandlerThread:3897519 [system_info.py:probe():200] Probing system done
+2025-01-20 10:22:34,407 DEBUG   HandlerThread:3897519 [system_monitor.py:probe():223] {'os': 'Linux-4.18.0-513.18.1.el8_9.x86_64-x86_64-with-glibc2.28', 'python': '3.11.9', 'heartbeatAt': '2025-01-20T15:22:34.403013', 'startedAt': '2025-01-20T15:22:33.815247', 'docker': None, 'cuda': None, 'args': ('--config', 'configs/sft.conf'), 'state': 'running', 'program': '/n/home05/sqin/self-correct/sudoku/train.py', 'codePathLocal': 'train.py', 'codePath': 'train.py', 'host': 'holygpu8a17503.rc.fas.harvard.edu', 'username': 'sqin', 'executable': '/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/bin/python3.11', 'cpu_count': 96, 'cpu_count_logical': 96, 'cpu_freq': {'current': 2760.937177083333, 'min': 1500.0, 'max': 3810.791000000006}, 'cpu_freq_per_core': [{'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 3799.985, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}, {'current': 2750.0, 'min': 1500.0, 'max': 3810.791}], 'disk': {'/': {'total': 49.9755859375, 'used': 14.914176940917969}}, 'gpu': 'NVIDIA H100 80GB HBM3', 'gpu_count': 2, 'gpu_devices': [{'name': 'NVIDIA H100 80GB HBM3', 'memory_total': 85520809984}, {'name': 'NVIDIA H100 80GB HBM3', 'memory_total': 85520809984}], 'memory': {'total': 1511.1288604736328}}
+2025-01-20 10:22:34,407 INFO    HandlerThread:3897519 [system_monitor.py:probe():224] Finished collecting system info
+2025-01-20 10:22:34,407 INFO    HandlerThread:3897519 [system_monitor.py:probe():227] Publishing system info
+2025-01-20 10:22:34,407 DEBUG   HandlerThread:3897519 [system_info.py:_save_conda():209] Saving list of conda packages installed into the current environment
+2025-01-20 10:22:35,224 INFO    Thread-12 :3897519 [dir_watcher.py:_on_file_created():271] file/dir created: /n/home05/sqin/self-correct/sudoku/wandb/run-20250120_102233-mbdq1j7n/files/conda-environment.yaml
+2025-01-20 10:22:36,229 INFO    Thread-12 :3897519 [dir_watcher.py:_on_file_modified():288] file/dir modified: /n/home05/sqin/self-correct/sudoku/wandb/run-20250120_102233-mbdq1j7n/files/conda-environment.yaml
+2025-01-20 10:22:36,283 DEBUG   HandlerThread:3897519 [system_info.py:_save_conda():224] Saving conda packages done
+2025-01-20 10:22:36,292 INFO    HandlerThread:3897519 [system_monitor.py:probe():229] Finished publishing system info
+2025-01-20 10:22:36,295 DEBUG   SenderThread:3897519 [sender.py:send():379] send: files
+2025-01-20 10:22:36,295 INFO    SenderThread:3897519 [sender.py:_save_file():1454] saving file wandb-metadata.json with policy now
+2025-01-20 10:22:36,398 DEBUG   HandlerThread:3897519 [handler.py:handle_request():158] handle_request: python_packages
+2025-01-20 10:22:36,398 DEBUG   SenderThread:3897519 [sender.py:send_request():406] send_request: python_packages
+2025-01-20 10:22:36,398 DEBUG   HandlerThread:3897519 [handler.py:handle_request():158] handle_request: stop_status
+2025-01-20 10:22:36,399 DEBUG   HandlerThread:3897519 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-20 10:22:36,406 DEBUG   SenderThread:3897519 [sender.py:send_request():406] send_request: stop_status
+2025-01-20 10:22:36,573 DEBUG   SenderThread:3897519 [sender.py:send():379] send: telemetry
+2025-01-20 10:22:36,609 INFO    wandb-upload_0:3897519 [upload_job.py:push():130] Uploaded file /tmp/tmpr1shtjg4wandb/09oxf90f-wandb-metadata.json
+2025-01-20 10:22:37,233 INFO    Thread-12 :3897519 [dir_watcher.py:_on_file_created():271] file/dir created: /n/home05/sqin/self-correct/sudoku/wandb/run-20250120_102233-mbdq1j7n/files/output.log
+2025-01-20 10:22:37,234 INFO    Thread-12 :3897519 [dir_watcher.py:_on_file_created():271] file/dir created: /n/home05/sqin/self-correct/sudoku/wandb/run-20250120_102233-mbdq1j7n/files/requirements.txt
+2025-01-20 10:22:37,234 INFO    Thread-12 :3897519 [dir_watcher.py:_on_file_created():271] file/dir created: /n/home05/sqin/self-correct/sudoku/wandb/run-20250120_102233-mbdq1j7n/files/wandb-metadata.json
+2025-01-20 10:22:37,399 DEBUG   HandlerThread:3897519 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-20 10:22:38,400 DEBUG   HandlerThread:3897519 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-20 10:22:39,041 DEBUG   HandlerThread:3897519 [handler.py:handle_request():158] handle_request: status_report
+2025-01-20 10:22:39,247 INFO    Thread-12 :3897519 [dir_watcher.py:_on_file_modified():288] file/dir modified: /n/home05/sqin/self-correct/sudoku/wandb/run-20250120_102233-mbdq1j7n/files/output.log
+2025-01-20 10:22:39,400 DEBUG   HandlerThread:3897519 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-20 10:22:39,908 DEBUG   SenderThread:3897519 [sender.py:send():379] send: config
+2025-01-20 10:22:39,945 DEBUG   SenderThread:3897519 [sender.py:send():379] send: metric
+2025-01-20 10:22:39,945 DEBUG   SenderThread:3897519 [sender.py:send():379] send: telemetry
+2025-01-20 10:22:39,945 DEBUG   SenderThread:3897519 [sender.py:send():379] send: telemetry
+2025-01-20 10:22:39,945 DEBUG   SenderThread:3897519 [sender.py:send():379] send: metric
+2025-01-20 10:22:39,945 WARNING SenderThread:3897519 [sender.py:send_metric():1405] Seen metric with glob (shouldn't happen)
+2025-01-20 10:22:39,945 DEBUG   SenderThread:3897519 [sender.py:send():379] send: telemetry
+2025-01-20 10:22:39,945 DEBUG   SenderThread:3897519 [sender.py:send():379] send: telemetry
+2025-01-20 10:22:39,945 DEBUG   SenderThread:3897519 [sender.py:send():379] send: config
+2025-01-20 10:22:40,412 DEBUG   HandlerThread:3897519 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-20 10:22:41,296 INFO    Thread-12 :3897519 [dir_watcher.py:_on_file_modified():288] file/dir modified: /n/home05/sqin/self-correct/sudoku/wandb/run-20250120_102233-mbdq1j7n/files/output.log
+2025-01-20 10:22:41,424 DEBUG   HandlerThread:3897519 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-20 10:22:42,425 DEBUG   HandlerThread:3897519 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-20 10:22:43,221 DEBUG   HandlerThread:3897519 [handler.py:handle_request():158] handle_request: partial_history
+2025-01-20 10:22:43,221 DEBUG   SenderThread:3897519 [sender.py:send():379] send: metric
+2025-01-20 10:22:43,222 DEBUG   SenderThread:3897519 [sender.py:send():379] send: metric
+2025-01-20 10:22:43,222 DEBUG   SenderThread:3897519 [sender.py:send():379] send: metric
+2025-01-20 10:22:43,222 DEBUG   SenderThread:3897519 [sender.py:send():379] send: metric
+2025-01-20 10:22:43,222 DEBUG   SenderThread:3897519 [sender.py:send():379] send: history
+2025-01-20 10:22:43,222 DEBUG   SenderThread:3897519 [sender.py:send_request():406] send_request: summary_record
+2025-01-20 10:22:43,251 INFO    SenderThread:3897519 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2025-01-20 10:22:43,310 INFO    Thread-12 :3897519 [dir_watcher.py:_on_file_created():271] file/dir created: /n/home05/sqin/self-correct/sudoku/wandb/run-20250120_102233-mbdq1j7n/files/wandb-summary.json
+2025-01-20 10:22:43,427 DEBUG   HandlerThread:3897519 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-20 10:22:44,263 DEBUG   HandlerThread:3897519 [handler.py:handle_request():158] handle_request: status_report
+2025-01-20 10:22:44,433 DEBUG   HandlerThread:3897519 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-20 10:22:44,636 DEBUG   HandlerThread:3897519 [handler.py:handle_request():158] handle_request: partial_history
+2025-01-20 10:22:44,636 DEBUG   SenderThread:3897519 [sender.py:send():379] send: history
+2025-01-20 10:22:44,636 DEBUG   SenderThread:3897519 [sender.py:send_request():406] send_request: summary_record
+2025-01-20 10:22:44,676 INFO    SenderThread:3897519 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2025-01-20 10:22:45,261 DEBUG   SenderThread:3897519 [sender.py:send():379] send: exit
+2025-01-20 10:22:45,261 INFO    SenderThread:3897519 [sender.py:send_exit():586] handling exit code: 255
+2025-01-20 10:22:45,261 INFO    SenderThread:3897519 [sender.py:send_exit():588] handling runtime: 10
+2025-01-20 10:22:45,269 INFO    SenderThread:3897519 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2025-01-20 10:22:45,269 INFO    SenderThread:3897519 [sender.py:send_exit():594] send defer
+2025-01-20 10:22:45,270 DEBUG   HandlerThread:3897519 [handler.py:handle_request():158] handle_request: defer
+2025-01-20 10:22:45,270 INFO    HandlerThread:3897519 [handler.py:handle_request_defer():184] handle defer: 0
+2025-01-20 10:22:45,270 DEBUG   SenderThread:3897519 [sender.py:send_request():406] send_request: defer
+2025-01-20 10:22:45,270 INFO    SenderThread:3897519 [sender.py:send_request_defer():610] handle sender defer: 0
+2025-01-20 10:22:45,270 INFO    SenderThread:3897519 [sender.py:transition_state():614] send defer: 1
+2025-01-20 10:22:45,270 DEBUG   HandlerThread:3897519 [handler.py:handle_request():158] handle_request: defer
+2025-01-20 10:22:45,270 INFO    HandlerThread:3897519 [handler.py:handle_request_defer():184] handle defer: 1
+2025-01-20 10:22:45,270 DEBUG   SenderThread:3897519 [sender.py:send_request():406] send_request: defer
+2025-01-20 10:22:45,270 INFO    SenderThread:3897519 [sender.py:send_request_defer():610] handle sender defer: 1
+2025-01-20 10:22:45,270 INFO    SenderThread:3897519 [sender.py:transition_state():614] send defer: 2
+2025-01-20 10:22:45,270 DEBUG   HandlerThread:3897519 [handler.py:handle_request():158] handle_request: defer
+2025-01-20 10:22:45,270 INFO    HandlerThread:3897519 [handler.py:handle_request_defer():184] handle defer: 2
+2025-01-20 10:22:45,270 INFO    HandlerThread:3897519 [system_monitor.py:finish():203] Stopping system monitor
+2025-01-20 10:22:45,270 DEBUG   SystemMonitor:3897519 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2025-01-20 10:22:45,270 DEBUG   SystemMonitor:3897519 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2025-01-20 10:22:45,270 DEBUG   SystemMonitor:3897519 [system_monitor.py:_start():183] Publishing last batch of metrics
+2025-01-20 10:22:45,270 INFO    HandlerThread:3897519 [interfaces.py:finish():200] Joined cpu monitor
+2025-01-20 10:22:45,280 INFO    HandlerThread:3897519 [interfaces.py:finish():200] Joined disk monitor
+2025-01-20 10:22:45,325 INFO    Thread-12 :3897519 [dir_watcher.py:_on_file_modified():288] file/dir modified: /n/home05/sqin/self-correct/sudoku/wandb/run-20250120_102233-mbdq1j7n/files/wandb-summary.json
+2025-01-20 10:22:45,325 INFO    Thread-12 :3897519 [dir_watcher.py:_on_file_modified():288] file/dir modified: /n/home05/sqin/self-correct/sudoku/wandb/run-20250120_102233-mbdq1j7n/files/output.log
+2025-01-20 10:22:45,637 INFO    HandlerThread:3897519 [interfaces.py:finish():200] Joined gpu monitor
+2025-01-20 10:22:45,637 INFO    HandlerThread:3897519 [interfaces.py:finish():200] Joined memory monitor
+2025-01-20 10:22:45,637 INFO    HandlerThread:3897519 [interfaces.py:finish():200] Joined network monitor
+2025-01-20 10:22:45,649 DEBUG   SenderThread:3897519 [sender.py:send_request():406] send_request: defer
+2025-01-20 10:22:45,649 INFO    SenderThread:3897519 [sender.py:send_request_defer():610] handle sender defer: 2
+2025-01-20 10:22:45,649 INFO    SenderThread:3897519 [sender.py:transition_state():614] send defer: 3
+2025-01-20 10:22:45,649 DEBUG   HandlerThread:3897519 [handler.py:handle_request():158] handle_request: defer
+2025-01-20 10:22:45,649 INFO    HandlerThread:3897519 [handler.py:handle_request_defer():184] handle defer: 3
+2025-01-20 10:22:45,649 DEBUG   SenderThread:3897519 [sender.py:send_request():406] send_request: defer
+2025-01-20 10:22:45,649 INFO    SenderThread:3897519 [sender.py:send_request_defer():610] handle sender defer: 3
+2025-01-20 10:22:45,649 INFO    SenderThread:3897519 [sender.py:transition_state():614] send defer: 4
+2025-01-20 10:22:45,649 DEBUG   HandlerThread:3897519 [handler.py:handle_request():158] handle_request: defer
+2025-01-20 10:22:45,649 INFO    HandlerThread:3897519 [handler.py:handle_request_defer():184] handle defer: 4
+2025-01-20 10:22:45,649 DEBUG   SenderThread:3897519 [sender.py:send_request():406] send_request: defer
+2025-01-20 10:22:45,649 INFO    SenderThread:3897519 [sender.py:send_request_defer():610] handle sender defer: 4
+2025-01-20 10:22:45,649 INFO    SenderThread:3897519 [sender.py:transition_state():614] send defer: 5
+2025-01-20 10:22:45,649 DEBUG   HandlerThread:3897519 [handler.py:handle_request():158] handle_request: defer
+2025-01-20 10:22:45,649 INFO    HandlerThread:3897519 [handler.py:handle_request_defer():184] handle defer: 5
+2025-01-20 10:22:45,649 DEBUG   SenderThread:3897519 [sender.py:send():379] send: summary
+2025-01-20 10:22:45,677 INFO    SenderThread:3897519 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2025-01-20 10:22:45,677 DEBUG   SenderThread:3897519 [sender.py:send_request():406] send_request: defer
+2025-01-20 10:22:45,677 INFO    SenderThread:3897519 [sender.py:send_request_defer():610] handle sender defer: 5
+2025-01-20 10:22:45,677 INFO    SenderThread:3897519 [sender.py:transition_state():614] send defer: 6
+2025-01-20 10:22:45,677 DEBUG   HandlerThread:3897519 [handler.py:handle_request():158] handle_request: defer
+2025-01-20 10:22:45,677 INFO    HandlerThread:3897519 [handler.py:handle_request_defer():184] handle defer: 6
+2025-01-20 10:22:45,677 DEBUG   SenderThread:3897519 [sender.py:send_request():406] send_request: defer
+2025-01-20 10:22:45,677 INFO    SenderThread:3897519 [sender.py:send_request_defer():610] handle sender defer: 6
+2025-01-20 10:22:45,679 DEBUG   HandlerThread:3897519 [handler.py:handle_request():158] handle_request: status_report
+2025-01-20 10:22:45,829 INFO    SenderThread:3897519 [sender.py:transition_state():614] send defer: 7
+2025-01-20 10:22:45,829 DEBUG   HandlerThread:3897519 [handler.py:handle_request():158] handle_request: defer
+2025-01-20 10:22:45,830 INFO    HandlerThread:3897519 [handler.py:handle_request_defer():184] handle defer: 7
+2025-01-20 10:22:45,830 DEBUG   SenderThread:3897519 [sender.py:send_request():406] send_request: defer
+2025-01-20 10:22:45,830 INFO    SenderThread:3897519 [sender.py:send_request_defer():610] handle sender defer: 7
+2025-01-20 10:22:46,262 DEBUG   HandlerThread:3897519 [handler.py:handle_request():158] handle_request: poll_exit
+2025-01-20 10:22:46,328 INFO    Thread-12 :3897519 [dir_watcher.py:_on_file_modified():288] file/dir modified: /n/home05/sqin/self-correct/sudoku/wandb/run-20250120_102233-mbdq1j7n/files/config.yaml
+2025-01-20 10:22:46,328 INFO    Thread-12 :3897519 [dir_watcher.py:_on_file_modified():288] file/dir modified: /n/home05/sqin/self-correct/sudoku/wandb/run-20250120_102233-mbdq1j7n/files/wandb-summary.json
+2025-01-20 10:22:47,060 INFO    SenderThread:3897519 [sender.py:transition_state():614] send defer: 8
+2025-01-20 10:22:47,060 DEBUG   SenderThread:3897519 [sender.py:send_request():406] send_request: poll_exit
+2025-01-20 10:22:47,060 DEBUG   HandlerThread:3897519 [handler.py:handle_request():158] handle_request: defer
+2025-01-20 10:22:47,060 INFO    HandlerThread:3897519 [handler.py:handle_request_defer():184] handle defer: 8
+2025-01-20 10:22:47,060 DEBUG   SenderThread:3897519 [sender.py:send_request():406] send_request: defer
+2025-01-20 10:22:47,060 INFO    SenderThread:3897519 [sender.py:send_request_defer():610] handle sender defer: 8
+2025-01-20 10:22:47,060 INFO    SenderThread:3897519 [job_builder.py:build():440] Attempting to build job artifact
+2025-01-20 10:22:47,063 INFO    SenderThread:3897519 [job_builder.py:_get_source_type():580] no source found
+2025-01-20 10:22:47,063 INFO    SenderThread:3897519 [sender.py:transition_state():614] send defer: 9
+2025-01-20 10:22:47,063 DEBUG   HandlerThread:3897519 [handler.py:handle_request():158] handle_request: defer
+2025-01-20 10:22:47,063 INFO    HandlerThread:3897519 [handler.py:handle_request_defer():184] handle defer: 9
+2025-01-20 10:22:47,063 DEBUG   SenderThread:3897519 [sender.py:send_request():406] send_request: defer
+2025-01-20 10:22:47,063 INFO    SenderThread:3897519 [sender.py:send_request_defer():610] handle sender defer: 9
+2025-01-20 10:22:47,063 INFO    SenderThread:3897519 [dir_watcher.py:finish():358] shutting down directory watcher
+2025-01-20 10:22:47,262 DEBUG   HandlerThread:3897519 [handler.py:handle_request():158] handle_request: poll_exit
+2025-01-20 10:22:47,332 INFO    SenderThread:3897519 [dir_watcher.py:_on_file_modified():288] file/dir modified: /n/home05/sqin/self-correct/sudoku/wandb/run-20250120_102233-mbdq1j7n/files/output.log
+2025-01-20 10:22:47,333 INFO    SenderThread:3897519 [dir_watcher.py:finish():388] scan: /n/home05/sqin/self-correct/sudoku/wandb/run-20250120_102233-mbdq1j7n/files
+2025-01-20 10:22:47,335 INFO    SenderThread:3897519 [dir_watcher.py:finish():402] scan save: /n/home05/sqin/self-correct/sudoku/wandb/run-20250120_102233-mbdq1j7n/files/conda-environment.yaml conda-environment.yaml
+2025-01-20 10:22:47,335 INFO    SenderThread:3897519 [dir_watcher.py:finish():402] scan save: /n/home05/sqin/self-correct/sudoku/wandb/run-20250120_102233-mbdq1j7n/files/config.yaml config.yaml
+2025-01-20 10:22:47,336 INFO    SenderThread:3897519 [dir_watcher.py:finish():402] scan save: /n/home05/sqin/self-correct/sudoku/wandb/run-20250120_102233-mbdq1j7n/files/wandb-metadata.json wandb-metadata.json
+2025-01-20 10:22:47,337 INFO    SenderThread:3897519 [dir_watcher.py:finish():402] scan save: /n/home05/sqin/self-correct/sudoku/wandb/run-20250120_102233-mbdq1j7n/files/requirements.txt requirements.txt
+2025-01-20 10:22:47,338 INFO    SenderThread:3897519 [dir_watcher.py:finish():402] scan save: /n/home05/sqin/self-correct/sudoku/wandb/run-20250120_102233-mbdq1j7n/files/output.log output.log
+2025-01-20 10:22:47,339 INFO    SenderThread:3897519 [dir_watcher.py:finish():402] scan save: /n/home05/sqin/self-correct/sudoku/wandb/run-20250120_102233-mbdq1j7n/files/wandb-summary.json wandb-summary.json
+2025-01-20 10:22:47,339 INFO    SenderThread:3897519 [sender.py:transition_state():614] send defer: 10
+2025-01-20 10:22:47,339 DEBUG   SenderThread:3897519 [sender.py:send_request():406] send_request: poll_exit
+2025-01-20 10:22:47,339 DEBUG   HandlerThread:3897519 [handler.py:handle_request():158] handle_request: defer
+2025-01-20 10:22:47,339 INFO    HandlerThread:3897519 [handler.py:handle_request_defer():184] handle defer: 10
+2025-01-20 10:22:47,341 DEBUG   SenderThread:3897519 [sender.py:send_request():406] send_request: defer
+2025-01-20 10:22:47,341 INFO    SenderThread:3897519 [sender.py:send_request_defer():610] handle sender defer: 10
+2025-01-20 10:22:47,341 INFO    SenderThread:3897519 [file_pusher.py:finish():169] shutting down file pusher
+2025-01-20 10:22:47,548 INFO    wandb-upload_1:3897519 [upload_job.py:push():130] Uploaded file /n/home05/sqin/self-correct/sudoku/wandb/run-20250120_102233-mbdq1j7n/files/config.yaml
+2025-01-20 10:22:47,603 INFO    wandb-upload_0:3897519 [upload_job.py:push():130] Uploaded file /n/home05/sqin/self-correct/sudoku/wandb/run-20250120_102233-mbdq1j7n/files/conda-environment.yaml
+2025-01-20 10:22:47,634 INFO    wandb-upload_2:3897519 [upload_job.py:push():130] Uploaded file /n/home05/sqin/self-correct/sudoku/wandb/run-20250120_102233-mbdq1j7n/files/requirements.txt
+2025-01-20 10:22:47,636 INFO    wandb-upload_4:3897519 [upload_job.py:push():130] Uploaded file /n/home05/sqin/self-correct/sudoku/wandb/run-20250120_102233-mbdq1j7n/files/wandb-summary.json
+2025-01-20 10:22:47,646 INFO    wandb-upload_3:3897519 [upload_job.py:push():130] Uploaded file /n/home05/sqin/self-correct/sudoku/wandb/run-20250120_102233-mbdq1j7n/files/output.log
+2025-01-20 10:22:47,846 INFO    Thread-11 (_thread_body):3897519 [sender.py:transition_state():614] send defer: 11
+2025-01-20 10:22:47,846 DEBUG   HandlerThread:3897519 [handler.py:handle_request():158] handle_request: defer
+2025-01-20 10:22:47,846 INFO    HandlerThread:3897519 [handler.py:handle_request_defer():184] handle defer: 11
+2025-01-20 10:22:47,846 DEBUG   SenderThread:3897519 [sender.py:send_request():406] send_request: defer
+2025-01-20 10:22:47,846 INFO    SenderThread:3897519 [sender.py:send_request_defer():610] handle sender defer: 11
+2025-01-20 10:22:47,846 INFO    SenderThread:3897519 [file_pusher.py:join():175] waiting for file pusher
+2025-01-20 10:22:47,847 INFO    SenderThread:3897519 [sender.py:transition_state():614] send defer: 12
+2025-01-20 10:22:47,847 DEBUG   HandlerThread:3897519 [handler.py:handle_request():158] handle_request: defer
+2025-01-20 10:22:47,847 INFO    HandlerThread:3897519 [handler.py:handle_request_defer():184] handle defer: 12
+2025-01-20 10:22:47,847 DEBUG   SenderThread:3897519 [sender.py:send_request():406] send_request: defer
+2025-01-20 10:22:47,847 INFO    SenderThread:3897519 [sender.py:send_request_defer():610] handle sender defer: 12
+2025-01-20 10:22:47,847 INFO    SenderThread:3897519 [file_stream.py:finish():601] file stream finish called
+2025-01-20 10:22:47,943 INFO    SenderThread:3897519 [file_stream.py:finish():605] file stream finish is done
+2025-01-20 10:22:47,943 INFO    SenderThread:3897519 [sender.py:transition_state():614] send defer: 13
+2025-01-20 10:22:47,944 DEBUG   HandlerThread:3897519 [handler.py:handle_request():158] handle_request: defer
+2025-01-20 10:22:47,944 INFO    HandlerThread:3897519 [handler.py:handle_request_defer():184] handle defer: 13
+2025-01-20 10:22:47,944 DEBUG   SenderThread:3897519 [sender.py:send_request():406] send_request: defer
+2025-01-20 10:22:47,944 INFO    SenderThread:3897519 [sender.py:send_request_defer():610] handle sender defer: 13
+2025-01-20 10:22:47,944 INFO    SenderThread:3897519 [sender.py:transition_state():614] send defer: 14
+2025-01-20 10:22:47,944 DEBUG   HandlerThread:3897519 [handler.py:handle_request():158] handle_request: defer
+2025-01-20 10:22:47,944 INFO    HandlerThread:3897519 [handler.py:handle_request_defer():184] handle defer: 14
+2025-01-20 10:22:47,944 DEBUG   SenderThread:3897519 [sender.py:send():379] send: final
+2025-01-20 10:22:47,944 DEBUG   SenderThread:3897519 [sender.py:send():379] send: footer
+2025-01-20 10:22:47,944 DEBUG   SenderThread:3897519 [sender.py:send_request():406] send_request: defer
+2025-01-20 10:22:47,944 INFO    SenderThread:3897519 [sender.py:send_request_defer():610] handle sender defer: 14
+2025-01-20 10:22:47,944 DEBUG   HandlerThread:3897519 [handler.py:handle_request():158] handle_request: poll_exit
+2025-01-20 10:22:47,944 DEBUG   SenderThread:3897519 [sender.py:send_request():406] send_request: poll_exit
+2025-01-20 10:22:47,945 DEBUG   HandlerThread:3897519 [handler.py:handle_request():158] handle_request: server_info
+2025-01-20 10:22:47,945 DEBUG   HandlerThread:3897519 [handler.py:handle_request():158] handle_request: poll_exit
+2025-01-20 10:22:47,945 DEBUG   SenderThread:3897519 [sender.py:send_request():406] send_request: server_info
+2025-01-20 10:22:47,946 DEBUG   HandlerThread:3897519 [handler.py:handle_request():158] handle_request: get_summary
+2025-01-20 10:22:47,946 DEBUG   HandlerThread:3897519 [handler.py:handle_request():158] handle_request: sampled_history
+2025-01-20 10:22:47,946 DEBUG   HandlerThread:3897519 [handler.py:handle_request():158] handle_request: internal_messages
+2025-01-20 10:22:48,014 DEBUG   SenderThread:3897519 [sender.py:send_request():406] send_request: poll_exit
+2025-01-20 10:22:48,015 INFO    MainThread:3897519 [wandb_run.py:_footer_history_summary_info():4008] rendering history
+2025-01-20 10:22:48,015 INFO    MainThread:3897519 [wandb_run.py:_footer_history_summary_info():4040] rendering summary
+2025-01-20 10:22:48,015 INFO    MainThread:3897519 [wandb_run.py:_footer_sync_info():3967] logging synced files
+2025-01-20 10:22:48,015 DEBUG   HandlerThread:3897519 [handler.py:handle_request():158] handle_request: shutdown
+2025-01-20 10:22:48,015 INFO    HandlerThread:3897519 [handler.py:finish():882] shutting down handler
+2025-01-20 10:22:48,945 INFO    WriterThread:3897519 [datastore.py:close():296] close: /n/home05/sqin/self-correct/sudoku/wandb/run-20250120_102233-mbdq1j7n/run-mbdq1j7n.wandb
+2025-01-20 10:22:49,015 INFO    SenderThread:3897519 [sender.py:finish():1608] shutting down sender
+2025-01-20 10:22:49,015 INFO    SenderThread:3897519 [file_pusher.py:finish():169] shutting down file pusher
+2025-01-20 10:22:49,015 INFO    SenderThread:3897519 [file_pusher.py:join():175] waiting for file pusher

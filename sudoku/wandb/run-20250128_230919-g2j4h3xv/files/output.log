@@ -1,0 +1,51 @@
+Tokenizer vocab size: 109
+Model size: 21,068,288
+Resolving data files: 100%|█████████████████████████████████████████████████████████████████████| 149/149 [00:00<00:00, 547242.82it/s]
+Traceback (most recent call last):
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 246, in <module>
+    main(args)
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 99, in main
+    hf_datasets = load_dataset(
+                  ^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/load.py", line 2166, in load_dataset
+    ds = builder_instance.as_dataset(split=split, verification_mode=verification_mode, in_memory=keep_in_memory)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/builder.py", line 1190, in as_dataset
+    datasets = map_nested(
+               ^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/utils/py_utils.py", line 464, in map_nested
+    mapped = [
+             ^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/utils/py_utils.py", line 465, in <listcomp>
+    _single_map_nested((function, obj, types, None, True, None))
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/utils/py_utils.py", line 367, in _single_map_nested
+    return function(data_struct)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/builder.py", line 1220, in _build_single_dataset
+    ds = self._as_dataset(
+         ^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/builder.py", line 1294, in _as_dataset
+    dataset_kwargs = ArrowReader(cache_dir, self.info).read(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/arrow_reader.py", line 244, in read
+    return self.read_files(files=files, original_instructions=instructions, in_memory=in_memory)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/arrow_reader.py", line 265, in read_files
+    pa_table = self._read_files(files, in_memory=in_memory)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/arrow_reader.py", line 200, in _read_files
+    pa_table: Table = self._get_table_from_filename(f_dict, in_memory=in_memory)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/arrow_reader.py", line 336, in _get_table_from_filename
+    table = ArrowReader.read_table(filename, in_memory=in_memory)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/arrow_reader.py", line 357, in read_table
+    return table_cls.from_file(filename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/table.py", line 1059, in from_file
+    table = _memory_mapped_arrow_table_from_file(filename)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/datasets/table.py", line 66, in _memory_mapped_arrow_table_from_file
+    pa_table = opened_stream.read_all()
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

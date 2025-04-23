@@ -1,0 +1,180 @@
+transformer.wte.weight: cpu
+transformer.wpe.weight: cpu
+transformer.h.0.ln_1.weight: cpu
+transformer.h.0.ln_1.bias: cpu
+transformer.h.0.attn.c_attn.weight: cpu
+transformer.h.0.attn.c_attn.bias: cpu
+transformer.h.0.attn.c_proj.weight: cpu
+transformer.h.0.attn.c_proj.bias: cpu
+transformer.h.0.ln_2.weight: cpu
+transformer.h.0.ln_2.bias: cpu
+transformer.h.0.mlp.c_fc.weight: cpu
+transformer.h.0.mlp.c_fc.bias: cpu
+transformer.h.0.mlp.c_proj.weight: cpu
+transformer.h.0.mlp.c_proj.bias: cpu
+transformer.h.1.ln_1.weight: cpu
+transformer.h.1.ln_1.bias: cpu
+transformer.h.1.attn.c_attn.weight: cpu
+transformer.h.1.attn.c_attn.bias: cpu
+transformer.h.1.attn.c_proj.weight: cpu
+transformer.h.1.attn.c_proj.bias: cpu
+transformer.h.1.ln_2.weight: cpu
+transformer.h.1.ln_2.bias: cpu
+transformer.h.1.mlp.c_fc.weight: cpu
+transformer.h.1.mlp.c_fc.bias: cpu
+transformer.h.1.mlp.c_proj.weight: cpu
+transformer.h.1.mlp.c_proj.bias: cpu
+transformer.h.2.ln_1.weight: cpu
+transformer.h.2.ln_1.bias: cpu
+transformer.h.2.attn.c_attn.weight: cpu
+transformer.h.2.attn.c_attn.bias: cpu
+transformer.h.2.attn.c_proj.weight: cpu
+transformer.h.2.attn.c_proj.bias: cpu
+transformer.h.2.ln_2.weight: cpu
+transformer.h.2.ln_2.bias: cpu
+transformer.h.2.mlp.c_fc.weight: cpu
+transformer.h.2.mlp.c_fc.bias: cpu
+transformer.h.2.mlp.c_proj.weight: cpu
+transformer.h.2.mlp.c_proj.bias: cpu
+transformer.h.3.ln_1.weight: cpu
+transformer.h.3.ln_1.bias: cpu
+transformer.h.3.attn.c_attn.weight: cpu
+transformer.h.3.attn.c_attn.bias: cpu
+transformer.h.3.attn.c_proj.weight: cpu
+transformer.h.3.attn.c_proj.bias: cpu
+transformer.h.3.ln_2.weight: cpu
+transformer.h.3.ln_2.bias: cpu
+transformer.h.3.mlp.c_fc.weight: cpu
+transformer.h.3.mlp.c_fc.bias: cpu
+transformer.h.3.mlp.c_proj.weight: cpu
+transformer.h.3.mlp.c_proj.bias: cpu
+transformer.h.4.ln_1.weight: cpu
+transformer.h.4.ln_1.bias: cpu
+transformer.h.4.attn.c_attn.weight: cpu
+transformer.h.4.attn.c_attn.bias: cpu
+transformer.h.4.attn.c_proj.weight: cpu
+transformer.h.4.attn.c_proj.bias: cpu
+transformer.h.4.ln_2.weight: cpu
+transformer.h.4.ln_2.bias: cpu
+transformer.h.4.mlp.c_fc.weight: cpu
+transformer.h.4.mlp.c_fc.bias: cpu
+transformer.h.4.mlp.c_proj.weight: cpu
+transformer.h.4.mlp.c_proj.bias: cpu
+transformer.h.5.ln_1.weight: cpu
+transformer.h.5.ln_1.bias: cpu
+transformer.h.5.attn.c_attn.weight: cpu
+transformer.h.5.attn.c_attn.bias: cpu
+transformer.h.5.attn.c_proj.weight: cpu
+transformer.h.5.attn.c_proj.bias: cpu
+transformer.h.5.ln_2.weight: cpu
+transformer.h.5.ln_2.bias: cpu
+transformer.h.5.mlp.c_fc.weight: cpu
+transformer.h.5.mlp.c_fc.bias: cpu
+transformer.h.5.mlp.c_proj.weight: cpu
+transformer.h.5.mlp.c_proj.bias: cpu
+transformer.ln_f.weight: cpu
+transformer.ln_f.bias: cpu
+Model size: 21,068,288
+tokenized dataset DatasetDict({
+    train: Dataset({
+        features: ['input_ids'],
+        num_rows: 39165
+    })
+    val: Dataset({
+        features: ['input_ids'],
+        num_rows: 278
+    })
+})
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/training_args.py:1575: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+/n/home05/sqin/self-correct/sudoku/train.py:187: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: c10d::broadcast_: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/deepspeed/runtime/zero/stage_1_and_2.py:1881: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at ../torch/csrc/tensor/python_tensor.cpp:78.)
+  overflow_gpu = get_accelerator().ByteTensor([overflow])
+{'loss': 4.9154, 'grad_norm': 0.0, 'learning_rate': 0.0, 'epoch': 0.016339869281045753}
+{'loss': 4.9161, 'grad_norm': 26.01333686915924, 'learning_rate': 1.2244897959183673e-06, 'epoch': 0.032679738562091505}
+{'loss': 4.4255, 'grad_norm': 11.617134345522416, 'learning_rate': 5.306122448979592e-06, 'epoch': 0.049019607843137254}
+{'loss': 3.5161, 'grad_norm': 4.350960153911028, 'learning_rate': 9.387755102040816e-06, 'epoch': 0.06535947712418301}
+{'loss': 2.9778, 'grad_norm': 4.384781882886758, 'learning_rate': 1.3469387755102042e-05, 'epoch': 0.08169934640522876}
+{'loss': 2.3947, 'grad_norm': 1.7009366154182206, 'learning_rate': 1.7551020408163266e-05, 'epoch': 0.09803921568627451}
+{'loss': 2.0533, 'grad_norm': 0.9887313835414555, 'learning_rate': 2.1632653061224492e-05, 'epoch': 0.11437908496732026}
+{'loss': 1.9391, 'grad_norm': 0.8939350381785427, 'learning_rate': 2.5714285714285714e-05, 'epoch': 0.13071895424836602}
+{'loss': 1.8944, 'grad_norm': 0.566022882125434, 'learning_rate': 2.9795918367346944e-05, 'epoch': 0.14705882352941177}
+{'loss': 1.8679, 'grad_norm': 0.4603589415414024, 'learning_rate': 3.387755102040816e-05, 'epoch': 0.16339869281045752}
+{'eval_valid_loss': 1.8515625, 'eval_valid_runtime': 0.3271, 'eval_valid_samples_per_second': 849.88, 'eval_valid_steps_per_second': 15.286, 'epoch': 0.16339869281045752}
+{'loss': 1.8507, 'grad_norm': 0.3666246636179134, 'learning_rate': 3.795918367346939e-05, 'epoch': 0.17973856209150327}
+{'loss': 1.8347, 'grad_norm': 0.5954826634927888, 'learning_rate': 4.2040816326530615e-05, 'epoch': 0.19607843137254902}
+{'loss': 1.8273, 'grad_norm': 0.3620578080251846, 'learning_rate': 4.612244897959184e-05, 'epoch': 0.21241830065359477}
+{'loss': 1.8187, 'grad_norm': 0.7176756396457659, 'learning_rate': 5.0204081632653066e-05, 'epoch': 0.22875816993464052}
+{'loss': 1.8067, 'grad_norm': 0.9457429780563271, 'learning_rate': 5.428571428571428e-05, 'epoch': 0.24509803921568626}
+Traceback (most recent call last):
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 214, in <module>
+    main(args)
+  File "/n/home05/sqin/self-correct/sudoku/train.py", line 202, in main
+    trainer.train()
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/trainer.py", line 2171, in train
+    return inner_training_loop(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/trainer.py", line 2531, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/trainer.py", line 3715, in training_step
+    self.accelerator.backward(loss, **kwargs)
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/accelerate/accelerator.py", line 2188, in backward
+    self.deepspeed_engine_wrapped.backward(loss, **kwargs)
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/accelerate/utils/deepspeed.py", line 166, in backward
+    self.engine.backward(loss, **kwargs)
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/deepspeed/utils/nvtx.py", line 15, in wrapped_fn
+    ret_val = func(*args, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/deepspeed/runtime/engine.py", line 1940, in backward
+    self.optimizer.backward(loss, retain_graph=retain_graph)
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/deepspeed/runtime/zero/stage_1_and_2.py", line 1953, in backward
+    self.loss_scaler.backward(loss.float(), retain_graph=retain_graph)
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/deepspeed/runtime/fp16/loss_scaler.py", line 63, in backward
+    scaled_loss.backward(retain_graph=retain_graph)
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/_tensor.py", line 525, in backward
+    torch.autograd.backward(
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/__init__.py", line 267, in backward
+    _engine_run_backward(
+  File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py", line 744, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/n/home05/sqin/self-correct/sudoku/train.py", line 214, in <module>
+[rank0]:     main(args)
+[rank0]:   File "/n/home05/sqin/self-correct/sudoku/train.py", line 202, in main
+[rank0]:     trainer.train()
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/trainer.py", line 2171, in train
+[rank0]:     return inner_training_loop(
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/trainer.py", line 2531, in _inner_training_loop
+[rank0]:     tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+[rank0]:                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/transformers/trainer.py", line 3715, in training_step
+[rank0]:     self.accelerator.backward(loss, **kwargs)
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/accelerate/accelerator.py", line 2188, in backward
+[rank0]:     self.deepspeed_engine_wrapped.backward(loss, **kwargs)
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/accelerate/utils/deepspeed.py", line 166, in backward
+[rank0]:     self.engine.backward(loss, **kwargs)
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/deepspeed/utils/nvtx.py", line 15, in wrapped_fn
+[rank0]:     ret_val = func(*args, **kwargs)
+[rank0]:               ^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/deepspeed/runtime/engine.py", line 1940, in backward
+[rank0]:     self.optimizer.backward(loss, retain_graph=retain_graph)
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/deepspeed/runtime/zero/stage_1_and_2.py", line 1953, in backward
+[rank0]:     self.loss_scaler.backward(loss.float(), retain_graph=retain_graph)
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/deepspeed/runtime/fp16/loss_scaler.py", line 63, in backward
+[rank0]:     scaled_loss.backward(retain_graph=retain_graph)
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/_tensor.py", line 525, in backward
+[rank0]:     torch.autograd.backward(
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/__init__.py", line 267, in backward
+[rank0]:     _engine_run_backward(
+[rank0]:   File "/n/holylabs/LABS/dam_lab/Lab/sqin/envs/reason/lib/python3.11/site-packages/torch/autograd/graph.py", line 744, in _engine_run_backward
+[rank0]:     return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]: KeyboardInterrupt
