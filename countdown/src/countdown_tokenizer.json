@@ -1,0 +1,75 @@
+{
+  "version": "1.0",
+  "truncation": null,
+  "padding": null,
+  "added_tokens": [],
+  "normalizer": null,
+  "pre_tokenizer": {
+    "type": "Sequence",
+    "pretokenizers": [
+      {
+        "type": "BertPreTokenizer"
+      },
+      {
+        "type": "Digits",
+        "individual_digits": true
+      }
+    ]
+  },
+  "post_processor": null,
+  "decoder": null,
+  "model": {
+    "type": "WordPiece",
+    "unk_token": "UNK",
+    "continuing_subword_prefix": "##",
+    "max_input_chars_per_word": 100,
+    "vocab": {
+      "0": 0,
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7,
+      "8": 8,
+      "9": 9,
+      "Exploring": 10,
+      "found": 11,
+      "Solution": 12,
+      "solution": 13,
+      "equal": 14,
+      "unequal": 15,
+      "Resulting": 16,
+      "to": 17,
+      "Operations": 18,
+      "Reached": 19,
+      "No": 20,
+      "Current": 21,
+      "Operation": 22,
+      "Node": 23,
+      "Moving": 24,
+      "Generated": 25,
+      "from": 26,
+      "State": 27,
+      "Numbers": 28,
+      "Goal": 29,
+      "+": 30,
+      "-": 31,
+      "*": 32,
+      "/": 33,
+      "=": 34,
+      "[": 35,
+      "]": 36,
+      "#": 37,
+      ",": 38,
+      ":": 39,
+      ".": 40,
+      "'": 41,
+      "UNK": 42,
+      "PAD": 43,
+      "START": 44,
+      "END": 45
+    }
+  }
+}
