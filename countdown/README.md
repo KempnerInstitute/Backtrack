@@ -30,15 +30,7 @@ sh scripts/gen_task.sh
 ```bash
 sh scripts/train.sh
 ```
-3. Generating data for STaR
-```bash
-sh scripts/gen_star.sh
-```
-4. Train the model with STaR
-```bash
-sh scripts/star.sh
-```
-5. Evaluate the model
+3. Evaluate the model
 ```bash
 sh scripts/eval.sh
 ```
@@ -52,18 +44,14 @@ This repository is structured to support efficient development, training, and ev
 
 ### `configs/`
 **Purpose**: Houses configuration files for various training settings.
-- `gpt-neo-s.json`: For the GPT-Neo transformer model.
-- `oft-mix-4-cd.conf`: For the Optimal Solution (OT) model.
-- `sft-mix-4-cd.conf`: For the Stream of Search (SoS) model.
-- `star1-mix-4-cd.conf`: For Star iteration 1 model.
-- `star2-mix-4-cd.conf`: For Star iteration 2 model.
-- `star3-mix-4-cd.conf`: For Star iteration 3 model.
+- `oft-mix-4-cd.conf`: For the Direction Solution model.
+- `sft-dfs-4-cd.conf`: For the Backtracking model.
+
 
 ### `scripts/`
 **Purpose**: Contains scripts for data generation and model training.
 - `gen_task.sh`: Generates the initial countdown dataset.
 - `train.sh`: Trains models under OT or SoS settings.
-- `gen_star.sh`: Generates data for Star iterations.
 - `star.sh`: Trains models in Star setting.
 - `eval.sh`: Evaluates the performance of the models.
 
