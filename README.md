@@ -9,5 +9,5 @@ I will be updating documentation in the coming weeks. Feel free to email me with
 
 CountDown: Code is adopted from [Stream of Search](https://github.com/kanishkg/stream-of-search)
 
-Verl: Code is adopted from [Ver](https://github.com/volcengine/verl)
+Verl: Code is adopted from [Verl](https://github.com/volcengine/verl). Scripts to train CountDown model can be found under `my_scripts/`
 
